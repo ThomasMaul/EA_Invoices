@@ -1,4 +1,4 @@
-﻿{
+{
 	"destination": "detailScreen",
 	"windowSizingX": "fixed",
 	"windowSizingY": "fixed",
@@ -33,7 +33,7 @@
 					"top": 43,
 					"left": 622,
 					"width": 295,
-					"height": 340,
+					"height": 185,
 					"sizingX": "grow",
 					"sizingY": "grow",
 					"stroke": "#FFFFFF",
@@ -775,20 +775,67 @@
 					"events": [
 						"onDataChange"
 					]
+				},
+				"Round Rectangle5": {
+					"type": "rectangle",
+					"top": 249,
+					"left": 622,
+					"width": 295,
+					"height": 134,
+					"sizingX": "grow",
+					"sizingY": "grow",
+					"stroke": "#FFFFFF",
+					"borderRadius": 5
+				},
+				"Schaltfläche": {
+					"type": "button",
+					"text": "Generic Data Browser",
+					"top": 275,
+					"left": 684,
+					"width": 189,
+					"height": 22,
+					"events": [
+						"onClick"
+					],
+					"method": "ObjectMethods/Schaltfläche.4dm"
+				},
+				"Schaltfläche1": {
+					"type": "button",
+					"text": "Template Editor",
+					"top": 307,
+					"left": 684,
+					"width": 189,
+					"height": 22,
+					"events": [
+						"onClick"
+					],
+					"method": "ObjectMethods/Schaltfläche1.4dm"
+				},
+				"Schaltfläche2": {
+					"type": "button",
+					"text": "Invoice Editor",
+					"top": 339,
+					"left": 684,
+					"width": 189,
+					"height": 22,
+					"events": [
+						"onClick"
+					],
+					"method": "ObjectMethods/Schaltfläche2.4dm"
 				}
 			}
 		}
 	],
 	"editor": {
 		"groups": {
+			"Group2": [
+				"_ADDPIC_4",
+				"_ADDPIC_3"
+			],
 			"Group3": [
 				"_NOPIC_5",
 				"_NOPIC_",
 				"_NOPIC_1"
-			],
-			"Group2": [
-				"_ADDPIC_4",
-				"_ADDPIC_3"
 			]
 		},
 		"activeView": "View 1",
@@ -843,5 +890,10 @@
 			"View 8": {},
 			"View 9": {}
 		}
+	},
+	"geometryStamp": 18,
+	"$4d": {
+		"version": "1",
+		"kind": "form"
 	}
 }

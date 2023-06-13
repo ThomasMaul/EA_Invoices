@@ -1,4 +1,4 @@
-﻿{
+{
 	"bars": [
 		{
 			"id": 1,
@@ -47,7 +47,8 @@
 				},
 				{
 					"title": ":xliff:Settings",
-					"method": "M_Settings"
+					"method": "M_Settings",
+					"action": "databaseSettings"
 				},
 				{
 					"title": "Item 3",

@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?><preferences stamp="14">
+<?xml version="1.0" encoding="UTF-8"?><preferences stamp="16">
 	<com.4d>
 		<deployment>
 			<options/>
@@ -9,7 +9,8 @@
 		</interface>
 		<general startup_environnement="1"/>
 		<compiler>
-			<typage default_for_button="2"/>
+			<typage default_for_button="2" default_for_numeric="1"/>
+			<options target="all"/>
 		</compiler>
 		<database>
 			<cache flush_buffer_delay="20s" size_maximum="1024" size_minimum="512"/>

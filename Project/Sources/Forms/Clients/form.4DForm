@@ -1,4 +1,4 @@
-﻿{
+{
 	"destination": "detailScreen",
 	"rightMargin": 0,
 	"bottomMargin": 10,
@@ -618,7 +618,7 @@
 					"left": 40,
 					"width": 221,
 					"height": 17,
-					"dataSource": "Util_GiveRecordCount (Form:C1466.displayedSelection;Form:C1466.selectedSubset)",
+					"dataSource": "Util_GiveRecordCount(Form:C1466.displayedSelection; Form:C1466.selectedSubset)",
 					"focusable": false,
 					"fill": "transparent",
 					"borderStyle": "none",
@@ -2077,6 +2077,44 @@
 					"class": "Texts13N",
 					"textAlign": "right",
 					"text": ":xliff:Contact"
+				},
+				"WParea": {
+					"type": "write",
+					"top": 97,
+					"left": 1017,
+					"width": 880,
+					"height": 590,
+					"sizingX": "grow",
+					"sizingY": "grow",
+					"dataSource": "WParea",
+					"hideFocusRing": true,
+					"scrollbarVertical": "automatic",
+					"scrollbarHorizontal": "automatic",
+					"dpi": 0,
+					"borderStyle": "none",
+					"method": "ObjectMethods/WParea.4dm",
+					"events": [
+						"onLoad",
+						"onLosingFocus",
+						"onGettingFocus",
+						"onSelectionChange",
+						"onAfterEdit"
+					]
+				},
+				"WPtoolbar": {
+					"type": "subform",
+					"top": 7,
+					"left": 1017,
+					"width": 880,
+					"height": 90,
+					"sizingX": "grow",
+					"detailForm": "WP_Toolbar",
+					"focusable": false,
+					"deletableInList": false,
+					"doubleClickInRowAction": "editSubrecord",
+					"doubleClickInEmptyAreaAction": "addSubrecord",
+					"selectionMode": "multiple",
+					"printFrame": "variable"
 				}
 			}
 		}
@@ -2136,5 +2174,10 @@
 			"View 8": {},
 			"View 9": {}
 		}
+	},
+	"geometryStamp": 5,
+	"$4d": {
+		"version": "1",
+		"kind": "form"
 	}
 }

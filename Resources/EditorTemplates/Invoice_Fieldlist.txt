@@ -1,0 +1,20 @@
+data.Client.fullAddress	Full Customer address
+data.Client.Country	Customer country
+data.Client.Name	Customer name
+data.Client.State	Customer State
+data.Invoice_Number	Invoice number
+data.Creation_Date	Invoice date
+string(this.data.Total;"###,###,##0.00;###,-###,##0.00;0.00")	Invoice Total
+data.Tax	Invoice Tax
+data.proforma_Number	Proforma number
+data.Comments	Invoice comments
+data.Lines_Fm_Invoices	Invoice items table data source
+item.Product.Reference	Invoice item reference
+item.Product.Name	Invoice item name
+item.Quantity	Invoice item quantity
+string(this.item.Unit_Price;"###,###,##0.00;###,-###,##0.00;0.00")	Invoice item unit price
+item.Discount_Rate	Invoice item discount rate
+item.Tax_Rate	Invoice item tax rate
+string(this.item.Total;"###,###,##0.00;###,-###,##0.00;0.00")	Invoice item total
+string(this.item.Total_Tax;;"###,###,##0.00;###,-###,##0.00;0.00")	Invoice item total tax
+string(sum(this.previousItems.Total);"###,###,##0.00;###,-###,##0.00;0.00")	Invoice item subtotal
