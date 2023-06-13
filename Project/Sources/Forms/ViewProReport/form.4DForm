@@ -1,0 +1,129 @@
+{
+	"$4d": {
+		"version": "1",
+		"kind": "form"
+	},
+	"windowSizingX": "variable",
+	"windowSizingY": "variable",
+	"windowMinWidth": 0,
+	"windowMinHeight": 0,
+	"windowMaxWidth": 32767,
+	"windowMaxHeight": 32767,
+	"rightMargin": 20,
+	"bottomMargin": 20,
+	"events": [
+		"onLoad",
+		"onPageChange",
+		"onValidate",
+		"onClick",
+		"onDoubleClick",
+		"onOutsideCall",
+		"onBeginDragOver",
+		"onDragOver",
+		"onDrop",
+		"onAfterKeystroke",
+		"onMenuSelect",
+		"onPluginArea",
+		"onAfterEdit",
+		"onTimer",
+		"onBoundVariableChange"
+	],
+	"windowTitle": "window title",
+	"destination": "detailScreen",
+	"pages": [
+		{
+			"objects": {}
+		},
+		{
+			"objects": {
+				"ViewProArea": {
+					"type": "view",
+					"top": 5,
+					"left": 7,
+					"width": 1130,
+					"height": 727,
+					"sizingX": "grow",
+					"sizingY": "grow",
+					"dataSourceTypeHint": "object",
+					"userInterface": "ribbon",
+					"withFormulaBar": true,
+					"method": "ObjectMethods/ViewProArea.4dm",
+					"events": [
+						"onVPReady"
+					]
+				},
+				"Schaltfläche1": {
+					"type": "button",
+					"text": "Button",
+					"top": 752,
+					"left": 1079,
+					"width": 27,
+					"height": 16,
+					"events": [
+						"onClick"
+					],
+					"shortcutAccel": false,
+					"shortcutControl": false,
+					"shortcutShift": false,
+					"shortcutAlt": false,
+					"shortcutKey": "[Esc]",
+					"visibility": "hidden",
+					"sizingY": "move"
+				},
+				"Schaltfläche2": {
+					"type": "button",
+					"text": "Button",
+					"top": 752,
+					"left": 1047,
+					"width": 27,
+					"height": 16,
+					"events": [
+						"onClick"
+					],
+					"shortcutAccel": false,
+					"shortcutControl": false,
+					"shortcutShift": false,
+					"shortcutAlt": false,
+					"shortcutKey": "[Enter]",
+					"visibility": "hidden",
+					"sizingY": "move"
+				},
+				"update": {
+					"type": "button",
+					"text": "Insert Data",
+					"top": 759,
+					"left": 19,
+					"width": 172,
+					"height": 36,
+					"events": [
+						"onClick"
+					],
+					"method": "ObjectMethods/update.4dm",
+					"sizingY": "move"
+				},
+				"Schaltfläche": {
+					"type": "button",
+					"text": "Update",
+					"top": 759,
+					"left": 246,
+					"width": 169,
+					"height": 41,
+					"events": [
+						"onClick"
+					],
+					"method": "ObjectMethods/Schaltfläche.4dm",
+					"sizingY": "move"
+				}
+			}
+		}
+	],
+	"geometryStamp": 1,
+	"method": "method.4dm",
+	"editor": {
+		"activeView": "View 1",
+		"defaultView": "View 1",
+		"views": {
+			"View 1": {}
+		}
+	}
+}
