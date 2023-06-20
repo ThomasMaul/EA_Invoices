@@ -14,23 +14,23 @@
 				</trans-unit>
 				<trans-unit resname="INVOICES">
 					<source>INVOICES</source>
-					<target>Invoices</target>
+					<target>Rechnungen</target>
 				</trans-unit>
 				<trans-unit resname="INVOICE_LINES">
 					<source>Invoice Lines</source>
-					<target>Invoice Lines</target>
+					<target>Rechnungspositionen</target>
 				</trans-unit>
 				<trans-unit resname="CLIENTS">
 					<source>CLIENTS</source>
-					<target>Clients</target>
+					<target>Kunden</target>
 				</trans-unit>
 				<trans-unit resname="PRODUCTS">
 					<source>PRODUCTS</source>
-					<target>Products</target>
+					<target>Produkte</target>
 				</trans-unit>
 				<trans-unit resname="SETTINGS">
 					<source>SETTINGS</source>
-					<target>Settings</target>
+					<target>Einstellungen</target>
 				</trans-unit>
 				<trans-unit resname="Graph">
 					<source>Graph</source>
@@ -38,17 +38,17 @@
 				</trans-unit>
 				<trans-unit resname="StartupScreen">
 					<source>Main Dialog</source>
-					<target>Main Dialog</target>
+					<target>Hauptdialog</target>
 				</trans-unit>
 			</group>
 	 		<group id="1000" resname="General">
 				<trans-unit id="1001" resname="Yes">
 				   <source>Yes</source>
-				   <target>Yes</target>
+				   <target>Ja</target>
 				</trans-unit>
 				<trans-unit id="1002" resname="No">
 				   <source>No</source>
-				   <target>No</target>
+				   <target>Nein</target>
 				</trans-unit>
 				<trans-unit id="1003" resname="OK">
 				   <source>OK</source>
@@ -56,86 +56,86 @@
 				</trans-unit>
 				<trans-unit id="1004" resname="Cancel">
 				   <source>Cancel</source>
-				   <target>Cancel</target>
+				   <target>Abbrechen</target>
 				</trans-unit>
 				<trans-unit id="1005" resname="Sure?">
 				   <source>Are you sure?</source>
-				   <target>Are you sure?</target>
+				   <target>Sind Sie sicher?</target>
 				</trans-unit>
 				<trans-unit id="1006" resname="Find">
 				   <source>Find</source>
-				   <target>Find</target>
+				   <target>Suchen</target>
 				</trans-unit>
 				<trans-unit id="1007" resname="Rename">
 				   <source>Rename</source>
-				   <target>Rename</target>
+				   <target>Umbenennen</target>
 				</trans-unit>
 				<trans-unit id="1008" resname="True">
 				   <source>True</source>
-				   <target>True</target>
+				   <target>Wahr</target>
 				</trans-unit>
 				<trans-unit id="1009" resname="False">
 				   <source>False</source>
-				   <target>False</target>
+				   <target>Falsch</target>
 				</trans-unit>
 				<trans-unit id="1010" resname="Continue">
 				   <source>Continue</source>
-				   <target>Continue</target>
+				   <target>Weiter</target>
 				</trans-unit>
 				<trans-unit id="1011" resname="Remove">
 				   <source>Remove</source>
-				   <target>Remove</target>
+				   <target>Löschen</target>
 				</trans-unit>
 				<trans-unit id="1012" resname="Edit">
 				   <source>Edit</source>
-				   <target>Edit</target>
+				   <target>Ändern</target>
 				</trans-unit>
 				<trans-unit id="4004" resname="PropertyValue">
 				   <source>Property Value</source>
-				   <target>Property Value</target>
+				   <target>Eigenschaftswert</target>
 				</trans-unit>
 				<trans-unit id="4005" resname="PropertyName">
 				   <source>Property Name</source>
-				   <target>Property Name</target>
+				   <target>Eigenschaftsname</target>
 				</trans-unit>
 
 			</group>
 			<group resname="3D Buttons">
 				<trans-unit resname="Print">
 					<source>Print</source>
-					<target>Print</target>
+					<target>Drucken</target>
 				</trans-unit>
 				<trans-unit resname="Labels">
 					<source>Labels</source>
-					<target>Labels</target>
+					<target>Etiketten</target>
 				</trans-unit>
 				<trans-unit resname="Reports">
 					<source>Reports</source>
-					<target>Reports</target>
+					<target>Bericht</target>
 				</trans-unit>
 				<trans-unit resname="Query">
 					<source>Query</source>
-					<target>Query</target>
+					<target>Suchen</target>
 				</trans-unit>
 				<trans-unit resname="Subset">
 					<source>Subset</source>
-					<target>Subset</target>
+					<target>Teilauswahl</target>
 				</trans-unit>
 				<trans-unit resname="All">
 					<source>All</source>
-					<target>All</target>
+					<target>Alle</target>
 				</trans-unit>
 				<trans-unit resname="Delete">
 					<source>Delete</source>
-					<target>Delete</target>
+					<target>Löschen</target>
 				</trans-unit>
 				<trans-unit resname="Add">
 					<source>Add</source>
-					<target>Add</target>
+					<target>Neu</target>
 				</trans-unit>
 				<trans-unit resname="Sort">
 					<source>Sort</source>
-					<target>Sort</target>
+					<target>Sortieren</target>
 				</trans-unit>
 				<trans-unit resname="Export">
 					<source>Export</source>
@@ -147,63 +147,63 @@
 				</trans-unit>
 				<trans-unit resname="Cancel">
 					<source>Cancel</source>
-					<target>Cancel</target>
+					<target>Abbrechen</target>
 				</trans-unit>
 				<trans-unit resname="Validate">
 					<source>Validate</source>
-					<target>Validate</target>
+					<target>Bestätigen</target>
 				</trans-unit>
 				<trans-unit resname="First">
 					<source>First</source>
-					<target>First</target>
+					<target>Erster</target>
 				</trans-unit>
 				<trans-unit resname="Next">
 					<source>Next</source>
-					<target>Next</target>
+					<target>Nächster</target>
 				</trans-unit>
 				<trans-unit resname="Last">
 					<source>Last</source>
-					<target>Last</target>
+					<target>Letzter</target>
 				</trans-unit>
 				<trans-unit resname="Previous">
 					<source>Previous</source>
-					<target>Previous</target>
+					<target>Vorheriger</target>
 				</trans-unit>
 				<trans-unit resname="Open Record">
 					<source>Open Record</source>
-					<target>Open Record</target>
+					<target>Öffne Datensatz</target>
 				</trans-unit>
 				<trans-unit resname="Edit Record">
 					<source>Edit Record</source>
-					<target>Edit Record</target>
+					<target>Ändere Datensatz</target>
 				</trans-unit>
 				<trans-unit resname="LockUnlock">
 					<source>Lock/Unlock</source>
-					<target>Lock/Unlock</target>
+					<target>Sperren/Entsperren</target>
 				</trans-unit>
 				<trans-unit resname="New">
 					<source>New Record</source>
-					<target>New Record</target>
+					<target>Neuer Datensatz</target>
 				</trans-unit>
 				<trans-unit resname="Unlock">
 					<source>Edit</source>
-					<target>Edit</target>
+					<target>Ändern</target>
 				</trans-unit>
 				<trans-unit resname="Lock">
 					<source>Read Only</source>
-					<target>Read Only</target>
+					<target>Nur Lesen</target>
 				</trans-unit>
 				<trans-unit resname="Property_Add">
 					<source>Add a Property</source>
-					<target>Add a Property</target>
+					<target>Neue Eigenschaft</target>
 				</trans-unit>
 				<trans-unit resname="Property_Delete">
 					<source>Remove a Property</source>
-					<target>Remove a Property</target>
+					<target>Entferne Eigenschaft</target>
 				</trans-unit>
 				<trans-unit resname="Property_Settings">
 					<source>Settings</source>
-					<target>Settings</target>
+					<target>Einstellungen</target>
 				</trans-unit>
 			</group>
 

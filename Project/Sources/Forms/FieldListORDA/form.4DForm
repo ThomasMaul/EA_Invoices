@@ -140,7 +140,7 @@
 				},
 				"Schaltfläche1": {
 					"type": "button",
-					"text": "Abbrechen",
+					"text": ":xliff:Cancel",
 					"top": 487,
 					"left": 327,
 					"width": 132,

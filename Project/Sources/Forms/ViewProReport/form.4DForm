@@ -90,7 +90,7 @@
 				},
 				"update": {
 					"type": "button",
-					"text": "Insert Data",
+					"text": ":xliff:Insert_Data",
 					"top": 759,
 					"left": 19,
 					"width": 172,
@@ -103,7 +103,7 @@
 				},
 				"Schaltfläche": {
 					"type": "button",
-					"text": "Update",
+					"text": ":xliff:Update_Data",
 					"top": 759,
 					"left": 246,
 					"width": 169,

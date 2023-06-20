@@ -24,7 +24,22 @@ End if
 
 $win:=Open form window:C675("FieldListORDA")
 $data:=New object:C1471("table"; ds:C1482[Form:C1466.table])
-If (Form:C1466.selectedFields#Null:C1517)
+If ((Form:C1466.selectedFields#Null:C1517) && (Form:C1466.selectedFields.length>0))
+	$data.selectedFields:=Form:C1466.selectedFields
+Else 
+	// try to get field names from spreadsheet
+	$tables:=VP Get tables("ViewProArea"; $datasheet)
+	If ($tables.indexOf(Form:C1466.table)>=0)
+		$range:=VP Get table range("ViewProArea"; Form:C1466.table; vk table data range:K89:157; $datasheet)
+		$count:=Num:C11($range.ranges[0].columnCount)
+		$col:=New collection:C1472
+		var $attributes : Object
+		For ($i; 0; $count-1)
+			$attributes:=VP Get table column attributes("ViewProArea"; Form:C1466.table; $i; $datasheet)
+			$col.push($attributes.name)
+		End for 
+	End if 
+	Form:C1466.selectedFields:=$col
 	$data.selectedFields:=Form:C1466.selectedFields
 End if 
 DIALOG:C40("FieldListORDA"; $data)
