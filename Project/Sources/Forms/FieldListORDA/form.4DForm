@@ -44,7 +44,8 @@
 					"width": 275,
 					"height": 464,
 					"events": [
-						"onDoubleClick"
+						"onDoubleClick",
+						"onBeginDragOver"
 					],
 					"dataSource": "Form:C1466.source",
 					"selectionMode": "multiple",

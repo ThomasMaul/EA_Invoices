@@ -16,13 +16,19 @@ Case of
 			var $icon; $para : Text
 			
 			$pos:=Drop position:C608
-			GET LIST ITEM:C378(*; "hlist_target"; $pos; $newitemRef; $itemText; $sublist; $expanded)
+			If ($pos>0)
+				GET LIST ITEM:C378(*; "hlist_target"; $pos; $newitemRef; $itemText; $sublist; $expanded)
+			End if 
 			
 			GET LIST ITEM PROPERTIES:C631(*; $ob.list; $ob.ref; $enterable; $styles; $icon; $color)
 			GET LIST ITEM PARAMETER:C985(*; $ob.list; $ob.ref; "ref"; $para)
 			DELETE FROM LIST:C624(*; $ob.list; $ob.ref)
 			
-			INSERT IN LIST:C625(*; "hlist_target"; $newitemRef; $ob.text; $ob.ref)
+			If ($pos>=0)
+				INSERT IN LIST:C625(*; "hlist_target"; $newitemRef; $ob.text; $ob.ref)
+			Else 
+				APPEND TO LIST:C376(Form:C1466.target; $ob.text; $ob.ref)
+			End if 
 			SET LIST ITEM PROPERTIES:C386(*; "hlist_target"; $ob.ref; $enterable; $styles; $icon; $color)
 			SET LIST ITEM PARAMETER:C986(*; "hlist_target"; $ob.ref; "ref"; $para)
 			
