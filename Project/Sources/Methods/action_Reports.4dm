@@ -10,6 +10,17 @@ Else
 	Else 
 		$data.data:=Form:C1466.displayedSelection
 	End if 
+	
+	// special behavior for invoices
+	If (Form:C1466.dataClassName="Invoices")
+		$pop:=Get localized string:C991("INVOICES")+";"+Get localized string:C991("INVOICE_LINES")
+		$popup:=Pop up menu:C542($pop)
+		If ($popup=2)
+			$data.table:="INVOICE_LINES"
+			$data.data:=$data.data.Lines_Fm_Invoices
+		End if 
+	End if 
+	
 	$win:=Open form window:C675("ViewProReport")
 	DIALOG:C40("ViewProReport"; $data; *)
 	

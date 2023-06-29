@@ -44,6 +44,8 @@ Else
 	Form:C1466.data:=Form:C1466.masterform.displayedSelection
 End if 
 
+Form:C1466.data:=VPReportCallback(Form:C1466.table; Form:C1466.data)
+
 $col:=Form:C1466.data.toCollection($filter)
 ds:C1482.flattenCollection($col; True:C214)
 Form:C1466.tabledata:=New object:C1471("table"; $col)

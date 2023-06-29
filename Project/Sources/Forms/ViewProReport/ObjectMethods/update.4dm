@@ -64,6 +64,8 @@ Else
 	Form:C1466.data:=Form:C1466.masterform.displayedSelection
 End if 
 
+Form:C1466.data:=VPReportCallback(Form:C1466.table; Form:C1466.data)
+
 If ($data.selectedFields.length>0)
 	Form:C1466.selectedFields:=$data.selectedFields
 	$col:=Form:C1466.data.toCollection($data.selectedFields)

@@ -14,7 +14,8 @@ The current content of the listbox is synced with 4D View Pro area, allowing the
 When the end user modifies the list box selection, the report can be synced in parallel, updating the report quickly, without the need to reopen all.
 
 ## Example:
-in the 4D Invoice example, just open Products, Invoices or Clients, select some records then click the "Reports" button. Invoices is most interesting, as it has relations to Clients.
+in the 4D Invoice example, just open Products, Invoices or Clients, select some records then click the "Reports" button. Invoices is most interesting, as it has relations to Clients. When you click Report on Invoices, it opens a popup to allow to either build the report on Invoices, or directly on Invoice Items, allowing to use the relation from Invoice Items to Products and from Invoice Items to Invoices and Clients.
+Such more complex tables are the perfect example for pivot tables...
 
 This opens a new window (in the same process) showing a 4D View Pro Area.
 Now click "Insert Data", which opens a field list editor.
@@ -44,7 +45,10 @@ EA_Invoices/Project/Sources/Forms/FieldListORDA (the folder)
 
 Copy class "FieldListEditor"
 
-Copy the two functions (or the whole class if you don't use it so far) from class "DataStore" flattenCollection and _flattenCollObject: 
+Copy the two functions (or the whole class if you don't use it so far) from class "DataStore" flattenCollection and _flattenCollObject.
+
+Copy the two methods VPReportUpdate and VPReportCallback.
+Adapt the code of VPReportCallback to your need, for minimum usage it can be just $result:=$data (doing nothing). This method allows to use another table, as in the Invoice example it allows to show invoice items for the selected invoices (often useful for pivot table reporting).
 
 Finally insert into your user interface a button (or reuse one) to start the report.
 Example code:
