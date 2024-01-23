@@ -192,9 +192,9 @@
 				"List Box": {
 					"type": "listbox",
 					"left": 918,
-					"top": 161,
+					"top": 107,
 					"width": 310,
-					"height": 536,
+					"height": 590,
 					"events": [
 						"onClick",
 						"onDataChange",
@@ -231,19 +231,6 @@
 							]
 						}
 					]
-				},
-				"btable": {
-					"type": "button",
-					"text": "Insert Table",
-					"top": 117,
-					"left": 990,
-					"width": 162,
-					"height": 35,
-					"events": [
-						"onClick"
-					],
-					"method": "ObjectMethods/btable.4dm",
-					"sizingX": "move"
 				},
 				"bSave": {
 					"type": "button",
@@ -309,7 +296,7 @@
 			}
 		}
 	],
-	"geometryStamp": 128,
+	"geometryStamp": 130,
 	"$4d": {
 		"version": "1",
 		"kind": "form"

@@ -1,0 +1,32 @@
+{
+    "tableDataSource": "This.data.Lines_Fm_Invoices",
+    "columns": [{
+        "check": true,
+        "header": "Quantity",
+        "source": "This.item.Quantity"
+    },{
+        "check": true,
+        "header": "Reference",
+        "source": "This.item.Product.Reference"
+    }, {
+        "check": true,
+        "header": "Name",
+        "source": "This.item.Product.Name"
+    },  {
+        "check": true,
+        "header": "Unit Price",
+        "source": "String(This.item.Unit_Price; \"###,###.00\")"
+    }, {
+        "check": true,
+        "header": "Unit Total",
+        "source": "String(This.item.Total; \"###,###.00\")"
+    }],
+    "bcorFormulas": [{
+        "label": "Subtotal",
+        "source": "String(This.previousItems.sum(\"Total\"); \"###,###.00\")"
+    }],
+    "extraFormulas": [{
+        "label": "Total",
+        "source": "String(This.tableData.sum(\"Total\"); \"###,###.00\")"
+    }]
+}

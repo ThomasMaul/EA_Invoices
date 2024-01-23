@@ -519,5 +519,5 @@
 			<table_ref uuid="C1146E075B67B24CAA3D4910AC2ED24C" name="INVOICE_LINES"/>
 		</field_ref>
 	</index>
-	<base_extra __stringCompHash="icu:72.1.0" __keywordBuildingHash="icu:72.1.0" package_name="InvoicesAdminDemo" structure_file_name="InvoicesAdminDemo" data_file_path=":InvoicesAdminDemo.4DD"/>
+	<base_extra package_name="InvoicesAdminDemo" structure_file_name="InvoicesAdminDemo" data_file_path=":InvoicesAdminDemo.4DD"/>
 </base>
