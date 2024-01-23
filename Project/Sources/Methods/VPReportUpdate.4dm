@@ -30,9 +30,12 @@ $count:=Num:C11($range.ranges[0].columnCount)
 
 $col:=New collection:C1472
 var $attributes : Object
+$dataclass:=Form:C1466.data.getDataClass()
 For ($i; 0; $count-1)
 	$attributes:=VP Get table column attributes("ViewProArea"; Form:C1466.table; $i; $datasheet)
+	//If ($dataclass[$attributes.name]#Null)  // check if that is a valid 4D field
 	$col.push($attributes.name)
+	//End if 
 End for 
 
 $filter:=$col.join(",")
