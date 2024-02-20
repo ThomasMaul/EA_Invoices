@@ -1,32 +1,20 @@
+.Buttons_13 {
+	font-family: Segoe UI;
+	font-size: 12px;
+}
+
 .default {
 	font-family: Segoe UI;
 	font-size: 12px;
 }
 
-.Texts11N {
+.Font18 {
 	font-family: Arial;
-	font-size: 11px;
+	font-size: 18px;
 }
 
-.Texts12N {
-	font-family: Arial;
-	font-size: 13px;
-}
-
-.Texts13B {
+.ToolbarButtons {
 	font-family: Arial;
 	font-size: 12px;
-	font-weight: bold;
-}
-
-.Texts13N {
-	font-family: Arial;
-	font-size: 12px;
-}
-
-.Texts14B {
-	font-family: Arial;
-	font-size: 14px;
-	font-weight: bold;
 }
 

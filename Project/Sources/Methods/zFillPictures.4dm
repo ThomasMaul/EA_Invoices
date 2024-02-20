@@ -1,0 +1,6 @@
+//%attributes = {}
+ALL RECORDS:C47([CLIENTS:1])
+APPLY TO SELECTION:C70([CLIENTS:1]; [CLIENTS:1]Logo:13:=ToolCreateLogo("logo"))
+
+ALL RECORDS:C47([PRODUCTS:4])
+APPLY TO SELECTION:C70([PRODUCTS:4]; [PRODUCTS:4]Picture:4:=ToolCreateLogo("product"))

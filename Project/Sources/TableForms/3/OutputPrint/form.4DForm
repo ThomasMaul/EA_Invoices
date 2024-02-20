@@ -1,0 +1,372 @@
+{
+	"destination": "listPrinter",
+	"rightMargin": 0,
+	"bottomMargin": 0,
+	"markerHeader": 24,
+	"markerBody": 67,
+	"markerBreak": 67,
+	"markerFooter": 67,
+	"events": [
+		"onLoad",
+		"onValidate",
+		"onClick",
+		"onHeader",
+		"onPrintingBreak",
+		"onPrintingFooter",
+		"onDisplayDetail",
+		"onOutsideCall",
+		"onDoubleClick",
+		"onDrop",
+		"onMenuSelect",
+		"onPluginArea",
+		"onDataChange",
+		"onDragOver",
+		"onPrintingDetail",
+		"onOpenDetail",
+		"onCloseDetail",
+		"onTimer",
+		"onAfterKeystroke",
+		"onLoadRecord",
+		"onAfterEdit",
+		"onBeginDragOver",
+		"onBoundVariableChange",
+		"onPageChange"
+	],
+	"pageFormat": {
+		"paperName": "DIN A4",
+		"paperWidth": "595pt",
+		"paperHeight": "841pt"
+	},
+	"pages": [
+		null,
+		{
+			"objects": {
+				"Rectangle13": {
+					"type": "rectangle",
+					"top": 1,
+					"left": 1,
+					"width": 562,
+					"height": 66,
+					"sizingX": "grow",
+					"fill": "transparent"
+				},
+				"S1_Text": {
+					"type": "text",
+					"top": 6,
+					"left": 4,
+					"width": 84,
+					"height": 16,
+					"textAlign": "left",
+					"fontWeight": "bold",
+					"text": "Reference"
+				},
+				"S2_Text": {
+					"type": "text",
+					"top": 6,
+					"left": 93,
+					"width": 120,
+					"height": 16,
+					"textAlign": "left",
+					"fontWeight": "bold",
+					"text": "Name"
+				},
+				"S1_Field": {
+					"type": "input",
+					"top": 28,
+					"left": 4,
+					"width": 84,
+					"height": 18,
+					"dataSource": "[INVOICE_LINES:3]ProductReference:4",
+					"textAlign": "left",
+					"fill": "transparent",
+					"borderStyle": "none",
+					"contextMenu": "none",
+					"multiline": "yes",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onLoad",
+						"onValidate",
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"S2_Field": {
+					"type": "input",
+					"top": 28,
+					"left": 93,
+					"width": 221,
+					"height": 36,
+					"dataSource": "[INVOICE_LINES:3]ProductName:5",
+					"textAlign": "left",
+					"fill": "transparent",
+					"borderStyle": "none",
+					"printFrame": "variable",
+					"contextMenu": "none",
+					"multiline": "yes",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onLoad",
+						"onValidate",
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"S3_Text": {
+					"type": "text",
+					"top": 6,
+					"left": 319,
+					"width": 23,
+					"height": 16,
+					"textAlign": "center",
+					"fontWeight": "bold",
+					"text": "Qty"
+				},
+				"S4_Text": {
+					"type": "text",
+					"top": 6,
+					"left": 347,
+					"width": 57,
+					"height": 16,
+					"textAlign": "center",
+					"fontWeight": "bold",
+					"text": "Unit Price"
+				},
+				"S5_Text": {
+					"type": "text",
+					"top": 6,
+					"left": 408,
+					"width": 46,
+					"height": 16,
+					"textAlign": "center",
+					"fontWeight": "bold",
+					"text": "Disc (%)"
+				},
+				"S6_Text": {
+					"type": "text",
+					"top": 6,
+					"left": 460,
+					"width": 56,
+					"height": 16,
+					"textAlign": "center",
+					"fontWeight": "bold",
+					"text": "Total"
+				},
+				"S3_Field": {
+					"type": "input",
+					"top": 28,
+					"left": 319,
+					"width": 23,
+					"height": 18,
+					"dataSource": "[INVOICE_LINES:3]Quantity:6",
+					"dataSourceTypeHint": "number",
+					"textAlign": "center",
+					"fill": "transparent",
+					"borderStyle": "none",
+					"contextMenu": "none",
+					"numberFormat": "###,###.##",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onLoad",
+						"onValidate",
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"S4_Field": {
+					"type": "input",
+					"top": 28,
+					"left": 347,
+					"width": 56,
+					"height": 18,
+					"dataSource": "[INVOICE_LINES:3]ProductUnitPrice:7",
+					"dataSourceTypeHint": "number",
+					"textAlign": "right",
+					"fill": "transparent",
+					"borderStyle": "none",
+					"contextMenu": "none",
+					"numberFormat": "###,##0.00€;(###,##0.00€)",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onLoad",
+						"onValidate",
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"S5_Field": {
+					"type": "input",
+					"top": 28,
+					"left": 408,
+					"width": 46,
+					"height": 18,
+					"dataSource": "[INVOICE_LINES:3]DiscountRate:8",
+					"dataSourceTypeHint": "number",
+					"textAlign": "center",
+					"fill": "transparent",
+					"borderStyle": "none",
+					"contextMenu": "none",
+					"numberFormat": "###,###.##",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onLoad",
+						"onValidate",
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"S6_Field": {
+					"type": "input",
+					"top": 28,
+					"left": 459,
+					"width": 57,
+					"height": 18,
+					"dataSource": "[INVOICE_LINES:3]Total:10",
+					"dataSourceTypeHint": "number",
+					"textAlign": "right",
+					"fill": "transparent",
+					"borderStyle": "none",
+					"contextMenu": "none",
+					"numberFormat": "###,##0.00€;(###,##0.00€)",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onLoad",
+						"onValidate",
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"S6_Text1": {
+					"type": "text",
+					"top": 6,
+					"left": 520,
+					"width": 40,
+					"height": 16,
+					"textAlign": "center",
+					"fontWeight": "bold",
+					"text": "Tax (%)"
+				},
+				"S6_Field1": {
+					"type": "input",
+					"top": 28,
+					"left": 521,
+					"width": 39,
+					"height": 18,
+					"dataSource": "[INVOICE_LINES:3]ProductTaxRate:9",
+					"dataSourceTypeHint": "number",
+					"textAlign": "right",
+					"fill": "transparent",
+					"borderStyle": "none",
+					"contextMenu": "none",
+					"numberFormat": "###,###.##",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onLoad",
+						"onValidate",
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"Line7": {
+					"type": "line",
+					"top": 23,
+					"left": 2,
+					"width": 560,
+					"sizingX": "grow"
+				},
+				"Splitter1_Line2": {
+					"type": "line",
+					"top": 1,
+					"left": 90,
+					"height": 66
+				},
+				"Splitter2_Line2": {
+					"type": "line",
+					"top": 1,
+					"left": 316,
+					"height": 66
+				},
+				"Splitter3_Line2": {
+					"type": "line",
+					"top": 1,
+					"left": 344,
+					"height": 66
+				},
+				"Splitter4_Line2": {
+					"type": "line",
+					"top": 1,
+					"left": 405,
+					"height": 66
+				},
+				"Splitter5_Line2": {
+					"type": "line",
+					"top": 1,
+					"left": 456,
+					"height": 66
+				},
+				"Splitter5_Line1": {
+					"type": "line",
+					"top": 1,
+					"left": 518,
+					"height": 66
+				}
+			}
+		}
+	],
+	"editor": {
+		"activeView": "View 1",
+		"defaultView": "View 1",
+		"views": {
+			"View 1": {},
+			"View 2": {},
+			"View 3": {},
+			"View 4": {},
+			"View 5": {},
+			"View 6": {},
+			"View 7": {},
+			"View 8": {},
+			"View 9": {}
+		}
+	}
+}

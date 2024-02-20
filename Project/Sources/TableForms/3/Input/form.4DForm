@@ -1,0 +1,581 @@
+{
+	"destination": "detailScreen",
+	"windowSizingX": "fixed",
+	"width": 1000,
+	"height": 620,
+	"menuBar": "Main",
+	"markerHeader": 15,
+	"markerBody": 200,
+	"markerBreak": 220,
+	"markerFooter": 240,
+	"events": [
+		"onLoad",
+		"onUnload"
+	],
+	"method": "method.4dm",
+	"pageFormat": {
+		"paperName": "US Letter",
+		"paperWidth": "612pt",
+		"paperHeight": "792pt"
+	},
+	"pages": [
+		null,
+		{
+			"objects": {
+				"Rectangle1": {
+					"type": "rectangle",
+					"top": 200,
+					"left": 25,
+					"width": 950,
+					"height": 395,
+					"sizingY": "grow",
+					"fill": "#DDDDDD",
+					"stroke": "#CCCCCC",
+					"borderRadius": 8
+				},
+				"Rectangle3": {
+					"type": "rectangle",
+					"top": 100,
+					"left": 25,
+					"width": 950,
+					"height": 75,
+					"fill": "#DDDDDD",
+					"stroke": "#CCCCCC",
+					"borderRadius": 8
+				},
+				"Picture1": {
+					"type": "picture",
+					"top": 20,
+					"left": 25,
+					"width": 100,
+					"height": 60,
+					"pictureFormat": "scaled",
+					"picture": "/RESOURCES/Images/Banners/Invoices.png"
+				},
+				"Text19": {
+					"type": "text",
+					"top": 225,
+					"left": 25,
+					"width": 300,
+					"height": 17,
+					"stroke": "#777777",
+					"textAlign": "right",
+					"text": ":xliff:Product Reference"
+				},
+				"Text1": {
+					"type": "text",
+					"top": 255,
+					"left": 25,
+					"width": 300,
+					"height": 17,
+					"stroke": "#777777",
+					"textAlign": "right",
+					"text": ":xliff:Product Name"
+				},
+				"Text2": {
+					"type": "text",
+					"top": 410,
+					"left": 25,
+					"width": 300,
+					"height": 17,
+					"stroke": "#777777",
+					"textAlign": "right",
+					"text": ":xliff:Quantity"
+				},
+				"Text3": {
+					"type": "text",
+					"top": 440,
+					"left": 25,
+					"width": 300,
+					"height": 17,
+					"stroke": "#777777",
+					"textAlign": "right",
+					"text": ":xliff:Product Unit Price"
+				},
+				"Text4": {
+					"type": "text",
+					"top": 470,
+					"left": 25,
+					"width": 300,
+					"height": 17,
+					"stroke": "#777777",
+					"textAlign": "right",
+					"text": ":xliff:Discount Rate"
+				},
+				"Text5": {
+					"type": "text",
+					"top": 500,
+					"left": 25,
+					"width": 300,
+					"height": 17,
+					"stroke": "#777777",
+					"textAlign": "right",
+					"text": ":xliff:Tax Rate"
+				},
+				"Text27": {
+					"type": "text",
+					"top": 560,
+					"left": 25,
+					"width": 300,
+					"height": 17,
+					"stroke": "#777777",
+					"textAlign": "right",
+					"fontWeight": "bold",
+					"text": ":xliff:Total"
+				},
+				"bFirstInvoiceLine": {
+					"type": "button",
+					"top": 20,
+					"left": 140,
+					"width": 80,
+					"height": 60,
+					"tooltip": "First Invoice Line",
+					"action": "firstRecord",
+					"textAlign": "center",
+					"stroke": "#000000",
+					"focusable": false,
+					"text": ":xliff:First",
+					"icon": "/RESOURCES/Images/Buttons/FirstRecord.png",
+					"iconFrames": 4,
+					"style": "custom",
+					"events": [
+						"onClick"
+					]
+				},
+				"bPreviousInvoiceLine": {
+					"type": "button",
+					"top": 20,
+					"left": 220,
+					"width": 80,
+					"height": 60,
+					"tooltip": "Previous Invoice Line",
+					"action": "previousRecord",
+					"textAlign": "center",
+					"stroke": "#000000",
+					"focusable": false,
+					"text": ":xliff:Previous",
+					"icon": "/RESOURCES/Images/Buttons/PreviousRecord.png",
+					"iconFrames": 4,
+					"style": "custom",
+					"events": [
+						"onClick"
+					]
+				},
+				"bNextInvoiceLine": {
+					"type": "button",
+					"top": 20,
+					"left": 300,
+					"width": 80,
+					"height": 60,
+					"tooltip": "Next Invoice Line",
+					"action": "nextRecord",
+					"textAlign": "center",
+					"stroke": "#000000",
+					"focusable": false,
+					"text": ":xliff:Next",
+					"icon": "/RESOURCES/Images/Buttons/NextRecord.png",
+					"iconFrames": 4,
+					"style": "custom",
+					"events": [
+						"onClick"
+					]
+				},
+				"bLastInvoiceLine": {
+					"type": "button",
+					"top": 20,
+					"left": 380,
+					"width": 80,
+					"height": 60,
+					"tooltip": "Last Invoice Line",
+					"action": "lastRecord",
+					"textAlign": "center",
+					"stroke": "#000000",
+					"focusable": false,
+					"text": ":xliff:Last",
+					"icon": "/RESOURCES/Images/Buttons/LastRecord.png",
+					"iconFrames": 4,
+					"style": "custom",
+					"events": [
+						"onClick"
+					]
+				},
+				"bDeleteInvoiceLine": {
+					"type": "button",
+					"top": 20,
+					"left": 460,
+					"width": 80,
+					"height": 60,
+					"tooltip": "Delete Invoice Line",
+					"action": "deleteRecord",
+					"textAlign": "center",
+					"stroke": "#000000",
+					"focusable": false,
+					"text": ":xliff:Delete",
+					"icon": "/RESOURCES/Images/Buttons/DeleteRecord.png",
+					"iconFrames": 4,
+					"style": "custom",
+					"events": [
+						"onClick"
+					]
+				},
+				"Text7": {
+					"type": "text",
+					"top": 129,
+					"left": 25,
+					"width": 300,
+					"height": 17,
+					"stroke": "#555555",
+					"textAlign": "right",
+					"text": ":xliff:Enter a product reference or name"
+				},
+				"productChoice": {
+					"type": "input",
+					"top": 129,
+					"left": 340,
+					"width": 396,
+					"height": 16,
+					"dataSource": "productChoice",
+					"textAlign": "left",
+					"fill": "#FFFFFF",
+					"hideFocusRing": true,
+					"dragging": "none",
+					"dropping": "none",
+					"method": "ObjectMethods/productChoice.4dm",
+					"events": [
+						"onLosingFocus",
+						"onGettingFocus",
+						"onAfterKeystroke"
+					]
+				},
+				"invl_ProductReference": {
+					"type": "input",
+					"top": 225,
+					"left": 340,
+					"width": 396,
+					"height": 16,
+					"dataSource": "[INVOICE_LINES:3]ProductReference:4",
+					"textAlign": "left",
+					"focusable": false,
+					"tooltip": "Quantity",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"method": "ObjectMethods/invl_ProductReference.4dm",
+					"events": [
+						"onGettingFocus"
+					]
+				},
+				"invl_ProductName": {
+					"type": "input",
+					"top": 255,
+					"left": 340,
+					"width": 395,
+					"height": 130,
+					"dataSource": "[INVOICE_LINES:3]ProductName:5",
+					"tooltip": "Product Name",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"method": "ObjectMethods/invl_ProductName.4dm",
+					"events": [
+						"onGettingFocus"
+					]
+				},
+				"logo": {
+					"type": "input",
+					"top": 225,
+					"left": 770,
+					"width": 160,
+					"height": 160,
+					"dataSource": "[PRODUCTS:4]Picture:4",
+					"dataSourceTypeHint": "picture",
+					"focusable": false,
+					"tooltip": "Logo",
+					"enterable": false,
+					"pictureFormat": "proportionalCenter",
+					"dragging": "custom",
+					"method": "ObjectMethods/logo.4dm",
+					"events": [
+						"onGettingFocus"
+					]
+				},
+				"invl_Quantity": {
+					"type": "input",
+					"top": 410,
+					"left": 340,
+					"width": 55,
+					"height": 16,
+					"dataSource": "[INVOICE_LINES:3]Quantity:6",
+					"dataSourceTypeHint": "number",
+					"textAlign": "right",
+					"tooltip": "Quantity",
+					"contextMenu": "none",
+					"numberFormat": "###,##0",
+					"entryFilter": "~\"0-9;,;.;-\"",
+					"dragging": "none",
+					"dropping": "none",
+					"method": "ObjectMethods/invl_Quantity.4dm",
+					"events": [
+						"onGettingFocus",
+						"onDataChange"
+					]
+				},
+				"invl_UnitPrice_cur": {
+					"type": "input",
+					"top": 440,
+					"left": 340,
+					"width": 135,
+					"height": 16,
+					"dataSource": "[INVOICE_LINES:3]ProductUnitPrice:7",
+					"dataSourceTypeHint": "number",
+					"textAlign": "right",
+					"tooltip": "Product Unit Price",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"method": "ObjectMethods/invl_UnitPrice_cur.4dm",
+					"events": [
+						"onGettingFocus",
+						"onDataChange"
+					]
+				},
+				"invl_DiscountRate": {
+					"type": "input",
+					"top": 470,
+					"left": 340,
+					"width": 135,
+					"height": 16,
+					"dataSource": "[INVOICE_LINES:3]DiscountRate:8",
+					"dataSourceTypeHint": "number",
+					"textAlign": "right",
+					"tooltip": "Product Discount Rate",
+					"contextMenu": "none",
+					"numberFormat": "##0%",
+					"dragging": "none",
+					"dropping": "none",
+					"method": "ObjectMethods/invl_DiscountRate.4dm",
+					"events": [
+						"onGettingFocus",
+						"onDataChange"
+					]
+				},
+				"invl_TaxRate": {
+					"type": "input",
+					"top": 500,
+					"left": 340,
+					"width": 50,
+					"height": 16,
+					"defaultValue": "19,6",
+					"dataSource": "[INVOICE_LINES:3]ProductTaxRate:9",
+					"dataSourceTypeHint": "number",
+					"textAlign": "right",
+					"tooltip": "Product Tax Rate",
+					"contextMenu": "none",
+					"numberFormat": "###,##0.00%",
+					"dragging": "none",
+					"dropping": "none",
+					"method": "ObjectMethods/invl_TaxRate.4dm",
+					"events": [
+						"onGettingFocus",
+						"onDataChange"
+					]
+				},
+				"TotalTax_cur": {
+					"type": "input",
+					"top": 530,
+					"left": 340,
+					"width": 136,
+					"height": 16,
+					"dataSource": "[INVOICE_LINES:3]TotalTax:11",
+					"dataSourceTypeHint": "integer",
+					"focusable": false,
+					"tooltip": "Total Tax",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none"
+				},
+				"webSite": {
+					"type": "input",
+					"top": 560,
+					"left": 340,
+					"width": 135,
+					"height": 16,
+					"dataSource": "[INVOICE_LINES:3]Total:10",
+					"dataSourceTypeHint": "number",
+					"fontWeight": "bold",
+					"focusable": false,
+					"tooltip": "Total",
+					"enterable": false,
+					"contextMenu": "none",
+					"numberFormat": "###,##0.00",
+					"dragging": "none",
+					"dropping": "none"
+				},
+				"productsList": {
+					"type": "listbox",
+					"top": 255,
+					"left": 340,
+					"width": 397,
+					"height": 130,
+					"visibility": "hidden",
+					"sizingY": "grow",
+					"resizingMode": "legacy",
+					"listboxType": "currentSelection",
+					"focusable": false,
+					"movableRows": false,
+					"rowHeight": "20px",
+					"showHeaders": false,
+					"staticColumnCount": 1,
+					"table": 4,
+					"highlightSet": "$highlightedProducts",
+					"selectionMode": "single",
+					"scrollbarHorizontal": "hidden",
+					"scrollbarVertical": "hidden",
+					"horizontalLineStroke": "transparent",
+					"verticalLineStroke": "transparent",
+					"fill": "#FFFFDF",
+					"textAlign": "left",
+					"verticalAlign": "middle",
+					"method": "ObjectMethods/productsList.4dm",
+					"events": [
+						"onDoubleClick"
+					],
+					"columns": [
+						{
+							"name": "ProductReference",
+							"dataSource": "[PRODUCTS:4]Reference:2+\" - \"+[PRODUCTS:4]Name:3",
+							"width": 400,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"enterable": false,
+							"stroke": "automatic",
+							"fill": "#FFFFDF",
+							"alternateFill": "#FFFFDF",
+							"textAlign": "left",
+							"verticalAlign": "middle",
+							"events": [
+								"onClick",
+								"onDataChange"
+							],
+							"header": {
+								"name": "productsReferenceHD",
+								"text": "Reference",
+								"tooltip": "Product Reference",
+								"stroke": "automatic",
+								"textAlign": "left",
+								"verticalAlign": "middle",
+								"fontWeight": "bold"
+							},
+							"footer": {
+								"name": "Footer1",
+								"stroke": "automatic",
+								"fill": "#FFFFDF",
+								"textAlign": "left",
+								"verticalAlign": "middle"
+							}
+						}
+					]
+				},
+				"Line2": {
+					"type": "line",
+					"top": 30,
+					"left": 460,
+					"height": 40,
+					"stroke": "#777777"
+				},
+				"Line3": {
+					"type": "line",
+					"top": 30,
+					"left": 540,
+					"height": 40,
+					"stroke": "#777777"
+				},
+				"Text6": {
+					"type": "text",
+					"top": 530,
+					"left": 25,
+					"width": 300,
+					"height": 17,
+					"stroke": "#777777",
+					"textAlign": "right",
+					"text": ":xliff:Tax"
+				},
+				"bCancelClient": {
+					"type": "button",
+					"top": 20,
+					"left": 815,
+					"width": 80,
+					"height": 60,
+					"sizingX": "move",
+					"tooltip": "Cancel Client",
+					"action": "cancel",
+					"textAlign": "center",
+					"stroke": "#000000",
+					"focusable": false,
+					"text": ":xliff:Cancel",
+					"icon": "/RESOURCES/Images/Buttons/Cancel.png",
+					"iconFrames": 4,
+					"style": "custom",
+					"events": [
+						"onClick"
+					]
+				},
+				"bValidateClient": {
+					"type": "button",
+					"top": 20,
+					"left": 895,
+					"width": 80,
+					"height": 60,
+					"sizingX": "move",
+					"tooltip": "Validate Client",
+					"action": "accept",
+					"textAlign": "center",
+					"stroke": "#000000",
+					"focusable": false,
+					"text": ":xliff:Validate",
+					"icon": "/RESOURCES/Images/Buttons/OK.png",
+					"iconFrames": 4,
+					"style": "custom",
+					"events": [
+						"onClick"
+					]
+				},
+				"Line4": {
+					"type": "line",
+					"top": 30,
+					"left": 815,
+					"height": 42,
+					"sizingX": "move",
+					"stroke": "#AAAAAA"
+				}
+			}
+		}
+	],
+	"editor": {
+		"activeView": "View 1",
+		"defaultView": "View 1",
+		"views": {
+			"View 1": {},
+			"View 2": {},
+			"View 3": {
+				"objects": [
+					"bFirstInvoiceLine",
+					"bPreviousInvoiceLine",
+					"bNextInvoiceLine",
+					"bLastInvoiceLine",
+					"bDeleteInvoiceLine",
+					"bCancelClient",
+					"bValidateClient"
+				]
+			},
+			"View 4": {},
+			"View 5": {},
+			"View 6": {},
+			"View 7": {},
+			"View 8": {},
+			"View 9": {}
+		}
+	}
+}

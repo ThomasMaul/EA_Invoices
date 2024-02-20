@@ -1,99 +1,128 @@
 {
+	"(Default Forms)": {},
+	"Compiler": {
+		"methods": [
+			"Compiler_Arrays",
+			"Compiler_Methods",
+			"Compiler_Variables",
+			"Compiler_Variables_Inter"
+		]
+	},
+	"Debug": {
+		"methods": [
+			"LISTBOX_ADJUST_WIDTH"
+		]
+	},
 	"Default Folder": {
 		"groups": [
-			"Default Forms",
-			"Default Project Methods",
-			"Default Tables"
+			"Default Project Methods"
 		]
 	},
-	"Default Forms": {},
-	"Default Project Methods": {},
-	"Default Tables": {
+	"Default Project Methods": {
+		"methods": [
+			"FillData",
+			"Invoices_CalculateLineTotals",
+			"Invoices_CalculateTotals",
+			"Invoices_ChangeColor",
+			"Invoices_Delete",
+			"Invoices_GetNumber",
+			"Invoices_GetNumberPrf",
+			"OnStartup"
+		]
+	},
+	"Entry": {
+		"forms": [
+			"[CLIENTS]Input",
+			"[INVOICE_LINES]Input",
+			"[INVOICES]Input",
+			"[PRODUCTS]Input",
+			"[SETTINGS]Input"
+		]
+	},
+	"Export": {
+		"forms": [
+			"[CLIENTS]OutputExport",
+			"[PRODUCTS]OutputExport"
+		]
+	},
+	"FillData": {
+		"methods": [
+			"Clients_BuildLogo"
+		]
+	},
+	"Graph": {
+		"forms": [
+			"[CLIENTS]GraphForm"
+		]
+	},
+	"List": {
+		"groups": [
+			"Reorder",
+			"Update"
+		],
+		"forms": [
+			"[CLIENTS]Output",
+			"[INVOICES]Output",
+			"[PRODUCTS]Output"
+		]
+	},
+	"Manage": {
+		"methods": [
+			"Clients_Manage",
+			"Invoices_Manage",
+			"Products_Manage",
+			"Settings_Manage"
+		]
+	},
+	"Menu": {
+		"groups": [
+			"Manage",
+			"ProcessInit"
+		]
+	},
+	"Print": {
+		"forms": [
+			"[CLIENTS]OutputPrint",
+			"[INVOICE_LINES]OutputPrint",
+			"[INVOICES]OutputPrint",
+			"[PRODUCTS]OutputPrint"
+		]
+	},
+	"ProcessInit": {
+		"methods": [
+			"Clients_ProcessInit",
+			"Invoices_ProcessInit",
+			"Products_ProcessInit",
+			"Settings_ProcessInit"
+		]
+	},
+	"Reorder": {
+		"methods": [
+			"Clients_Reorder",
+			"InvoiceLines_Reorder",
+			"Invoices_Reorder",
+			"Products_Reorder"
+		]
+	},
+	"Tables": {
 		"tables": [
 			"CLIENTS",
-			"DEFAULT_SETTINGS",
 			"INVOICE_LINES",
 			"INVOICES",
-			"PRODUCTS"
+			"PRODUCTS",
+			"SETTINGS"
 		]
 	},
-	"OldCode": {
+	"Update": {
 		"methods": [
-			"___CreateRandom",
-			"___CreateXLIFF",
-			"___UpdateObjects",
-			"action_Add",
-			"action_AddPicture",
-			"action_All",
-			"action_Cancel",
-			"action_Delete",
-			"Action_DragNDrop",
-			"action_Edit",
-			"action_Export",
-			"action_Labels",
-			"action_Move",
-			"action_Open",
-			"action_PrintSelection",
-			"action_Property_Add",
-			"action_Property_Delete",
-			"action_Property_Delete_Tradit",
-			"action_Property_List",
-			"action_Property_Settings",
-			"action_QuickSearch",
-			"action_QuickSelect",
-			"action_Related_Add",
-			"action_Related_Delete",
-			"action_Reports",
-			"action_Save",
-			"action_Save_Optimistic",
-			"action_Search",
-			"action_Sort",
-			"action_Subset",
-			"action_Unlock",
-			"Call_Open1Record",
-			"Call_Update_Dialogs",
-			"Call_Update_Select",
-			"Hndl_StatusError",
-			"M_Clients",
-			"M_Invoices",
-			"M_Products",
-			"M_Settings",
-			"M_StartupScreen",
-			"OB_Set_Path",
-			"query_invoices",
-			"Settings_ApplyToListBox",
-			"Settings_GetCurrent",
-			"Settings_Preset",
-			"StartUp",
-			"Util_Collection2Object",
-			"Util_ConvertText2Type",
-			"Util_ConvertTypeToText",
-			"Util_EntityLoad",
-			"Util_EntityLoad_Specific",
-			"Util_FilterPropertyName",
-			"Util_Get_DragNDropIcon",
-			"Util_Get_LocalizedMessage",
-			"Util_GetPropertyList",
-			"Util_GetPropertyTypePictures",
-			"Util_GetSimplePropertyList",
-			"Util_GiveRecordCount",
-			"Util_HandleButtons",
-			"Util_Object2Collection",
-			"Util_OrderSelection_Extended",
-			"Util_OrderSelection_Simple",
-			"Util_PositionFmEnd",
-			"Util_Query_Extended",
-			"Util_Query_GetPropertyPicture",
-			"Util_Query_PrepareMenus",
-			"Util_Query_SetCriteriaLine",
-			"Util_Query_SetCriteriaValueCell",
-			"Util_RecordInNewWindow",
-			"Util_SetWindowTitle",
-			"Util_UpdateOnContext",
-			"Util_UpdateSelection",
-			"W_Generic",
-			"wrap_distinctPaths"
+			"UPDATE_ALL_BUTTON",
+			"UPDATE_DELETE_BUTTON",
+			"UPDATE_SUBSET_BUTTON"
 		]
 	},
-	"trash": {}
+	"trash": {
+		"groups": [
+			"(Default Forms)"
+		]
+	}
 }

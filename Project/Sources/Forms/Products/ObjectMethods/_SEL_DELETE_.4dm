@@ -1,1 +1,0 @@
-action_Delete (Form:C1466.selectedSubset;"Selection")

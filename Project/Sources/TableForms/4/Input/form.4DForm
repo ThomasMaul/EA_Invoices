@@ -1,0 +1,391 @@
+{
+	"destination": "detailScreen",
+	"windowSizingX": "fixed",
+	"windowMinHeight": 640,
+	"width": 1000,
+	"height": 640,
+	"menuBar": "Main",
+	"markerHeader": 15,
+	"markerBody": 200,
+	"markerBreak": 220,
+	"markerFooter": 240,
+	"events": [
+		"onLoad",
+		"onUnload"
+	],
+	"method": "method.4dm",
+	"pageFormat": {
+		"paperName": "US Letter",
+		"paperWidth": "612pt",
+		"paperHeight": "792pt"
+	},
+	"pages": [
+		null,
+		{
+			"objects": {
+				"Rectangle1": {
+					"type": "rectangle",
+					"top": 350,
+					"left": 25,
+					"width": 615,
+					"height": 265,
+					"sizingY": "grow",
+					"fill": "#DDDDDD",
+					"stroke": "#CCCCCC",
+					"borderRadius": 8
+				},
+				"Rectangle3": {
+					"type": "rectangle",
+					"top": 100,
+					"left": 25,
+					"width": 615,
+					"height": 225,
+					"fill": "#DDDDDD",
+					"stroke": "#CCCCCC",
+					"borderRadius": 8
+				},
+				"Group Box1": {
+					"type": "text",
+					"top": 80,
+					"left": 35,
+					"width": 320,
+					"height": 16,
+					"stroke": "#777777",
+					"fontFamily": "System Font Regular",
+					"fontSize": 13,
+					"text": ":xliff:Product Details"
+				},
+				"name": {
+					"type": "input",
+					"top": 126,
+					"left": 155,
+					"width": 140,
+					"height": 16,
+					"dataSource": "[PRODUCTS:4]Reference:2",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"name1": {
+					"type": "input",
+					"top": 150,
+					"left": 155,
+					"width": 448,
+					"height": 112,
+					"dataSource": "[PRODUCTS:4]Name:3",
+					"contextMenu": "none",
+					"scrollbarVertical": "visible",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"name3_cur": {
+					"type": "input",
+					"top": 270,
+					"left": 155,
+					"width": 140,
+					"height": 16,
+					"dataSource": "[PRODUCTS:4]UnitPrice:5",
+					"dataSourceTypeHint": "number",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"name5": {
+					"type": "input",
+					"top": 294,
+					"left": 155,
+					"width": 140,
+					"height": 16,
+					"defaultValue": "19,6",
+					"dataSource": "[PRODUCTS:4]TaxRate:6",
+					"dataSourceTypeHint": "number",
+					"contextMenu": "none",
+					"numberFormat": "###,##0.00%",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"logo": {
+					"type": "input",
+					"top": 370,
+					"left": 46,
+					"width": 569,
+					"height": 220,
+					"sizingY": "grow",
+					"dataSource": "[PRODUCTS:4]Picture:4",
+					"dataSourceTypeHint": "picture",
+					"tooltip": "Logo",
+					"fill": "transparent",
+					"borderStyle": "none",
+					"pictureFormat": "truncatedCenter",
+					"dragging": "custom"
+				},
+				"Text19": {
+					"type": "text",
+					"top": 126,
+					"left": 45,
+					"width": 100,
+					"height": 16,
+					"stroke": "#777777",
+					"textAlign": "right",
+					"text": ":xliff:Reference"
+				},
+				"Text1": {
+					"type": "text",
+					"top": 150,
+					"left": 45,
+					"width": 100,
+					"height": 16,
+					"stroke": "#777777",
+					"textAlign": "right",
+					"text": ":xliff:Name"
+				},
+				"Text3": {
+					"type": "text",
+					"top": 270,
+					"left": 45,
+					"width": 100,
+					"height": 16,
+					"stroke": "#777777",
+					"textAlign": "right",
+					"text": ":xliff:Unit Price"
+				},
+				"Text5": {
+					"type": "text",
+					"top": 294,
+					"left": 45,
+					"width": 100,
+					"height": 16,
+					"stroke": "#777777",
+					"textAlign": "right",
+					"text": ":xliff:Tax Rate"
+				},
+				"bFirstProduct": {
+					"type": "button",
+					"top": 20,
+					"left": 140,
+					"width": 80,
+					"height": 60,
+					"tooltip": "First Product",
+					"action": "firstRecord",
+					"textAlign": "center",
+					"stroke": "#000000",
+					"focusable": false,
+					"text": ":xliff:First",
+					"icon": "/RESOURCES/Images/Buttons/FirstRecord.png",
+					"iconFrames": 4,
+					"style": "custom",
+					"events": [
+						"onClick"
+					]
+				},
+				"bPreviousProduct": {
+					"type": "button",
+					"top": 20,
+					"left": 220,
+					"width": 80,
+					"height": 60,
+					"tooltip": "Previous Product",
+					"action": "previousRecord",
+					"textAlign": "center",
+					"stroke": "#000000",
+					"focusable": false,
+					"text": ":xliff:Previous",
+					"icon": "/RESOURCES/Images/Buttons/PreviousRecord.png",
+					"iconFrames": 4,
+					"style": "custom",
+					"events": [
+						"onClick"
+					]
+				},
+				"bNextProduct": {
+					"type": "button",
+					"top": 20,
+					"left": 300,
+					"width": 80,
+					"height": 60,
+					"tooltip": "Next Product",
+					"action": "nextRecord",
+					"textAlign": "center",
+					"stroke": "#000000",
+					"focusable": false,
+					"text": ":xliff:Next",
+					"icon": "/RESOURCES/Images/Buttons/NextRecord.png",
+					"iconFrames": 4,
+					"style": "custom",
+					"events": [
+						"onClick"
+					]
+				},
+				"bLastProduct": {
+					"type": "button",
+					"top": 20,
+					"left": 380,
+					"width": 80,
+					"height": 60,
+					"tooltip": "Last Product",
+					"action": "lastRecord",
+					"textAlign": "center",
+					"stroke": "#000000",
+					"focusable": false,
+					"text": ":xliff:Last",
+					"icon": "/RESOURCES/Images/Buttons/LastRecord.png",
+					"iconFrames": 4,
+					"style": "custom",
+					"events": [
+						"onClick"
+					]
+				},
+				"bDeleteProduct": {
+					"type": "button",
+					"top": 20,
+					"left": 460,
+					"width": 80,
+					"height": 60,
+					"tooltip": "Delete Product",
+					"action": "deleteRecord",
+					"textAlign": "center",
+					"stroke": "#000000",
+					"focusable": false,
+					"text": ":xliff:Delete",
+					"icon": "/RESOURCES/Images/Buttons/DeleteRecord.png",
+					"iconFrames": 4,
+					"style": "custom",
+					"events": [
+						"onClick"
+					]
+				},
+				"Line2": {
+					"type": "line",
+					"top": 30,
+					"left": 540,
+					"height": 40,
+					"stroke": "#777777"
+				},
+				"Line3": {
+					"type": "line",
+					"top": 30,
+					"left": 460,
+					"height": 40,
+					"stroke": "#777777"
+				},
+				"Group Box2": {
+					"type": "text",
+					"top": 330,
+					"left": 35,
+					"width": 320,
+					"height": 16,
+					"stroke": "#777777",
+					"fontFamily": "System Font Regular",
+					"fontSize": 13,
+					"text": ":xliff:Product Picture"
+				},
+				"Rectangle2": {
+					"type": "rectangle",
+					"top": 100,
+					"left": 660,
+					"width": 315,
+					"height": 515,
+					"sizingX": "grow",
+					"sizingY": "grow",
+					"fill": "#DDDDDD",
+					"stroke": "#CCCCCC",
+					"borderRadius": 8
+				},
+				"Picture1": {
+					"type": "picture",
+					"top": 20,
+					"left": 25,
+					"width": 100,
+					"height": 60,
+					"pictureFormat": "scaled",
+					"picture": "/RESOURCES/Images/Banners/products.png"
+				},
+				"bCancelClient": {
+					"type": "button",
+					"top": 20,
+					"left": 815,
+					"width": 80,
+					"height": 60,
+					"sizingX": "move",
+					"tooltip": "Cancel Client",
+					"action": "cancel",
+					"textAlign": "center",
+					"stroke": "#000000",
+					"focusable": false,
+					"text": ":xliff:Cancel",
+					"icon": "/RESOURCES/Images/Buttons/Cancel.png",
+					"iconFrames": 4,
+					"style": "custom",
+					"events": [
+						"onClick"
+					]
+				},
+				"bValidateClient": {
+					"type": "button",
+					"top": 20,
+					"left": 895,
+					"width": 80,
+					"height": 60,
+					"sizingX": "move",
+					"tooltip": "Validate Client",
+					"action": "accept",
+					"textAlign": "center",
+					"stroke": "#000000",
+					"focusable": false,
+					"text": ":xliff:Validate",
+					"icon": "/RESOURCES/Images/Buttons/OK.png",
+					"iconFrames": 4,
+					"style": "custom",
+					"events": [
+						"onClick"
+					]
+				},
+				"Line4": {
+					"type": "line",
+					"top": 30,
+					"left": 815,
+					"height": 42,
+					"sizingX": "move",
+					"stroke": "#AAAAAA"
+				}
+			}
+		}
+	],
+	"editor": {
+		"activeView": "View 1",
+		"defaultView": "View 1",
+		"views": {
+			"View 1": {},
+			"View 2": {},
+			"View 3": {
+				"objects": [
+					"bFirstProduct",
+					"bPreviousProduct",
+					"bNextProduct",
+					"bLastProduct",
+					"bDeleteProduct",
+					"bCancelClient",
+					"bValidateClient"
+				]
+			},
+			"View 4": {},
+			"View 5": {},
+			"View 6": {},
+			"View 7": {},
+			"View 8": {},
+			"View 9": {}
+		}
+	}
+}

@@ -1,0 +1,454 @@
+{
+	"windowSizingX": "fixed",
+	"windowMinHeight": 640,
+	"width": 1000,
+	"height": 640,
+	"menuBar": "Main",
+	"markerHeader": 75,
+	"markerBody": 800,
+	"markerBreak": 800,
+	"markerFooter": 800,
+	"events": [
+		"onLoad",
+		"onUnload"
+	],
+	"method": "method.4dm",
+	"pageFormat": {
+		"paperName": "US Letter",
+		"paperWidth": "612pt",
+		"paperHeight": "792pt"
+	},
+	"pages": [
+		null,
+		{
+			"objects": {
+				"Rectangle": {
+					"type": "rectangle",
+					"top": 100,
+					"left": 25,
+					"width": 950,
+					"height": 515,
+					"sizingX": "grow",
+					"sizingY": "grow",
+					"fill": "#DDDDDD",
+					"stroke": "#CCCCCC",
+					"borderRadius": 8
+				},
+				"ListBoxProducts": {
+					"type": "listbox",
+					"top": 120,
+					"left": 26,
+					"width": 948,
+					"height": 480,
+					"sizingX": "grow",
+					"sizingY": "grow",
+					"resizingMode": "legacy",
+					"listboxType": "currentSelection",
+					"hideFocusRing": true,
+					"movableRows": false,
+					"rowHeight": "20px",
+					"headerHeight": "20px",
+					"showFooters": true,
+					"footerHeight": "20px",
+					"doubleClickInRowAction": "editSubrecord",
+					"staticColumnCount": 4,
+					"table": 4,
+					"highlightSet": "$highlightedProducts",
+					"detailForm": "Input",
+					"scrollbarHorizontal": "hidden",
+					"horizontalLineStroke": "#DDDDDD",
+					"verticalLineStroke": "#DDDDDD",
+					"fill": "#FFFFFF",
+					"alternateFill": "#EEEEEE",
+					"verticalAlign": "middle",
+					"borderStyle": "none",
+					"method": "ObjectMethods/ListBoxProducts.4dm",
+					"events": [
+						"onSelectionChange"
+					],
+					"columns": [
+						{
+							"name": "productsReference",
+							"dataSource": "[PRODUCTS:4]Reference:2",
+							"width": 150,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"enterable": false,
+							"stroke": "automatic",
+							"fill": "#FFFFFF",
+							"alternateFill": "#EEEEEE",
+							"textAlign": "left",
+							"verticalAlign": "middle",
+							"header": {
+								"name": "productsReferenceHD",
+								"text": ":xliff:Reference",
+								"tooltip": "Product Reference",
+								"stroke": "automatic",
+								"textAlign": "center",
+								"verticalAlign": "middle"
+							},
+							"footer": {
+								"name": "Footer1",
+								"stroke": "automatic",
+								"fill": "#DDDDDD",
+								"textAlign": "automatic",
+								"verticalAlign": "bottom"
+							}
+						},
+						{
+							"name": "productsName",
+							"dataSource": "[PRODUCTS:4]Name:3",
+							"width": 560,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"enterable": false,
+							"stroke": "automatic",
+							"fill": "#FFFFFF",
+							"alternateFill": "#EEEEEE",
+							"textAlign": "left",
+							"verticalAlign": "middle",
+							"header": {
+								"name": "productsNameHD",
+								"text": ":xliff:Name",
+								"tooltip": "Product Name",
+								"stroke": "automatic",
+								"textAlign": "center",
+								"verticalAlign": "middle"
+							},
+							"footer": {
+								"name": "infoProducts",
+								"dataSource": "infoProducts",
+								"stroke": "#777777",
+								"fill": "#DDDDDD",
+								"textAlign": "center",
+								"verticalAlign": "bottom",
+								"fontWeight": "bold"
+							}
+						},
+						{
+							"name": "productsUnitPrice",
+							"dataSource": "[PRODUCTS:4]UnitPrice:5",
+							"dataSourceTypeHint": "number",
+							"width": 110,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"enterable": false,
+							"numberFormat": "###,##0.00",
+							"stroke": "automatic",
+							"fill": "#FFFFFF",
+							"alternateFill": "#EEEEEE",
+							"textAlign": "right",
+							"verticalAlign": "middle",
+							"events": [
+								"onClick",
+								"onDataChange"
+							],
+							"header": {
+								"name": "productsUnitPriceHD",
+								"text": ":xliff:Unit Price",
+								"tooltip": "Product Unit Price",
+								"stroke": "automatic",
+								"textAlign": "center",
+								"verticalAlign": "middle"
+							},
+							"footer": {
+								"name": "Footer3",
+								"stroke": "automatic",
+								"fill": "#DDDDDD",
+								"textAlign": "right",
+								"verticalAlign": "bottom"
+							}
+						},
+						{
+							"name": "productsTaxRate",
+							"dataSource": "[PRODUCTS:4]TaxRate:6",
+							"dataSourceTypeHint": "number",
+							"width": 112,
+							"minWidth": 10,
+							"maxWidth": 112,
+							"resizable": false,
+							"enterable": false,
+							"numberFormat": "##0.00%",
+							"stroke": "automatic",
+							"fill": "#FFFFFF",
+							"alternateFill": "#EEEEEE",
+							"textAlign": "center",
+							"verticalAlign": "middle",
+							"events": [
+								"onClick",
+								"onDataChange"
+							],
+							"header": {
+								"name": "productsTaxRateHD",
+								"text": ":xliff:Tax Rate (%)",
+								"tooltip": "Product Tax Rate",
+								"stroke": "automatic",
+								"textAlign": "center",
+								"verticalAlign": "middle"
+							},
+							"footer": {
+								"name": "Footer4",
+								"numberFormat": "###,###,###,##0.00",
+								"stroke": "automatic",
+								"fill": "#DDDDDD",
+								"textAlign": "right",
+								"verticalAlign": "bottom"
+							}
+						}
+					]
+				},
+				"bAddProduct": {
+					"type": "button",
+					"top": 20,
+					"left": 140,
+					"width": 80,
+					"height": 60,
+					"tooltip": "Add Product",
+					"textAlign": "center",
+					"stroke": "#000000",
+					"focusable": false,
+					"text": ":xliff:Add",
+					"icon": "/RESOURCES/Images/Buttons/NewRecord.png",
+					"iconFrames": 4,
+					"style": "custom",
+					"method": "ObjectMethods/bAddProduct.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"bDeleteProducts": {
+					"type": "button",
+					"top": 20,
+					"left": 220,
+					"width": 80,
+					"height": 60,
+					"tooltip": "Delete Product(s)",
+					"textAlign": "center",
+					"stroke": "#000000",
+					"focusable": false,
+					"text": ":xliff:Delete",
+					"icon": "/RESOURCES/Images/Buttons/DeleteRecord.png",
+					"iconFrames": 4,
+					"style": "custom",
+					"method": "ObjectMethods/bDeleteProducts.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"bAllProducts": {
+					"type": "button",
+					"top": 20,
+					"left": 300,
+					"width": 80,
+					"height": 60,
+					"tooltip": "Show All Products",
+					"textAlign": "center",
+					"stroke": "#000000",
+					"focusable": false,
+					"text": ":xliff:All",
+					"icon": "/RESOURCES/Images/Buttons/AllRecords.png",
+					"iconFrames": 4,
+					"style": "custom",
+					"method": "ObjectMethods/bAllProducts.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"bShowSubsetProducts": {
+					"type": "button",
+					"top": 20,
+					"left": 380,
+					"width": 80,
+					"height": 60,
+					"tooltip": "Show Subset Products",
+					"textAlign": "center",
+					"stroke": "#000000",
+					"focusable": false,
+					"text": ":xliff:Subset",
+					"icon": "/RESOURCES/Images/Buttons/ShowSubset.png",
+					"iconFrames": 4,
+					"style": "custom",
+					"method": "ObjectMethods/bShowSubsetProducts.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"bQueryProducts": {
+					"type": "button",
+					"top": 20,
+					"left": 460,
+					"width": 80,
+					"height": 60,
+					"tooltip": "Query Products",
+					"textAlign": "center",
+					"stroke": "#000000",
+					"focusable": false,
+					"text": ":xliff:Query",
+					"icon": "/RESOURCES/Images/Buttons/Query.png",
+					"iconFrames": 4,
+					"style": "custom",
+					"method": "ObjectMethods/bQueryProducts.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"bLabelsProducts": {
+					"type": "button",
+					"top": 20,
+					"left": 620,
+					"width": 80,
+					"height": 60,
+					"sizingX": "move",
+					"tooltip": "Print Labels Products",
+					"textAlign": "center",
+					"stroke": "#000000",
+					"focusable": false,
+					"text": ":xliff:Labels",
+					"icon": "/RESOURCES/Images/Buttons/Labels.png",
+					"iconFrames": 4,
+					"style": "custom",
+					"method": "ObjectMethods/bLabelsProducts.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"bPrintProducts": {
+					"type": "button",
+					"top": 20,
+					"left": 700,
+					"width": 80,
+					"height": 60,
+					"sizingX": "move",
+					"tooltip": "Print Products",
+					"textAlign": "center",
+					"stroke": "#000000",
+					"focusable": false,
+					"text": ":xliff:Print",
+					"icon": "/RESOURCES/Images/Buttons/Print.png",
+					"iconFrames": 4,
+					"style": "custom",
+					"method": "ObjectMethods/bPrintProducts.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"bReportsProducts": {
+					"type": "button",
+					"top": 20,
+					"left": 540,
+					"width": 80,
+					"height": 60,
+					"tooltip": "Reports Products",
+					"textAlign": "center",
+					"stroke": "#000000",
+					"focusable": false,
+					"text": ":xliff:Reports",
+					"icon": "/RESOURCES/Images/Buttons/Reports.png",
+					"iconFrames": 4,
+					"style": "custom",
+					"method": "ObjectMethods/bReportsProducts.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"bExportProducts": {
+					"type": "button",
+					"top": 20,
+					"left": 780,
+					"width": 80,
+					"height": 60,
+					"sizingX": "move",
+					"tooltip": "Export Products",
+					"textAlign": "center",
+					"stroke": "#000000",
+					"focusable": false,
+					"text": ":xliff:Export",
+					"icon": "/RESOURCES/Images/Buttons/ImportExport.png",
+					"iconFrames": 4,
+					"style": "custom",
+					"method": "ObjectMethods/bExportProducts.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"Line2": {
+					"type": "line",
+					"top": 20,
+					"left": 300,
+					"height": 62,
+					"stroke": "#AAAAAA"
+				},
+				"Line1": {
+					"type": "line",
+					"top": 20,
+					"left": 220,
+					"height": 62,
+					"stroke": "#AAAAAA"
+				},
+				"Line3": {
+					"type": "line",
+					"top": 20,
+					"left": 540,
+					"height": 62,
+					"stroke": "#AAAAAA"
+				},
+				"Picture1": {
+					"type": "picture",
+					"top": 20,
+					"left": 25,
+					"width": 100,
+					"height": 60,
+					"pictureFormat": "scaled",
+					"picture": "/RESOURCES/Images/Banners/products.png"
+				},
+				"Header.Filler.Mac": {
+					"type": "picture",
+					"top": 120,
+					"left": 959,
+					"width": 15,
+					"height": 19,
+					"pictureFormat": "scaled",
+					"picture": "Images/Header.Filler.Mac.png"
+				},
+				"Footer.Filler.Mac": {
+					"type": "rectangle",
+					"top": 580,
+					"left": 954,
+					"width": 20,
+					"height": 20,
+					"sizingX": "move",
+					"sizingY": "move",
+					"fill": "#DDDDDD",
+					"stroke": "transparent"
+				}
+			}
+		}
+	],
+	"editor": {
+		"activeView": "View 1",
+		"defaultView": "View 1",
+		"views": {
+			"View 1": {},
+			"View 2": {},
+			"View 3": {
+				"objects": [
+					"bAddProduct",
+					"bDeleteProducts",
+					"bAllProducts",
+					"bShowSubsetProducts",
+					"bQueryProducts",
+					"bLabelsProducts",
+					"bPrintProducts",
+					"Header.Filler.Mac",
+					"Footer.Filler.Mac"
+				]
+			},
+			"View 4": {},
+			"View 5": {},
+			"View 6": {},
+			"View 7": {},
+			"View 8": {},
+			"View 9": {}
+		}
+	}
+}

@@ -1,0 +1,524 @@
+{
+	"windowSizingX": "fixed",
+	"windowMinHeight": 700,
+	"width": 1000,
+	"height": 800,
+	"menuBar": "Main",
+	"markerHeader": 75,
+	"markerBody": 800,
+	"markerBreak": 800,
+	"markerFooter": 800,
+	"events": [
+		"onLoad",
+		"onUnload"
+	],
+	"method": "method.4dm",
+	"pageFormat": {
+		"paperName": "US Letter",
+		"paperWidth": "612pt",
+		"paperHeight": "792pt"
+	},
+	"pages": [
+		null,
+		{
+			"objects": {
+				"Rectangle": {
+					"type": "rectangle",
+					"top": 100,
+					"left": 25,
+					"width": 950,
+					"height": 675,
+					"sizingX": "grow",
+					"sizingY": "grow",
+					"fill": "#DDDDDD",
+					"stroke": "#CCCCCC",
+					"borderRadius": 8
+				},
+				"ListBoxInvoices": {
+					"type": "listbox",
+					"top": 120,
+					"left": 26,
+					"width": 948,
+					"height": 640,
+					"sizingX": "grow",
+					"sizingY": "grow",
+					"resizingMode": "legacy",
+					"listboxType": "currentSelection",
+					"hideFocusRing": true,
+					"movableRows": false,
+					"rowHeight": "24px",
+					"headerHeight": "20px",
+					"showFooters": true,
+					"footerHeight": "20px",
+					"doubleClickInRowAction": "editSubrecord",
+					"staticColumnCount": 8,
+					"table": 2,
+					"highlightSet": "$highlightedInvoices",
+					"detailForm": "Input",
+					"scrollbarHorizontal": "hidden",
+					"horizontalLineStroke": "#DDDDDD",
+					"verticalLineStroke": "#DDDDDD",
+					"fill": "#FFFFFF",
+					"alternateFill": "#EEEEEE",
+					"borderStyle": "none",
+					"method": "ObjectMethods/ListBoxInvoices.4dm",
+					"events": [
+						"onSelectionChange"
+					],
+					"columns": [
+						{
+							"name": "ClientsName",
+							"dataSource": "[CLIENTS:1]Name:2",
+							"width": 240,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"enterable": false,
+							"stroke": "automatic",
+							"fill": "#FFFFFF",
+							"alternateFill": "#EEEEEE",
+							"textAlign": "left",
+							"verticalAlign": "middle",
+							"header": {
+								"name": "clientsNameHD",
+								"text": ":xliff:Client",
+								"tooltip": "Company Name",
+								"stroke": "automatic",
+								"textAlign": "center",
+								"verticalAlign": "middle"
+							},
+							"footer": {
+								"name": "Footer1",
+								"stroke": "automatic",
+								"fill": "#DDDDDD",
+								"textAlign": "automatic",
+								"verticalAlign": "middle"
+							}
+						},
+						{
+							"name": "InvoicesNumber",
+							"dataSource": "[INVOICES:2]InvoiceNumber:2",
+							"width": 80,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"enterable": false,
+							"stroke": "automatic",
+							"fill": "#FFFFFF",
+							"alternateFill": "#EEEEEE",
+							"textAlign": "left",
+							"verticalAlign": "middle",
+							"header": {
+								"name": "invoicesNumberHD",
+								"text": ":xliff:Number",
+								"tooltip": "Company City",
+								"stroke": "automatic",
+								"textAlign": "center",
+								"verticalAlign": "middle"
+							},
+							"footer": {
+								"name": "Footer2",
+								"stroke": "automatic",
+								"fill": "#DDDDDD",
+								"textAlign": "automatic",
+								"verticalAlign": "middle"
+							}
+						},
+						{
+							"name": "InvoicesDate",
+							"dataSource": "[INVOICES:2]Date:4",
+							"dataSourceTypeHint": "date",
+							"width": 90,
+							"minWidth": 10,
+							"maxWidth": 90,
+							"resizable": false,
+							"enterable": false,
+							"stroke": "automatic",
+							"fill": "#FFFFFF",
+							"alternateFill": "#EEEEEE",
+							"textAlign": "right",
+							"verticalAlign": "middle",
+							"header": {
+								"name": "invoicesDateHD",
+								"text": ":xliff:Date",
+								"tooltip": "Company contact",
+								"stroke": "automatic",
+								"textAlign": "center",
+								"verticalAlign": "middle"
+							},
+							"footer": {
+								"name": "invoicesSubtotalLabel",
+								"dataSource": "invoicesSubtotalLabel",
+								"stroke": "automatic",
+								"fill": "#DDDDDD",
+								"textAlign": "right",
+								"verticalAlign": "middle",
+								"fontWeight": "bold"
+							}
+						},
+						{
+							"name": "InvoicesSubtotal",
+							"dataSource": "[INVOICES:2]Subtotal:5",
+							"dataSourceTypeHint": "number",
+							"width": 100,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"resizable": false,
+							"enterable": false,
+							"numberFormat": "###,##0.00",
+							"stroke": "automatic",
+							"fill": "#FFFFFF",
+							"alternateFill": "#EEEEEE",
+							"textAlign": "right",
+							"verticalAlign": "middle",
+							"header": {
+								"name": "invoicesSubtotalHD",
+								"text": ":xliff:Subtotal",
+								"tooltip": "Contact email",
+								"stroke": "automatic",
+								"textAlign": "center",
+								"verticalAlign": "middle"
+							},
+							"footer": {
+								"name": "invoicesSubtotalAll",
+								"dataSource": "invoicesSubtotalAll",
+								"dataSourceTypeHint": "number",
+								"variableCalculation": "sum",
+								"numberFormat": "###,###,###,##0.00",
+								"stroke": "automatic",
+								"fill": "#DDDDDD",
+								"textAlign": "right",
+								"verticalAlign": "middle",
+								"fontWeight": "bold"
+							}
+						},
+						{
+							"name": "InvoicesPaid",
+							"dataSource": "[INVOICES:2]Paid:8",
+							"dataSourceTypeHint": "boolean",
+							"width": 70,
+							"minWidth": 5,
+							"maxWidth": 32000,
+							"controlType": "checkbox",
+							"stroke": "automatic",
+							"fill": "#FFFFFF",
+							"alternateFill": "#EEEEEE",
+							"textAlign": "center",
+							"verticalAlign": "middle",
+							"header": {
+								"name": "invoicesPaidHD",
+								"text": ":xliff:Paid",
+								"stroke": "automatic",
+								"textAlign": "center",
+								"verticalAlign": "middle"
+							},
+							"footer": {
+								"name": "Footer5",
+								"stroke": "automatic",
+								"fill": "#DDDDDD",
+								"textAlign": "automatic",
+								"verticalAlign": "middle"
+							}
+						},
+						{
+							"name": "InvoicesPayementDate",
+							"dataSource": "[INVOICES:2]PaymentDate:9",
+							"dataSourceTypeHint": "date",
+							"width": 100,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"enterable": false,
+							"stroke": "automatic",
+							"fill": "#FFFFFF",
+							"alternateFill": "#EEEEEE",
+							"textAlign": "center",
+							"verticalAlign": "middle",
+							"header": {
+								"name": "invoicesPayementDateHD",
+								"text": "Payment Date",
+								"stroke": "automatic",
+								"textAlign": "center",
+								"verticalAlign": "middle"
+							},
+							"footer": {
+								"name": "Footer3",
+								"stroke": "automatic",
+								"fill": "#DDDDDD",
+								"textAlign": "automatic",
+								"verticalAlign": "middle"
+							}
+						},
+						{
+							"name": "InvoicesPayementMethod",
+							"dataSource": "[INVOICES:2]PaymentMethod:10",
+							"width": 160,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"stroke": "automatic",
+							"fill": "#FFFFFF",
+							"alternateFill": "#EEEEEE",
+							"textAlign": "left",
+							"verticalAlign": "middle",
+							"header": {
+								"name": "invoicesPayementMethodHD",
+								"text": ":xliff:Payment Method",
+								"stroke": "automatic",
+								"textAlign": "center",
+								"verticalAlign": "middle"
+							},
+							"footer": {
+								"name": "infoInvoices",
+								"dataSource": "infoInvoices",
+								"stroke": "automatic",
+								"fill": "#DDDDDD",
+								"textAlign": "center",
+								"verticalAlign": "middle",
+								"fontWeight": "bold"
+							}
+						},
+						{
+							"name": "InvoicesProforma",
+							"dataSource": "[INVOICES:2]ProForma:12",
+							"dataSourceTypeHint": "boolean",
+							"width": 93,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"resizable": false,
+							"controlType": "checkbox",
+							"stroke": "automatic",
+							"fill": "#FFFFFF",
+							"alternateFill": "#EEEEEE",
+							"textAlign": "center",
+							"verticalAlign": "middle",
+							"header": {
+								"name": "invoicesProFormaHD",
+								"text": "Pro Forma",
+								"stroke": "automatic",
+								"textAlign": "center",
+								"verticalAlign": "middle"
+							},
+							"footer": {
+								"name": "Footer6",
+								"stroke": "automatic",
+								"fill": "#DDDDDD",
+								"textAlign": "automatic",
+								"verticalAlign": "middle"
+							}
+						}
+					]
+				},
+				"bDeleteInvoices": {
+					"type": "button",
+					"top": 20,
+					"left": 140,
+					"width": 80,
+					"height": 60,
+					"tooltip": "Delete Invoice(s)",
+					"textAlign": "center",
+					"stroke": "#000000",
+					"focusable": false,
+					"text": ":xliff:Delete",
+					"icon": "/RESOURCES/Images/Buttons/DeleteRecord.png",
+					"iconFrames": 4,
+					"style": "custom",
+					"method": "ObjectMethods/bDeleteInvoices.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"bAllInvoices": {
+					"type": "button",
+					"top": 20,
+					"left": 220,
+					"width": 80,
+					"height": 60,
+					"tooltip": "Show All Invoices",
+					"textAlign": "center",
+					"stroke": "#000000",
+					"focusable": false,
+					"text": ":xliff:All",
+					"icon": "/RESOURCES/Images/Buttons/AllRecords.png",
+					"iconFrames": 4,
+					"style": "custom",
+					"method": "ObjectMethods/bAllInvoices.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"bShowSubsetInvoices": {
+					"type": "button",
+					"top": 20,
+					"left": 300,
+					"width": 80,
+					"height": 60,
+					"tooltip": "Show Subset Invoices",
+					"textAlign": "center",
+					"stroke": "#000000",
+					"focusable": false,
+					"text": ":xliff:Subset",
+					"icon": "/RESOURCES/Images/Buttons/ShowSubset.png",
+					"iconFrames": 4,
+					"style": "custom",
+					"method": "ObjectMethods/bShowSubsetInvoices.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"bQueryInvoices": {
+					"type": "button",
+					"top": 20,
+					"left": 380,
+					"width": 80,
+					"height": 60,
+					"tooltip": "Query Invoices",
+					"textAlign": "center",
+					"stroke": "#000000",
+					"focusable": false,
+					"text": ":xliff:Query",
+					"icon": "/RESOURCES/Images/Buttons/Query.png",
+					"iconFrames": 4,
+					"style": "custom",
+					"method": "ObjectMethods/bQueryInvoices.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"bLabelsInvoices": {
+					"type": "button",
+					"top": 20,
+					"left": 540,
+					"width": 80,
+					"height": 60,
+					"sizingX": "move",
+					"tooltip": "Print Labels Invoices",
+					"textAlign": "center",
+					"stroke": "#000000",
+					"focusable": false,
+					"text": ":xliff:Labels",
+					"icon": "/RESOURCES/Images/Buttons/Labels.png",
+					"iconFrames": 4,
+					"style": "custom",
+					"method": "ObjectMethods/bLabelsInvoices.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"bPrintInvoices": {
+					"type": "button",
+					"top": 20,
+					"left": 620,
+					"width": 80,
+					"height": 60,
+					"sizingX": "move",
+					"tooltip": "Print Invoices",
+					"textAlign": "center",
+					"stroke": "#000000",
+					"focusable": false,
+					"text": ":xliff:Print",
+					"icon": "/RESOURCES/Images/Buttons/Print.png",
+					"iconFrames": 4,
+					"style": "custom",
+					"method": "ObjectMethods/bPrintInvoices.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"bReportsInvoices": {
+					"type": "button",
+					"top": 20,
+					"left": 460,
+					"width": 80,
+					"height": 60,
+					"tooltip": "Reports Invoices",
+					"textAlign": "center",
+					"stroke": "#000000",
+					"focusable": false,
+					"text": ":xliff:Reports",
+					"icon": "/RESOURCES/Images/Buttons/Reports.png",
+					"iconFrames": 4,
+					"style": "custom",
+					"method": "ObjectMethods/bReportsInvoices.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"Picture1": {
+					"type": "picture",
+					"top": 18,
+					"left": 18,
+					"width": 85,
+					"height": 60,
+					"pictureFormat": "scaled",
+					"picture": "/RESOURCES/Images/Banners/invoices.png"
+				},
+				"Line1": {
+					"type": "line",
+					"top": 18,
+					"left": 220,
+					"height": 62,
+					"stroke": "#AAAAAA"
+				},
+				"Line3": {
+					"type": "line",
+					"top": 18,
+					"left": 460,
+					"height": 62,
+					"stroke": "#AAAAAA"
+				},
+				"Splitter1": {
+					"type": "splitter",
+					"top": 18,
+					"left": 466,
+					"width": 1,
+					"height": 62,
+					"splitterMode": "move",
+					"borderStyle": "none"
+				},
+				"Header.Filler.Mac": {
+					"type": "picture",
+					"top": 120,
+					"left": 959,
+					"width": 15,
+					"height": 19,
+					"pictureFormat": "scaled",
+					"picture": "Images/Header.Filler.Mac.png"
+				},
+				"Footer.Filler.Mac": {
+					"type": "rectangle",
+					"top": 740,
+					"left": 954,
+					"width": 20,
+					"height": 20,
+					"sizingX": "move",
+					"sizingY": "move",
+					"fill": "#DDDDDD",
+					"stroke": "transparent"
+				}
+			}
+		}
+	],
+	"editor": {
+		"activeView": "View 1",
+		"defaultView": "View 1",
+		"views": {
+			"View 1": {},
+			"View 2": {},
+			"View 3": {
+				"objects": [
+					"bDeleteInvoices",
+					"bAllInvoices",
+					"bShowSubsetInvoices",
+					"bQueryInvoices",
+					"bLabelsInvoices",
+					"bPrintInvoices",
+					"Header.Filler.Mac",
+					"Footer.Filler.Mac"
+				]
+			},
+			"View 4": {},
+			"View 5": {},
+			"View 6": {},
+			"View 7": {},
+			"View 8": {},
+			"View 9": {}
+		}
+	}
+}

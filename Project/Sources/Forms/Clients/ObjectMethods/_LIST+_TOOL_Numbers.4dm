@@ -1,1 +1,0 @@
-action_Property_Settings ("_LB_Numbers";True:C214)

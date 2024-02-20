@@ -1,0 +1,36 @@
+//%attributes = {"invisible":true}
+
+
+//Clients_BuildLogo
+C_PICTURE:C286(Clients_BuildLogo; $0)
+C_TEXT:C284(Clients_BuildLogo; $1)
+
+//Invoices_ChangeColor
+C_REAL:C285(Invoices_ChangeColor; $0)
+
+//Invoices_GetNumber
+C_LONGINT:C283(Invoices_GetNumber; $0)
+
+//Invoices_GetNumberPrf
+C_LONGINT:C283(Invoices_GetNumberPrf; $0)
+
+//LISTBOX_ADJUST_WIDTH
+C_TEXT:C284(LISTBOX_ADJUST_WIDTH; $1)
+
+//UPDATE_SUBSET_BUTTON
+C_TEXT:C284(UPDATE_SUBSET_BUTTON; $1)
+C_TEXT:C284(UPDATE_SUBSET_BUTTON; $2)
+C_POINTER:C301(UPDATE_SUBSET_BUTTON; $3)
+
+//UPDATE_DELETE_BUTTON
+C_TEXT:C284(UPDATE_DELETE_BUTTON; $1)
+C_TEXT:C284(UPDATE_DELETE_BUTTON; $2)
+
+//UPDATE_ALL_BUTTON
+C_TEXT:C284(UPDATE_ALL_BUTTON; $1)
+C_POINTER:C301(UPDATE_ALL_BUTTON; $2)
+
+
+//ToolCreateLogo
+C_PICTURE:C286(ToolCreateLogo; $0)
+C_TEXT:C284(ToolCreateLogo; $1)

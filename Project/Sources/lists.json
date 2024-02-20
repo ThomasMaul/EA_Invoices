@@ -1,0 +1,161 @@
+{
+	"PayementMethodEN": {
+		"lineHeight": 18,
+		"editable": true,
+		"items": [
+			{
+				"text": "By check",
+				"ref": 1,
+				"editable": true
+			},
+			{
+				"text": "By credit card",
+				"ref": 2,
+				"editable": true
+			},
+			{
+				"text": "By bank transfer",
+				"ref": 3,
+				"editable": true
+			}
+		]
+	},
+	"Months": {
+		"lineHeight": 18,
+		"editable": false,
+		"items": [
+			{
+				"text": "January",
+				"ref": 1,
+				"editable": true
+			},
+			{
+				"text": "February",
+				"ref": 2,
+				"editable": true
+			},
+			{
+				"text": "March",
+				"ref": 3,
+				"editable": true
+			},
+			{
+				"text": "April",
+				"ref": 4,
+				"editable": true
+			},
+			{
+				"text": "May",
+				"ref": 5,
+				"editable": true
+			},
+			{
+				"text": "June",
+				"ref": 6,
+				"editable": true
+			},
+			{
+				"text": "July",
+				"ref": 7,
+				"editable": true
+			},
+			{
+				"text": "August",
+				"ref": 8,
+				"editable": true
+			},
+			{
+				"text": "September",
+				"ref": 9,
+				"editable": true
+			},
+			{
+				"text": "October",
+				"ref": 10,
+				"editable": true
+			},
+			{
+				"text": "November",
+				"ref": 11,
+				"editable": true
+			},
+			{
+				"text": "December",
+				"ref": 12,
+				"editable": true
+			}
+		]
+	},
+	"Years": {
+		"lineHeight": 18,
+		"editable": false,
+		"items": [
+			{
+				"text": "2005",
+				"ref": 1,
+				"editable": true
+			},
+			{
+				"text": "2006",
+				"ref": 2,
+				"editable": true
+			},
+			{
+				"text": "2007",
+				"ref": 3,
+				"editable": true
+			},
+			{
+				"text": "2008",
+				"ref": 4,
+				"editable": true
+			},
+			{
+				"text": "2009",
+				"ref": 5,
+				"editable": true
+			},
+			{
+				"text": "2010",
+				"ref": 6,
+				"editable": true
+			},
+			{
+				"text": "2011",
+				"ref": 7,
+				"editable": true
+			},
+			{
+				"text": "2012",
+				"ref": 8,
+				"editable": true
+			},
+			{
+				"text": "2013",
+				"ref": 9,
+				"editable": true
+			}
+		]
+	},
+	"PayementMethodFR": {
+		"lineHeight": 18,
+		"editable": true,
+		"items": [
+			{
+				"text": "Par chèque",
+				"ref": 1,
+				"editable": true
+			},
+			{
+				"text": "Par carte bancaire",
+				"ref": 2,
+				"editable": true
+			},
+			{
+				"text": "Par transfert bancaire",
+				"ref": 3,
+				"editable": true
+			}
+		]
+	}
+}

@@ -1,2 +1,0 @@
-WP UpdateWidget("WPtoolbar"; "WParea")
-

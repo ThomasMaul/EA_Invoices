@@ -1,0 +1,291 @@
+{
+	"destination": "listScreen",
+	"rightMargin": 16,
+	"bottomMargin": 10,
+	"markerHeader": 24,
+	"markerBody": 45,
+	"markerBreak": 50,
+	"markerFooter": 50,
+	"events": [
+		"onLoad",
+		"onValidate",
+		"onClick",
+		"onHeader",
+		"onPrintingBreak",
+		"onPrintingFooter",
+		"onDisplayDetail",
+		"onOutsideCall",
+		"onDoubleClick",
+		"onDrop",
+		"onMenuSelect",
+		"onPluginArea",
+		"onDataChange",
+		"onDragOver",
+		"onPrintingDetail",
+		"onOpenDetail",
+		"onCloseDetail",
+		"onTimer",
+		"onAfterKeystroke",
+		"onLoadRecord",
+		"onAfterEdit",
+		"onBeginDragOver",
+		"onBoundVariableChange",
+		"onPageChange"
+	],
+	"pageFormat": {
+		"paperName": "US Letter",
+		"paperWidth": "612pt",
+		"paperHeight": "792pt"
+	},
+	"pages": [
+		null,
+		{
+			"objects": {
+				"Rectangle12": {
+					"type": "rectangle",
+					"top": 0,
+					"left": 0,
+					"width": 579,
+					"height": 47,
+					"sizingX": "grow",
+					"fill": "transparent"
+				},
+				"Picture6": {
+					"type": "picture",
+					"top": 2,
+					"left": 2,
+					"width": 575,
+					"height": 22,
+					"sizingX": "grow",
+					"pictureFormat": "scaled",
+					"picture": "Images/Picture6.pict"
+				},
+				"S1_Text": {
+					"type": "text",
+					"top": 7,
+					"left": 15,
+					"width": 48,
+					"height": 15,
+					"sizingX": "grow",
+					"text": "ID : "
+				},
+				"S2_Text": {
+					"type": "text",
+					"top": 7,
+					"left": 75,
+					"width": 112,
+					"height": 15,
+					"sizingX": "grow",
+					"text": "Reference : "
+				},
+				"S3_Text": {
+					"type": "text",
+					"top": 7,
+					"left": 199,
+					"width": 240,
+					"height": 15,
+					"sizingX": "grow",
+					"text": "Name : "
+				},
+				"S4_Text": {
+					"type": "text",
+					"top": 7,
+					"left": 451,
+					"width": 54,
+					"height": 15,
+					"sizingX": "grow",
+					"text": "UnitPrice : "
+				},
+				"S5_Text": {
+					"type": "text",
+					"top": 7,
+					"left": 517,
+					"width": 54,
+					"height": 15,
+					"sizingX": "grow",
+					"text": "TaxRate : "
+				},
+				"Rectangle7": {
+					"type": "rectangle",
+					"top": 24,
+					"left": 2,
+					"width": 575,
+					"height": 23,
+					"sizingX": "grow",
+					"stroke": "#FFFFFF"
+				},
+				"S1_Field": {
+					"type": "input",
+					"top": 28,
+					"left": 15,
+					"width": 48,
+					"height": 15,
+					"sizingX": "grow",
+					"dataSource": "[PRODUCTS:4]ID:1",
+					"dataSourceTypeHint": "integer",
+					"fill": "#FFFFFF",
+					"borderStyle": "none",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onLoad",
+						"onValidate",
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"S2_Field": {
+					"type": "input",
+					"top": 28,
+					"left": 75,
+					"width": 112,
+					"height": 15,
+					"sizingX": "grow",
+					"dataSource": "[PRODUCTS:4]Reference:2",
+					"fill": "#FFFFFF",
+					"borderStyle": "none",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onLoad",
+						"onValidate",
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"S3_Field": {
+					"type": "input",
+					"top": 28,
+					"left": 199,
+					"width": 240,
+					"height": 15,
+					"sizingX": "grow",
+					"dataSource": "[PRODUCTS:4]Name:3",
+					"fill": "#FFFFFF",
+					"borderStyle": "none",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onLoad",
+						"onValidate",
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"S4_Field": {
+					"type": "input",
+					"top": 28,
+					"left": 451,
+					"width": 54,
+					"height": 15,
+					"sizingX": "grow",
+					"dataSource": "[PRODUCTS:4]UnitPrice:5",
+					"dataSourceTypeHint": "number",
+					"fill": "#FFFFFF",
+					"borderStyle": "none",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onLoad",
+						"onValidate",
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"S5_Field": {
+					"type": "input",
+					"top": 28,
+					"left": 517,
+					"width": 54,
+					"height": 15,
+					"sizingX": "grow",
+					"dataSource": "[PRODUCTS:4]TaxRate:6",
+					"dataSourceTypeHint": "number",
+					"fill": "#FFFFFF",
+					"borderStyle": "none",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onLoad",
+						"onValidate",
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"Line8": {
+					"type": "line",
+					"top": 2,
+					"left": 511,
+					"height": 45,
+					"stroke": "#A8A8A8"
+				},
+				"Line9": {
+					"type": "line",
+					"top": 2,
+					"left": 445,
+					"height": 45,
+					"stroke": "#A8A8A8"
+				},
+				"Line10": {
+					"type": "line",
+					"top": 2,
+					"left": 193,
+					"height": 45,
+					"stroke": "#A8A8A8"
+				},
+				"Line11": {
+					"type": "line",
+					"top": 2,
+					"left": 69,
+					"height": 45,
+					"stroke": "#A8A8A8"
+				}
+			}
+		}
+	],
+	"editor": {
+		"activeView": "View 1",
+		"defaultView": "View 1",
+		"views": {
+			"View 1": {},
+			"View 2": {},
+			"View 3": {},
+			"View 4": {},
+			"View 5": {},
+			"View 6": {},
+			"View 7": {},
+			"View 8": {},
+			"View 9": {}
+		}
+	}
+}

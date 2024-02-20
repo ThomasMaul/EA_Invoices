@@ -2,7 +2,7 @@
 	"bars": [
 		{
 			"id": 1,
-			"name": "Menu Bar #1",
+			"name": "Main",
 			"items": [
 				{
 					"link": 32001
@@ -22,36 +22,43 @@
 			"title": ":xliff:CommonMenuFile",
 			"items": [
 				{
-					"title": ":xliff:StartupScreen",
-					"method": "M_StartupScreen"
+					"title": ":xliff:Clients",
+					"method": "Clients_Manage",
+					"shortcutShift": true,
+					"shortcutAccel": true,
+					"shortcutKey": "c"
 				},
 				{
-					"title": "Item 5",
+					"title": ":xliff:Invoices",
+					"method": "Invoices_Manage",
+					"shortcutShift": true,
+					"shortcutAccel": true,
+					"shortcutKey": "i"
+				},
+				{
+					"title": ":xliff:Products",
+					"method": "Products_Manage",
+					"shortcutShift": true,
+					"shortcutAccel": true,
+					"shortcutKey": "p"
+				},
+				{
+					"title": "Item 7",
 					"isSeparator": true
 				},
 				{
-					"title": ":xliff:CLIENTS",
-					"method": "M_Clients"
-				},
-				{
-					"title": ":xliff:PRODUCTS",
-					"method": "M_Products"
-				},
-				{
-					"title": ":xliff:INVOICES",
-					"method": "M_Invoices"
-				},
-				{
-					"title": "Item 1",
-					"isSeparator": true
+					"title": "Custom Fields",
+					"method": "Settings_CustomFields"
 				},
 				{
 					"title": ":xliff:Settings",
-					"method": "M_Settings",
-					"action": "databaseSettings"
+					"method": "Settings_Manage",
+					"shortcutShift": true,
+					"shortcutAccel": true,
+					"shortcutKey": "s"
 				},
 				{
-					"title": "Item 3",
+					"title": "Item 5",
 					"isSeparator": true
 				},
 				{
@@ -120,6 +127,8 @@
 			"items": [
 				{
 					"title": ":xliff:CommonMenuItemDesign",
+					"shortcutAccel": true,
+					"shortcutKey": "y",
 					"action": "design"
 				}
 			]

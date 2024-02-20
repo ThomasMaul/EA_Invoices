@@ -1,0 +1,138 @@
+{
+	"$4d": {
+		"version": "1",
+		"kind": "form"
+	},
+	"windowSizingX": "variable",
+	"windowSizingY": "variable",
+	"windowMinWidth": 0,
+	"windowMinHeight": 0,
+	"windowMaxWidth": 32767,
+	"windowMaxHeight": 32767,
+	"rightMargin": 0,
+	"bottomMargin": 0,
+	"events": [
+		"onLoad",
+		"onPageChange",
+		"onValidate",
+		"onClick",
+		"onDoubleClick",
+		"onOutsideCall",
+		"onBeginDragOver",
+		"onDragOver",
+		"onDrop",
+		"onAfterKeystroke",
+		"onMenuSelect",
+		"onPluginArea",
+		"onAfterEdit",
+		"onTimer",
+		"onBoundVariableChange"
+	],
+	"windowTitle": "Form.title",
+	"destination": "detailScreen",
+	"pages": [
+		{
+			"objects": {}
+		},
+		{
+			"objects": {
+				"Splitter": {
+					"type": "splitter",
+					"top": 1,
+					"left": 785,
+					"width": 6,
+					"height": 769,
+					"sizingX": "move",
+					"sizingY": "grow",
+					"method": "ObjectMethods/Splitter.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"Direkteingabe": {
+					"type": "subform",
+					"top": 1,
+					"left": 791,
+					"width": 805,
+					"height": 769,
+					"sizingX": "grow",
+					"sizingY": "grow",
+					"dataSource": "Form:C1466.Direkt",
+					"detailForm": "leer",
+					"enterableInList": false,
+					"deletableInList": false,
+					"doubleClickInRowAction": "editSubrecord",
+					"doubleClickInEmptyAreaAction": "addSubrecord",
+					"printFrame": "variable",
+					"borderStyle": "system"
+				},
+				"Listbox": {
+					"type": "listbox",
+					"top": 77,
+					"left": 1,
+					"width": 781,
+					"height": 693,
+					"sizingX": "grow",
+					"sizingY": "grow",
+					"resizingMode": "legacy",
+					"listboxType": "collection",
+					"hideFocusRing": true,
+					"movableRows": false,
+					"dragging": "custom",
+					"dropping": "custom",
+					"rowHeight": "20px",
+					"dataSource": "Form:C1466.listbox",
+					"currentItemSource": "Form:C1466.SelectedElement",
+					"selectedItemsSource": "Form:C1466.Selection",
+					"metaSource": "OrdaListboxMeta ",
+					"scrollbarHorizontal": "hidden",
+					"alternateFill": "#DFE4FF",
+					"method": "ObjectMethods/Listbox.4dm",
+					"events": [
+						"onClick",
+						"onDoubleClick",
+						"onLosingFocus",
+						"onGettingFocus",
+						"onDrop",
+						"onAfterKeystroke",
+						"onSelectionChange",
+						"onColumnMove",
+						"onColumnResize",
+						"onHeaderClick",
+						"onBeginDragOver"
+					],
+					"currentItemPositionSource": "Form:C1466.SelectedPosition",
+					"hideSystemHighlight": true,
+					"showFooters": true,
+					"columns": []
+				},
+				"buttonsubform": {
+					"type": "subform",
+					"left": 1,
+					"top": 1,
+					"width": 782,
+					"height": 77,
+					"detailForm": "",
+					"borderStyle": "none",
+					"visibility": "visible",
+					"focusable": false,
+					"sizingX": "grow",
+					"sizingY": "fixed",
+					"dataSource": "Form:C1466.toolbar",
+					"events": [],
+					"scrollbarHorizontal": "hidden",
+					"method": "ObjectMethods/buttonsubform.4dm"
+				}
+			}
+		}
+	],
+	"geometryStamp": 35,
+	"method": "method.4dm",
+	"editor": {
+		"activeView": "View 1",
+		"defaultView": "View 1",
+		"views": {
+			"View 1": {}
+		}
+	}
+}

@@ -1,0 +1,161 @@
+{
+	"destination": "detailScreen",
+	"windowSizingX": "fixed",
+	"windowSizingY": "fixed",
+	"rightMargin": 20,
+	"bottomMargin": 20,
+	"menuBar": "Main",
+	"markerBody": 398,
+	"markerBreak": 398,
+	"markerFooter": 408,
+	"pageFormat": {
+		"paperName": "DIN A4",
+		"paperWidth": "595pt",
+		"paperHeight": "842pt"
+	},
+	"pages": [
+		null,
+		{
+			"objects": {
+				"Rectangle3": {
+					"type": "rectangle",
+					"top": 40,
+					"left": 25,
+					"width": 330,
+					"height": 115,
+					"fill": "#DDDDDD",
+					"stroke": "#CCCCCC",
+					"borderRadius": 8
+				},
+				"Group Box1": {
+					"type": "text",
+					"top": 20,
+					"left": 35,
+					"width": 320,
+					"height": 16,
+					"stroke": "#777777",
+					"fontFamily": "System Font Regular",
+					"fontSize": 13,
+					"text": ":xliff:General Settings"
+				},
+				"name": {
+					"type": "input",
+					"top": 84,
+					"left": 247,
+					"width": 70,
+					"height": 16,
+					"dataSource": "[SETTINGS:5]CrtProformaNumber:2",
+					"dataSourceTypeHint": "integer",
+					"textAlign": "left",
+					"tooltip": "Client Name",
+					"borderStyle": "none",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none"
+				},
+				"Text19": {
+					"type": "text",
+					"top": 84,
+					"left": 27,
+					"width": 214,
+					"height": 14,
+					"stroke": "#777777",
+					"textAlign": "right",
+					"text": ":xliff:Current Proforma Number"
+				},
+				"name1": {
+					"type": "input",
+					"top": 109,
+					"left": 247,
+					"width": 70,
+					"height": 16,
+					"dataSource": "[SETTINGS:5]CrtInvoiceNumber:1",
+					"dataSourceTypeHint": "integer",
+					"textAlign": "left",
+					"tooltip": "Client Name",
+					"borderStyle": "none",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none"
+				},
+				"Text1": {
+					"type": "text",
+					"top": 109,
+					"left": 27,
+					"width": 214,
+					"height": 14,
+					"stroke": "#777777",
+					"textAlign": "right",
+					"text": ":xliff:Current Invoice Number"
+				},
+				"Button": {
+					"type": "button",
+					"top": 250,
+					"left": 211,
+					"width": 70,
+					"height": 20,
+					"sizingX": "move",
+					"sizingY": "move",
+					"dataSource": "Button",
+					"action": "cancel",
+					"shortcutKey": "[Esc]",
+					"text": "Cancel",
+					"class": "Buttons_13",
+					"events": [
+						"onClick"
+					]
+				},
+				"Button1": {
+					"type": "button",
+					"top": 250,
+					"left": 291,
+					"width": 70,
+					"height": 20,
+					"sizingX": "move",
+					"sizingY": "move",
+					"dataSource": "Button",
+					"action": "accept",
+					"shortcutKey": "[Enter]",
+					"text": "OK",
+					"class": "Buttons_13",
+					"defaultButton": true,
+					"events": [
+						"onClick"
+					]
+				},
+				"Schaltflaeche": {
+					"type": "button",
+					"text": "Toolbar Setup",
+					"top": 195,
+					"left": 217,
+					"width": 138,
+					"height": 30,
+					"events": [
+						"onClick"
+					],
+					"method": "ObjectMethods/Schaltflaeche.4dm"
+				}
+			}
+		}
+	],
+	"editor": {
+		"activeView": "View 1",
+		"defaultView": "View 1",
+		"views": {
+			"View 1": {},
+			"View 2": {},
+			"View 3": {},
+			"View 4": {},
+			"View 5": {},
+			"View 6": {},
+			"View 7": {},
+			"View 8": {},
+			"View 9": {}
+		}
+	},
+	"geometryStamp": 4,
+	"$4d": {
+		"version": "1",
+		"kind": "form"
+	}
+}

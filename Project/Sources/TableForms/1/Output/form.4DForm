@@ -1,0 +1,452 @@
+{
+	"windowSizingX": "fixed",
+	"windowMinHeight": 800,
+	"width": 1000,
+	"height": 800,
+	"menuBar": "Main",
+	"markerHeader": 90,
+	"markerBody": 800,
+	"markerBreak": 800,
+	"markerFooter": 800,
+	"events": [
+		"onLoad",
+		"onUnload"
+	],
+	"method": "method.4dm",
+	"pageFormat": {
+		"paperName": "DIN A4",
+		"paperWidth": "595pt",
+		"paperHeight": "842pt"
+	},
+	"pages": [
+		null,
+		{
+			"objects": {
+				"Rectangle": {
+					"type": "rectangle",
+					"top": 100,
+					"left": 25,
+					"width": 950,
+					"height": 675,
+					"sizingX": "grow",
+					"sizingY": "grow",
+					"fill": "#DDDDDD",
+					"stroke": "#CCCCCC",
+					"borderRadius": 8
+				},
+				"bAddClient": {
+					"type": "button",
+					"top": 20,
+					"left": 140,
+					"width": 80,
+					"height": 60,
+					"tooltip": "Add Client",
+					"action": "addSubrecord",
+					"textAlign": "center",
+					"stroke": "#000000",
+					"focusable": false,
+					"text": ":xliff:Add",
+					"icon": "/RESOURCES/Images/Buttons/NewRecord.png",
+					"iconFrames": 4,
+					"style": "custom",
+					"events": [
+						"onClick"
+					]
+				},
+				"bDeleteClients": {
+					"type": "button",
+					"top": 20,
+					"left": 220,
+					"width": 80,
+					"height": 60,
+					"tooltip": "Delete Client(s)",
+					"action": "deleteSubrecord",
+					"textAlign": "center",
+					"stroke": "#000000",
+					"focusable": false,
+					"text": ":xliff:Delete",
+					"icon": "/RESOURCES/Images/Buttons/DeleteRecord.png",
+					"iconFrames": 4,
+					"style": "custom",
+					"events": [
+						"onClick"
+					]
+				},
+				"bAllClients": {
+					"type": "button",
+					"top": 20,
+					"left": 300,
+					"width": 80,
+					"height": 60,
+					"tooltip": "Show All Clients",
+					"textAlign": "center",
+					"stroke": "#000000",
+					"focusable": false,
+					"text": ":xliff:All",
+					"icon": "/RESOURCES/Images/Buttons/AllRecords.png",
+					"iconFrames": 4,
+					"style": "custom",
+					"method": "ObjectMethods/bAllClients.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"bShowSubsetClients": {
+					"type": "button",
+					"top": 20,
+					"left": 380,
+					"width": 80,
+					"height": 60,
+					"tooltip": "Show Subset Clients",
+					"textAlign": "center",
+					"stroke": "#000000",
+					"focusable": false,
+					"text": ":xliff:Subset",
+					"icon": "/RESOURCES/Images/Buttons/ShowSubset.png",
+					"iconFrames": 4,
+					"style": "custom",
+					"method": "ObjectMethods/bShowSubsetClients.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"bQueryClients": {
+					"type": "button",
+					"top": 20,
+					"left": 460,
+					"width": 80,
+					"height": 60,
+					"tooltip": "Query Clients",
+					"textAlign": "center",
+					"stroke": "#000000",
+					"focusable": false,
+					"text": ":xliff:Query",
+					"icon": "/RESOURCES/Images/Buttons/Query.png",
+					"iconFrames": 4,
+					"style": "custom",
+					"method": "ObjectMethods/bQueryClients.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"bLabelsClients": {
+					"type": "button",
+					"top": 20,
+					"left": 700,
+					"width": 80,
+					"height": 60,
+					"sizingX": "move",
+					"tooltip": "Print Labels Clients",
+					"textAlign": "center",
+					"stroke": "#000000",
+					"focusable": false,
+					"text": ":xliff:Labels",
+					"icon": "/RESOURCES/Images/Buttons/Labels.png",
+					"iconFrames": 4,
+					"style": "custom",
+					"method": "ObjectMethods/bLabelsClients.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"bPrintClients": {
+					"type": "button",
+					"top": 20,
+					"left": 780,
+					"width": 80,
+					"height": 60,
+					"sizingX": "move",
+					"tooltip": "Print Clients",
+					"textAlign": "center",
+					"stroke": "#000000",
+					"focusable": false,
+					"text": ":xliff:Print",
+					"icon": "/RESOURCES/Images/Buttons/Print.png",
+					"iconFrames": 4,
+					"style": "custom",
+					"method": "ObjectMethods/bPrintClients.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"bReportsClients": {
+					"type": "button",
+					"top": 20,
+					"left": 540,
+					"width": 80,
+					"height": 60,
+					"tooltip": "Reports Clients",
+					"textAlign": "center",
+					"stroke": "#000000",
+					"focusable": false,
+					"text": ":xliff:Reports",
+					"icon": "/RESOURCES/Images/Buttons/Reports.png",
+					"iconFrames": 4,
+					"style": "custom",
+					"method": "ObjectMethods/bReportsClients.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"bGraphsClients": {
+					"type": "button",
+					"top": 20,
+					"left": 620,
+					"width": 80,
+					"height": 60,
+					"tooltip": "Graph Clients",
+					"textAlign": "center",
+					"stroke": "#000000",
+					"focusable": false,
+					"text": ":xliff:Graphs",
+					"icon": "/RESOURCES/Images/Buttons/Graphs.png",
+					"iconFrames": 4,
+					"style": "custom",
+					"method": "ObjectMethods/bGraphsClients.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"bExportClients": {
+					"type": "button",
+					"top": 20,
+					"left": 860,
+					"width": 80,
+					"height": 60,
+					"sizingX": "move",
+					"tooltip": "Export Clients",
+					"textAlign": "center",
+					"stroke": "#000000",
+					"focusable": false,
+					"text": ":xliff:Export",
+					"icon": "/RESOURCES/Images/Buttons/ImportExport.png",
+					"iconFrames": 4,
+					"style": "custom",
+					"method": "ObjectMethods/bExportClients.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"Picture1": {
+					"type": "picture",
+					"top": 20,
+					"left": 25,
+					"width": 100,
+					"height": 60,
+					"pictureFormat": "scaled",
+					"picture": "/RESOURCES/Images/Banners/customers.png"
+				},
+				"Line2": {
+					"type": "line",
+					"top": 30,
+					"left": 300,
+					"height": 40,
+					"stroke": "#AAAAAA"
+				},
+				"Line3": {
+					"type": "line",
+					"top": 30,
+					"left": 540,
+					"height": 40,
+					"stroke": "#AAAAAA"
+				},
+				"ListBoxClients": {
+					"type": "listbox",
+					"top": 120,
+					"left": 26,
+					"width": 948,
+					"height": 640,
+					"sizingX": "grow",
+					"sizingY": "grow",
+					"resizingMode": "legacy",
+					"listboxType": "currentSelection",
+					"hideFocusRing": true,
+					"movableRows": false,
+					"rowHeight": "20px",
+					"headerHeight": "20px",
+					"showFooters": true,
+					"footerHeight": "20px",
+					"doubleClickInRowAction": "editSubrecord",
+					"staticColumnCount": 4,
+					"table": 1,
+					"highlightSet": "$highlightedClients",
+					"detailForm": "Input",
+					"scrollbarHorizontal": "hidden",
+					"horizontalLineStroke": "#DDDDDD",
+					"verticalLineStroke": "#DDDDDD",
+					"fill": "#FFFFFF",
+					"alternateFill": "#EEEEEE",
+					"borderStyle": "none",
+					"method": "ObjectMethods/ListBoxClients.4dm",
+					"events": [
+						"onSelectionChange"
+					],
+					"columns": [
+						{
+							"name": "ClientsName",
+							"dataSource": "[CLIENTS:1]Name:2",
+							"width": 250,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"enterable": false,
+							"stroke": "automatic",
+							"fill": "#FFFFFF",
+							"alternateFill": "#EEEEEE",
+							"textAlign": "automatic",
+							"verticalAlign": "middle",
+							"header": {
+								"name": "clientsNameHD",
+								"text": ":xliff:Name",
+								"tooltip": "Company Name",
+								"stroke": "automatic",
+								"textAlign": "center",
+								"verticalAlign": "automatic"
+							},
+							"footer": {
+								"name": "Footer1",
+								"stroke": "automatic",
+								"fill": "#DDDDDD",
+								"textAlign": "automatic",
+								"verticalAlign": "middle"
+							}
+						},
+						{
+							"name": "ClientsCity",
+							"dataSource": "[CLIENTS:1]City:5",
+							"width": 150,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"enterable": false,
+							"stroke": "automatic",
+							"fill": "#FFFFFF",
+							"alternateFill": "#EEEEEE",
+							"textAlign": "automatic",
+							"verticalAlign": "middle",
+							"header": {
+								"name": "clientsCityHD",
+								"text": ":xliff:City",
+								"tooltip": "Company City",
+								"stroke": "automatic",
+								"textAlign": "center",
+								"verticalAlign": "automatic"
+							},
+							"footer": {
+								"name": "Footer2",
+								"stroke": "automatic",
+								"fill": "#DDDDDD",
+								"textAlign": "automatic",
+								"verticalAlign": "middle"
+							}
+						},
+						{
+							"name": "ClientsContact",
+							"dataSource": "[CLIENTS:1]Contact:14",
+							"width": 220,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"enterable": false,
+							"stroke": "automatic",
+							"fill": "#FFFFFF",
+							"alternateFill": "#EEEEEE",
+							"textAlign": "automatic",
+							"verticalAlign": "middle",
+							"header": {
+								"name": "clientsContactHD",
+								"text": ":xliff:Contact",
+								"tooltip": "Company contact",
+								"stroke": "automatic",
+								"textAlign": "center",
+								"verticalAlign": "automatic"
+							},
+							"footer": {
+								"name": "Footer3",
+								"stroke": "automatic",
+								"fill": "#DDDDDD",
+								"textAlign": "automatic",
+								"verticalAlign": "middle"
+							}
+						},
+						{
+							"name": "ClientsEmail",
+							"dataSource": "[CLIENTS:1]Email:11",
+							"width": 328,
+							"minWidth": 10,
+							"maxWidth": 367,
+							"resizable": false,
+							"enterable": false,
+							"stroke": "automatic",
+							"fill": "#FFFFFF",
+							"alternateFill": "#EEEEEE",
+							"textAlign": "automatic",
+							"verticalAlign": "middle",
+							"header": {
+								"name": "clientsEmailHD",
+								"text": "Email",
+								"tooltip": "Contact email",
+								"stroke": "automatic",
+								"textAlign": "center",
+								"verticalAlign": "automatic"
+							},
+							"footer": {
+								"name": "infoClients",
+								"dataSource": "infoClients",
+								"stroke": "automatic",
+								"fill": "#DDDDDD",
+								"textAlign": "center",
+								"verticalAlign": "middle",
+								"fontWeight": "bold"
+							}
+						}
+					]
+				},
+				"Header.Filler.Mac": {
+					"type": "picture",
+					"top": 120,
+					"left": 959,
+					"width": 15,
+					"height": 19,
+					"pictureFormat": "scaled",
+					"picture": "Images/Header.Filler.Mac.png"
+				},
+				"Footer.Filler.Mac": {
+					"type": "rectangle",
+					"top": 740,
+					"left": 954,
+					"width": 20,
+					"height": 20,
+					"sizingX": "move",
+					"sizingY": "move",
+					"fill": "#DDDDDD",
+					"stroke": "transparent"
+				}
+			}
+		}
+	],
+	"editor": {
+		"defaultView": "View 1",
+		"activeView": "View 3",
+		"views": {
+			"View 1": {},
+			"View 2": {},
+			"View 3": {
+				"objects": [
+					"bAddClient",
+					"bDeleteClients",
+					"bAllClients",
+					"bShowSubsetClients",
+					"bQueryClients",
+					"bLabelsClients",
+					"bPrintClients",
+					"Header.Filler.Mac",
+					"Footer.Filler.Mac"
+				]
+			},
+			"View 4": {},
+			"View 5": {},
+			"View 6": {},
+			"View 7": {},
+			"View 8": {},
+			"View 9": {}
+		}
+	}
+}
