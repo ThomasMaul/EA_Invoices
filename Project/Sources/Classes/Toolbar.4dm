@@ -73,7 +73,6 @@ Function getSubform($objectname : Text)->$subform : Object
 		
 		This:C1470.maxWidth:=$x
 		
-		// "method";"Toolbar_FormMethod";
 		$subform:=New object:C1471("windowSizingX"; "variable"; "windowSizingY"; "variable"; "rightMargin"; 1; "bottomMargin"; 1; "windowMinWidth"; 0; "windowMinHeight"; 0; \
 			"windowMaxWidth"; 32767; "windowMaxHeight"; 32767; \
 			"events"; New collection:C1472("onResize"; "onLoad"); \
@@ -137,7 +136,7 @@ Function _reduceWidthTo($requestedWidth : Integer; $currentWidth : Integer)
 	// first remove title
 	While (($currentWidth>=$requestedWidth) & ($safetycounter>0))
 		// start with lowestest priority from right
-		var $bigbuttons : Object:=This:C1470.buttons.query("status=0 and title # ''").orderBy("Prio desc, order desc")
+		var $bigbuttons : Collection:=This:C1470.buttons.query("status=0 and title # ''").orderBy("Prio desc, order desc")
 		If ($bigbuttons.length=0)
 			$safetycounter:=0
 		Else 
@@ -212,8 +211,65 @@ Function _enlargeWidthTo($requestedWidth : Integer; $currentWidth : Integer)
 		$safetycounter:=$safetycounter-1  // gave up, avoid deadlock
 	End while 
 	
-Function CreateButton($name : Text; $group : Integer; $prio : Integer; $separator : Boolean; $title : Text)->$button : cs:C1710.Toolbar_Button
-	If ($title="")
-		$title:=$name
+Function createButton($group : Integer; $buttondesc : Object; $allbuttons : cs:C1710.Toolbar_Setup; $callback : Text)
+	var $find : Collection:=$allbuttons.buttons.query("id=:1"; $buttondesc.id)
+	var $masterbutton : Object
+	var $title : Text
+	If ($find.length>0)
+		$masterbutton:=$find[0]
+	Else 
+		$masterbutton:=Null:C1517
 	End if 
+	If ($masterbutton.title#Null:C1517)
+		$title:=$masterbutton.title
+	Else 
+		$title:=$buttondesc.name
+	End if 
+	var $localizedTitle:=Get localized string:C991($title)
+	If ($localizedTitle#"")
+		$title:=$localizedTitle
+	End if 
+	var $button : cs:C1710.Toolbar_Button:=cs:C1710.Toolbar_Button.new(New object:C1471("name"; $buttondesc.name; "title"; $title; "prio"; 0; "group"; $group))
+	If ($masterbutton#Null:C1517)
+		$button.icon:="/RESOURCES/Images/Buttons_32/"+$masterbutton.pictname
+		$button.icon16:="/RESOURCES/Images/Buttons_16/"+Replace string:C233($masterbutton.pictname; "32"; "16")
+		$button.tooltip:=Get localized string:C991($buttondesc.name)
+		$button.width:=45
+		$button.style:="toolbar"
+		$button.method:=$callback
+		$button.fontSize:=9
+		If ($buttondesc.sub=Null:C1517)
+			$buttondesc.sub:=New collection:C1472
+		End if 
+		If ($buttondesc.sub.length=0)
+			$button.events:=New collection:C1472("onClick")
+		Else 
+			$button.popupPlacement:="separated"
+			$button.events:=New collection:C1472("onClick"; "onAlternateClick")
+			$button.sub:=$buttondesc.sub
+			var $subbutton : Object
+			For each ($subbutton; $button.sub)
+				$find:=$allbuttons.buttons.query("id=:1"; $subbutton.id)
+				If ($find.length>0)
+					$subbutton.icon:="/RESOURCES/Images/Buttons_32/"+$find[0].pictname
+				End if 
+				$localizedTitle:=Get localized string:C991($subbutton.name)
+				$subbutton.title:=($localizedTitle#"") ? $localizedTitle : $subbutton.name
+			End for each 
+		End if 
+	End if 
+	This:C1470.add($button)
 	
+Function buildSubPopup($title : Text)->$menu : Text
+	var $sub : Object
+	$menu:=Create menu:C408
+	var $find : Collection:=This:C1470.buttons.query("name=:1"; $title)
+	If ($find.length>0)
+		For each ($sub; $find[0].sub)
+			APPEND MENU ITEM:C411($menu; $sub.title)
+			SET MENU ITEM PARAMETER:C1004($menu; -1; $sub.name)
+			If ($sub.icon#"")
+				SET MENU ITEM ICON:C984($menu; -1; "Path:"+Replace string:C233($sub.icon; "32.png"; "single.png"))  // enable this if you have additional single line icons
+			End if 
+		End for each 
+	End if 

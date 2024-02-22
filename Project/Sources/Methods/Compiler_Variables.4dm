@@ -22,3 +22,6 @@ C_LONGINT:C283(bShowSubset)
 C_LONGINT:C283(Invisible Button)
 C_LONGINT:C283(Splitter2)
 C_LONGINT:C283(Button)
+
+// for Toolbar, Searchbox
+C_TEXT:C284(vSearch)

@@ -6,11 +6,10 @@ Function load()
 	Form:C1466.Search:=""
 	Form:C1466.SearchCopy:=""
 	
-	Form:C1466.listbox:=ds:C1482.useAll(This:C1470._table)
-	SET WINDOW TITLE:C213(ds:C1482.calcWindowTitle(Form:C1466.listbox))
+	Form:C1466.listbox:=This:C1470.useAll(This:C1470._table)
+	SET WINDOW TITLE:C213(This:C1470.calcWindowTitle(Form:C1466.listbox); Current form window:C827)
 	
 	This:C1470._loadListboxColumns()
-	
 	
 Function resize()
 	ARRAY TEXT:C222($arrColNames; 0)
@@ -44,7 +43,7 @@ Function _loadListboxColumns()
 	var $nullpointer : Pointer
 	var $counter : Integer:=0
 	var $column : Object
-	var $file : 4D:C1709.File:=File:C1566("/LOGS/Explorer/"+$tablename+".myPrefs")
+	var $file : 4D:C1709.File:=File:C1566("/LOGS/Settings/Explorer/"+$tablename+".myPrefs")
 	If ($file.exists)
 		var $object : Object:=JSON Parse:C1218($file.getText())
 		This:C1470._loadListboxColumns:=[]
@@ -90,5 +89,80 @@ Function _loadListboxColumns()
 	End if 
 	
 	
+	
+Function useAll($class : 4D:C1709.DataClass)->$all : 4D:C1709.EntitySelection
+	If ($class.useAll#Null:C1517)
+		//%W-550.2
+		$all:=$class.useAll()
+		//%W+550.2
+	Else 
+		$all:=$class.all()
+	End if 
+	
+	
+Function calcWindowTitle($sel : 4D:C1709.EntitySelection)->$title : Text
+	var $class : 4D:C1709.DataClass:=$sel.getDataClass()
+	
+	If ($class.calcWindowTitle#Null:C1517)
+		//%W-550.2
+		$title:=$class.calcWindowTitle($sel)
+		//%W+550.2
+	Else 
+		$title:=$class.getInfo().name+"   -   "+String:C10($sel.length)+" von "+String:C10($class.all().length)
+	End if 
+	
+Function handleButtonClick($button : Text; $event : Integer)
+	If ($event=On Clicked:K2:4)
+		var $class : 4D:C1709.DataClass:=This:C1470._table
+		var $tablename : Text
+		var $tableptr : Pointer
+		Case of 
+			: ($button="All")
+				Form:C1466.listbox:=This:C1470.useAll($class)
+				SET WINDOW TITLE:C213(This:C1470.calcWindowTitle(Form:C1466.listbox); Current form window:C827)
+				
+			: ($button="None")
+				Form:C1466.listbox:=$class.newSelection()
+				SET WINDOW TITLE:C213(This:C1470.calcWindowTitle(Form:C1466.listbox); Current form window:C827)
+				
+			: ($button="Selected")
+				Form:C1466.listbox:=Form:C1466.Selection
+				SET WINDOW TITLE:C213(This:C1470.calcWindowTitle(Form:C1466.listbox); Current form window:C827)
+				
+			: ($button="Query")
+				// open standard query editor from Classic
+				// this shows how to use Classic editors for ORDA
+				// alternative: use ORDA query, by example https://github.com/ThomasMaul/QueryEditor/tree/main
+				$tablename:=This:C1470._table.getInfo().name
+				$tableptr:=Formula from string:C1601("->["+$tablename+"]").call()
+				QUERY:C277($tableptr->)
+				Form:C1466.listbox:=Create entity selection:C1512($tableptr->)
+				SET WINDOW TITLE:C213(This:C1470.calcWindowTitle(Form:C1466.listbox); Current form window:C827)
+				
+			: ($button="Sort")
+				$tablename:=This:C1470._table.getInfo().name
+				$tableptr:=Formula from string:C1601("->["+$tablename+"]").call()
+				USE ENTITY SELECTION:C1513(Form:C1466.listbox)
+				ORDER BY:C49($tableptr->)
+				Form:C1466.listbox:=Create entity selection:C1512($tableptr->)
+		End case 
+		
+	Else   // alternative, open submenu
+		var $submenu : Text:=Form:C1466.toolbar.buildSubPopup($button)
+		var $ref : Text:=Dynamic pop up menu:C1006($submenu)
+		RELEASE MENU:C978($submenu)
+		This:C1470.handleButtonClick($ref; On Clicked:K2:4)
+	End if 
+	
+Function handleSearchbox()  // handle the searchbox
+	If (This:C1470._table.quickSearch#Null:C1517)
+		//%W-550.2
+		Form:C1466.listbox:=This:C1470._table.quickSearch(vSearch)
+		//%W+550.2
+		SET WINDOW TITLE:C213(This:C1470.calcWindowTitle(Form:C1466.listbox); Current form window:C827)
+	End if 
+	
+Function displaySearchbox()->$bool : Boolean  // display the searchbox
+	$bool:=(This:C1470._table.quickSearch#Null:C1517)
 	
 	

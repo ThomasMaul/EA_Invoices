@@ -28,7 +28,7 @@
 		"onTimer",
 		"onBoundVariableChange"
 	],
-	"windowTitle": "Form.title",
+	"windowTitle": "",
 	"destination": "detailScreen",
 	"pages": [
 		{
@@ -102,8 +102,8 @@
 						"onBeginDragOver"
 					],
 					"currentItemPositionSource": "Form:C1466.SelectedPosition",
-					"hideSystemHighlight": true,
-					"showFooters": true,
+					"hideSystemHighlight": false,
+					"showFooters": false,
 					"columns": []
 				},
 				"buttonsubform": {

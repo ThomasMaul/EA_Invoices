@@ -2,7 +2,7 @@ var $event : Object:=FORM Event:C1606
 Case of 
 	: ($event.code=On Header Click:K2:40)
 		If (Right click:C712)
-			var $popup : Text:="Delete Column;Save;Clear Saved;-;"
+			var $popup : Text:=Get localized string:C991("ColumnRightClick")
 			var $table : 4D:C1709.DataClass:=Form:C1466.listbox.getDataClass()
 			var $tablename : Text:=$table.getInfo().name
 			var $nullpointer : Pointer
@@ -35,10 +35,10 @@ Case of
 						$col.push(New object:C1471("pos"; $i; "formula"; $formula; "width"; $width; "title"; $arrKopfNamen{$i}))
 					End for 
 					$object.columns:=$col
-					var $created : 4D:C1709.File:=File:C1566("/LOGS/Explorer/"+$tablename+".myPrefs").setText(JSON Stringify:C1217($object))
+					var $created : 4D:C1709.File:=File:C1566("/LOGS/Setup/Explorer/"+$tablename+".myPrefs").setText(JSON Stringify:C1217($object))
 					
 				: ($select=3)  // clear
-					File:C1566("/LOGS/Explorer/"+$tablename+".myPrefs").delete()
+					File:C1566("/LOGS/Setup/Explorer/"+$tablename+".myPrefs").delete()
 					
 				: ($select>4)
 					$col:=Split string:C1554($popup; ";")

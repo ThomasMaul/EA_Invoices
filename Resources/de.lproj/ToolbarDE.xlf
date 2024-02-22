@@ -1,33 +1,47 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <xliff xmlns="http://www.w3.org/1999/xhtml" version="1.0">
-    <file datatype="x-STR#" original="undefined" product-version="v14" source-language="en-US" target-language="de">
+	<file datatype="x-STR#" original="undefined" product-version="v14" source-language="en-US" target-language="de">
+		<header>
+			<note/>
+		</header>
+		<body>
+			<group resname="More_Buttons">
+				<trans-unit resname="Selected">
+					<source>Subset</source>
+					<target>Auswahl</target>
+				</trans-unit>
+				
+				<trans-unit resname="None">
+					<source>None</source>
+					<target>Nichts</target>
+				</trans-unit>
+			</group>
 
-        <header>
-            <note/>
-        </header>
-
-        <body>
-            <group resname="Messages">
-                <trans-unit resname="Overwrite_user_settings">   
-                    <source>Do you want to overwrite User Settings?</source>                    
-                    <target>Wirklich Benutzervoreinstellung überschreiben?</target>
-                </trans-unit>
-                 <trans-unit resname="Popup_Delete">   
-                    <source>Delete;Delete All</source>                    
-                    <target>Löschen;Alle löschen</target>
-                </trans-unit>              
-                 <trans-unit resname="Delete_all_buttons">   
-                    <source>Delete all buttons?</source>                    
-                    <target>Wirklich alle Buttons löschen?</target>
-                </trans-unit>     
-                 <trans-unit resname="Reset_Defaults">   
-                    <source>Reset to defaults?</source>                    
-                    <target>Auf Voreinstellungen zurücksetzen?</target>
-                </trans-unit>    
-            </group>
-
- 
-
-        </body>
-    </file>
+			<group resname="Toolbar_Messages">
+				<trans-unit resname="Overwrite_user_settings">
+					<source>Do you want to overwrite User Settings?</source>
+					<target>Wirklich Benutzervoreinstellung überschreiben?</target>
+				</trans-unit>
+				<trans-unit resname="Popup_Delete">
+					<source>Delete;Delete All</source>
+					<target>Löschen;Alle löschen</target>
+				</trans-unit>
+				<trans-unit resname="Delete_all_buttons">
+					<source>Delete all buttons?</source>
+					<target>Wirklich alle Buttons löschen?</target>
+				</trans-unit>
+				<trans-unit resname="Reset_Defaults">
+					<source>Reset to defaults?</source>
+					<target>Auf Voreinstellungen zurücksetzen?</target>
+				</trans-unit>
+			</group>
+			
+			<group resname="ORDAListbox">
+				<trans-unit resname="ColumnRightClick">
+					<source>Delete Column;Save;Clear Saved;-;</source>
+					<target>Spalte löschen;Vorlage Sichern;Vorlage löschen;-;</target>
+				</trans-unit>
+			</group>
+		</body>
+	</file>
 </xliff>

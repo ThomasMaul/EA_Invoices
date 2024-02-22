@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="http://www.w3.org/1999/xhtml" version="1.0">
+    <file datatype="x-STR#" original="undefined" product-version="v14" source-language="en-US" target-language="en">
+
+        <header>
+            <note/>
+        </header>
+
+        <body>
+            <group resname="Messages">
+                <trans-unit resname="Overwrite_user_settings">   
+                    <source>Do you want to overwrite User Settings?</source>                    
+                    <target>Wirklich Benutzervoreinstellung überschreiben?</target>
+                </trans-unit>
+                 <trans-unit resname="Popup_Delete">   
+                    <source>Delete;Delete All</source>                    
+                    <target>Löschen;Alle löschen</target>
+                </trans-unit>              
+                 <trans-unit resname="Delete_all_buttons">   
+                    <source>Delete all buttons?</source>                    
+                    <target>Wirklich alle Buttons löschen?</target>
+                </trans-unit>     
+                 <trans-unit resname="Reset_Defaults">   
+                    <source>Reset to defaults?</source>                    
+                    <target>Auf Voreinstellungen zurücksetzen?</target>
+                </trans-unit>    
+            </group>
+
+ 
+
+        </body>
+    </file>
+</xliff>
