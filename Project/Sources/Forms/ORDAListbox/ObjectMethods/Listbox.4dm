@@ -45,6 +45,8 @@ Case of
 					var $title : Text:=$col[$select-1]
 					LISTBOX INSERT COLUMN FORMULA:C970(*; "Listbox"; $event.column+1; $title; "this."+$title; Is text:K8:3; $title; $nullpointer)
 					OBJECT SET TITLE:C194(*; $title; $title)
+					Form:C1466.ORDA_listbox._columnwidths.insert($event.column; 50)
+					Form:C1466.ORDA_listbox.resize()
 			End case 
 		End if 
 		

@@ -24,8 +24,6 @@
 Case of 
 		//MARK: button - called from object method
 	: ($job="")
-		
-		
 		var $event : Integer:=FORM Event:C1606.code
 		
 		Case of 
@@ -107,4 +105,20 @@ Case of
 			CLOSE WINDOW:C154($win)
 		End if 
 		
+	: ($job="customButton")
+		Case of 
+			: ($classname="Clients")
+				Form:C1466.ORDA_listbox.setTable(ds:C1482.CLIENTS)
+				Form:C1466.ORDA_listbox.load()
+				Form:C1466.ORDA_listbox.setInputForm()
+			: ($classname="Invoices")
+				Form:C1466.ORDA_listbox.setTable(ds:C1482.INVOICES)
+				Form:C1466.ORDA_listbox.load()
+				Form:C1466.ORDA_listbox.setInputForm()
+			: ($classname="Products")
+				Form:C1466.ORDA_listbox.setTable(ds:C1482.PRODUCTS)
+				Form:C1466.ORDA_listbox.load()
+				Form:C1466.ORDA_listbox.setInputForm()
+				
+		End case 
 End case 

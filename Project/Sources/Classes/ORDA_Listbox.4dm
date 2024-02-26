@@ -3,6 +3,12 @@ Class constructor($table : 4D:C1709.DataClass)
 	This:C1470.tablename:=This:C1470.table.getInfo().name
 	This:C1470._columnwidths:=[]
 	
+Function setTable($table : 4D:C1709.DataClass)
+	This:C1470.table:=$table
+	This:C1470.tablename:=This:C1470.table.getInfo().name
+	This:C1470._columnwidths:=[]
+	
+	
 Function load()
 	Form:C1466.Search:=""
 	Form:C1466.SearchCopy:=""
@@ -21,6 +27,10 @@ Function resize()
 	ARRAY POINTER:C280($arrStyles; 0)
 	
 	LISTBOX GET ARRAYS:C832(*; "Listbox"; $arrColNames; $arrHeaderNames; $arrColVars; $arrHeaderVars; $arrColsVisible; $arrStyles)
+	If (Size of array:C274($arrColNames)>This:C1470._columnwidths.length)
+		
+	End if 
+	
 	var $width : Integer:=This:C1470._columnwidths.sum()
 	
 	var $left; $top; $right; $bottom; $view
@@ -46,7 +56,7 @@ Function _loadListboxColumns()
 	var $file : 4D:C1709.File:=File:C1566("/LOGS/Settings/Explorer/"+This:C1470.tablename+".myPrefs")
 	If ($file.exists)
 		var $object : Object:=JSON Parse:C1218($file.getText())
-		This:C1470._loadListboxColumns:=[]
+		This:C1470._columnwidths:=[]
 		
 		For each ($column; $object.columns)
 			$counter+=1
@@ -87,6 +97,36 @@ Function _loadListboxColumns()
 			End if 
 		End for each 
 	End if 
+	
+Function setInputForm()
+	//  load Preview Form
+	Form:C1466.preview:=New object:C1471
+	Form:C1466.preview.data:=Form:C1466.SelectedElement  // pass the selected element
+	
+	var $tableptr : Pointer:=Formula from string:C1601("->["+This:C1470.tablename+"]").call()
+	var $form : 4D:C1709.File:=File:C1566("/PROJECT/Sources/TableForms/"+String:C10(Table:C252($tableptr))+"/Input_ORDA/form.4DForm")
+	If ($form.exists)
+		OBJECT SET SUBFORM:C1138(*; "Preview"; $tableptr->; "Input_ORDA")
+	Else 
+		// create form with text + field in loop
+		// use this form
+		var $page : Object:=New object:C1471()
+		
+		var $top : Integer:=20
+		var $fieldname : Text
+		For each ($fieldname; This:C1470.table)
+			var $text : Object:=New object:C1471("height"; 20; "width"; 130; "left"; 20; "top"; $top; "text"; $fieldname; "type"; "text")
+			$page["text_"+String:C10($top)]:=$text
+			var $field : Object:=New object:C1471("height"; 20; "width"; 300; "left"; 160; "top"; $top; "type"; "input"; "enterable"; False:C215; "dataSource"; "Form.data."+$fieldname)
+			$page[$fieldname]:=$field
+			$top:=$top+30
+		End for each 
+		
+		var $sub : Object:=New object:C1471("pages"; New collection:C1472(Null:C1517; New object:C1471("objects"; $page)); "destination"; "detailScreen")
+		OBJECT SET SUBFORM:C1138(*; "Preview"; $sub)
+		
+	End if 
+	
 	
 	
 	
@@ -143,6 +183,9 @@ Function handleButtonClick($button : Text; $event : Integer)
 				USE ENTITY SELECTION:C1513(Form:C1466.listbox)
 				ORDER BY:C49($tableptr->)
 				Form:C1466.listbox:=Create entity selection:C1512($tableptr->)
+				
+			Else   // everything from your application to customize
+				ORDA_Listbox_Method("customButton"; $button)
 		End case 
 		
 	Else   // alternative, open submenu

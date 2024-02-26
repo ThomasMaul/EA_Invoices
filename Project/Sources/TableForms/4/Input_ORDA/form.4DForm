@@ -1,0 +1,220 @@
+{
+	"destination": "detailScreen",
+	"windowSizingX": "fixed",
+	"windowMinHeight": 640,
+	"menuBar": "Main",
+	"markerHeader": 15,
+	"markerBody": 200,
+	"markerBreak": 220,
+	"markerFooter": 240,
+	"events": [
+		"onLoad",
+		"onUnload"
+	],
+	"method": "method.4dm",
+	"pageFormat": {
+		"paperName": "US Letter",
+		"paperWidth": "612pt",
+		"paperHeight": "792pt"
+	},
+	"pages": [
+		null,
+		{
+			"objects": {
+				"Rectangle1": {
+					"type": "rectangle",
+					"top": 285,
+					"left": 19,
+					"width": 615,
+					"height": 265,
+					"sizingY": "grow",
+					"fill": "#DDDDDD",
+					"stroke": "#CCCCCC",
+					"borderRadius": 8
+				},
+				"Rectangle3": {
+					"type": "rectangle",
+					"top": 35,
+					"left": 19,
+					"width": 615,
+					"height": 225,
+					"fill": "#DDDDDD",
+					"stroke": "#CCCCCC",
+					"borderRadius": 8
+				},
+				"Group Box1": {
+					"type": "text",
+					"top": 15,
+					"left": 29,
+					"width": 320,
+					"height": 16,
+					"stroke": "#777777",
+					"fontFamily": "System Font Regular",
+					"fontSize": 13,
+					"text": ":xliff:Product Details"
+				},
+				"name": {
+					"type": "input",
+					"top": 61,
+					"left": 149,
+					"width": 140,
+					"height": 16,
+					"dataSource": "Form:C1466.data.Reference",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"name1": {
+					"type": "input",
+					"top": 85,
+					"left": 149,
+					"width": 448,
+					"height": 112,
+					"dataSource": "Form:C1466.data.Name",
+					"contextMenu": "none",
+					"scrollbarVertical": "visible",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"name3_cur": {
+					"type": "input",
+					"top": 205,
+					"left": 149,
+					"width": 140,
+					"height": 16,
+					"dataSource": "Form:C1466.data.UnitPrice",
+					"dataSourceTypeHint": "number",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"name5": {
+					"type": "input",
+					"top": 229,
+					"left": 149,
+					"width": 140,
+					"height": 16,
+					"defaultValue": "19,6",
+					"dataSource": "Form:C1466.data.TaxRate",
+					"dataSourceTypeHint": "number",
+					"contextMenu": "none",
+					"numberFormat": "###,##0.00%",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"logo": {
+					"type": "input",
+					"top": 305,
+					"left": 40,
+					"width": 569,
+					"height": 220,
+					"sizingY": "grow",
+					"dataSource": "Form:C1466.data.Picture",
+					"dataSourceTypeHint": "picture",
+					"tooltip": "Logo",
+					"fill": "transparent",
+					"borderStyle": "none",
+					"pictureFormat": "truncatedCenter",
+					"dragging": "custom"
+				},
+				"Text19": {
+					"type": "text",
+					"top": 61,
+					"left": 39,
+					"width": 100,
+					"height": 16,
+					"stroke": "#777777",
+					"textAlign": "right",
+					"text": ":xliff:Reference"
+				},
+				"Text1": {
+					"type": "text",
+					"top": 85,
+					"left": 39,
+					"width": 100,
+					"height": 16,
+					"stroke": "#777777",
+					"textAlign": "right",
+					"text": ":xliff:Name"
+				},
+				"Text3": {
+					"type": "text",
+					"top": 205,
+					"left": 39,
+					"width": 100,
+					"height": 16,
+					"stroke": "#777777",
+					"textAlign": "right",
+					"text": ":xliff:Unit Price"
+				},
+				"Text5": {
+					"type": "text",
+					"top": 229,
+					"left": 39,
+					"width": 100,
+					"height": 16,
+					"stroke": "#777777",
+					"textAlign": "right",
+					"text": ":xliff:Tax Rate"
+				},
+				"Group Box2": {
+					"type": "text",
+					"top": 265,
+					"left": 29,
+					"width": 320,
+					"height": 16,
+					"stroke": "#777777",
+					"fontFamily": "System Font Regular",
+					"fontSize": 13,
+					"text": ":xliff:Product Picture"
+				},
+				"Rectangle2": {
+					"type": "rectangle",
+					"top": 35,
+					"left": 654,
+					"width": 315,
+					"height": 515,
+					"sizingX": "grow",
+					"sizingY": "grow",
+					"fill": "#DDDDDD",
+					"stroke": "#CCCCCC",
+					"borderRadius": 8
+				}
+			}
+		}
+	],
+	"editor": {
+		"activeView": "View 1",
+		"defaultView": "View 1",
+		"views": {
+			"View 1": {},
+			"View 2": {},
+			"View 3": {},
+			"View 4": {},
+			"View 5": {},
+			"View 6": {},
+			"View 7": {},
+			"View 8": {},
+			"View 9": {}
+		}
+	},
+	"geometryStamp": 5,
+	"rightMargin": 20,
+	"bottomMargin": 20,
+	"$4d": {
+		"version": "1",
+		"kind": "form"
+	}
+}

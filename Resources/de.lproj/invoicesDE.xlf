@@ -325,6 +325,14 @@
                     <source>General Settings</source>                    
                     <target>Allgemeine Einstellungen</target>
                 </trans-unit> 
+                 <trans-unit resname="Product Details">   
+                    <source>Product Details</source>                    
+                    <target>Produktdetails</target>
+                </trans-unit> 
+                <trans-unit resname="Product Picture">   
+                    <source>Product Picture</source>                    
+                    <target>Produktbild</target>
+                </trans-unit>                
             </group>                 
 
             <group resname="Menus">
