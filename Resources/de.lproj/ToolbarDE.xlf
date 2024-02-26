@@ -41,6 +41,30 @@
 					<source>Delete Column;Save;Clear Saved;-;</source>
 					<target>Spalte löschen;Vorlage Sichern;Vorlage löschen;-;</target>
 				</trans-unit>
+				<trans-unit resname="SaveChanges">
+					<source>Save changes?</source>
+					<target>Änderungen speichern?</target>
+				</trans-unit>
+				<trans-unit resname="SomebodyElseChanged">
+					<source>Someone else has changed the same fields in the meantime, the data cannot be saved!</source>
+					<target>Jemand anderes hat in der Zwischenzeit die gleichen Felder verändert, die Daten können nicht gespeichert werden!</target>
+				</trans-unit>				
+				<trans-unit resname="RecordLockedFrom">
+					<source>Record is locked from </source>
+					<target>Datensatz ist gesperrt von </target>
+				</trans-unit>	
+				<trans-unit resname="LockedWait">
+					<source>Wait</source>
+					<target>Warten</target>
+				</trans-unit>	
+				<trans-unit resname="LockedCancel">
+					<source>Cancel</source>
+					<target>Verwerfen</target>
+				</trans-unit>									
+				<trans-unit resname="LockedClassic">
+					<source>The data record is currently being processed by xxx! Open read-only...</source>
+					<target>Der Datensatz wird zur Zeit von xxx bearbeitet!. Öffne nur lesend...</target>
+				</trans-unit>	
 			</group>
 		</body>
 	</file>

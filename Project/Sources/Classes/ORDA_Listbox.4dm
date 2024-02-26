@@ -1,12 +1,13 @@
 Class constructor($table : 4D:C1709.DataClass)
-	This:C1470._table:=$table
+	This:C1470.table:=$table
+	This:C1470.tablename:=This:C1470.table.getInfo().name
 	This:C1470._columnwidths:=[]
 	
 Function load()
 	Form:C1466.Search:=""
 	Form:C1466.SearchCopy:=""
 	
-	Form:C1466.listbox:=This:C1470.useAll(This:C1470._table)
+	Form:C1466.listbox:=This:C1470.useAll(This:C1470.table)
 	SET WINDOW TITLE:C213(This:C1470.calcWindowTitle(Form:C1466.listbox); Current form window:C827)
 	
 	This:C1470._loadListboxColumns()
@@ -37,13 +38,12 @@ Function resize()
 	End if 
 	
 Function _loadListboxColumns()
-	var $tablename : Text:=This:C1470._table.getInfo().name
 	LISTBOX DELETE COLUMN:C830(*; "listbox"; 1; 100)
 	
 	var $nullpointer : Pointer
 	var $counter : Integer:=0
 	var $column : Object
-	var $file : 4D:C1709.File:=File:C1566("/LOGS/Settings/Explorer/"+$tablename+".myPrefs")
+	var $file : 4D:C1709.File:=File:C1566("/LOGS/Settings/Explorer/"+This:C1470.tablename+".myPrefs")
 	If ($file.exists)
 		var $object : Object:=JSON Parse:C1218($file.getText())
 		This:C1470._loadListboxColumns:=[]
@@ -60,8 +60,8 @@ Function _loadListboxColumns()
 	Else 
 		// without defined content we use the first 10 attributes to display
 		var $fieldname : Text
-		For each ($fieldname; This:C1470._table) While ($counter<10)
-			$column:=This:C1470._table[$fieldname]
+		For each ($fieldname; This:C1470.table) While ($counter<10)
+			$column:=This:C1470.table[$fieldname]
 			If ($column.kind="storage")
 				If (($column.fieldType#Is BLOB:K8:12) & ($column.fieldType#Is object:K8:27))
 					$counter:=$counter+1
@@ -74,8 +74,8 @@ Function _loadListboxColumns()
 		$view:=$right-$left-16
 		var $width : Integer:=Int:C8($view/$counter)
 		$counter:=0
-		For each ($fieldname; This:C1470._table) While ($counter<10)
-			$column:=This:C1470._table[$fieldname]
+		For each ($fieldname; This:C1470.table) While ($counter<10)
+			$column:=This:C1470.table[$fieldname]
 			If ($column.kind="storage")
 				If (($column.fieldType#Is BLOB:K8:12) & ($column.fieldType#Is object:K8:27))
 					$counter:=$counter+1
@@ -108,12 +108,12 @@ Function calcWindowTitle($sel : 4D:C1709.EntitySelection)->$title : Text
 		$title:=$class.calcWindowTitle($sel)
 		//%W+550.2
 	Else 
-		$title:=$class.getInfo().name+"   -   "+String:C10($sel.length)+" von "+String:C10($class.all().length)
+		$title:=This:C1470.tablename+"   -   "+String:C10($sel.length)+" von "+String:C10($class.all().length)
 	End if 
 	
 Function handleButtonClick($button : Text; $event : Integer)
 	If ($event=On Clicked:K2:4)
-		var $class : 4D:C1709.DataClass:=This:C1470._table
+		var $class : 4D:C1709.DataClass:=This:C1470.table
 		var $tablename : Text
 		var $tableptr : Pointer
 		Case of 
@@ -133,15 +133,13 @@ Function handleButtonClick($button : Text; $event : Integer)
 				// open standard query editor from Classic
 				// this shows how to use Classic editors for ORDA
 				// alternative: use ORDA query, by example https://github.com/ThomasMaul/QueryEditor/tree/main
-				$tablename:=This:C1470._table.getInfo().name
-				$tableptr:=Formula from string:C1601("->["+$tablename+"]").call()
+				$tableptr:=Formula from string:C1601("->["+This:C1470.tablename+"]").call()
 				QUERY:C277($tableptr->)
 				Form:C1466.listbox:=Create entity selection:C1512($tableptr->)
 				SET WINDOW TITLE:C213(This:C1470.calcWindowTitle(Form:C1466.listbox); Current form window:C827)
 				
 			: ($button="Sort")
-				$tablename:=This:C1470._table.getInfo().name
-				$tableptr:=Formula from string:C1601("->["+$tablename+"]").call()
+				$tableptr:=Formula from string:C1601("->["+This:C1470.tablename+"]").call()
 				USE ENTITY SELECTION:C1513(Form:C1466.listbox)
 				ORDER BY:C49($tableptr->)
 				Form:C1466.listbox:=Create entity selection:C1512($tableptr->)
@@ -155,14 +153,15 @@ Function handleButtonClick($button : Text; $event : Integer)
 	End if 
 	
 Function handleSearchbox()  // handle the searchbox
-	If (This:C1470._table.quickSearch#Null:C1517)
+	If (This:C1470.table.quickSearch#Null:C1517)
 		//%W-550.2
-		Form:C1466.listbox:=This:C1470._table.quickSearch(vSearch)
+		Form:C1466.listbox:=This:C1470.table.quickSearch(vSearch)
 		//%W+550.2
 		SET WINDOW TITLE:C213(This:C1470.calcWindowTitle(Form:C1466.listbox); Current form window:C827)
 	End if 
 	
 Function displaySearchbox()->$bool : Boolean  // display the searchbox
-	$bool:=(This:C1470._table.quickSearch#Null:C1517)
+	$bool:=(This:C1470.table.quickSearch#Null:C1517)
+	
 	
 	

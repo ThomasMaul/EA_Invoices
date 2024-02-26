@@ -49,7 +49,7 @@
 						"onClick"
 					]
 				},
-				"Direkteingabe": {
+				"preview": {
 					"type": "subform",
 					"top": 1,
 					"left": 791,
@@ -57,7 +57,7 @@
 					"height": 769,
 					"sizingX": "grow",
 					"sizingY": "grow",
-					"dataSource": "Form:C1466.Direkt",
+					"dataSource": "Form:C1466.preview",
 					"detailForm": "leer",
 					"enterableInList": false,
 					"deletableInList": false,
@@ -126,7 +126,7 @@
 			}
 		}
 	],
-	"geometryStamp": 35,
+	"geometryStamp": 36,
 	"method": "method.4dm",
 	"editor": {
 		"activeView": "View 1",

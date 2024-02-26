@@ -1,3 +1,5 @@
+var $sub : Object
+
 Case of 
 	: (Form event code:C388=On Load:K2:1)
 		Form:C1466.ORDA_listbox:=cs:C1710.ORDA_Listbox.new(ds:C1482.CLIENTS)
@@ -50,12 +52,40 @@ Case of
 				vSearch:=""  // default text empty
 				Form:C1466.toolbar.add($searchbox)
 				
-				C_OBJECT:C1216($sub)
 				$sub:=Form:C1466.toolbar.getSubform("buttonsubform")
 				OBJECT SET SUBFORM:C1138(*; "buttonsubform"; $sub)
 			End if 
 		End if 
 		
+		
+		// MARK: load Preview Form
+		Form:C1466.preview:=New object:C1471
+		Form:C1466.preview.data:=Form:C1466.SelectedElement  // pass the selected element
+		Case of 
+			: (Form:C1466.ORDA_listbox.tablename="CLIENTS")
+				OBJECT SET SUBFORM:C1138(*; "Preview"; [CLIENTS:1]; "Input_ORDA")
+				
+				
+				
+			Else 
+				// create form with text + field in loop
+				// use this form
+				var $page : Object:=New object:C1471()
+				
+				var $top : Integer:=20
+				var $fieldname : Text
+				For each ($fieldname; ds:C1482[Form:C1466.table])
+					var $text : Object:=New object:C1471("height"; 20; "width"; 130; "left"; 20; "top"; $top; "text"; $fieldname; "type"; "text")
+					$page["text_"+String:C10($top)]:=$text
+					var $field : Object:=New object:C1471("height"; 20; "width"; 300; "left"; 160; "top"; $top; "type"; "input"; "enterable"; False:C215; "dataSource"; "Form.data."+$fieldname)
+					$page[$fieldname]:=$field
+					$top:=$top+30
+				End for each 
+				
+				$sub:=New object:C1471("pages"; New collection:C1472(Null:C1517; New object:C1471("objects"; $page)); "destination"; "detailScreen")
+				OBJECT SET SUBFORM:C1138(*; "Preview"; $sub)
+				
+		End case 
 		
 	: (Form event code:C388=On Unload:K2:2)
 		// nothing in this example

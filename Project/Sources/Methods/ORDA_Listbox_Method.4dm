@@ -1,18 +1,110 @@
 //%attributes = {}
-// called from ORDA_listbox Toolbar (buttons on top)
-// those buttons automatically call a method using the method property, so it needs to be a project method
+/* this method allows customization, it is used for 3 different purposes
 
-var $event : Integer:=FORM Event:C1606.code
+- used as object method for Toolbar buttons (they must be a project mode). (from ORDA_listbox Toolbar)
+   zero parameters given
+
+- prepare preview form, init your data here depending of your tables
+   parameter "preview"
+
+- handle double click, either open classic process or open form as ORDA form in current process
+  parameter "doubleclick" 
+
+- double click - new process, opens input form in classic mode
+  this is a placeholder, most of you have code for that already
+  instead of using this placeholder, call your existing code
+  the placeholder uses as job "doubleclick_process", with additional parameters
+  tablename and primary key
+
+*/
+
+#DECLARE($job : Text; $classname : Text; $pk : Text)
+
 
 Case of 
-	: (($event=On Clicked:K2:4) | ($event=On Alternative Click:K2:36))
-		If (Form:C1466.buttons#Null:C1517)  // to be sure we are in the right form...
-			var $buttonname : Text:=FORM Event:C1606.objectName
-			CALL FORM:C1391(Current form window:C827; Formula:C1597(Form:C1466.ORDA_listbox.handleButtonClick($buttonname; FORM Event:C1606.code)))
+		//MARK: button - called from object method
+	: ($job="")
+		
+		
+		var $event : Integer:=FORM Event:C1606.code
+		
+		Case of 
+			: (($event=On Clicked:K2:4) | ($event=On Alternative Click:K2:36))
+				If (Form:C1466.buttons#Null:C1517)  // to be sure we are in the right form...
+					var $buttonname : Text:=FORM Event:C1606.objectName
+					CALL FORM:C1391(Current form window:C827; Formula:C1597(Form:C1466.ORDA_listbox.handleButtonClick($buttonname; FORM Event:C1606.code)))
+				End if 
+				
+			: ($event=On Data Change:K2:15)
+				If (String:C10(FORM Event:C1606.objectName)="search")
+					CALL FORM:C1391(Current form window:C827; Formula:C1597(Form:C1466.ORDA_listbox.handleSearchbox()))
+				End if 
+		End case 
+		
+		//MARK: Preview - init your preview data
+	: ($job="preview")
+		// customize this for your tables
+		// executed in context of the preview form
+		
+		$classname:=String:C10(Form:C1466.data.getDataClass().getInfo().name)
+		
+		Case of 
+			: ($classname="CLIENTS")
+				// load customfields done via computed attribute
+				// sort invoices done via computed attribute as relation
+				// for example purpose, we just hide/show listbox depending of computed content
+				If ((Form:C1466.data.customFieldsLB#Null:C1517) && (Form:C1466.data.customFieldsLB.result.length>0))
+					OBJECT SET VISIBLE:C603(*; "customF_LB"; True:C214)
+				Else 
+					OBJECT SET VISIBLE:C603(*; "customF_LB"; False:C215)
+				End if 
+		End case 
+		
+		
+		//MARK: Double click - handle detail form
+	: ($job="doubleclick")
+		$classname:=String:C10(Form:C1466.preview.data.getDataClass().getInfo().name)
+		
+		Case of 
+			: ($classname="CLIENTSnew")
+				
+			Else 
+				var $p : Integer:=New process:C317("ORDA_Listbox_Method"; 0; "ORDA_Listbox_Doubleclick"; "doubleclick_process"; $classname; Form:C1466.SelectedElement.getKey(dk key as string:K85:16))
+		End case 
+		
+		//MARK: Classic Mode - generic Double click 
+	: ($job="doubleclick_process")
+		// better to call above in double click directly your existing code to handle classic mode detail form
+		// this generic method is just to help coding...
+		// it requires that there is an input form named "Input" for each form, else it will do nothing
+		
+		// only if the form exist. Note that using that path checking works interpreted or compiled (checking inside 4DZ)
+		var $tableptr : Pointer:=Formula from string:C1601("->["+$classname+"]").call()
+		var $form : 4D:C1709.File:=File:C1566("/PROJECT/Sources/TableForms/"+String:C10(Table:C252($tableptr))+"/Input/form.4DForm")
+		If ($form.exists)
+			var $entity : 4D:C1709.Entity:=ds:C1482[$classname].get($pk)
+			var $sel : 4D:C1709.EntitySelection:=ds:C1482[$classname].newSelection()
+			USE ENTITY SELECTION:C1513($sel.add($entity))
+			READ WRITE:C146($tableptr->)
+			LOAD RECORD:C52($tableptr->)
+			
+			var $win : Integer:=Open form window:C675($tableptr->; "Input")
+			FORM SET INPUT:C55($tableptr->; "Input")
+			If (Locked:C147($tableptr->))
+				var $long : Integer
+				var $user : Text
+				var $machineuser : Text
+				var $processname : Text
+				var $message : Text
+				LOCKED BY:C353($tableptr->; $long; $user; $machineuser; $processname)
+				$user:=$user+"/"+$machineuser+" ("+$processname+")"
+				$message:=Replace string:C233(Get localized string:C991("LockedClassic"); "xxx"; $user)
+				ALERT:C41($message)
+				DISPLAY SELECTION:C59($tableptr->)
+			Else 
+				MODIFY RECORD:C57($tableptr->; *)
+			End if 
+			CLOSE WINDOW:C154($win)
 		End if 
 		
-	: ($event=On Data Change:K2:15)
-		If (String:C10(FORM Event:C1606.objectName)="search")
-			CALL FORM:C1391(Current form window:C827; Formula:C1597(Form:C1466.ORDA_listbox.handleSearchbox()))
-		End if 
 End case 

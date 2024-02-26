@@ -47,4 +47,44 @@ Case of
 					OBJECT SET TITLE:C194(*; $title; $title)
 			End case 
 		End if 
+		
+	: ($event.code=On Selection Change:K2:29)
+		If (Form:C1466.preview.data#Null:C1517)
+			If (Form:C1466.preview.data.touched())
+				C_COLLECTION:C1488($touchedAttributes)
+				$touchedAttributes:=Form:C1466.preview.data.touchedAttributes()
+				var $check : Boolean:=True:C214
+				
+				If ($check)
+					CONFIRM:C162(Get localized string:C991("SaveChanges"))
+					If (OK=1)
+						C_OBJECT:C1216($status)
+						$status:=Form:C1466.preview.data.save(dk auto merge:K85:24)
+						Case of 
+							: ($status.success)
+								// nichts, also passt!
+							: ($status.status=dk status automerge failed:K85:25)
+								ALERT:C41(Get localized string:C991("SomebodyElseChanged"))
+							: ($status.status=dk status locked:K85:21)
+								var $user : Text:=$status.lockInfo.user_name+"/"+$status.lockInfo.host_name+"/"+$status.lockInfo.task_name
+								CONFIRM:C162(Get localized string:C991("RecordLockedFrom")+$user; Get localized string:C991("LockedWait"); Get localized string:C991("LockedCancel"))
+								If (OK=1)
+									LISTBOX SELECT ROW:C912(*; "Listbox"; Num:C11(Form:C1466.preview.Position); lk replace selection:K53:1)
+									Form:C1466.SelectedElement:=Form:C1466.preview.data
+								Else 
+								End if 
+						End case 
+					End if 
+				End if 
+			End if 
+		End if 
+		Form:C1466.preview.data:=Form:C1466.SelectedElement
+		Form:C1466.preview.Position:=Form:C1466.SelectedPosition
+		EXECUTE METHOD IN SUBFORM:C1085("preview"; Formula:C1597(ORDA_Listbox_Method("preview")))
+		
+	: ($event.code=On Double Clicked:K2:5)
+		If (Form:C1466.SelectedElement.getKey(dk key as string:K85:16)#"")
+			ORDA_Listbox_Method("doubleclick")
+		End if 
+		
 End case 

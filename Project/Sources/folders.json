@@ -26,8 +26,7 @@
 			"Invoices_ChangeColor",
 			"Invoices_Delete",
 			"Invoices_GetNumber",
-			"Invoices_GetNumberPrf",
-			"OnStartup"
+			"Invoices_GetNumberPrf"
 		]
 	},
 	"Entry": {

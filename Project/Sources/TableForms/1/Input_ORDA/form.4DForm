@@ -1,0 +1,812 @@
+{
+	"destination": "detailScreen",
+	"windowSizingX": "fixed",
+	"windowMinHeight": 720,
+	"menuBar": "Main",
+	"markerHeader": 15,
+	"markerBody": 200,
+	"markerBreak": 220,
+	"markerFooter": 240,
+	"events": [
+		"onLoad"
+	],
+	"method": "method.4dm",
+	"pageFormat": {
+		"paperName": "DIN A4",
+		"paperWidth": "595pt",
+		"paperHeight": "842pt"
+	},
+	"pages": [
+		null,
+		{
+			"objects": {
+				"Rectangle1": {
+					"type": "rectangle",
+					"top": 438,
+					"left": 29,
+					"width": 950,
+					"height": 265,
+					"sizingX": "grow",
+					"sizingY": "grow",
+					"fill": "#DDDDDD",
+					"stroke": "#CCCCCC",
+					"borderRadius": 8
+				},
+				"Rectangle": {
+					"type": "rectangle",
+					"top": 28,
+					"left": 29,
+					"width": 540,
+					"height": 385,
+					"fill": "#DDDDDD",
+					"stroke": "#CCCCCC",
+					"borderRadius": 8
+				},
+				"name": {
+					"type": "input",
+					"top": 52,
+					"left": 149,
+					"width": 395,
+					"height": 16,
+					"dataSource": "Form:C1466.data.Name",
+					"textAlign": "left",
+					"tooltip": "Client Name",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none"
+				},
+				"address1": {
+					"type": "input",
+					"top": 76,
+					"left": 149,
+					"width": 395,
+					"height": 16,
+					"dataSource": "Form:C1466.data.Address1",
+					"textAlign": "left",
+					"tooltip": "Client Address 1",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none"
+				},
+				"address2": {
+					"type": "input",
+					"top": 100,
+					"left": 149,
+					"width": 395,
+					"height": 16,
+					"dataSource": "Form:C1466.data.Address2",
+					"textAlign": "left",
+					"tooltip": "Client Address 2",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none"
+				},
+				"city": {
+					"type": "input",
+					"top": 124,
+					"left": 149,
+					"width": 395,
+					"height": 16,
+					"dataSource": "Form:C1466.data.City",
+					"textAlign": "left",
+					"tooltip": "Client City",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none"
+				},
+				"city1": {
+					"type": "input",
+					"top": 148,
+					"left": 149,
+					"width": 160,
+					"height": 16,
+					"dataSource": "Form:C1466.data.State",
+					"textAlign": "left",
+					"tooltip": "Client State",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none"
+				},
+				"zipCode": {
+					"type": "input",
+					"top": 148,
+					"left": 384,
+					"width": 160,
+					"height": 16,
+					"dataSource": "Form:C1466.data.ZipCode",
+					"textAlign": "left",
+					"tooltip": "Client ZipCode",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none"
+				},
+				"zipCode1": {
+					"type": "input",
+					"top": 172,
+					"left": 149,
+					"width": 395,
+					"height": 16,
+					"dataSource": "Form:C1466.data.Country",
+					"textAlign": "left",
+					"tooltip": "Client ZipCode",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none"
+				},
+				"telephone": {
+					"type": "input",
+					"top": 208,
+					"left": 149,
+					"width": 160,
+					"height": 16,
+					"dataSource": "Form:C1466.data.Phone",
+					"textAlign": "left",
+					"fontFamily": ".Helvetica Neue DeskInterface",
+					"fontSize": 13,
+					"tooltip": "Client Telephone",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none"
+				},
+				"telephone1": {
+					"type": "input",
+					"top": 208,
+					"left": 384,
+					"width": 160,
+					"height": 16,
+					"dataSource": "Form:C1466.data.Mobile",
+					"textAlign": "left",
+					"fontFamily": ".Helvetica Neue DeskInterface",
+					"fontSize": 13,
+					"tooltip": "Client Mobile",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none"
+				},
+				"email": {
+					"type": "input",
+					"top": 232,
+					"left": 149,
+					"width": 395,
+					"height": 16,
+					"dataSource": "Form:C1466.data.Email",
+					"textAlign": "left",
+					"fontFamily": ".Helvetica Neue DeskInterface",
+					"fontSize": 13,
+					"tooltip": "Client Email",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none"
+				},
+				"webSite": {
+					"type": "input",
+					"top": 256,
+					"left": 149,
+					"width": 395,
+					"height": 16,
+					"dataSource": "Form:C1466.data.WebSite",
+					"textAlign": "left",
+					"fontFamily": ".Helvetica Neue DeskInterface",
+					"fontSize": 13,
+					"tooltip": "Client Web Site",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none"
+				},
+				"contact": {
+					"type": "input",
+					"top": 292,
+					"left": 149,
+					"width": 395,
+					"height": 16,
+					"dataSource": "Form:C1466.data.Contact",
+					"textAlign": "left",
+					"fontFamily": ".Helvetica Neue DeskInterface",
+					"fontSize": 13,
+					"tooltip": "Client Contact",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none"
+				},
+				"invl_DiscountRate": {
+					"type": "input",
+					"top": 316,
+					"left": 149,
+					"width": 150,
+					"height": 16,
+					"dataSource": "Form:C1466.data.DiscountRate",
+					"dataSourceTypeHint": "number",
+					"textAlign": "left",
+					"fontFamily": ".Helvetica Neue DeskInterface",
+					"fontSize": 13,
+					"tooltip": "Product Discount Rate",
+					"contextMenu": "none",
+					"numberFormat": "##0%",
+					"dragging": "none",
+					"dropping": "none"
+				},
+				"comments": {
+					"type": "input",
+					"top": 340,
+					"left": 149,
+					"width": 395,
+					"height": 59,
+					"dataSource": "Form:C1466.data.Comments",
+					"textAlign": "left",
+					"fontFamily": ".Helvetica Neue DeskInterface",
+					"fontSize": 13,
+					"tooltip": "Comments on Client",
+					"styledText": true,
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onLoad",
+						"onValidate",
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"clientInvoices": {
+					"type": "listbox",
+					"top": 458,
+					"left": 30,
+					"width": 864,
+					"height": 235,
+					"sizingX": "grow",
+					"sizingY": "grow",
+					"resizingMode": "legacy",
+					"listboxType": "collection",
+					"focusable": false,
+					"movableRows": false,
+					"rowHeight": "20px",
+					"headerHeight": "20px",
+					"showFooters": true,
+					"footerHeight": "35px",
+					"staticColumnCount": 8,
+					"selectionMode": "single",
+					"scrollbarHorizontal": "hidden",
+					"horizontalLineStroke": "#DDDDDD",
+					"verticalLineStroke": "#DDDDDD",
+					"fill": "#FFFFFF",
+					"alternateFill": "#EEEEEE",
+					"rowStrokeSource": "Invoices_ChangeColor",
+					"textAlign": "right",
+					"verticalAlign": "middle",
+					"borderStyle": "none",
+					"events": [
+						"onDoubleClick",
+						"onSelectionChange"
+					],
+					"currentItemSource": "",
+					"dataSource": "Form:C1466.data.invoices_sort",
+					"columns": [
+						{
+							"name": "invoicesNumber",
+							"width": 80,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"enterable": false,
+							"stroke": "automatic",
+							"fill": "#FFFFFF",
+							"alternateFill": "#EEEEEE",
+							"textAlign": "left",
+							"verticalAlign": "middle",
+							"header": {
+								"name": "invoicesNumberHD",
+								"text": ":xliff:Number",
+								"tooltip": "Invoice Number",
+								"stroke": "automatic",
+								"textAlign": "left",
+								"verticalAlign": "middle"
+							},
+							"footer": {
+								"name": "Footer1",
+								"stroke": "automatic",
+								"fill": "#DDDDDD",
+								"textAlign": "automatic",
+								"verticalAlign": "middle"
+							},
+							"dataSource": "This:C1470.InvoiceNumber"
+						},
+						{
+							"name": "invoicesDate",
+							"width": 100,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"enterable": false,
+							"stroke": "automatic",
+							"fill": "#FFFFFF",
+							"alternateFill": "#EEEEEE",
+							"textAlign": "center",
+							"verticalAlign": "middle",
+							"header": {
+								"name": "invoicesDateHD",
+								"text": ":xliff:Date",
+								"tooltip": "Invoice Date",
+								"stroke": "automatic",
+								"textAlign": "center",
+								"verticalAlign": "middle"
+							},
+							"footer": {
+								"name": "invoicesSubtotalLabel",
+								"dataSource": "invoicesSubtotalLabel",
+								"stroke": "automatic",
+								"fill": "#DDDDDD",
+								"textAlign": "right",
+								"verticalAlign": "middle",
+								"fontWeight": "bold"
+							},
+							"dataSource": "This:C1470.Date"
+						},
+						{
+							"name": "invoicesSubtotal_cur",
+							"width": 100,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"enterable": false,
+							"stroke": "automatic",
+							"fill": "#FFFFFF",
+							"alternateFill": "#EEEEEE",
+							"textAlign": "right",
+							"verticalAlign": "middle",
+							"header": {
+								"name": "invoicesSubtotalHD",
+								"text": ":xliff:Subtotal",
+								"tooltip": "Invoice Subtotal",
+								"stroke": "automatic",
+								"textAlign": "right",
+								"verticalAlign": "middle"
+							},
+							"footer": {
+								"name": "invoicesSubtotalAll",
+								"dataSource": "invoicesSubtotalAll_cur",
+								"dataSourceTypeHint": "number",
+								"variableCalculation": "sum",
+								"stroke": "automatic",
+								"fill": "#DDDDDD",
+								"textAlign": "right",
+								"verticalAlign": "middle",
+								"fontWeight": "bold"
+							},
+							"dataSource": "This:C1470.Subtotal",
+							"numberFormat": "###,##0.00"
+						},
+						{
+							"name": "invoicesPaid",
+							"width": 70,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"enterable": false,
+							"stroke": "automatic",
+							"fill": "#FFFFFF",
+							"alternateFill": "#EEEEEE",
+							"textAlign": "center",
+							"verticalAlign": "middle",
+							"header": {
+								"name": "invoicesPaidHD",
+								"text": ":xliff:Paid",
+								"tooltip": "Paid",
+								"stroke": "automatic",
+								"textAlign": "center",
+								"verticalAlign": "middle"
+							},
+							"footer": {
+								"name": "Footer4",
+								"stroke": "automatic",
+								"fill": "#DDDDDD",
+								"textAlign": "automatic",
+								"verticalAlign": "middle"
+							},
+							"dataSource": "This:C1470.Paid"
+						},
+						{
+							"name": "invoicesPayementDate",
+							"width": 110,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"enterable": false,
+							"stroke": "automatic",
+							"fill": "#FFFFFF",
+							"alternateFill": "#EEEEEE",
+							"textAlign": "center",
+							"verticalAlign": "middle",
+							"header": {
+								"name": "invoicesPayementDateHD",
+								"text": ":xliff:Payment Date",
+								"tooltip": "Invoice Payement Date",
+								"stroke": "automatic",
+								"textAlign": "center",
+								"verticalAlign": "middle"
+							},
+							"footer": {
+								"name": "Footer5",
+								"stroke": "automatic",
+								"fill": "#DDDDDD",
+								"textAlign": "automatic",
+								"verticalAlign": "middle"
+							},
+							"dataSource": "This:C1470.PaymentDate"
+						},
+						{
+							"name": "invoicesPayementMethod",
+							"width": 320,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"enterable": false,
+							"stroke": "automatic",
+							"fill": "#FFFFFF",
+							"alternateFill": "#EEEEEE",
+							"textAlign": "left",
+							"verticalAlign": "middle",
+							"header": {
+								"name": "invoicesPayementMethodHD",
+								"text": ":xliff:Payment Method",
+								"tooltip": "Invoice Payement Method",
+								"stroke": "automatic",
+								"textAlign": "left",
+								"verticalAlign": "middle"
+							},
+							"footer": {
+								"name": "Footer6",
+								"dataSource": "",
+								"stroke": "automatic",
+								"fill": "#DDDDDD",
+								"textAlign": "center",
+								"verticalAlign": "middle",
+								"fontWeight": "normal"
+							},
+							"dataSource": "This:C1470.PaymentMethod"
+						},
+						{
+							"name": "invoicesProForma",
+							"width": 70,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"resizable": false,
+							"enterable": false,
+							"stroke": "automatic",
+							"fill": "#FFFFFF",
+							"alternateFill": "#EEEEEE",
+							"textAlign": "center",
+							"verticalAlign": "middle",
+							"header": {
+								"name": "invoicesProFormaHD",
+								"text": ":xliff:Pro Forma",
+								"stroke": "automatic",
+								"textAlign": "left",
+								"verticalAlign": "middle"
+							},
+							"footer": {
+								"name": "Footer2",
+								"stroke": "automatic",
+								"fill": "#DDDDDD",
+								"textAlign": "right",
+								"verticalAlign": "middle"
+							},
+							"dataSource": "This:C1470.ProForma"
+						}
+					]
+				},
+				"Text19": {
+					"type": "text",
+					"top": 52,
+					"left": 29,
+					"width": 110,
+					"height": 16,
+					"stroke": "#777777",
+					"textAlign": "right",
+					"text": ":xliff:Name"
+				},
+				"Text20": {
+					"type": "text",
+					"top": 76,
+					"left": 29,
+					"width": 110,
+					"height": 16,
+					"stroke": "#777777",
+					"textAlign": "right",
+					"text": ":xliff:Address 1"
+				},
+				"Text22": {
+					"type": "text",
+					"top": 148,
+					"left": 314,
+					"width": 60,
+					"height": 16,
+					"stroke": "#777777",
+					"textAlign": "right",
+					"text": ":xliff:Zip"
+				},
+				"Text23": {
+					"type": "text",
+					"top": 124,
+					"left": 29,
+					"width": 110,
+					"height": 16,
+					"stroke": "#777777",
+					"textAlign": "right",
+					"text": ":xliff:City"
+				},
+				"Text24": {
+					"type": "text",
+					"top": 208,
+					"left": 29,
+					"width": 110,
+					"height": 16,
+					"stroke": "#777777",
+					"textAlign": "right",
+					"text": ":xliff:Telephone"
+				},
+				"Text26": {
+					"type": "text",
+					"top": 232,
+					"left": 49,
+					"width": 90,
+					"height": 16,
+					"stroke": "#777777",
+					"textAlign": "right",
+					"text": ":xliff:Email"
+				},
+				"Text27": {
+					"type": "text",
+					"top": 256,
+					"left": 29,
+					"width": 110,
+					"height": 16,
+					"stroke": "#777777",
+					"textAlign": "right",
+					"text": ":xliff:Web Site"
+				},
+				"Text28": {
+					"type": "text",
+					"top": 292,
+					"left": 29,
+					"width": 110,
+					"height": 16,
+					"stroke": "#777777",
+					"textAlign": "right",
+					"text": ":xliff:Contact"
+				},
+				"Text29": {
+					"type": "text",
+					"top": 340,
+					"left": 29,
+					"width": 110,
+					"height": 16,
+					"stroke": "#777777",
+					"textAlign": "right",
+					"text": ":xliff:Comments"
+				},
+				"Text1": {
+					"type": "text",
+					"top": 148,
+					"left": 29,
+					"width": 110,
+					"height": 16,
+					"stroke": "#777777",
+					"textAlign": "right",
+					"text": ":xliff:State"
+				},
+				"Text2": {
+					"type": "text",
+					"top": 208,
+					"left": 314,
+					"width": 60,
+					"height": 16,
+					"stroke": "#777777",
+					"textAlign": "right",
+					"text": ":xliff:Mobile"
+				},
+				"Text3": {
+					"type": "text",
+					"top": 172,
+					"left": 29,
+					"width": 110,
+					"height": 16,
+					"stroke": "#777777",
+					"textAlign": "right",
+					"text": ":xliff:Country"
+				},
+				"Text4": {
+					"type": "text",
+					"top": 316,
+					"left": 29,
+					"width": 110,
+					"height": 16,
+					"stroke": "#777777",
+					"textAlign": "right",
+					"text": ":xliff:Discount Rate"
+				},
+				"Text5": {
+					"type": "text",
+					"top": 100,
+					"left": 29,
+					"width": 110,
+					"height": 16,
+					"stroke": "#777777",
+					"textAlign": "right",
+					"text": ":xliff:Address 2"
+				},
+				"Line5": {
+					"type": "line",
+					"top": 198,
+					"left": 49,
+					"width": 495,
+					"height": 1,
+					"stroke": "#AAAAAA"
+				},
+				"Line6": {
+					"type": "line",
+					"top": 282,
+					"left": 49,
+					"width": 495,
+					"height": 1,
+					"stroke": "#AAAAAA"
+				},
+				"Rectangle2": {
+					"type": "rectangle",
+					"top": 28,
+					"left": 594,
+					"width": 385,
+					"height": 385,
+					"fill": "#DDDDDD",
+					"stroke": "#CCCCCC",
+					"borderRadius": 8
+				},
+				"Text7": {
+					"type": "text",
+					"top": 9,
+					"left": 614,
+					"width": 173,
+					"height": 16,
+					"stroke": "#777777",
+					"text": ":xliff:Logo"
+				},
+				"logo": {
+					"type": "input",
+					"top": 45,
+					"left": 611,
+					"width": 350,
+					"height": 160,
+					"dataSource": "Form:C1466.data.Logo",
+					"dataSourceTypeHint": "picture",
+					"tooltip": "Logo",
+					"fill": "transparent",
+					"borderStyle": "none",
+					"pictureFormat": "proportionalCenter",
+					"dragging": "custom",
+					"events": [
+						"onLoad",
+						"onValidate",
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"Header.Filler.Mac": {
+					"type": "picture",
+					"top": 458,
+					"left": 879,
+					"width": 15,
+					"height": 19,
+					"pictureFormat": "scaled",
+					"picture": "Images/Header.Filler.Mac.png"
+				},
+				"Footer.Filler.Mac": {
+					"type": "rectangle",
+					"top": 658,
+					"left": 874,
+					"width": 20,
+					"height": 40,
+					"sizingX": "move",
+					"sizingY": "move",
+					"fill": "#DDDDDD",
+					"stroke": "transparent"
+				},
+				"customF_LB": {
+					"type": "listbox",
+					"top": 214,
+					"left": 611,
+					"width": 356,
+					"height": 190,
+					"visibility": "visible",
+					"resizingMode": "legacy",
+					"rowHeight": "20px",
+					"rowHeightAutoMin": "20px",
+					"rowHeightAutoMax": "20px",
+					"showHeaders": false,
+					"selectionMode": "single",
+					"scrollbarHorizontal": "hidden",
+					"scrollbarVertical": "hidden",
+					"events": [
+						"onClick",
+						"onDataChange",
+						"onSelectionChange",
+						"onHeaderClick"
+					],
+					"listboxType": "collection",
+					"dataSource": "Form:C1466.data.customFieldsLB.result",
+					"columns": [
+						{
+							"header": {
+								"name": "Kopf1",
+								"text": "Kopf1"
+							},
+							"name": "Column1",
+							"footer": {
+								"name": "Fussteil1"
+							},
+							"dataSource": "This:C1470.name"
+						},
+						{
+							"header": {
+								"name": "Kopf2",
+								"text": "Kopf2"
+							},
+							"name": "Column2",
+							"footer": {
+								"name": "Fussteil2"
+							},
+							"dataSource": "This:C1470.value"
+						}
+					]
+				}
+			},
+			"entryOrder": [
+				"name",
+				"address1",
+				"address2",
+				"city",
+				"city1",
+				"zipCode",
+				"zipCode1",
+				"telephone",
+				"telephone1",
+				"email",
+				"webSite",
+				"contact",
+				"invl_DiscountRate",
+				"comments",
+				"clientInvoices",
+				"logo",
+				"customF_LB"
+			]
+		}
+	],
+	"editor": {
+		"activeView": "View 1",
+		"defaultView": "View 1",
+		"views": {
+			"View 1": {},
+			"View 2": {},
+			"View 3": {
+				"objects": [
+					"Header.Filler.Mac",
+					"Footer.Filler.Mac"
+				]
+			},
+			"View 4": {},
+			"View 5": {},
+			"View 6": {},
+			"View 7": {},
+			"View 8": {},
+			"View 9": {}
+		}
+	},
+	"geometryStamp": 15,
+	"rightMargin": 20,
+	"bottomMargin": 20,
+	"$4d": {
+		"version": "1",
+		"kind": "form"
+	}
+}
