@@ -342,7 +342,7 @@
 							},
 							"footer": {
 								"name": "invoiceTotal_cur",
-								"dataSource": "invoiceTotal",
+								"dataSource": "",
 								"dataSourceTypeHint": "number",
 								"variableCalculation": "sum",
 								"stroke": "automatic",

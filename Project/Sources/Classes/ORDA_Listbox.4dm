@@ -184,6 +184,11 @@ Function handleButtonClick($button : Text; $event : Integer)
 				ORDER BY:C49($tableptr->)
 				Form:C1466.listbox:=Create entity selection:C1512($tableptr->)
 				
+			: (($button="Print") | ($button="QuickReport"))
+				$tableptr:=Formula from string:C1601("->["+This:C1470.tablename+"]").call()
+				USE ENTITY SELECTION:C1513(Form:C1466.listbox)
+				QR REPORT:C197($tableptr->; Char:C90(1))
+				
 			Else   // everything from your application to customize
 				ORDA_Listbox_Method("customButton"; $button)
 		End case 

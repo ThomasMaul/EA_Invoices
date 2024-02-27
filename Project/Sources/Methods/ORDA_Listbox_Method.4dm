@@ -43,33 +43,33 @@ Case of
 	: ($job="preview")
 		// customize this for your tables
 		// executed in context of the preview form
-		
-		$classname:=String:C10(Form:C1466.data.getDataClass().getInfo().name)
-		
-		Case of 
-			: ($classname="CLIENTS")
-				// load customfields done via computed attribute
-				// sort invoices done via computed attribute as relation
-				// for example purpose, we just hide/show listbox depending of computed content
-				If ((Form:C1466.data.customFieldsLB#Null:C1517) && (Form:C1466.data.customFieldsLB.result.length>0))
-					OBJECT SET VISIBLE:C603(*; "customF_LB"; True:C214)
-				Else 
-					OBJECT SET VISIBLE:C603(*; "customF_LB"; False:C215)
-				End if 
-				
-			: ($classname="INVOICES")
-				If (Form:C1466.data.ProForma)
-					OBJECT SET VISIBLE:C603(*; "inv_@"; False:C215)
-				Else 
-					OBJECT SET ENTERABLE:C238(*; "invoiceDate"; False:C215)
-					OBJECT SET ENTERABLE:C238(*; "invoiceDelay"; False:C215)
-					OBJECT SET ENTERABLE:C238(*; "invoiceProforma"; False:C215)
-					OBJECT SET VISIBLE:C603(*; "inv_@"; Bool:C1537(Form:C1466.data.Paid))
-				End if 
-				
-				OBJECT SET FORMAT:C236(*; "@_cur"; Get localized string:C991("currency"))
-		End case 
-		
+		If (Form:C1466.data#Null:C1517)
+			$classname:=String:C10(Form:C1466.data.getDataClass().getInfo().name)
+			
+			Case of 
+				: ($classname="CLIENTS")
+					// load customfields done via computed attribute
+					// sort invoices done via computed attribute as relation
+					// for example purpose, we just hide/show listbox depending of computed content
+					If ((Form:C1466.data.customFieldsLB#Null:C1517) && (Form:C1466.data.customFieldsLB.result.length>0))
+						OBJECT SET VISIBLE:C603(*; "customF_LB"; True:C214)
+					Else 
+						OBJECT SET VISIBLE:C603(*; "customF_LB"; False:C215)
+					End if 
+					
+				: ($classname="INVOICES")
+					If (Form:C1466.data.ProForma)
+						OBJECT SET VISIBLE:C603(*; "inv_@"; False:C215)
+					Else 
+						OBJECT SET ENTERABLE:C238(*; "invoiceDate"; False:C215)
+						OBJECT SET ENTERABLE:C238(*; "invoiceDelay"; False:C215)
+						OBJECT SET ENTERABLE:C238(*; "invoiceProforma"; False:C215)
+						OBJECT SET VISIBLE:C603(*; "inv_@"; Bool:C1537(Form:C1466.data.Paid))
+					End if 
+					
+					OBJECT SET FORMAT:C236(*; "@_cur"; Get localized string:C991("currency"))
+			End case 
+		End if 
 		
 		//MARK: Double click - handle detail form
 	: ($job="doubleclick")
@@ -145,5 +145,7 @@ Case of
 						ALERT:C41("Not supported")
 				End case   // button New
 				
+			Else 
+				ALERT:C41("Not supported")
 		End case   // customButton
 End case   // job
