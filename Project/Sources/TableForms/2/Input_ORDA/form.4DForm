@@ -471,7 +471,8 @@
 					"tooltip": "Selected if the invoice is a pro forma",
 					"events": [
 						"onClick"
-					]
+					],
+					"method": "ObjectMethods/invoiceProforma.4dm"
 				},
 				"invoiceProformaNumber": {
 					"type": "input",
@@ -582,7 +583,7 @@
 						"onPrintingDetail"
 					]
 				},
-				"inv_Paid": {
+				"invPaid": {
 					"type": "checkbox",
 					"top": 151,
 					"left": 186,
@@ -595,7 +596,8 @@
 					"tooltip": "Selected if the invoice is payed",
 					"events": [
 						"onClick"
-					]
+					],
+					"method": "ObjectMethods/invPaid.4dm"
 				},
 				"inv_PayementDate": {
 					"type": "input",
@@ -1257,7 +1259,7 @@
 			"View 9": {}
 		}
 	},
-	"geometryStamp": 4,
+	"geometryStamp": 5,
 	"$4d": {
 		"version": "1",
 		"kind": "form"

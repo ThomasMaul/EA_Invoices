@@ -264,7 +264,7 @@ Function buildSubPopup($title : Text)->$menu : Text
 	var $sub : Object
 	$menu:=Create menu:C408
 	var $find : Collection:=This:C1470.buttons.query("name=:1"; $title)
-	If ($find.length>0)
+	If (($find.length>0) && ($find[0].sub#Null:C1517))
 		For each ($sub; $find[0].sub)
 			APPEND MENU ITEM:C411($menu; $sub.title)
 			SET MENU ITEM PARAMETER:C1004($menu; -1; $sub.name)

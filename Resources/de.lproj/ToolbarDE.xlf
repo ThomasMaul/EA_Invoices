@@ -66,6 +66,14 @@
 					<target>Der Datensatz wird zur Zeit von xxx bearbeitet!. Öffne nur lesend...</target>
 				</trans-unit>	
 			</group>
+			
+			<group resname="Application_Specific">
+				<trans-unit resname="NoNewButtonForInvoices">
+					<source>Double click the Client, to create a new invoice.</source>
+					<target>Doppelklicken Sie den Kunden, um dort eine neue Rechnung anzulegen.</target>
+				</trans-unit>
+				
+			</group>
 		</body>
 	</file>
 </xliff>

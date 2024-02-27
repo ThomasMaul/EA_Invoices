@@ -30,7 +30,7 @@ Case of
 			: (($event=On Clicked:K2:4) | ($event=On Alternative Click:K2:36))
 				If (Form:C1466.buttons#Null:C1517)  // to be sure we are in the right form...
 					var $buttonname : Text:=FORM Event:C1606.objectName
-					CALL FORM:C1391(Current form window:C827; Formula:C1597(Form:C1466.ORDA_listbox.handleButtonClick($buttonname; FORM Event:C1606.code)))
+					CALL FORM:C1391(Current form window:C827; Formula:C1597(Form:C1466.ORDA_listbox.handleButtonClick($buttonname; $event)))
 				End if 
 				
 			: ($event=On Data Change:K2:15)
@@ -56,19 +56,25 @@ Case of
 				Else 
 					OBJECT SET VISIBLE:C603(*; "customF_LB"; False:C215)
 				End if 
+				
+			: ($classname="INVOICES")
+				If (Form:C1466.data.ProForma)
+					OBJECT SET VISIBLE:C603(*; "inv_@"; False:C215)
+				Else 
+					OBJECT SET ENTERABLE:C238(*; "invoiceDate"; False:C215)
+					OBJECT SET ENTERABLE:C238(*; "invoiceDelay"; False:C215)
+					OBJECT SET ENTERABLE:C238(*; "invoiceProforma"; False:C215)
+					OBJECT SET VISIBLE:C603(*; "inv_@"; Bool:C1537(Form:C1466.data.Paid))
+				End if 
+				
+				OBJECT SET FORMAT:C236(*; "@_cur"; Get localized string:C991("currency"))
 		End case 
 		
 		
 		//MARK: Double click - handle detail form
 	: ($job="doubleclick")
 		$classname:=String:C10(Form:C1466.preview.data.getDataClass().getInfo().name)
-		
-		Case of 
-			: ($classname="CLIENTSnew")
-				
-			Else 
-				var $p : Integer:=New process:C317("ORDA_Listbox_Method"; 0; "ORDA_Listbox_Doubleclick"; "doubleclick_process"; $classname; Form:C1466.SelectedElement.getKey(dk key as string:K85:16))
-		End case 
+		var $p : Integer:=New process:C317("ORDA_Listbox_Method"; 0; "ORDA_Listbox_Doubleclick"; "doubleclick_process"; $classname; Form:C1466.SelectedElement.getKey(dk key as string:K85:16))
 		
 		//MARK: Classic Mode - generic Double click 
 	: ($job="doubleclick_process")
@@ -80,27 +86,33 @@ Case of
 		var $tableptr : Pointer:=Formula from string:C1601("->["+$classname+"]").call()
 		var $form : 4D:C1709.File:=File:C1566("/PROJECT/Sources/TableForms/"+String:C10(Table:C252($tableptr))+"/Input/form.4DForm")
 		If ($form.exists)
-			var $entity : 4D:C1709.Entity:=ds:C1482[$classname].get($pk)
-			var $sel : 4D:C1709.EntitySelection:=ds:C1482[$classname].newSelection()
-			USE ENTITY SELECTION:C1513($sel.add($entity))
-			READ WRITE:C146($tableptr->)
-			LOAD RECORD:C52($tableptr->)
-			
 			var $win : Integer:=Open form window:C675($tableptr->; "Input")
 			FORM SET INPUT:C55($tableptr->; "Input")
-			If (Locked:C147($tableptr->))
-				var $long : Integer
-				var $user : Text
-				var $machineuser : Text
-				var $processname : Text
-				var $message : Text
-				LOCKED BY:C353($tableptr->; $long; $user; $machineuser; $processname)
-				$user:=$user+"/"+$machineuser+" ("+$processname+")"
-				$message:=Replace string:C233(Get localized string:C991("LockedClassic"); "xxx"; $user)
-				ALERT:C41($message)
-				DISPLAY SELECTION:C59($tableptr->)
-			Else 
-				MODIFY RECORD:C57($tableptr->; *)
+			
+			If ($pk="")  // new record
+				ADD RECORD:C56($tableptr->; *)
+			Else   // existing record
+				var $entity : 4D:C1709.Entity:=ds:C1482[$classname].get($pk)
+				var $sel : 4D:C1709.EntitySelection:=ds:C1482[$classname].newSelection()
+				USE ENTITY SELECTION:C1513($sel.add($entity))
+				
+				READ WRITE:C146($tableptr->)
+				LOAD RECORD:C52($tableptr->)
+				
+				If (Locked:C147($tableptr->))
+					var $long : Integer
+					var $user : Text
+					var $machineuser : Text
+					var $processname : Text
+					var $message : Text
+					LOCKED BY:C353($tableptr->; $long; $user; $machineuser; $processname)
+					$user:=$user+"/"+$machineuser+" ("+$processname+")"
+					$message:=Replace string:C233(Get localized string:C991("LockedClassic"); "xxx"; $user)
+					ALERT:C41($message)
+					DISPLAY SELECTION:C59($tableptr->)
+				Else 
+					MODIFY RECORD:C57($tableptr->; *)
+				End if 
 			End if 
 			CLOSE WINDOW:C154($win)
 		End if 
@@ -120,5 +132,18 @@ Case of
 				Form:C1466.ORDA_listbox.load()
 				Form:C1466.ORDA_listbox.setInputForm()
 				
-		End case 
-End case 
+			: ($classname="Add")  // "New" button, different behavior depending of module
+				Case of 
+					: ((Form:C1466.ORDA_listbox.tablename="CLIENTS") | (Form:C1466.ORDA_listbox.tablename="PRODUCTS"))
+						// code similar to double click, but with new record
+						$p:=New process:C317("ORDA_Listbox_Method"; 0; "ORDA_Listbox_Doubleclick"; "doubleclick_process"; Form:C1466.ORDA_listbox.tablename; "")
+						
+					: (Form:C1466.ORDA_listbox.tablename="INVOICES")
+						ALERT:C41(Get localized string:C991("NoNewButtonForInvoices"))
+						
+					Else 
+						ALERT:C41("Not supported")
+				End case   // button New
+				
+		End case   // customButton
+End case   // job
