@@ -11,9 +11,9 @@ If (False:C215)  // old code, classic interface
 Else 
 	If (Is Windows:C1573)
 		HIDE MENU BAR:C432
-	Else 
-		SET MENU BAR:C67("empty")
 	End if 
+	SET MENU BAR:C67("empty")
 	var $win : Integer:=Open form window:C675("ORDAListbox")
 	DIALOG:C40("ORDAListbox"; *)
+	
 End if 

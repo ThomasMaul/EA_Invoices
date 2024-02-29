@@ -12,6 +12,7 @@ Case of
 				If (OK=1)
 					QUIT 4D:C291
 				Else 
+					SHOW MENU BAR:C431
 					INVOKE ACTION:C1439(ak return to design mode:K76:62)
 				End if 
 			End if 
@@ -20,6 +21,9 @@ Case of
 		End if 
 		
 	: (Form event code:C388=On Load:K2:1)
+		If (Is Windows:C1573)
+			HIDE MENU BAR:C432
+		End if 
 		Form:C1466.ORDA_listbox:=cs:C1710.ORDA_Listbox.new(ds:C1482.CLIENTS)
 		Form:C1466.ORDA_listbox.load()
 		Form:C1466.ORDA_listbox.setInputForm()
