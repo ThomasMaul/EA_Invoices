@@ -134,6 +134,18 @@
 						"onClick"
 					],
 					"method": "ObjectMethods/Schaltflaeche.4dm"
+				},
+				"Schaltflaeche1": {
+					"type": "button",
+					"text": "Custom Fields",
+					"top": 195,
+					"left": 35,
+					"width": 138,
+					"height": 30,
+					"events": [
+						"onClick"
+					],
+					"method": "ObjectMethods/Schaltflaeche1.4dm"
 				}
 			}
 		}
@@ -153,7 +165,7 @@
 			"View 9": {}
 		}
 	},
-	"geometryStamp": 4,
+	"geometryStamp": 6,
 	"$4d": {
 		"version": "1",
 		"kind": "form"

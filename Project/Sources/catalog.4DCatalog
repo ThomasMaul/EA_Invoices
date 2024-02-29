@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE base SYSTEM "http://www.4d.com/dtd/2007/base.dtd" >
-<base name="4D Invoice" uuid="652F3EA1E604344993D38C88D5949740" collation_locale="fr">
+<base name="4D Invoice" uuid="652F3EA1E604344993D38C88D5949740" collation_locale="de">
 	<schema name="DEFAULT_SCHEMA"/>
 	<table name="CLIENTS" uuid="D51B26D316C37D4BA9AB081E94BAF6C3" id="1">
 		<field name="ID" uuid="9B79A7051949394E8001F9367CE27A4A" type="4" unique="true" autosequence="true" never_null="true" id="1">
@@ -77,7 +77,6 @@
 			</field_extra>
 		</field>
 		<field name="Comments" uuid="542481867A8BEB40823B282AAE4E5E1A" type="10" never_null="true" id="15"/>
-		<field name="TotalSales" uuid="4F49417823CE264697A0B9FDA22F373C" type="6" never_null="true" id="16"/>
 		<field name="Country" uuid="DE4E1273E07B6444BFDCD908269DC715" type="10" limiting_length="40" never_null="true" id="17"/>
 		<field name="DiscountRate" uuid="95FC3375A564B94B888962DB55C38F07" type="6" never_null="true" id="18"/>
 		<field name="CustomFields" uuid="C86DE737B2D8F44799B3FC577E05F73D" type="21" never_null="true" id="19"/>

@@ -1,5 +1,6 @@
 Class extends Entity
 
+
 Function get invoices_sort->$sel : cs:C1710.INVOICESSelection
 	$sel:=This:C1470.invoices.orderBy("Date desc")
 	
@@ -25,3 +26,8 @@ we need to rearrange as
 		End for each 
 		$cb:=New object:C1471("result"; $col)
 	End if 
+	
+	
+Function get TotalSales->$total : Real
+	$total:=This:C1470.invoices.sum("Total")
+	

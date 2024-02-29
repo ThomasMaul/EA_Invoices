@@ -5,4 +5,15 @@ If (Records in table:C83([CLIENTS:1])=0)  // Test if the database is empty
 	End if 
 End if 
 
-Clients_Manage
+If (False:C215)  // old code, classic interface
+	Clients_Manage
+	
+Else 
+	If (Is Windows:C1573)
+		HIDE MENU BAR:C432
+	Else 
+		SET MENU BAR:C67("empty")
+	End if 
+	var $win : Integer:=Open form window:C675("ORDAListbox")
+	DIALOG:C40("ORDAListbox"; *)
+End if 

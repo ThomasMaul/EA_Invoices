@@ -1,0 +1,177 @@
+{
+	"$4d": {
+		"version": "1",
+		"kind": "form"
+	},
+	"windowSizingX": "variable",
+	"windowSizingY": "variable",
+	"windowMinWidth": 0,
+	"windowMinHeight": 0,
+	"windowMaxWidth": 32767,
+	"windowMaxHeight": 32767,
+	"rightMargin": 20,
+	"bottomMargin": 20,
+	"events": [
+		"onLoad",
+		"onValidate",
+		"onClick",
+		"onOutsideCall",
+		"onDoubleClick",
+		"onDrop",
+		"onMenuSelect",
+		"onPluginArea",
+		"onDragOver",
+		"onUnload",
+		"onTimer",
+		"onAfterKeystroke",
+		"onAfterEdit",
+		"onBeginDragOver",
+		"onBoundVariableChange",
+		"onPageChange"
+	],
+	"windowTitle": "Feldliste",
+	"destination": "detailScreen",
+	"pages": [
+		{
+			"objects": {}
+		},
+		{
+			"objects": {
+				"hlist_source": {
+					"type": "list",
+					"left": 8,
+					"top": 10,
+					"width": 275,
+					"height": 464,
+					"events": [
+						"onDoubleClick",
+						"onBeginDragOver"
+					],
+					"dataSource": "Form:C1466.source",
+					"selectionMode": "multiple",
+					"dragging": "automatic",
+					"dropping": "automatic",
+					"method": "ObjectMethods/hlist_source.4dm"
+				},
+				"hlist_target": {
+					"type": "list",
+					"left": 341,
+					"top": 10,
+					"width": 275,
+					"height": 464,
+					"events": [
+						"onDrop",
+						"onDragOver",
+						"onSelectionChange",
+						"onBeginDragOver"
+					],
+					"dataSource": "Form:C1466.target",
+					"dragging": "automatic",
+					"dropping": "automatic",
+					"selectionMode": "multiple",
+					"method": "ObjectMethods/hlist_target.4dm"
+				},
+				"next": {
+					"type": "pictureButton",
+					"left": 297,
+					"top": 98,
+					"width": 24,
+					"height": 24,
+					"events": [
+						"onClick"
+					],
+					"picture": "/RESOURCES/Images/next.png",
+					"columnCount": 1,
+					"rowCount": 4,
+					"loopBackToFirstFrame": false,
+					"switchWhenRollover": true,
+					"switchBackWhenReleased": true,
+					"useLastFrameAsDisabled": true,
+					"method": "ObjectMethods/next.4dm"
+				},
+				"nextAll": {
+					"type": "pictureButton",
+					"left": 297,
+					"top": 126,
+					"width": 24,
+					"height": 24,
+					"events": [
+						"onClick"
+					],
+					"picture": "/RESOURCES/Images/nextAll.png",
+					"columnCount": 1,
+					"rowCount": 4,
+					"loopBackToFirstFrame": false,
+					"switchWhenRollover": true,
+					"switchBackWhenReleased": true,
+					"useLastFrameAsDisabled": true,
+					"method": "ObjectMethods/nextAll.4dm"
+				},
+				"previous": {
+					"type": "pictureButton",
+					"left": 297,
+					"top": 154,
+					"width": 24,
+					"height": 24,
+					"events": [
+						"onClick"
+					],
+					"picture": "/RESOURCES/Images/previous.png",
+					"columnCount": 1,
+					"rowCount": 4,
+					"loopBackToFirstFrame": false,
+					"switchWhenRollover": true,
+					"switchBackWhenReleased": true,
+					"useLastFrameAsDisabled": true,
+					"method": "ObjectMethods/previous.4dm"
+				},
+				"Schaltfläche": {
+					"type": "button",
+					"text": "Einsetzen",
+					"top": 487,
+					"left": 484,
+					"width": 132,
+					"height": 28,
+					"events": [
+						"onClick"
+					],
+					"action": "accept",
+					"method": "ObjectMethods/Schaltfläche.4dm",
+					"dataSource": ""
+				},
+				"Schaltfläche1": {
+					"type": "button",
+					"text": ":xliff:Cancel",
+					"top": 487,
+					"left": 327,
+					"width": 132,
+					"height": 28,
+					"events": [
+						"onClick"
+					],
+					"action": "cancel"
+				},
+				"Ankreuzfeld": {
+					"type": "checkbox",
+					"text": "Checkbox",
+					"top": 198,
+					"left": 714,
+					"width": 9,
+					"height": 1,
+					"events": [
+						"onClick"
+					]
+				}
+			}
+		}
+	],
+	"geometryStamp": 36,
+	"method": "method.4dm",
+	"editor": {
+		"activeView": "View 1",
+		"defaultView": "View 1",
+		"views": {
+			"View 1": {}
+		}
+	}
+}

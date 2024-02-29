@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="http://www.w3.org/1999/xhtml" version="1.0">
+	<file datatype="x-STR#" original="undefined" product-version="v14" source-language="en-US" target-language="de">
+
+		<header>
+			<note/>
+		</header>
+
+		<body>
+			<group resname="Report_View">
+			<trans-unit resname="Insert_Data">
+					<source>Insert Data</source>
+					<target>Daten einsetzen</target>
+				</trans-unit>
+				<trans-unit resname="Update_Data">
+					<source>Update Data</source>
+					<target>Daten aktualisieren</target>
+				</trans-unit>
+				<trans-unit resname="Insert">
+					<source>Insert</source>
+					<target>Einsetzen</target>
+				</trans-unit>
+			</group>
+		</body>
+	</file>
+</xliff>

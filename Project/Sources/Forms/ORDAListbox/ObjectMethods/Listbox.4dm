@@ -35,7 +35,7 @@ Case of
 						$col.push(New object:C1471("pos"; $i; "formula"; $formula; "width"; $width; "title"; $arrKopfNamen{$i}))
 					End for 
 					$object.columns:=$col
-					var $created : 4D:C1709.File:=File:C1566("/LOGS/Setup/Explorer/"+$tablename+".myPrefs").setText(JSON Stringify:C1217($object))
+					File:C1566("/LOGS/Setup/Explorer/"+$tablename+".myPrefs").setText(JSON Stringify:C1217($object))
 					
 				: ($select=3)  // clear
 					File:C1566("/LOGS/Setup/Explorer/"+$tablename+".myPrefs").delete()

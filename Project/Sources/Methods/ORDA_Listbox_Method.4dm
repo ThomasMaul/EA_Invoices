@@ -145,7 +145,34 @@ Case of
 						ALERT:C41("Not supported")
 				End case   // button New
 				
+			: ($classname="Settings")
+				Settings_Manage
+				
+			: ($classname="4DViewPro")
+				$data:=New object:C1471("table"; Form:C1466.ORDA_listbox.tablename; "masterform"; Form:C1466)
+				If (FForm.Selection.length>0)  // if some records are selected, we use those, else all
+					$data.data:=Form:C1466.Selection
+				Else 
+					$data.data:=Form:C1466.listbox
+				End if 
+				
+				// special behavior for invoices
+				If (Form:C1466.ORDA_listbox.tablename="Invoices")
+					$pop:=Get localized string:C991("INVOICES")+";"+Get localized string:C991("INVOICE_LINES")
+					$popup:=Pop up menu:C542($pop)
+					If ($popup=2)
+						$data.table:="INVOICE_LINES"
+						$data.data:=$data.data.invoice_lines
+					End if 
+				End if 
+				
+				$win:=Open form window:C675("ViewProReport")
+				DIALOG:C40("ViewProReport"; $data; *)
+				// end VPReport
+				
 			Else 
-				ALERT:C41("Not supported")
+				If ($classname#"")
+					ALERT:C41("Not supported")
+				End if 
 		End case   // customButton
 End case   // job

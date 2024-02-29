@@ -44,7 +44,15 @@
         "id": 7,
         "icon": "Print_32.png"
     },{
-        "name": "Special",
+        "name": "QuickReport",
+        "id": 7001,
+        "icon": "Print_32.png"
+    },{
+        "name": "4DViewPro",
+        "id": 7002,
+        "icon": "4DViewPro.png"
+    },{
+        "name": "Settings",
         "id": 8,
         "icon": "Special_32.png"
     },{

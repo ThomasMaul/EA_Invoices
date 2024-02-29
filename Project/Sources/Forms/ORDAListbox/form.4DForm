@@ -13,20 +13,21 @@
 	"bottomMargin": 0,
 	"events": [
 		"onLoad",
-		"onPageChange",
 		"onValidate",
 		"onClick",
-		"onDoubleClick",
 		"onOutsideCall",
-		"onBeginDragOver",
-		"onDragOver",
+		"onDoubleClick",
 		"onDrop",
-		"onAfterKeystroke",
 		"onMenuSelect",
 		"onPluginArea",
-		"onAfterEdit",
+		"onDragOver",
+		"onCloseBox",
 		"onTimer",
-		"onBoundVariableChange"
+		"onAfterKeystroke",
+		"onAfterEdit",
+		"onBeginDragOver",
+		"onBoundVariableChange",
+		"onPageChange"
 	],
 	"windowTitle": "",
 	"destination": "detailScreen",
@@ -122,11 +123,87 @@
 					"events": [],
 					"scrollbarHorizontal": "hidden",
 					"method": "ObjectMethods/buttonsubform.4dm"
+				},
+				"Schaltflaeche": {
+					"type": "button",
+					"text": "cut",
+					"top": 792,
+					"left": 4,
+					"width": 82,
+					"height": 27,
+					"events": [
+						"onClick"
+					],
+					"action": "cut",
+					"shortcutAccel": true,
+					"shortcutControl": false,
+					"shortcutShift": false,
+					"shortcutAlt": false,
+					"shortcutKey": "x",
+					"focusable": false,
+					"sizingY": "move"
+				},
+				"Schaltflaeche1": {
+					"type": "button",
+					"text": "copy",
+					"top": 792,
+					"left": 106,
+					"width": 82,
+					"height": 27,
+					"events": [
+						"onClick"
+					],
+					"action": "copy",
+					"shortcutAccel": true,
+					"shortcutControl": false,
+					"shortcutShift": false,
+					"shortcutAlt": false,
+					"shortcutKey": "x",
+					"focusable": false,
+					"sizingY": "move"
+				},
+				"Schaltflaeche2": {
+					"type": "button",
+					"text": "paste",
+					"top": 792,
+					"left": 208,
+					"width": 82,
+					"height": 27,
+					"events": [
+						"onClick"
+					],
+					"action": "paste",
+					"shortcutAccel": true,
+					"shortcutControl": false,
+					"shortcutShift": false,
+					"shortcutAlt": false,
+					"shortcutKey": "x",
+					"focusable": false,
+					"sizingY": "move"
+				},
+				"Schaltflaeche3": {
+					"type": "button",
+					"text": "undo",
+					"top": 792,
+					"left": 310,
+					"width": 82,
+					"height": 27,
+					"events": [
+						"onClick"
+					],
+					"action": "undo",
+					"shortcutAccel": true,
+					"shortcutControl": false,
+					"shortcutShift": false,
+					"shortcutAlt": false,
+					"shortcutKey": "x",
+					"focusable": false,
+					"sizingY": "move"
 				}
 			}
 		}
 	],
-	"geometryStamp": 36,
+	"geometryStamp": 49,
 	"method": "method.4dm",
 	"editor": {
 		"activeView": "View 1",
@@ -134,5 +211,6 @@
 		"views": {
 			"View 1": {}
 		}
-	}
+	},
+	"formSizeAnchor": "preview"
 }

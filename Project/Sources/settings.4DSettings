@@ -1,8 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?><preferences stamp="21">
+<?xml version="1.0" encoding="UTF-8"?><preferences stamp="22">
 	<com.4d>
-		<general startup_environnement="1"/>
+		<general allow_user_settings="true" startup_environnement="1"/>
 		<interface>
-			<user display_toolbar="true" flush_window="false" print_progress="false" splash_screen="false"/>
+			<user color_scheme="light" display_toolbar="true" flush_window="false" print_progress="false" sdi_application="true" splash_screen="false"/>
 			<developper display_toolbar="true"/>
 		</interface>
 		<compiler>
@@ -26,12 +26,12 @@
 			</remote>
 		</web>
 		<database>
-			<misc standard_xpath="true"/>
-			<cache size_maximum="800"/>
+			<misc non_blocking_printing="true" standard_xpath="true"/>
+			<cache size_maximum="2000"/>
 		</database>
 		<server>
 			<network>
-				<client_server use_encryption="false"/>
+				<client_server use_encryption="true"/>
 				<options use_legacy_network_layer="false"/>
 			</network>
 		</server>
