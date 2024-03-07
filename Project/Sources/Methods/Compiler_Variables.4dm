@@ -1,4 +1,5 @@
 //%attributes = {"invisible":true}
+C_OBJECT:C1216(WPArea)
 
 C_TEXT:C284(dateTime)
 C_TEXT:C284(infoClients)

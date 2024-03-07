@@ -69,7 +69,7 @@
 					"sizingY": "grow",
 					"selectionMode": "multiple"
 				},
-				"Schaltfläche1": {
+				"save": {
 					"type": "button",
 					"text": "Speichern",
 					"top": 518,
@@ -80,10 +80,10 @@
 						"onClick"
 					],
 					"action": "",
-					"method": "ObjectMethods/Schaltfläche1.4dm",
+					"method": "ObjectMethods/save.4dm",
 					"sizingY": "move"
 				},
-				"Schaltfläche2": {
+				"reset": {
 					"type": "button",
 					"text": "Reset",
 					"top": 518,
@@ -94,7 +94,7 @@
 						"onClick"
 					],
 					"action": "",
-					"method": "ObjectMethods/Schaltfläche2.4dm",
+					"method": "ObjectMethods/reset.4dm",
 					"sizingY": "move"
 				},
 				"SaveDefault": {
@@ -115,7 +115,7 @@
 			}
 		}
 	],
-	"geometryStamp": 47,
+	"geometryStamp": 49,
 	"method": "method.4dm",
 	"editor": {
 		"activeView": "View 1",

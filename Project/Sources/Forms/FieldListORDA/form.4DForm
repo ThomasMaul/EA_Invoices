@@ -125,7 +125,7 @@
 					"useLastFrameAsDisabled": true,
 					"method": "ObjectMethods/previous.4dm"
 				},
-				"Schaltfläche": {
+				"insert": {
 					"type": "button",
 					"text": "Einsetzen",
 					"top": 487,
@@ -136,10 +136,10 @@
 						"onClick"
 					],
 					"action": "accept",
-					"method": "ObjectMethods/Schaltfläche.4dm",
+					"method": "ObjectMethods/insert.4dm",
 					"dataSource": ""
 				},
-				"Schaltfläche1": {
+				"cancel": {
 					"type": "button",
 					"text": ":xliff:Cancel",
 					"top": 487,
@@ -165,7 +165,7 @@
 			}
 		}
 	],
-	"geometryStamp": 36,
+	"geometryStamp": 38,
 	"method": "method.4dm",
 	"editor": {
 		"activeView": "View 1",

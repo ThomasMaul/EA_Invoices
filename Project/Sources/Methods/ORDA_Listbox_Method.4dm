@@ -149,8 +149,8 @@ Case of
 				Settings_Manage
 				
 			: ($classname="4DViewPro")
-				$data:=New object:C1471("table"; Form:C1466.ORDA_listbox.tablename; "masterform"; Form:C1466)
-				If (FForm.Selection.length>0)  // if some records are selected, we use those, else all
+				var $data : Object:=New object:C1471("table"; Form:C1466.ORDA_listbox.tablename; "masterform"; Form:C1466)
+				If (Form:C1466.Selection.length>0)  // if some records are selected, we use those, else all
 					$data.data:=Form:C1466.Selection
 				Else 
 					$data.data:=Form:C1466.listbox
@@ -158,8 +158,8 @@ Case of
 				
 				// special behavior for invoices
 				If (Form:C1466.ORDA_listbox.tablename="Invoices")
-					$pop:=Get localized string:C991("INVOICES")+";"+Get localized string:C991("INVOICE_LINES")
-					$popup:=Pop up menu:C542($pop)
+					var $pop : Text:=Get localized string:C991("INVOICES")+";"+Get localized string:C991("INVOICE_LINES")
+					var $popup : Integer:=Pop up menu:C542($pop)
 					If ($popup=2)
 						$data.table:="INVOICE_LINES"
 						$data.data:=$data.data.invoice_lines

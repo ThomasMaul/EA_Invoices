@@ -274,7 +274,21 @@
 		<table_extra input_form="Input" output_form="Input">
 			<editor_table_info displayable_fields_count="5">
 				<color red="114" green="209" blue="221" alpha="255"/>
-				<coordinates left="742" top="326" width="160" height="151.66015625"/>
+				<coordinates left="685.796875" top="456.80859375" width="160" height="151.66015625"/>
+			</editor_table_info>
+		</table_extra>
+	</table>
+	<table name="Document_Templates" uuid="AE13A9FA43CF4EFD84A559A8675D4505" id="6">
+		<field name="ID" uuid="2CBCD23759564405A99E0A12480593BC" type="10" unique="true" autogenerate="true" store_as_UUID="true" not_null="true" id="1"/>
+		<field name="Name" uuid="3B7990920C644A0ABD031E4E5DFC1B99" type="10" limiting_length="255" never_null="true" id="2"/>
+		<field name="WPro" uuid="465F07D840954DD1AC0221CC41539C03" type="21" blob_switch_size="2147483647" never_null="true" id="3"/>
+		<field name="image" uuid="65004FB69A4B441BAA0590FE2EC9FCEE" type="12" never_null="true" id="4"/>
+		<field name="data" uuid="352F3B8BA90041F5B267057D4A08F6B6" type="21" blob_switch_size="2147483647" id="5"/>
+		<primary_key field_name="ID" field_uuid="2CBCD23759564405A99E0A12480593BC"/>
+		<table_extra>
+			<editor_table_info displayable_fields_count="5">
+				<color red="255" green="255" blue="255" alpha="0"/>
+				<coordinates left="489.27734375" top="454.03125" width="156.8359375" height="163.61328125"/>
 			</editor_table_info>
 		</table_extra>
 	</table>
@@ -332,6 +346,11 @@
 	<index kind="regular" uuid="01B39D6F7643E74BACE579995701AACB" type="7">
 		<field_ref uuid="BF4FE4186E0A7540A128D92A2FB088A6" name="InvoiceNumber">
 			<table_ref uuid="689F27F44AE5FA43B1D357F9A3A43468" name="INVOICES"/>
+		</field_ref>
+	</index>
+	<index kind="regular" unique_keys="true" uuid="07919E8E5AC249CFBC76D3D007848685" type="1">
+		<field_ref uuid="2CBCD23759564405A99E0A12480593BC" name="ID">
+			<table_ref uuid="AE13A9FA43CF4EFD84A559A8675D4505" name="Document_Templates"/>
 		</field_ref>
 	</index>
 	<index kind="regular" uuid="11B0B18831B8E847A8EDAAC3983F82FB" type="7">

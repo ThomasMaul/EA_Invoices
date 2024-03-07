@@ -1,9 +1,10 @@
 // create sheet "data" if not exists, use that sheet later for data
 
-$datasheet:=-1
-$sheetcount:=VP Get sheet count("ViewProArea")
+var $datasheet : Integer:=-1
+var $sheetcount : Integer:=VP Get sheet count("ViewProArea")
+var $i : Integer
 For ($i; 0; $sheetcount)
-	$name:=VP Get sheet name("ViewProArea"; $i)
+	var $name : Text:=VP Get sheet name("ViewProArea"; $i)
 	If ($name="data")
 		$datasheet:=$i
 		break
@@ -15,8 +16,8 @@ If ($datasheet<0)
 	$datasheet:=$0
 End if 
 
-$currentsheet:=VP Get current sheet("ViewProArea")
-$newcurrentsheet:=-1
+var $currentsheet : Integer:=VP Get current sheet("ViewProArea")
+var $newcurrentsheet : Integer:=-1
 If ($currentsheet=$datasheet)
 	If (($sheetcount>1) && ($datasheet=$currentsheet))
 		If ($currentsheet>0)
@@ -31,17 +32,17 @@ If ($currentsheet=$datasheet)
 	End if 
 End if 
 
-$win:=Open form window:C675("FieldListORDA")
-$data:=New object:C1471("table"; ds:C1482[Form:C1466.table])
+var $win : Integer:=Open form window:C675("FieldListORDA")
+var $data : Object:=New object:C1471("table"; ds:C1482[Form:C1466.table])
 If ((Form:C1466.selectedFields#Null:C1517) && (Form:C1466.selectedFields.length>0))
 	$data.selectedFields:=Form:C1466.selectedFields
 Else 
 	// try to get field names from spreadsheet
-	$tables:=VP Get tables("ViewProArea"; $datasheet)
+	var $tables : Collection:=VP Get tables("ViewProArea"; $datasheet)
 	If ($tables.indexOf(Form:C1466.table)>=0)
-		$range:=VP Get table range("ViewProArea"; Form:C1466.table; vk table data range:K89:157; $datasheet)
-		$count:=Num:C11($range.ranges[0].columnCount)
-		$col:=New collection:C1472
+		var $range : Object:=VP Get table range("ViewProArea"; Form:C1466.table; vk table data range:K89:157; $datasheet)
+		var $count : Integer:=Num:C11($range.ranges[0].columnCount)
+		var $col : Collection:=New collection:C1472
 		var $attributes : Object
 		For ($i; 0; $count-1)
 			$attributes:=VP Get table column attributes("ViewProArea"; Form:C1466.table; $i; $datasheet)
@@ -76,9 +77,12 @@ Else
 	// nothing !!   Form.tabledata:=New object("table"; Form.data.toCollection())
 End if 
 
+var $entity : 4D:C1709.Entity
+var $field : Text
+
 For each ($entity; Form:C1466.tabledata.table)
 	For each ($field; $entity)
-		$type:=Value type:C1509($entity[$field])
+		var $type : Integer:=Value type:C1509($entity[$field])
 		If ($type=4)
 			If ($entity[$field]=!00-00-00!)
 				$entity[$field]:=""
@@ -88,6 +92,7 @@ For each ($entity; Form:C1466.tabledata.table)
 End for each 
 
 $tables:=VP Get tables("ViewProArea"; $datasheet)
+var $t : Text
 If ($tables.indexOf(Form:C1466.table)>=0)
 	For each ($t; $tables)
 		VP REMOVE TABLE("ViewProArea"; $t; $datasheet)

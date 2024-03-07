@@ -1,0 +1,285 @@
+{
+	"destination": "detailScreen",
+	"rightMargin": 20,
+	"bottomMargin": 20,
+	"markerHeader": 15,
+	"markerBody": 200,
+	"markerBreak": 220,
+	"markerFooter": 240,
+	"events": [
+		"onLoad",
+		"onValidate",
+		"onClick",
+		"onOutsideCall",
+		"onDoubleClick",
+		"onDrop",
+		"onMenuSelect",
+		"onPluginArea",
+		"onDataChange",
+		"onDragOver",
+		"onTimer",
+		"onAfterKeystroke",
+		"onAfterEdit",
+		"onBeginDragOver",
+		"onBoundVariableChange",
+		"onPageChange"
+	],
+	"method": "method.4dm",
+	"pageFormat": {
+		"paperName": "A4 (großer Druckbereich)",
+		"paperWidth": "594pt",
+		"paperHeight": "841pt"
+	},
+	"pages": [
+		null,
+		{
+			"objects": {
+				"Eingabe": {
+					"type": "input",
+					"left": 525,
+					"top": 730,
+					"width": 109,
+					"height": 17,
+					"dataSource": "Form:C1466.Number",
+					"dataSourceTypeHint": "integer",
+					"sizingY": "move",
+					"enterable": false
+				},
+				"bPrev": {
+					"type": "button",
+					"text": "<",
+					"top": 726,
+					"left": 496,
+					"width": 21,
+					"height": 25,
+					"events": [
+						"onClick"
+					],
+					"sizingY": "move",
+					"method": "ObjectMethods/bPrev.4dm"
+				},
+				"bNext": {
+					"type": "button",
+					"text": ">",
+					"top": 725,
+					"left": 646,
+					"width": 21,
+					"height": 25,
+					"events": [
+						"onClick"
+					],
+					"sizingY": "move",
+					"method": "ObjectMethods/bNext.4dm"
+				},
+				"bPDF": {
+					"type": "button",
+					"text": "PDF",
+					"top": 725,
+					"left": 697,
+					"width": 57,
+					"height": 27,
+					"events": [
+						"onClick"
+					],
+					"method": "ObjectMethods/bPDF.4dm",
+					"sizingY": "move"
+				},
+				"pPrint": {
+					"type": "button",
+					"text": "Print",
+					"top": 725,
+					"left": 765,
+					"width": 57,
+					"height": 27,
+					"events": [
+						"onClick"
+					],
+					"method": "ObjectMethods/pPrint.4dm",
+					"sizingY": "move"
+				},
+				"WParea": {
+					"type": "write",
+					"top": 107,
+					"left": 14,
+					"width": 880,
+					"height": 590,
+					"sizingX": "grow",
+					"sizingY": "grow",
+					"dataSource": "WParea",
+					"hideFocusRing": true,
+					"scrollbarVertical": "automatic",
+					"scrollbarHorizontal": "automatic",
+					"dpi": 0,
+					"borderStyle": "none",
+					"method": "ObjectMethods/WParea.4dm",
+					"events": [
+						"onLoad",
+						"onLosingFocus",
+						"onGettingFocus",
+						"onDrop",
+						"onSelectionChange",
+						"onAfterEdit"
+					]
+				},
+				"WPtoolbar": {
+					"type": "subform",
+					"top": 17,
+					"left": 14,
+					"width": 880,
+					"height": 90,
+					"sizingX": "grow",
+					"detailForm": "WP_Toolbar",
+					"focusable": false,
+					"deletableInList": false,
+					"doubleClickInRowAction": "editSubrecord",
+					"doubleClickInEmptyAreaAction": "addSubrecord",
+					"selectionMode": "multiple",
+					"printFrame": "variable",
+					"sizingY": "fixed"
+				},
+				"pCopy": {
+					"type": "button",
+					"text": "intern",
+					"top": 725,
+					"left": 830,
+					"width": 57,
+					"height": 27,
+					"events": [
+						"onClick"
+					],
+					"method": "ObjectMethods/pCopy.4dm",
+					"sizingY": "move"
+				},
+				"bPictTop": {
+					"type": "button",
+					"text": "Insert pict on top",
+					"top": 14,
+					"left": 918,
+					"width": 150,
+					"height": 35,
+					"events": [
+						"onClick"
+					],
+					"method": "ObjectMethods/bPictTop.4dm",
+					"sizingX": "move"
+				},
+				"bPictbottom": {
+					"type": "button",
+					"text": "Insert pict on bottom",
+					"top": 14,
+					"left": 1078,
+					"width": 150,
+					"height": 35,
+					"events": [
+						"onClick"
+					],
+					"method": "ObjectMethods/bPictbottom.4dm",
+					"sizingX": "move"
+				},
+				"bPictbackground": {
+					"type": "button",
+					"text": "Insert pict background",
+					"top": 61,
+					"left": 998,
+					"width": 150,
+					"height": 35,
+					"events": [
+						"onClick"
+					],
+					"method": "ObjectMethods/bPictbackground.4dm",
+					"sizingX": "move"
+				},
+				"List Box": {
+					"type": "listbox",
+					"left": 918,
+					"top": 107,
+					"width": 310,
+					"height": 590,
+					"events": [
+						"onClick",
+						"onDataChange",
+						"onDragOver",
+						"onSelectionChange",
+						"onHeaderClick",
+						"onBeginDragOver"
+					],
+					"showHeaders": false,
+					"listboxType": "collection",
+					"dataSource": "Form:C1466.fieldlist",
+					"currentItemSource": "Form:C1466.selectedField",
+					"scrollbarHorizontal": "hidden",
+					"method": "ObjectMethods/List Box.4dm",
+					"dragging": "custom",
+					"sizingY": "grow",
+					"sizingX": "move",
+					"columns": [
+						{
+							"header": {
+								"text": "Header1",
+								"name": "Kopf1"
+							},
+							"name": "Spalte1",
+							"footer": {
+								"name": "Fußteil1"
+							},
+							"dataSource": "This:C1470.name",
+							"width": 300,
+							"enterable": false,
+							"events": [
+								"onDragOver",
+								"onBeginDragOver"
+							]
+						}
+					]
+				},
+				"bSave": {
+					"type": "button",
+					"text": "Save Template",
+					"top": 719,
+					"left": 26,
+					"width": 142,
+					"height": 32,
+					"events": [
+						"onClick"
+					],
+					"method": "ObjectMethods/bSave.4dm",
+					"sizingY": "move"
+				},
+				"Text": {
+					"type": "text",
+					"text": "testing only:",
+					"top": 707,
+					"left": 533,
+					"width": 81,
+					"height": 16,
+					"sizingY": "move"
+				},
+				"pCopy1": {
+					"type": "button",
+					"text": "update",
+					"top": 726,
+					"left": 400,
+					"width": 57,
+					"height": 27,
+					"events": [
+						"onClick"
+					],
+					"method": "ObjectMethods/pCopy1.4dm",
+					"sizingY": "move"
+				}
+			}
+		}
+	],
+	"geometryStamp": 133,
+	"$4d": {
+		"version": "1",
+		"kind": "form"
+	},
+	"editor": {
+		"activeView": "View 1",
+		"defaultView": "View 1",
+		"views": {
+			"View 1": {}
+		}
+	}
+}

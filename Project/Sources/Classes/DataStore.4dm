@@ -2,9 +2,11 @@ Class extends DataStoreImplementation
 
 
 local Function flattenCollection($col : Collection; $fullName : Boolean)
-	$curName:=""
+	var $curName : Text:=""
+	var $ent : Object
+	var $ob : Text
+	
 	For each ($ent; $col)
-		
 		For each ($ob; $ent)
 			If (Value type:C1509($ent[$ob])=Is object:K8:27)
 				This:C1470._flattenCollObject($ent; $ent[$ob]; $ob; $fullName)
@@ -17,6 +19,9 @@ local Function flattenCollection($col : Collection; $fullName : Boolean)
 	End for each 
 	
 local Function _flattenCollObject($ent : Object; $subent : Object; $curName : Text; $fullName : Boolean)
+	var $ob : Text
+	var $name : Text
+	
 	For each ($ob; $subent)
 		If (Value type:C1509($subent[$ob])=Is object:K8:27)
 			$name:=($curName="") ? $ob : $curName+"."+$ob

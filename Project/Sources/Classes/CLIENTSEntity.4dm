@@ -31,3 +31,13 @@ we need to rearrange as
 Function get TotalSales->$total : Real
 	$total:=This:C1470.invoices.sum("Total")
 	
+Function get fullAddress->$address : Text
+	$address:=This:C1470.Name+Char:C90(13)
+	$address+=(This:C1470.Address1+Char:C90(13))
+	If (This:C1470.Country="Germany")  // In Germany first Zip, then city
+		$address+=(This:C1470.ZipCode+" "+This:C1470.City+Char:C90(13))
+	Else   // to keep the code simple, for anything else US format, City, State Zip. Adapt for your country format...
+		$address+=(This:C1470.City+", "+This:C1470.State+" "+This:C1470.ZipCode+Char:C90(13))
+	End if 
+	$address+=This:C1470.Country
+	

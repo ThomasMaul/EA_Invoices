@@ -6,18 +6,22 @@ Case of
 		If (Form:C1466.selectedFields=Null:C1517)
 			Form:C1466.selectedFields:=New collection:C1472
 		End if 
-		$class:=cs:C1710.FieldListEditor.new(Form:C1466.table; Form:C1466.source)
+		var $class : cs:C1710.FieldListEditor:=cs:C1710.FieldListEditor.new(Form:C1466.table; Form:C1466.source)
 		
 		If (Form:C1466.selectedFields.length>0)
+			var $el : Text
 			For each ($el; Form:C1466.selectedFields)
 				// $el could be relation.fieldname. If not, we can use Find in list.
 				If (Position:C15("."; $el; *)<1)
-					$vlItemPos:=Find in list:C952(Form:C1466.source; $el; 0; *)
+					var $vlItemPos : Integer:=Find in list:C952(Form:C1466.source; $el; 0; *)
 					If ($vlItemPos>0)
 						GET LIST ITEM:C378(*; "hlist_source"; List item position:C629(*; "hlist_source"; $vlItemPos); $itemRef; $itemText; $sublist; $expanded)
 						If ($sublist=0)
 							If (List item parent:C633(*; "hlist_source"; $itemRef)=0)
 								var $icon : Text
+								var $enterable : Boolean
+								var $styles; $color : Integer
+								var $para : Text
 								GET LIST ITEM PROPERTIES:C631(*; "hlist_source"; $itemRef; $enterable; $styles; $icon; $color)
 								GET LIST ITEM PARAMETER:C985(*; "hlist_source"; $itemRef; "ref"; $para)
 								DELETE FROM LIST:C624(*; "hlist_source"; $itemRef)
@@ -29,6 +33,7 @@ Case of
 					End if 
 					
 				Else 
+					var $max; $i : Integer
 					$max:=Count list items:C380(*; "hlist_source"; *)
 					For ($i; 1; $max)
 						GET LIST ITEM:C378(*; "hlist_source"; $i; $itemRef; $itemText; $sublist; $expanded)
