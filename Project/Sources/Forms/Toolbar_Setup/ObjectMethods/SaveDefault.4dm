@@ -5,5 +5,6 @@ Else
 	If (OK=1)
 		var $file : 4D:C1709.File:=Folder:C1567(fk resources folder:K87:11).folder("Settings").folder("Toolbar").file("Default.json")
 		$file.setText(JSON Stringify:C1217(New object:C1471("settings"; Form:C1466.mainlist.storeSettings())))
+		Form:C1466.userlist.isModified:=False:C215
 	End if 
 End if 

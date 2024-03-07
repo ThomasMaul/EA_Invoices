@@ -3,6 +3,7 @@ Class constructor($pictpath : Text)
 	This:C1470.list:=New list:C375
 	SET LIST PROPERTIES:C387(This:C1470.list; 0; 0; 38)
 	This:C1470.buttons:=New collection:C1472
+	This:C1470.isModified:=False:C215  // require saving
 	
 Function clear
 	CLEAR LIST:C377(This:C1470.list; *)
@@ -91,6 +92,7 @@ Function acceptDrop()->$return : Integer
 	var $value : Text:=Get text from pasteboard:C524
 	var $data : Object:=JSON Parse:C1218($value)
 	If (($data.id#Null:C1517) | ($data.ids#Null:C1517))
+		This:C1470.isModified:=True:C214
 		var $droppos : Integer:=Drop position:C608
 		var $beforeref : Integer:=0
 		If ($droppos=-1)
@@ -162,17 +164,32 @@ Function _acceptDropSingleButton($id : Integer; $parabeforeref : Integer)
 			$ref:=-(Count list items:C380(Form:C1466.userlist; *))
 		End if 
 		$name:=$button.name
-		If ($beforeref=0)
+		
+		If ($beforeref=$button.masterid)  // droping an icon back into the group
+			//find the group
+			var $pos : Integer:=List item position:C629(Form:C1466.userlist; $beforeref)
+			GET LIST ITEM:C378(Form:C1466.userlist; $pos; $beforeref; $beforetext; $sublist; $extended)
+			// insert
 			If ($sublist=0)
-				APPEND TO LIST:C376(Form:C1466.userlist; $name; $ref)
+				$sublist:=New list:C375
+				APPEND TO LIST:C376($sublist; $name; $ref)
+				SET LIST ITEM:C385(Form:C1466.userlist; $beforeref; $beforetext; $beforeref; $sublist; True:C214)
 			Else 
-				APPEND TO LIST:C376(Form:C1466.userlist; $name; $ref; $sublist; True:C214)
+				APPEND TO LIST:C376($sublist; $name; $ref)
 			End if 
 		Else 
-			If ($sublist=0)
-				INSERT IN LIST:C625(Form:C1466.userlist; $beforeref; $name; $ref)
+			If ($beforeref=0)
+				If ($sublist=0)
+					APPEND TO LIST:C376(Form:C1466.userlist; $name; $ref)
+				Else 
+					APPEND TO LIST:C376(Form:C1466.userlist; $name; $ref; $sublist; True:C214)
+				End if 
 			Else 
-				INSERT IN LIST:C625(Form:C1466.userlist; $beforeref; $name; $ref; $sublist; True:C214)
+				If ($sublist=0)
+					INSERT IN LIST:C625(Form:C1466.userlist; $beforeref; $name; $ref)
+				Else 
+					INSERT IN LIST:C625(Form:C1466.userlist; $beforeref; $name; $ref; $sublist; True:C214)
+				End if 
 			End if 
 		End if 
 		
@@ -240,6 +257,13 @@ Function storeSettings()->$userdata : Collection
 	End for 
 	This:C1470.buttons:=$buttons
 	$userdata:=$buttons
+	// update forms...
+	ARRAY LONGINT:C221($windows; 0)
+	WINDOW LIST:C442($windows)
+	For ($i; 1; Size of array:C274($windows))
+		CALL FORM:C1391($windows{$i}; "ORDA_Listbox_Method"; "Toolbar_Refresh")
+	End for 
+	
 	
 Function setUserSettings($bisher : Collection)
 	var $button : Object
@@ -274,10 +298,11 @@ Function setUserSettings($bisher : Collection)
 			$pict:=$masterbuttons[0].icon
 			SET LIST ITEM ICON:C950(Form:C1466.userlist; $id; $pict)
 			SET LIST ITEM PARAMETER:C986(Form:C1466.userlist; $id; "name"; $name)
-		Else   // button existiert nicht mehr?
-			// erstmal nichts
+		Else   // button is not existing anymore
+			// for now nothing...
 		End if 
 	End for each 
+	
 	
 Function buttonsInit
 	// init of all available button, used in setup dialog and in display

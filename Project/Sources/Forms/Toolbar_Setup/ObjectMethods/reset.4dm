@@ -11,5 +11,6 @@ If (OK=1)
 		Form:C1466.userlist:=$newlist
 		
 		Form:C1466.mainlist.setUserSettings($buttons)
+		Form:C1466.mainlist.isModified:=True:C214
 	End if 
 End if 

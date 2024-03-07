@@ -8,5 +8,5 @@ $result:=$data
 
 If ($table="INVOICE_LINES")
 	//if($data.data.
-	$result:=$data.Lines_Fm_Invoices
+	$result:=$data.invoice_lines
 End if 

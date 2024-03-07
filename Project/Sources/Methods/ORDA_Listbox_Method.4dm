@@ -39,6 +39,13 @@ Case of
 				End if 
 		End case 
 		
+		// MARK: Refresh Button Toolbar
+	: ($job="Toolbar_Refresh")
+		// called via call form for all open windows. In each window check if there is a form.toolbar object, if yes execute form.loolbar.load()
+		If ((Form:C1466.toolbar#Null:C1517) && (Form:C1466.toolbar.load#Null:C1517))
+			Form:C1466.toolbar.load()
+		End if 
+		
 		//MARK: Preview - init your preview data
 	: ($job="preview")
 		// customize this for your tables
@@ -158,7 +165,7 @@ Case of
 				
 				// special behavior for invoices
 				If (Form:C1466.ORDA_listbox.tablename="Invoices")
-					var $pop : Text:=Get localized string:C991("INVOICES")+";"+Get localized string:C991("INVOICE_LINES")
+					var $pop : Text:=Get localized string:C991("Invoices")+";"+Get localized string:C991("Invoice_Lines")
 					var $popup : Integer:=Pop up menu:C542($pop)
 					If ($popup=2)
 						$data.table:="INVOICE_LINES"

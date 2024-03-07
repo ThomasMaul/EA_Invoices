@@ -344,6 +344,10 @@
                     <source>Invoices</source>                    
                     <target>Rechnungen</target>
                 </trans-unit>  
+                <trans-unit resname="Invoice_Lines">   
+                    <source>Invoice Lines</source>                    
+                    <target>Rechnungspositionen</target>
+                </trans-unit> 
                 <trans-unit resname="Products">   
                     <source>Products</source>                    
                     <target>Produkte</target>

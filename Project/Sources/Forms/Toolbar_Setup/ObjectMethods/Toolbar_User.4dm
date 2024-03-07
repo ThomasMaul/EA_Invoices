@@ -32,6 +32,7 @@ Case of
 				Case of 
 					: ($pop=1)
 						DELETE FROM LIST:C624(Form:C1466.userlist; $ref; *)
+						Form:C1466.mainlist.isModified:=True:C214
 					: ($pop=2)
 						CONFIRM:C162(Get localized string:C991("Delete_all_buttons"))
 						If (OK=1)
@@ -40,6 +41,7 @@ Case of
 							SET LIST PROPERTIES:C387($newlist; 0; 0; 38)
 							OBJECT Get pointer:C1124(Object named:K67:5; "Toolbar_User")->:=$newlist
 							Form:C1466.userlist:=$newlist
+							Form:C1466.mainlist.isModified:=True:C214
 						End if 
 				End case 
 			End if 

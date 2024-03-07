@@ -121,8 +121,7 @@
 					"sizingY": "fixed",
 					"dataSource": "Form:C1466.toolbar",
 					"events": [],
-					"scrollbarHorizontal": "hidden",
-					"method": "ObjectMethods/buttonsubform.4dm"
+					"scrollbarHorizontal": "hidden"
 				},
 				"Schaltflaeche": {
 					"type": "button",

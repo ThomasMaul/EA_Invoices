@@ -203,6 +203,8 @@ Function _getDSClassDetails($class : 4D:C1709.DataClass; $relatedTableName : Tex
 	var $field : Text
 	var $f : Object
 	
+	$fields:=New collection:C1472
+	
 	For each ($field; $fieldnames)
 		$f:=$class[$field]
 		var $data : Object:=New object:C1471("name"; $field; \
