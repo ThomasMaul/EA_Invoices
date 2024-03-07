@@ -1,0 +1,42 @@
+{
+    "tables": [{
+            "original": "Invoice",
+            "translation": "Rechnung"
+        }
+    ],
+    "fields": [{
+            "original": "Quantity",
+            "translation": "Anzahl"
+        }, {
+            "original": "Product Reference",
+            "translation": "Artikelnummer"
+        }, {
+            "original": "Product Name",
+            "translation": "Artikelname"
+        }, {
+            "original": "Unit Price",
+            "translation": "Stückpreis"
+        }, {
+            "original": "Discount Rate",
+            "translation": "Rabatt %"
+        }, {
+            "original": "Discount Value",
+            "translation": "Rabatt"
+        }, {
+            "original": "VAT Rate",
+            "translation": "MwSt %"
+        }, {
+            "original": "Total Tax",
+            "translation": "MwSt"
+        }, {
+            "original": "Total",
+            "translation": "Netto"
+        }
+    ],
+    "formulas": [{
+            "original": "Sum of invoice items",
+            "translation": "Gesamtsumme"
+        }
+    ]
+}
+   

@@ -72,18 +72,19 @@ Function createPDF($pfad : Text)
 	var $col : Collection:=This:C1470.getPageImages()
 	var $conditions : Picture
 	var $conditionsentity : cs:C1710.Document_TemplatesSelection:=ds:C1482.Document_Templates.query("Name='conditions'")
+	
+	var $page : Object
+	For each ($page; $col)
+		var $pic : Object:=WP Add picture:C1536($wp; $page.svg)
+		WP SET ATTRIBUTES:C1342($pic; wk anchor page:K81:231; $page.page)
+		WP INSERT BREAK:C1413($wp; wk page break:K81:188; wk append:K81:179)
+	End for each 
 	If ($conditionsentity.length>0)
 		$conditions:=$conditionsentity.first().image
-	End if 
-	If (Picture size:C356($conditions)>0)
-		var $page : Object
-		For each ($page; $col)
-			var $pic : Object:=WP Add picture:C1536($wp; $page.svg)
-			WP SET ATTRIBUTES:C1342($pic; wk anchor page:K81:231; $page.page)
-			WP INSERT BREAK:C1413($wp; wk page break:K81:188; wk append:K81:179)
-		End for each 
-		$pic:=WP Add picture:C1536($wp; $conditions)
-		WP SET ATTRIBUTES:C1342($pic; wk anchor page:K81:231; $col.length+1)
+		If (Picture size:C356($conditions)>0)
+			$pic:=WP Add picture:C1536($wp; $conditions)
+			WP SET ATTRIBUTES:C1342($pic; wk anchor page:K81:231; $col.length+1)
+		End if 
 	End if 
 	WP EXPORT DOCUMENT:C1337($wp; $pfad; wk pdf:K81:315)
 	
@@ -94,7 +95,7 @@ Function print_white()
 	var $obj : Object:=WP Get element by ID:C1549($wp; "LogoBackground")
 	WP DELETE PICTURE:C1701($obj)
 	
-	SET PRINT OPTION:C733(Spooler document name option:K47:10; "Invoice "+This:C1470.invoice.Invoice_Number)
+	SET PRINT OPTION:C733(Spooler document name option:K47:10; "Invoice "+This:C1470.invoice.InvoiceNumber)
 	WP PRINT:C1343($wp)
 	
 Function print_color()

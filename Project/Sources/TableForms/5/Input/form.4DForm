@@ -90,8 +90,8 @@
 				},
 				"Button": {
 					"type": "button",
-					"top": 250,
-					"left": 211,
+					"top": 251,
+					"left": 205,
 					"width": 70,
 					"height": 20,
 					"sizingX": "move",
@@ -107,8 +107,8 @@
 				},
 				"Button1": {
 					"type": "button",
-					"top": 250,
-					"left": 291,
+					"top": 251,
+					"left": 285,
 					"width": 70,
 					"height": 20,
 					"sizingX": "move",
@@ -123,22 +123,22 @@
 						"onClick"
 					]
 				},
-				"Schaltflaeche": {
+				"ToolbarSetup": {
 					"type": "button",
 					"text": "Toolbar Setup",
-					"top": 195,
+					"top": 168,
 					"left": 217,
 					"width": 138,
 					"height": 30,
 					"events": [
 						"onClick"
 					],
-					"method": "ObjectMethods/Schaltflaeche.4dm"
+					"method": "ObjectMethods/ToolbarSetup.4dm"
 				},
 				"Schaltflaeche1": {
 					"type": "button",
 					"text": "Custom Fields",
-					"top": 195,
+					"top": 168,
 					"left": 35,
 					"width": 138,
 					"height": 30,
@@ -146,6 +146,18 @@
 						"onClick"
 					],
 					"method": "ObjectMethods/Schaltflaeche1.4dm"
+				},
+				"InvoiceEditor": {
+					"type": "button",
+					"text": "Invoice Editor",
+					"top": 211,
+					"left": 217,
+					"width": 138,
+					"height": 30,
+					"events": [
+						"onClick"
+					],
+					"method": "ObjectMethods/InvoiceEditor.4dm"
 				}
 			}
 		}
@@ -165,7 +177,7 @@
 			"View 9": {}
 		}
 	},
-	"geometryStamp": 6,
+	"geometryStamp": 13,
 	"$4d": {
 		"version": "1",
 		"kind": "form"

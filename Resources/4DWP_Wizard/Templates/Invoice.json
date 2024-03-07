@@ -1,0 +1,51 @@
+{
+    "tableDataSource": "Form.invoice_lines",
+    "columns": [{
+            "check": true, 
+            "header": "Quantity",
+            "source": "This.item.Quantity"
+        },{
+            "check": true, 
+            "header": "Product Reference",
+            "source": "This.item.ProductReference"
+        }, {
+            "check": true,
+            "header": "Product Name",
+            "source": "This.item.ProductName"
+        }, {
+            "check": true,
+            "header": "Unit Price",
+            "source": "String(This.item.ProductUnitPrice;\"###,###.00\")"
+        }, {
+            "check": true,
+            "header": "Discount Rate",
+            "source": "String(This.item.DiscountRate;\"###,###.00\")"
+        }, {
+            "check": true,
+            "header": "Discount Value",
+            "source": "String(This.item.DiscountRate*This.item.ProductUnitPrice*This.item.Quantity/100);\"###,###.00\")"
+        }, {
+            "check": true,
+            "header": "VAT Rate",
+            "source": "String(This.item.ProductTaxRate);\"###,###.00\")"
+        }, {
+            "check": true,
+            "header": "Total",
+            "source": "String(This.item.Total);\"###,###.00\")"
+        }, {
+            "check": true,
+            "header": "Total Tax",
+            "source": "String(This.item.TotalTax);\"###,###.00\")"
+        }
+    ],
+    "bcorFormulas": [{
+            "label": "Sum of invoice items",
+            "source": "String(This.tableData.sum(\"Total\"); \"###,###.00\")"
+        }
+    ],
+    "extraFormulas": [{
+            "label": "Sum of invoice items",
+            "source": "String(This.tableData.sum(\"Total\"); \"###,###.00\")"
+        }
+    ]
+}

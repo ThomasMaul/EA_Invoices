@@ -257,8 +257,8 @@
 				"pCopy1": {
 					"type": "button",
 					"text": "update",
-					"top": 726,
-					"left": 400,
+					"top": 724,
+					"left": 395,
 					"width": 57,
 					"height": 27,
 					"events": [
@@ -270,7 +270,7 @@
 			}
 		}
 	],
-	"geometryStamp": 133,
+	"geometryStamp": 135,
 	"$4d": {
 		"version": "1",
 		"kind": "form"
