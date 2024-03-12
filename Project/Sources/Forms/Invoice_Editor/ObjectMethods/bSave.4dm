@@ -1,5 +1,5 @@
 
-$templatename:="Invoice"
+var $templatename : Text:="Invoice"
 
 var $templates : cs:C1710.Document_TemplatesSelection:=ds:C1482.Document_Templates.query("Name=:1"; $templatename)
 

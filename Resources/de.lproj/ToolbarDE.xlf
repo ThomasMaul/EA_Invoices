@@ -16,6 +16,14 @@
 					<target>Nichts</target>
 				</trans-unit>
 			</group>
+			
+			<group resname="InvoiceEditor">
+				<trans-unit resname="IE_TabControl">
+					<source>Invoice Editor;Business Letter;Conditions</source>
+					<target>Rechnungseditor;Briefpapier;AGBs</target>
+				</trans-unit>
+				
+			</group>
 
 			<group resname="Toolbar_Messages">
 				<trans-unit resname="Overwrite_user_settings">

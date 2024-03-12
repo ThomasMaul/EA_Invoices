@@ -31,13 +31,28 @@
 		"paperHeight": "841pt"
 	},
 	"pages": [
-		null,
+		{
+			"objects": {
+				"tabcontrol": {
+					"type": "tab",
+					"text": "Tab control",
+					"top": 11,
+					"left": 14,
+					"width": 1242,
+					"height": 793,
+					"action": "gotoPage",
+					"dataSourceTypeHint": "object",
+					"dataSource": "Form:C1466.oTab",
+					"method": "ObjectMethods/tabcontrol.4dm"
+				}
+			}
+		},
 		{
 			"objects": {
 				"Eingabe": {
 					"type": "input",
-					"left": 525,
-					"top": 730,
+					"left": 533,
+					"top": 764,
 					"width": 109,
 					"height": 17,
 					"dataSource": "Form:C1466.Number",
@@ -48,8 +63,8 @@
 				"bPrev": {
 					"type": "button",
 					"text": "<",
-					"top": 726,
-					"left": 496,
+					"top": 760,
+					"left": 504,
 					"width": 21,
 					"height": 25,
 					"events": [
@@ -61,8 +76,8 @@
 				"bNext": {
 					"type": "button",
 					"text": ">",
-					"top": 725,
-					"left": 646,
+					"top": 759,
+					"left": 654,
 					"width": 21,
 					"height": 25,
 					"events": [
@@ -74,8 +89,8 @@
 				"bPDF": {
 					"type": "button",
 					"text": "PDF",
-					"top": 725,
-					"left": 697,
+					"top": 759,
+					"left": 705,
 					"width": 57,
 					"height": 27,
 					"events": [
@@ -87,8 +102,8 @@
 				"pPrint": {
 					"type": "button",
 					"text": "Print",
-					"top": 725,
-					"left": 765,
+					"top": 759,
+					"left": 773,
 					"width": 57,
 					"height": 27,
 					"events": [
@@ -99,8 +114,8 @@
 				},
 				"WParea": {
 					"type": "write",
-					"top": 107,
-					"left": 14,
+					"top": 141,
+					"left": 22,
 					"width": 880,
 					"height": 590,
 					"sizingX": "grow",
@@ -123,8 +138,8 @@
 				},
 				"WPtoolbar": {
 					"type": "subform",
-					"top": 17,
-					"left": 14,
+					"top": 51,
+					"left": 22,
 					"width": 880,
 					"height": 90,
 					"sizingX": "grow",
@@ -140,8 +155,8 @@
 				"pCopy": {
 					"type": "button",
 					"text": "intern",
-					"top": 725,
-					"left": 830,
+					"top": 759,
+					"left": 838,
 					"width": 57,
 					"height": 27,
 					"events": [
@@ -150,38 +165,12 @@
 					"method": "ObjectMethods/pCopy.4dm",
 					"sizingY": "move"
 				},
-				"bPictTop": {
-					"type": "button",
-					"text": "Insert pict on top",
-					"top": 14,
-					"left": 918,
-					"width": 150,
-					"height": 35,
-					"events": [
-						"onClick"
-					],
-					"method": "ObjectMethods/bPictTop.4dm",
-					"sizingX": "move"
-				},
-				"bPictbottom": {
-					"type": "button",
-					"text": "Insert pict on bottom",
-					"top": 14,
-					"left": 1078,
-					"width": 150,
-					"height": 35,
-					"events": [
-						"onClick"
-					],
-					"method": "ObjectMethods/bPictbottom.4dm",
-					"sizingX": "move"
-				},
 				"bPictbackground": {
 					"type": "button",
-					"text": "Insert pict background",
-					"top": 61,
-					"left": 998,
-					"width": 150,
+					"text": "Insert business letter background",
+					"top": 51,
+					"left": 965,
+					"width": 232,
 					"height": 35,
 					"events": [
 						"onClick"
@@ -191,10 +180,10 @@
 				},
 				"List Box": {
 					"type": "listbox",
-					"left": 918,
-					"top": 107,
+					"left": 926,
+					"top": 96,
 					"width": 310,
-					"height": 590,
+					"height": 635,
 					"events": [
 						"onClick",
 						"onDataChange",
@@ -235,8 +224,8 @@
 				"bSave": {
 					"type": "button",
 					"text": "Save Template",
-					"top": 719,
-					"left": 26,
+					"top": 753,
+					"left": 34,
 					"width": 142,
 					"height": 32,
 					"events": [
@@ -248,8 +237,8 @@
 				"Text": {
 					"type": "text",
 					"text": "testing only:",
-					"top": 707,
-					"left": 533,
+					"top": 741,
+					"left": 541,
 					"width": 81,
 					"height": 16,
 					"sizingY": "move"
@@ -257,8 +246,8 @@
 				"pCopy1": {
 					"type": "button",
 					"text": "update",
-					"top": 724,
-					"left": 395,
+					"top": 758,
+					"left": 403,
 					"width": 57,
 					"height": 27,
 					"events": [
@@ -268,9 +257,150 @@
 					"sizingY": "move"
 				}
 			}
+		},
+		{
+			"objects": {
+				"WParea1": {
+					"type": "write",
+					"top": 143,
+					"left": 38,
+					"width": 880,
+					"height": 590,
+					"sizingX": "grow",
+					"sizingY": "grow",
+					"dataSource": "WParea1",
+					"hideFocusRing": true,
+					"scrollbarVertical": "automatic",
+					"scrollbarHorizontal": "automatic",
+					"dpi": 0,
+					"borderStyle": "none",
+					"method": "ObjectMethods/WParea1.4dm",
+					"events": [
+						"onLoad",
+						"onLosingFocus",
+						"onGettingFocus",
+						"onDrop",
+						"onSelectionChange",
+						"onAfterEdit"
+					]
+				},
+				"WPtoolbar1": {
+					"type": "subform",
+					"top": 53,
+					"left": 38,
+					"width": 880,
+					"height": 90,
+					"sizingX": "grow",
+					"detailForm": "WP_Toolbar",
+					"focusable": false,
+					"deletableInList": false,
+					"doubleClickInRowAction": "editSubrecord",
+					"doubleClickInEmptyAreaAction": "addSubrecord",
+					"selectionMode": "multiple",
+					"printFrame": "variable",
+					"sizingY": "fixed"
+				},
+				"bPictTop1": {
+					"type": "button",
+					"text": "Insert pict on top",
+					"top": 752,
+					"left": 608,
+					"width": 150,
+					"height": 35,
+					"events": [
+						"onClick"
+					],
+					"method": "ObjectMethods/bPictTop1.4dm",
+					"sizingX": "move"
+				},
+				"bPictbottom1": {
+					"type": "button",
+					"text": "Insert pict on bottom",
+					"top": 752,
+					"left": 768,
+					"width": 150,
+					"height": 35,
+					"events": [
+						"onClick"
+					],
+					"method": "ObjectMethods/bPictbottom1.4dm",
+					"sizingX": "move"
+				},
+				"bSave1": {
+					"type": "button",
+					"text": "Save Template",
+					"top": 755,
+					"left": 50,
+					"width": 142,
+					"height": 32,
+					"events": [
+						"onClick"
+					],
+					"method": "ObjectMethods/bSave1.4dm",
+					"sizingY": "move"
+				}
+			}
+		},
+		{
+			"objects": {
+				"WParea2": {
+					"type": "write",
+					"top": 143,
+					"left": 38,
+					"width": 880,
+					"height": 590,
+					"sizingX": "grow",
+					"sizingY": "grow",
+					"dataSource": "WParea2",
+					"hideFocusRing": true,
+					"scrollbarVertical": "automatic",
+					"scrollbarHorizontal": "automatic",
+					"dpi": 0,
+					"borderStyle": "none",
+					"method": "ObjectMethods/WParea2.4dm",
+					"events": [
+						"onLoad",
+						"onLosingFocus",
+						"onGettingFocus",
+						"onDrop",
+						"onSelectionChange",
+						"onAfterEdit"
+					]
+				},
+				"WPtoolbar2": {
+					"type": "subform",
+					"top": 53,
+					"left": 38,
+					"width": 880,
+					"height": 90,
+					"sizingX": "grow",
+					"detailForm": "WP_Toolbar",
+					"focusable": false,
+					"deletableInList": false,
+					"doubleClickInRowAction": "editSubrecord",
+					"doubleClickInEmptyAreaAction": "addSubrecord",
+					"selectionMode": "multiple",
+					"printFrame": "variable",
+					"sizingY": "fixed",
+					"method": "ObjectMethods/WPtoolbar2.4dm"
+				},
+				"bSave2": {
+					"type": "button",
+					"text": "Save Template",
+					"top": 755,
+					"left": 50,
+					"width": 142,
+					"height": 32,
+					"events": [
+						"onClick"
+					],
+					"method": "ObjectMethods/bSave2.4dm",
+					"sizingY": "move"
+				}
+			}
 		}
 	],
-	"geometryStamp": 135,
+	"geometryStamp": 159,
 	"$4d": {
 		"version": "1",
 		"kind": "form"

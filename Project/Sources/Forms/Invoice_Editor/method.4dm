@@ -1,5 +1,14 @@
 If (Form event code:C388=On Load:K2:1)
 	
+	// Tab Control
+	var $items : Collection:=Split string:C1554(Get localized string:C991("IE_TabControl"); ";")
+	
+	Form:C1466.oTab:=New object:C1471
+	Form:C1466.oTab.values:=$items
+	Form:C1466.oTab.index:=0  // select the first Tab
+	
+	
+	
 	Form:C1466.Invoice:=ds:C1482.INVOICES.all().first()
 	Form:C1466.Number:=Form:C1466.Invoice.InvoiceNumber
 	Form:C1466.drop:=Null:C1517

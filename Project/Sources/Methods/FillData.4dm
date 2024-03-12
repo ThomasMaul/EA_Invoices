@@ -203,7 +203,7 @@ If ($importOk)
 						End if 
 				End case 
 			End if 
-			For ($k; 1; ((Random:C100%(10-1+1))+1))
+			For ($k; 1; ((Random:C100%(20-1+1))+1))
 				CREATE RECORD:C68([INVOICE_LINES:3])
 				[INVOICE_LINES:3]Invoice_ID:2:=[INVOICES:2]ID:1
 				$productID:=(Random:C100%(Size of array:C274($_productsID)-1+1))+1  // Pick a random product

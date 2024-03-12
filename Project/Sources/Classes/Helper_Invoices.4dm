@@ -88,6 +88,7 @@ Function createPDF($pfad : Text)
 	End if 
 	WP EXPORT DOCUMENT:C1337($wp; $pfad; wk pdf:K81:315)
 	
+	
 Function print_white()
 	// remove background, then print. Create a copy to do so
 	var $wp : Object:=WP New:C1317(This:C1470.WP)
@@ -132,5 +133,5 @@ Function print_color()
 		End case 
 	End for each 
 	
-	SET PRINT OPTION:C733(Spooler document name option:K47:10; "Invoice "+This:C1470.invoice.Invoice_Number)
+	SET PRINT OPTION:C733(Spooler document name option:K47:10; "Invoice "+This:C1470.invoice.InvoiceNumber)
 	WP PRINT:C1343($wp)
