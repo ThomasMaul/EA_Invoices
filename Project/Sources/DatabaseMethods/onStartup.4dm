@@ -15,5 +15,4 @@ Else
 	SET MENU BAR:C67("empty")
 	var $win : Integer:=Open form window:C675("ORDAListbox")
 	DIALOG:C40("ORDAListbox"; *)
-	
 End if 

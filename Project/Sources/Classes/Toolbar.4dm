@@ -323,3 +323,13 @@ Function buildSubPopup($title : Text)->$menu : Text
 			End if 
 		End for each 
 	End if 
+	
+	// check if we have table specific overwrite
+	var $class : 4D:C1709.DataClass:=Form:C1466.ORDA_listbox.table
+	If ($class.OverWriteButtonPopup#Null:C1517)
+		//%W-550.2
+		$class.OverWriteButtonPopup($title; $menu)
+		//%W+550.2
+	End if 
+	
+	

@@ -68,6 +68,15 @@
 					"shortcutKey": "s"
 				},
 				{
+					"title": "Zeile 2",
+					"isSeparator": true
+				},
+				{
+					"title": "Start New Window",
+					"method": "Start_ORDAWindow",
+					"startNewProcess": true
+				},
+				{
 					"title": "Item 5",
 					"isSeparator": true
 				},

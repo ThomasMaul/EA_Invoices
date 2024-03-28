@@ -126,7 +126,7 @@ Case of
 		
 	: ($job="customButton")
 		Case of 
-			: ($classname="Clients")
+			: (($classname="Clients") | ($classname="Module"))
 				Form:C1466.ORDA_listbox.setTable(ds:C1482.CLIENTS)
 				Form:C1466.ORDA_listbox.load()
 				Form:C1466.ORDA_listbox.setInputForm()
