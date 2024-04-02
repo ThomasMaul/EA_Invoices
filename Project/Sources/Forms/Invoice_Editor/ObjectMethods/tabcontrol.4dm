@@ -1,4 +1,4 @@
-If (FORM Event:C1606.code=On Data Change:K2:15)
+If (FORM Event:C1606.code=On Clicked:K2:4)
 	Case of 
 		: (Form:C1466.oTab.index=1)  // business paper
 			var $templates : cs:C1710.Document_TemplatesSelection:=ds:C1482.Document_Templates.query("Name='BusinessPaper'")
@@ -12,15 +12,15 @@ If (FORM Event:C1606.code=On Data Change:K2:15)
 				WParea1:=$template.WPro
 			End if 
 			
-		: (Form:C1466.oTab.index=1)  // business paper
+		: (Form:C1466.oTab.index=2)  // conditions
 			$templates:=ds:C1482.Document_Templates.query("Name='Conditions'")
 			If ($templates.length=0)
 				//ALERT("Template Invoice is missing")
 				// start with an empty one
-				WParea1:=WP New:C1317()
+				WParea2:=WP New:C1317()
 			Else 
 				$template:=$templates.first()
-				WParea1:=$template.WPro
+				WParea2:=$template.WPro
 			End if 
 	End case 
 End if 

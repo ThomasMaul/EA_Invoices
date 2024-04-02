@@ -43,7 +43,86 @@
 					"action": "gotoPage",
 					"dataSourceTypeHint": "object",
 					"dataSource": "Form:C1466.oTab",
-					"method": "ObjectMethods/tabcontrol.4dm"
+					"method": "ObjectMethods/tabcontrol.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"Schaltflaeche": {
+					"type": "button",
+					"text": "cut",
+					"top": 863,
+					"left": 40,
+					"width": 82,
+					"height": 27,
+					"events": [
+						"onClick"
+					],
+					"action": "cut",
+					"shortcutAccel": true,
+					"shortcutControl": false,
+					"shortcutShift": false,
+					"shortcutAlt": false,
+					"shortcutKey": "x",
+					"focusable": false,
+					"sizingY": "move"
+				},
+				"Schaltflaeche1": {
+					"type": "button",
+					"text": "copy",
+					"top": 863,
+					"left": 142,
+					"width": 82,
+					"height": 27,
+					"events": [
+						"onClick"
+					],
+					"action": "copy",
+					"shortcutAccel": true,
+					"shortcutControl": false,
+					"shortcutShift": false,
+					"shortcutAlt": false,
+					"shortcutKey": "x",
+					"focusable": false,
+					"sizingY": "move"
+				},
+				"Schaltflaeche2": {
+					"type": "button",
+					"text": "paste",
+					"top": 863,
+					"left": 244,
+					"width": 82,
+					"height": 27,
+					"events": [
+						"onClick"
+					],
+					"action": "paste",
+					"shortcutAccel": true,
+					"shortcutControl": false,
+					"shortcutShift": false,
+					"shortcutAlt": false,
+					"shortcutKey": "x",
+					"focusable": false,
+					"sizingY": "move"
+				},
+				"Schaltflaeche3": {
+					"type": "button",
+					"text": "undo",
+					"top": 863,
+					"left": 346,
+					"width": 82,
+					"height": 27,
+					"events": [
+						"onClick"
+					],
+					"action": "undo",
+					"shortcutAccel": true,
+					"shortcutControl": false,
+					"shortcutShift": false,
+					"shortcutAlt": false,
+					"shortcutKey": "x",
+					"focusable": false,
+					"sizingY": "move"
 				}
 			}
 		},
@@ -400,7 +479,7 @@
 			}
 		}
 	],
-	"geometryStamp": 159,
+	"geometryStamp": 164,
 	"$4d": {
 		"version": "1",
 		"kind": "form"
@@ -411,5 +490,6 @@
 		"views": {
 			"View 1": {}
 		}
-	}
+	},
+	"formSizeAnchor": "tabcontrol"
 }
