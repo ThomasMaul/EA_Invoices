@@ -12,7 +12,8 @@ If (Form event code:C388=On Load:K2:1)
 	Form:C1466.Invoice:=ds:C1482.INVOICES.all().first()
 	Form:C1466.Number:=Form:C1466.Invoice.InvoiceNumber
 	Form:C1466.drop:=Null:C1517
-	Form:C1466.helper:=cs:C1710.Helper_Invoices.new(Form:C1466.Invoice)
+	var $context : Object:={invoice: Form:C1466.Invoice; seller: Storage:C1525.company}
+	Form:C1466.helper:=cs:C1710.Helper_Invoices.new($context)
 	WPArea:=Form:C1466.helper.WP
 	
 	var $col : Collection:=New collection:C1472

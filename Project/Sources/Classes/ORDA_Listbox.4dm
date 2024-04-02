@@ -156,6 +156,9 @@ Function handleButtonClick($button : Text; $event : Integer)
 		var $class : 4D:C1709.DataClass:=This:C1470.table
 		var $tablename : Text
 		var $tableptr : Pointer
+		var $context : Object
+		var $helper : cs:C1710.Helper_Invoices
+		
 		Case of 
 			: ($button="All")
 				Form:C1466.listbox:=This:C1470.useAll($class)
@@ -197,12 +200,14 @@ Function handleButtonClick($button : Text; $event : Integer)
 				PRINT RECORD:C71($tableptr->)
 				
 			: ($button="New Invoice as PDF")
-				$helper:=cs:C1710.Helper_Invoices.new(Form:C1466.SelectedElement)
+				$context:={invoice: Form:C1466.SelectedElement; seller: Storage:C1525.company}
+				$helper:=cs:C1710.Helper_Invoices.new($context)
 				$helper.createPDF(System folder:C487(Desktop:K41:16)+"test.pdf")
 				ALERT:C41("Stored as test.pdf on your desktop")
 				
 			: ($button="New Invoice Color Paper")
-				$helper:=cs:C1710.Helper_Invoices.new(Form:C1466.SelectedElement)
+				$context:={invoice: Form:C1466.SelectedElement; seller: Storage:C1525.company}
+				$helper:=cs:C1710.Helper_Invoices.new($context)
 				ALERT:C41("Set the printer to duplex and color. For production, change the code to make this automatically")
 				PRINT SETTINGS:C106  // better than to ask the user how to setup the printer would be to do that automatically
 				// in settings dialog, allow the end user to store the settings using Print settings to BLOB   
@@ -211,7 +216,8 @@ Function handleButtonClick($button : Text; $event : Integer)
 				$helper.print_color()
 				
 			: ($button="New Invoice BW Paper")
-				$helper:=cs:C1710.Helper_Invoices.new(Form:C1466.SelectedElement)
+				$context:={invoice: Form:C1466.SelectedElement; seller: Storage:C1525.company}
+				$helper:=cs:C1710.Helper_Invoices.new($context)
 				ALERT:C41("Set the printer to single page and black&white. For production, change the code to make this automatically")
 				PRINT SETTINGS:C106  // better than to ask the user how to setup the printer would be to do that automatically
 				// in settings dialog, allow the end user to store the settings using Print settings to BLOB   
