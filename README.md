@@ -16,7 +16,7 @@ This one, based on a version created for 4D 14, before ORDA was introduced, show
 - invoice editor (allow the end user to modify invoice design/content)
 - Reporting via 4D View Pro
 
-<img src="Documentation/Screenshot.png" alt="Screenshot" width="600"/>
+<img src="Documentation/screenshot.png" alt="Screenshot" width="600"/>
 
 
 ## Feature Details

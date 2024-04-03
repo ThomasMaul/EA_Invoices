@@ -2,7 +2,7 @@
 
 ## Overview
 
-<img src="ORDAListbox.png" alt="ORDAlistbox" width="600"/>
+<img src="ORDAListbox.png" alt="ORDAListbox" width="600"/>
 
 This form combines the listbox, the preview (subform on the right) and the toolbar (subform on top).
 
@@ -41,7 +41,7 @@ Handling a button click is divided in two parts, generic and custom actions.
 Generic actions are handled in ORDA_Listbox.handleButtonClick(), while custom actions handled in project method ORDA_Listbox_Method.
 
 #### Standard Actions
-Actions such as All, None, Selected, Query, etc, are handled in a generic way, allowing you to overwrite behavior if needed.
+Actions such as All, None, Selected, Query, etc, are handled in a generic way, allowing you to overwrite behavior if needed.‚‘
 
 To overwrite, create a class  function with a given name. The code checks if that function exists, if yes it is executed, else a generic function is used.
 
@@ -54,7 +54,20 @@ CLIENTS.calcWindowTitle: Overwrite the window title from ### of ### to "### clie
 
 INVOICES.OverWriteButtonPopup: Overwrite 2nd level buttons, here the printing button to add several additional printing options.
 
+## Preview
+Subform on the right, used to display an ORDA prepared input form, such as [CLIENTS]Input_ORDA
+The form is called with the selected entity/record passed in Form.data
+Saving changes is handled from the object method of the list box container.
 
+
+## Invoice Editor
+
+
+
+## Invoice Printing
+
+
+## Report
 
 
 
