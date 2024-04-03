@@ -53,7 +53,7 @@ Function _loadListboxColumns()
 	var $nullpointer : Pointer
 	var $counter : Integer:=0
 	var $column : Object
-	var $file : 4D:C1709.File:=File:C1566("/LOGS/Settings/Explorer/"+This:C1470.tablename+".myPrefs")
+	var $file : 4D:C1709.File:=File:C1566("/LOGS/Setup/Explorer/"+This:C1470.tablename+".myPrefs")
 	If ($file.exists)
 		var $object : Object:=JSON Parse:C1218($file.getText())
 		This:C1470._columnwidths:=[]
@@ -191,39 +191,6 @@ Function handleButtonClick($button : Text; $event : Integer)
 				$tableptr:=Formula from string:C1601("->["+This:C1470.tablename+"]").call()
 				USE ENTITY SELECTION:C1513(Form:C1466.listbox)
 				QR REPORT:C197($tableptr->; Char:C90(1))
-				
-			: ($button="Classic Invoice")
-				$tableptr:=Formula from string:C1601("->["+This:C1470.tablename+"]").call()
-				USE ENTITY SELECTION:C1513(Form:C1466.Selection)
-				FIRST RECORD:C50($tableptr->)
-				FORM SET OUTPUT:C54($tableptr->; "OutputPrint")
-				PRINT RECORD:C71($tableptr->)
-				
-			: ($button="New Invoice as PDF")
-				$context:={invoice: Form:C1466.SelectedElement; seller: Storage:C1525.company}
-				$helper:=cs:C1710.Helper_Invoices.new($context)
-				$helper.createPDF(System folder:C487(Desktop:K41:16)+"test.pdf")
-				ALERT:C41("Stored as test.pdf on your desktop")
-				
-			: ($button="New Invoice Color Paper")
-				$context:={invoice: Form:C1466.SelectedElement; seller: Storage:C1525.company}
-				$helper:=cs:C1710.Helper_Invoices.new($context)
-				ALERT:C41("Set the printer to duplex and color. For production, change the code to make this automatically")
-				PRINT SETTINGS:C106  // better than to ask the user how to setup the printer would be to do that automatically
-				// in settings dialog, allow the end user to store the settings using Print settings to BLOB   
-				// this includes which printer to use, what paper tray, color/duplex/stapling, etc.
-				// then just load this settings and pass them to the printer via BLOB to print settings   
-				$helper.print_color()
-				
-			: ($button="New Invoice BW Paper")
-				$context:={invoice: Form:C1466.SelectedElement; seller: Storage:C1525.company}
-				$helper:=cs:C1710.Helper_Invoices.new($context)
-				ALERT:C41("Set the printer to single page and black&white. For production, change the code to make this automatically")
-				PRINT SETTINGS:C106  // better than to ask the user how to setup the printer would be to do that automatically
-				// in settings dialog, allow the end user to store the settings using Print settings to BLOB   
-				// this includes which printer to use, what paper tray, color/duplex/stapling, etc.
-				// then just load this settings and pass them to the printer via BLOB to print settings   
-				$helper.print_white()
 				
 			Else   // everything from your application to customize
 				ORDA_Listbox_Method("customButton"; $button)

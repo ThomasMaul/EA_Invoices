@@ -14,7 +14,7 @@ Case of
 		
 		var $buttons : Collection
 		var $file : 4D:C1709.File
-		$file:=Folder:C1567(fk logs folder:K87:17).folder("Settings").folder("Toolbar").file("User.json")
+		$file:=Folder:C1567(fk logs folder:K87:17).folder("Setup").folder("Toolbar").file("User.json")
 		If ($file.exists)
 			$buttons:=JSON Parse:C1218($file.getText()).settings
 		Else 
@@ -36,7 +36,7 @@ Case of
 		If (Form:C1466.mainlist.isModified)
 			CONFIRM:C162(Get localized string:C991("SaveChanges"))
 			If (OK=1)
-				$file:=Folder:C1567(fk logs folder:K87:17).folder("Settings").folder("Toolbar").file("User.json")
+				$file:=Folder:C1567(fk logs folder:K87:17).folder("Setup").folder("Toolbar").file("User.json")
 				$file.setText(JSON Stringify:C1217(New object:C1471("settings"; Form:C1466.mainlist.storeSettings())))
 			End if 
 		End if 

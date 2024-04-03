@@ -7,7 +7,7 @@ Function load()
 	// load buttons
 	var $buttons : Collection
 	var $file : 4D:C1709.File
-	$file:=Folder:C1567(fk logs folder:K87:17).folder("Settings").folder("Toolbar").file("User.json")
+	$file:=Folder:C1567(fk logs folder:K87:17).folder("Setup").folder("Toolbar").file("User.json")
 	If ($file.exists)
 		$buttons:=JSON Parse:C1218($file.getText()).settings
 	Else 

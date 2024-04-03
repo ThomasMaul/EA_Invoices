@@ -1,10 +1,10 @@
-data.client.fullAddress	Full Customer address
-data.client.Country	Customer country
-data.client.Name	Customer name
-data.client.State	Customer State
-data.InvoiceNumber	Invoice number
-data.Date	Invoice date
-string(this.data.Total;"###,###,##0.00;###,-###,##0.00;0.00")	Invoice Total
-data.Tax	Invoice Tax
-data.ProformaNumber	Proforma number
-data.Reference	Invoice comments
+data.invoice.client.fullAddress	Full Customer address
+data.invoice.client.Country	Customer country
+data.invoice.client.Name	Customer name
+data.invoice.client.State	Customer State
+data.invoice.InvoiceNumber	Invoice number
+data.invoice.Date	Invoice date
+string(this.data.invoice.Total;"###,###,##0.00;###,-###,##0.00;0.00")	Invoice Total
+data.invoice.Tax	Invoice Tax
+data.invoice.ProformaNumber	Proforma number
+data.invoice.Reference	Invoice comments

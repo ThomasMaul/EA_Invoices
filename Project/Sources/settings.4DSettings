@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?><preferences stamp="22">
+<?xml version="1.0" encoding="UTF-8"?><preferences stamp="23">
 	<com.4d>
 		<general allow_user_settings="true" startup_environnement="1"/>
 		<interface>
 			<user color_scheme="light" display_toolbar="true" flush_window="false" print_progress="false" sdi_application="true" splash_screen="false"/>
-			<developper display_toolbar="true"/>
+			<developper display_toolbar="false"/>
 		</interface>
 		<compiler>
 			<typage default_for_button="2" default_for_numeric="1"/>

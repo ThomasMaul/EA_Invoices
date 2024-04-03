@@ -177,6 +177,51 @@ Case of
 				DIALOG:C40("ViewProReport"; $data; *)
 				// end VPReport
 				
+			: ($classname="Classic Invoice")
+				$tableptr:=Formula from string:C1601("->["+This:C1470.tablename+"]").call()
+				USE ENTITY SELECTION:C1513(Form:C1466.Selection)
+				FIRST RECORD:C50($tableptr->)
+				FORM SET OUTPUT:C54($tableptr->; "OutputPrint")
+				PRINT RECORD:C71($tableptr->)
+				
+			: ($classname="New Invoice as PDF")
+				If (Form:C1466.SelectedElement=Null:C1517)
+					ALERT:C41("Please select an invoice")
+					return 
+				End if 
+				$context:={invoice: Form:C1466.SelectedElement; seller: Storage:C1525.company}
+				$helper:=cs:C1710.Helper_Invoices.new($context)
+				$helper.createPDF(System folder:C487(Desktop:K41:16)+"test.pdf")
+				ALERT:C41("Stored as test.pdf on your desktop")
+				
+			: ($classname="New Invoice Color Paper")
+				If (Form:C1466.SelectedElement=Null:C1517)
+					ALERT:C41("Please select an invoice")
+					return 
+				End if 
+				$context:={invoice: Form:C1466.SelectedElement; seller: Storage:C1525.company}
+				$helper:=cs:C1710.Helper_Invoices.new($context)
+				ALERT:C41("Set the printer to duplex and color. For production, change the code to make this automatically")
+				PRINT SETTINGS:C106  // better than to ask the user how to setup the printer would be to do that automatically
+				// in settings dialog, allow the end user to store the settings using Print settings to BLOB   
+				// this includes which printer to use, what paper tray, color/duplex/stapling, etc.
+				// then just load this settings and pass them to the printer via BLOB to print settings   
+				$helper.print_color()
+				
+			: ($classname="New Invoice BW Paper")
+				If (Form:C1466.SelectedElement=Null:C1517)
+					ALERT:C41("Please select an invoice")
+					return 
+				End if 
+				$context:={invoice: Form:C1466.SelectedElement; seller: Storage:C1525.company}
+				$helper:=cs:C1710.Helper_Invoices.new($context)
+				ALERT:C41("Set the printer to single page and black&white. For production, change the code to make this automatically")
+				PRINT SETTINGS:C106  // better than to ask the user how to setup the printer would be to do that automatically
+				// in settings dialog, allow the end user to store the settings using Print settings to BLOB   
+				// this includes which printer to use, what paper tray, color/duplex/stapling, etc.
+				// then just load this settings and pass them to the printer via BLOB to print settings   
+				$helper.print_white()
+				
 			Else 
 				If ($classname#"")
 					ALERT:C41("Not supported")

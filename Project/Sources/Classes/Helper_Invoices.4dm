@@ -142,7 +142,7 @@ Function print_white()
 	var $obj : Object:=WP Get element by ID:C1549($wp; "LogoBackground")
 	WP DELETE PICTURE:C1701($obj)
 	
-	SET PRINT OPTION:C733(Spooler document name option:K47:10; "Invoice "+This:C1470.invoice.InvoiceNumber)
+	SET PRINT OPTION:C733(Spooler document name option:K47:10; "Invoice "+This:C1470.context.invoice.InvoiceNumber)
 	WP PRINT:C1343($wp)
 	
 Function print_color()
@@ -179,7 +179,7 @@ Function print_color()
 		End case 
 	End for each 
 	
-	SET PRINT OPTION:C733(Spooler document name option:K47:10; "Invoice "+This:C1470.invoice.InvoiceNumber)
+	SET PRINT OPTION:C733(Spooler document name option:K47:10; "Invoice "+This:C1470.context.invoice.InvoiceNumber)
 	WP PRINT:C1343($wp)
 	
 	
