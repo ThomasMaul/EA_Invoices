@@ -59,18 +59,34 @@ Subform on the right, used to display an ORDA prepared input form, such as [CLIE
 The form is called with the selected entity/record passed in Form.data
 Saving changes is handled from the object method of the list box container.
 
+## Invoice Printing
+
+Invoices, which can be designed using the invoice editor, can be printed for the customer in color, duplex, with conditions on the back of the first page, as internal copy (black/white, no background image, no business paper, no conditions) or exported as PDF directly to disk. When written as PDF a PDF/A is created, if country is Germany or France a Factur-X/Zugferd electronic invoice is created.
+
+The class Helper_Invoice provides functions for this job, especially print_color(), print_white(), createPDF_noConditions() and createPDF().
+In createPDF() define the target country (French/German/other).
+It uses the function buildXML() to create the electronic invoice, which you need to adapt to your field names, to use it in your own application.
+
+Find example calls in method "ORDA_Listbox_Method", search for "New Invoice as PDF":
+<code>
+			: ($classname="New Invoice as PDF")
+				$context:={invoice: Form.SelectedElement; seller: Storage.company}
+				$helper:=cs.Helper_Invoices.new($context)
+				$helper.createPDF(System folder(Desktop)+"test.pdf")
+</code>
 
 ## Invoice Editor
+The functionality invoice editor uses the form "Invoice_Editor", the table "Document_Templates", the class "Helper_Invoices" and the file "Resources/EditorTemplates/Invoice_Fieldlist.txt". To create electronic invoices it also needs the folder "Resources/Profiles".
 
+In table Document_Tables the editor allows to create/edit 3 documents. "Invoice", which contains the 4D Write Pro template to print an invoice. "BusinessPaper", which is used as background for the invoice and "Conditions", used for small prints as last page. Both BusinessPaper and Conditions are 4D Write Pro documents, but stored as SVG image to be inserted in the final invoice.
 
-
-## Invoice Printing
 
 
 ## Report
 
+4D View Pro as report editor uses the class FieldListEditor with the project form "FieldListORDA" to provide the field list.
+Additionally it uses the project form "ViewProReport" as an example form, with the two project methods VPReportCallback and VPReportUpdate
 
-
-
-## ds.flatten
-singleton with R5
+## Possible ideas for R5
+rewrite ds.flatten to singleton 
+use window type without toolbar
