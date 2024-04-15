@@ -86,7 +86,7 @@ When designing the invoice, use the button on top right to insert the pre-create
 For the invoice itself, use the field list on the right for standard invoice content.
 Use the table wizard to add the invoice item table.
 
-<img src="Documentation/tablewizard.png" alt="Button Setup" width="500"/>
+<img src="Documentation/Tablewizard.png" alt="Button Setup" width="500"/>
 
 ### Reporting via 4D View Pro
 
