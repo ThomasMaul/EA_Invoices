@@ -1,7 +1,7 @@
 Case of 
 	: (Form event code:C388=On Clicked:K2:4)
 		
-		REDUCE RESTORE WINDOW:C1829(Form:C1466.hwd)
+		REDUCE RESTORE WINDOW:C1829(Current form window:C827)
 		
 	: (Form event code:C388=On Mouse Enter:K2:33)
 		OBJECT SET FORMAT:C236(*; "btnClose"; ";path:/RESOURCES/images/mac/close2.png")

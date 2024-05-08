@@ -18,7 +18,7 @@ If (False:C215)  // old code, classic interface
 	Clients_Manage
 	
 Else 
-	$version:=Application version:C493
+	var $version:=Application version:C493
 	If ($version<"2050")
 		ALERT:C41("Diese Demo verwendet neue Fenstertypen und erfordert 4D 20 R5 oder eine neuere Version.")
 	End if 

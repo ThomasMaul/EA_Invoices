@@ -189,8 +189,8 @@ Case of
 					ALERT:C41("Please select an invoice")
 					return 
 				End if 
-				$context:={invoice: Form:C1466.SelectedElement; seller: Storage:C1525.company}
-				$helper:=cs:C1710.Helper_Invoices.new($context)
+				var $context:={invoice: Form:C1466.SelectedElement; seller: Storage:C1525.company}
+				var $helper:=cs:C1710.Helper_Invoices.new($context)
 				$helper.createPDF(System folder:C487(Desktop:K41:16)+"test.pdf")
 				ALERT:C41("Stored as test.pdf on your desktop")
 				
