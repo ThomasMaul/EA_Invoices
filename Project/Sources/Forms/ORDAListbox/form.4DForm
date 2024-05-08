@@ -37,6 +37,84 @@
 		},
 		{
 			"objects": {
+				"Rectangle": {
+					"type": "rectangle",
+					"top": 3,
+					"left": 1,
+					"width": 1582,
+					"height": 58,
+					"stroke": "transparent",
+					"bottom": 61,
+					"fill": "automatic",
+					"sizingX": "grow"
+				},
+				"btnDragWindow": {
+					"type": "button",
+					"text": "",
+					"top": 2,
+					"left": 2,
+					"width": 1589,
+					"height": 58,
+					"events": [
+						"onClick"
+					],
+					"style": "custom",
+					"display": false,
+					"method": "ObjectMethods/btnDragWindow.4dm",
+					"fontWeight": "normal",
+					"sizingX": "grow"
+				},
+				"btnMacClose": {
+					"type": "button",
+					"text": "",
+					"top": 21,
+					"left": 10,
+					"width": 20,
+					"height": 20,
+					"events": [
+						"onClick",
+						"onMouseEnter",
+						"onMouseLeave"
+					],
+					"style": "custom",
+					"icon": "/RESOURCES/images/mac/close.png",
+					"iconFrames": 4,
+					"method": "ObjectMethods/btnMacClose.4dm"
+				},
+				"btnMacMinus": {
+					"type": "button",
+					"text": "",
+					"top": 21,
+					"left": 34,
+					"width": 20,
+					"height": 20,
+					"events": [
+						"onClick",
+						"onMouseEnter",
+						"onMouseLeave"
+					],
+					"style": "custom",
+					"icon": "/RESOURCES/images/mac/minus.png",
+					"iconFrames": 4,
+					"method": "ObjectMethods/btnMacMinus.4dm"
+				},
+				"btnMacPlus": {
+					"type": "button",
+					"text": "",
+					"top": 21,
+					"left": 59,
+					"width": 20,
+					"height": 20,
+					"events": [
+						"onClick",
+						"onMouseEnter",
+						"onMouseLeave"
+					],
+					"style": "custom",
+					"icon": "/RESOURCES/images/mac/plus.png",
+					"iconFrames": 4,
+					"method": "ObjectMethods/btnMacPlus.4dm"
+				},
 				"Splitter": {
 					"type": "splitter",
 					"top": 1,
@@ -52,10 +130,10 @@
 				},
 				"preview": {
 					"type": "subform",
-					"top": 1,
+					"top": 66,
 					"left": 791,
 					"width": 805,
-					"height": 769,
+					"height": 704,
 					"sizingX": "grow",
 					"sizingY": "grow",
 					"dataSource": "Form:C1466.preview",
@@ -69,10 +147,10 @@
 				},
 				"Listbox": {
 					"type": "listbox",
-					"top": 77,
+					"top": 66,
 					"left": 1,
 					"width": 781,
-					"height": 693,
+					"height": 704,
 					"sizingX": "grow",
 					"sizingY": "grow",
 					"resizingMode": "legacy",
@@ -109,10 +187,10 @@
 				},
 				"buttonsubform": {
 					"type": "subform",
-					"left": 1,
-					"top": 1,
-					"width": 782,
-					"height": 77,
+					"left": 86,
+					"top": 2,
+					"width": 696,
+					"height": 58,
 					"detailForm": "",
 					"borderStyle": "none",
 					"visibility": "visible",
@@ -198,11 +276,63 @@
 					"shortcutKey": "x",
 					"focusable": false,
 					"sizingY": "move"
+				},
+				"btnWinClose": {
+					"type": "button",
+					"text": "",
+					"top": 3,
+					"left": 1561,
+					"width": 32,
+					"height": 32,
+					"events": [
+						"onClick"
+					],
+					"style": "custom",
+					"icon": "/RESOURCES/Images/win/close.png",
+					"iconFrames": 4,
+					"method": "ObjectMethods/btnWinClose.4dm",
+					"sizingX": "move"
+				},
+				"btnWinMinus": {
+					"type": "button",
+					"text": "",
+					"top": 3,
+					"left": 1497,
+					"width": 32,
+					"height": 32,
+					"events": [
+						"onClick",
+						"onMouseEnter",
+						"onMouseLeave"
+					],
+					"style": "custom",
+					"icon": "/RESOURCES/Images/win/minimize.png",
+					"iconFrames": 4,
+					"method": "ObjectMethods/btnWinMinus.4dm",
+					"sizingX": "move"
+				},
+				"btnWinPlus": {
+					"type": "button",
+					"text": "",
+					"top": 3,
+					"left": 1529,
+					"width": 32,
+					"height": 32,
+					"events": [
+						"onClick",
+						"onMouseEnter",
+						"onMouseLeave"
+					],
+					"style": "custom",
+					"icon": "/RESOURCES/Images/win/maximize.png",
+					"iconFrames": 4,
+					"method": "ObjectMethods/btnWinPlus.4dm",
+					"sizingX": "move"
 				}
 			}
 		}
 	],
-	"geometryStamp": 49,
+	"geometryStamp": 88,
 	"method": "method.4dm",
 	"editor": {
 		"activeView": "View 1",

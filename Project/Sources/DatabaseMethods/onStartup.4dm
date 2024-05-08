@@ -18,10 +18,15 @@ If (False:C215)  // old code, classic interface
 	Clients_Manage
 	
 Else 
+	$version:=Application version:C493
+	If ($version<"2050")
+		ALERT:C41("Diese Demo verwendet neue Fenstertypen und erfordert 4D 20 R5 oder eine neuere Version.")
+	End if 
+	
 	If (Is Windows:C1573)
 		HIDE MENU BAR:C432
 	End if 
 	SET MENU BAR:C67("empty")
-	var $win : Integer:=Open form window:C675("ORDAListbox")
+	var $win : Integer:=Open form window:C675("ORDAListbox"; Plain form window no title:K39:19)
 	DIALOG:C40("ORDAListbox"; *)
 End if 

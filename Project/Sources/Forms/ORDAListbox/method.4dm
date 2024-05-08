@@ -2,6 +2,7 @@ var $sub : Object
 
 Case of 
 	: (Form event code:C388=On Close Box:K2:21)
+		// code also in red/close button, as we handle this with new window type ourself
 		ARRAY LONGINT:C221($windows; 0)
 		WINDOW LIST:C442($windows)
 		If (Size of array:C274($Windows)=1)  // if not already in design mode or other windows open, quit...
@@ -21,9 +22,14 @@ Case of
 		End if 
 		
 	: (Form event code:C388=On Load:K2:1)
-		If (Is Windows:C1573)
+		If (Is macOS:C1572)
+			OBJECT SET VISIBLE:C603(*; "BtnWin@"; False:C215)
+		Else 
+			OBJECT SET VISIBLE:C603(*; "BtnMac@"; False:C215)
+			OBJECT MOVE:C664(*; "buttonsubform"; -88; 0; 88; 0)
 			HIDE MENU BAR:C432
 		End if 
+		
 		Form:C1466.ORDA_listbox:=cs:C1710.ORDA_Listbox.new(ds:C1482.CLIENTS)
 		Form:C1466.ORDA_listbox.load()
 		Form:C1466.ORDA_listbox.setInputForm()
