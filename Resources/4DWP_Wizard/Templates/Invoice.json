@@ -1,5 +1,5 @@
 {
-    "tableDataSource": "Form.invoice_lines",
+    "tableDataSource": "This.data.invoice.invoice_lines",
     "columns": [{
             "check": true, 
             "header": "Quantity",

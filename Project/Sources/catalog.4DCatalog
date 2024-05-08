@@ -292,7 +292,7 @@
 			</editor_table_info>
 		</table_extra>
 	</table>
-	<relation uuid="DB086A51B8E14040AF27F65CE8ADC66E" name_Nto1="product" name_1toN="invoice_lines" auto_load_Nto1="true" auto_load_1toN="true" foreign_key="false" state="1">
+	<relation uuid="DB086A51B8E14040AF27F65CE8ADC66E" name_Nto1="product" name_1toN="invoice_lines" auto_load_Nto1="true" auto_load_1toN="true" state="1">
 		<related_field kind="source">
 			<field_ref uuid="48C015E83E297B48A2C0618CF0E41FFA" name="Product_ID">
 				<table_ref uuid="C1146E075B67B24CAA3D4910AC2ED24C" name="INVOICE_LINES"/>
@@ -309,7 +309,7 @@
 			</editor_relation_info>
 		</relation_extra>
 	</relation>
-	<relation uuid="E102AD0611DC5F4ABC678BF2FAA3355B" name_Nto1="invoice" name_1toN="invoice_lines" auto_load_Nto1="true" auto_load_1toN="true" foreign_key="false" state="1" integrity="reject">
+	<relation uuid="E102AD0611DC5F4ABC678BF2FAA3355B" name_Nto1="invoice" name_1toN="invoice_lines" auto_load_Nto1="true" auto_load_1toN="true" state="1" integrity="reject">
 		<related_field kind="source">
 			<field_ref uuid="FB780D6B09568846B8220AF0CAC3DA26" name="Invoice_ID">
 				<table_ref uuid="C1146E075B67B24CAA3D4910AC2ED24C" name="INVOICE_LINES"/>
@@ -326,7 +326,7 @@
 			</editor_relation_info>
 		</relation_extra>
 	</relation>
-	<relation uuid="ED0E940B7BA7AE4B99C3F957045694F1" name_Nto1="client" name_1toN="invoices" auto_load_Nto1="true" auto_load_1toN="true" foreign_key="false" state="1" integrity="reject">
+	<relation uuid="ED0E940B7BA7AE4B99C3F957045694F1" name_Nto1="client" name_1toN="invoices" auto_load_Nto1="true" auto_load_1toN="true" state="1" integrity="reject">
 		<related_field kind="source">
 			<field_ref uuid="05CAAB266618E342B11B9DA211DD71C5" name="Client_ID">
 				<table_ref uuid="689F27F44AE5FA43B1D357F9A3A43468" name="INVOICES"/>
