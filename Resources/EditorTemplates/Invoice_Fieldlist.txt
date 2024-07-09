@@ -4,7 +4,8 @@ data.invoice.client.Name	Customer name
 data.invoice.client.State	Customer State
 data.invoice.InvoiceNumber	Invoice number
 data.invoice.Date	Invoice date
-string(this.data.invoice.Total;"###,###,##0.00;###,-###,##0.00;0.00")	Invoice Total
+string(this.data.invoice.Subtotal;"###,###,##0.00;###,-###,##0.00;0.00")	Invoice Total
+string(this.data.invoice.Total;"###,###,##0.00;###,-###,##0.00;0.00")	Invoice Total with Tax
 data.invoice.Tax	Invoice Tax
 data.invoice.ProformaNumber	Proforma number
 data.invoice.Reference	Invoice comments
