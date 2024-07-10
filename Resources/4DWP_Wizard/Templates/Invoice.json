@@ -36,16 +36,37 @@
             "check": true,
             "header": "Total Tax",
             "source": "String(This.item.TotalTax);\"###,###.00\")"
+        }, {
+            "check": true,
+            "header": "Total with Tax",
+            "source": "String(This.item.TotalWithTax);\"###,###.00\")"
         }
     ],
     "bcorFormulas": [{
             "label": "Sum of invoice items",
             "source": "String(This.tableData.sum(\"Total\"); \"###,###.00\")"
+        },
+        {
+            "label": "Sum of invoice items with tax",
+            "source": "String(This.tableData.sum(\"TotalWithTax\"); \"###,###.00\")"
+        },
+        {
+            "label": "Sum of invoice items tax",
+            "source": "String(This.tableData.sum(\"TotalTax\"); \"###,###.00\")"
         }
     ],
     "extraFormulas": [{
             "label": "Sum of invoice items",
             "source": "String(This.tableData.sum(\"Total\"); \"###,###.00\")"
+        }
+        ,
+        {
+            "label": "Sum of invoice items with tax",
+            "source": "String(This.tableData.sum(\"TotalWithTax\"); \"###,###.00\")"
+        },
+        {
+            "label": "Sum of invoice items tax",
+            "source": "String(This.tableData.sum(\"TotalTax\"); \"###,###.00\")"
         }
     ]
 }

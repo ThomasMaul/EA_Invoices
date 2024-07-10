@@ -224,7 +224,7 @@
 				</editor_field_info>
 			</field_extra>
 		</field>
-		<field name="TotalTax" uuid="183B06E6B222164F871719F2EF33E01F" type="4" never_null="true" id="11"/>
+		<field name="TotalTax" uuid="183B06E6B222164F871719F2EF33E01F" type="6" never_null="true" id="11"/>
 		<primary_key field_name="ID" field_uuid="701C73A810B33342AD34262E9C843123"/>
 		<table_extra input_form="Input" output_form="OutputPrint">
 			<editor_table_info displayable_fields_count="12">

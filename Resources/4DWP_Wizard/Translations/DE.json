@@ -31,11 +31,22 @@
         }, {
             "original": "Total",
             "translation": "Netto"
+        }, {
+            "original": "Total with Tax",
+            "translation": "Brutto"
         }
     ],
     "formulas": [{
             "original": "Sum of invoice items",
-            "translation": "Gesamtsumme"
+            "translation": "Gesamt Netto"
+        },
+        {
+            "original": "Sum of invoice items with tax",
+            "translation": "Gesamt Brutto"
+        },
+        {
+            "original": "Sum of invoice items tax",
+            "translation": "Gesamt MwSt"
         }
     ]
 }
