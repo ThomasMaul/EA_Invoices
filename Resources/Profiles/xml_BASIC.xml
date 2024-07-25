@@ -10,13 +10,13 @@
   
 
   <rsm:ExchangedDocument>
-    <ram:ID>XXX--invoice.ID--XXX</ram:ID>
+    <ram:ID></ram:ID>
     <ram:TypeCode>380</ram:TypeCode>
     <ram:IssueDateTime>
-      <udt:DateTimeString format="102">20171113</udt:DateTimeString>
+      <udt:DateTimeString format="102"></udt:DateTimeString>
     </ram:IssueDateTime>
     <ram:IncludedNote>
-      <ram:Content>XXX-invoice.content-XXX</ram:Content>
+      <ram:Content></ram:Content>
     </ram:IncludedNote>
   </rsm:ExchangedDocument>
   
@@ -25,117 +25,103 @@
   
     <ram:IncludedSupplyChainTradeLineItem>
       <ram:AssociatedDocumentLineDocument>
-        <ram:LineID>XXX</ram:LineID>
+        <ram:LineID></ram:LineID>
       </ram:AssociatedDocumentLineDocument>
       <ram:SpecifiedTradeProduct>
-        <ram:Name>XXX</ram:Name>
+        <ram:Name></ram:Name>
       </ram:SpecifiedTradeProduct>
       <ram:SpecifiedLineTradeAgreement>
         <ram:NetPriceProductTradePrice>
-          <ram:ChargeAmount>XXX</ram:ChargeAmount>
+          <ram:ChargeAmount></ram:ChargeAmount>
         </ram:NetPriceProductTradePrice>
       </ram:SpecifiedLineTradeAgreement>
       <ram:SpecifiedLineTradeDelivery>
-        <ram:BilledQuantity unitCode="C62">XXX</ram:BilledQuantity>
+        <ram:BilledQuantity unitCode="C62"></ram:BilledQuantity>
       </ram:SpecifiedLineTradeDelivery>
       <ram:SpecifiedLineTradeSettlement>
         <ram:ApplicableTradeTax>
           <ram:TypeCode>VAT</ram:TypeCode>
           <ram:CategoryCode>S</ram:CategoryCode>
-          <ram:RateApplicablePercent>XXX</ram:RateApplicablePercent>
+          <ram:RateApplicablePercent></ram:RateApplicablePercent>
         </ram:ApplicableTradeTax>
         <ram:SpecifiedTradeSettlementLineMonetarySummation>
-          <ram:LineTotalAmount>XXX</ram:LineTotalAmount>
+          <ram:LineTotalAmount></ram:LineTotalAmount>
         </ram:SpecifiedTradeSettlementLineMonetarySummation>
       </ram:SpecifiedLineTradeSettlement>
     </ram:IncludedSupplyChainTradeLineItem>
-
-
-
-
     <ram:ApplicableHeaderTradeAgreement>
-
-
       <ram:SellerTradeParty>
-        <ram:Name>XXX--seller.name--XXX</ram:Name>
-        <ram:SpecifiedLegalOrganization>
-          <ram:ID schemeID="0002">XXX--seller.siret--XXX</ram:ID>
-        </ram:SpecifiedLegalOrganization>
-        <ram:PostalTradeAddress>
-          <ram:PostcodeCode>XXX--seller.zipCode--XXX</ram:PostcodeCode>
-          <ram:LineOne>XXX--seller.address--XXX</ram:LineOne>
-          <ram:CityName>XXX--seller.city--XXX</ram:CityName>
-          <ram:CountryID>XXX--seller.countryID--XXX</ram:CountryID>
+        <ram:Name></ram:Name>
+          <ram:PostalTradeAddress>
+          <ram:PostcodeCode></ram:PostcodeCode>
+          <ram:LineOne></ram:LineOne>
+          <ram:CityName></ram:CityName>
+          <ram:CountryID></ram:CountryID>
         </ram:PostalTradeAddress>
         <ram:SpecifiedTaxRegistration>
-          <ram:ID schemeID="VA">XXX--seller.tva--XXX</ram:ID>
+          <ram:ID schemeID="VA"></ram:ID>
         </ram:SpecifiedTaxRegistration>
       </ram:SellerTradeParty>
 
 
       <ram:BuyerTradeParty>
-        <ram:Name>XXX--buyer.name--XXX</ram:Name>
-        <ram:SpecifiedLegalOrganization>
-          <ram:ID schemeID="0002">XXX--buyer.siret--XXX</ram:ID>
-        </ram:SpecifiedLegalOrganization>
+        <ram:Name></ram:Name>
         <ram:PostalTradeAddress>
-          <ram:PostcodeCode>XXX--buyer.zipCode--XXX</ram:PostcodeCode>
-          <ram:LineOne>XXX--buyer.address--XXX</ram:LineOne>
-          <ram:CityName>XXX--buyer.city--XXX</ram:CityName>
-          <ram:CountryID>XXX--buyer.countryID--XXX</ram:CountryID>
+          <ram:PostcodeCode></ram:PostcodeCode>
+          <ram:LineOne></ram:LineOne>
+          <ram:CityName></ram:CityName>
+          <ram:CountryID></ram:CountryID>
         </ram:PostalTradeAddress>
         <ram:SpecifiedTaxRegistration>
-          <ram:ID schemeID="VA">XXX--buyer.tva--XXX</ram:ID>
+          <ram:ID schemeID="VA"></ram:ID>
         </ram:SpecifiedTaxRegistration>
       </ram:BuyerTradeParty>
 
 
 
       <ram:BuyerOrderReferencedDocument>
-        <ram:IssuerAssignedID>XXX--invoice.buyerIssuerAssignedID--XXX</ram:IssuerAssignedID>
+        <ram:IssuerAssignedID></ram:IssuerAssignedID>
       </ram:BuyerOrderReferencedDocument>
       <ram:ContractReferencedDocument>
-        <ram:IssuerAssignedID>XXX-invoice.contractIssuerAssignedID--XXX</ram:IssuerAssignedID>
+        <ram:IssuerAssignedID></ram:IssuerAssignedID>
       </ram:ContractReferencedDocument>
     </ram:ApplicableHeaderTradeAgreement>
 
     <ram:ApplicableHeaderTradeDelivery/>
     
     <ram:ApplicableHeaderTradeSettlement>
-
-      <ram:PaymentReference>XXX--invoice.id--XXX</ram:PaymentReference>
-    
-      <ram:InvoiceCurrencyCode>XXX--EUR--XXX</ram:InvoiceCurrencyCode>
-
+      <ram:PaymentReference></ram:PaymentReference>    
+      <ram:InvoiceCurrencyCode></ram:InvoiceCurrencyCode>
       <ram:SpecifiedTradeSettlementPaymentMeans>
         <ram:TypeCode>30</ram:TypeCode>
         <ram:PayeePartyCreditorFinancialAccount>
-          <ram:IBANID>XXX-IBANID-XXX</ram:IBANID>
-        </ram:PayeePartyCreditorFinancialAccount>
+          <ram:IBANID></ram:IBANID>
+        </ram:PayeePartyCreditorFinancialAccount>      
       </ram:SpecifiedTradeSettlementPaymentMeans>
       
       <ram:ApplicableTradeTax>
-        <ram:CalculatedAmount>XXX-CalculatedAmount-XXX</ram:CalculatedAmount>
-        <ram:TypeCode>XXX-VAT-XXX</ram:TypeCode>
-        <ram:BasisAmount>XXX-BasisAmount-XXX</ram:BasisAmount>
+        <ram:CalculatedAmount></ram:CalculatedAmount>
+        <ram:TypeCode></ram:TypeCode>
+        <ram:BasisAmount></ram:BasisAmount>
         <ram:CategoryCode>S</ram:CategoryCode>
         <ram:DueDateTypeCode>5</ram:DueDateTypeCode>
-        <ram:RateApplicablePercent>XXX-RateApplicablePercent-XXX</ram:RateApplicablePercent>
+        <ram:RateApplicablePercent></ram:RateApplicablePercent>
       </ram:ApplicableTradeTax>
 
       <ram:SpecifiedTradePaymentTerms>
+        <ram:Description></ram:Description>
         <ram:DueDateDateTime>
-          <udt:DateTimeString format="XXX-102-XXX">YYYYMMDD</udt:DateTimeString>
+          <udt:DateTimeString format="102"></udt:DateTimeString>
         </ram:DueDateDateTime>
       </ram:SpecifiedTradePaymentTerms>
       
       <ram:SpecifiedTradeSettlementHeaderMonetarySummation>
-        <ram:LineTotalAmount>XXX-LineTotalAmount-XXX</ram:LineTotalAmount>
-        <ram:TaxBasisTotalAmount>XXX-TaxBasisTotalAmount-XXX</ram:TaxBasisTotalAmount>
-        <ram:TaxTotalAmount currencyID="XXX-EUR-XXX">XXX-TaxTotalAmount-XXX</ram:TaxTotalAmount>
-        <ram:GrandTotalAmount>XXX-GrandTotalAmount-XXX</ram:GrandTotalAmount>
-        <ram:TotalPrepaidAmount>XXX-GrandTotalAmount-XXX</ram:TotalPrepaidAmount>
-        <ram:DuePayableAmount>XXX-DuePayableAmount-XXX</ram:DuePayableAmount>
+        <ram:LineTotalAmount></ram:LineTotalAmount>
+        <ram:TaxBasisTotalAmount></ram:TaxBasisTotalAmount>
+        <ram:TaxTotalAmount currencyID="DE"></ram:TaxTotalAmount>
+        <ram:GrandTotalAmount></ram:GrandTotalAmount>
+        <ram:TotalPrepaidAmount></ram:TotalPrepaidAmount>
+        <ram:DuePayableAmount></ram:DuePayableAmount>
       </ram:SpecifiedTradeSettlementHeaderMonetarySummation>
     
     </ram:ApplicableHeaderTradeSettlement>

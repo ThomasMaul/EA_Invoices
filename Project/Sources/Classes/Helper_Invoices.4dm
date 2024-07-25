@@ -91,7 +91,9 @@ Function createPDF($pfad : Text)
 	// electronic invoice for Germany, France, Spain (Facture-X - Zugferd)
 	If (True:C214)  // remove for other countries...
 		var $xml : Text:=This:C1470.buildXML()
-		// Folder(fk desktop folder).file("test.xml").setText($xml)  // for debugging
+		If (False:C215)
+			Folder:C1567(fk desktop folder:K87:19).file("test.xml").setText($xml)  // for debugging
+		End if 
 		var $options:={}
 		var $fileInfo:={}
 		var $target:="german"
@@ -114,10 +116,10 @@ Function createPDF($pfad : Text)
 			: ($target="german")
 				
 				$options.facturX:={}
-				$options.facturX.profile:="RECHNUNG"  // "guessed" from XML so, no need to fill
-				$options.facturX.version:="2.1"
+				$options.facturX.profile:="BASIC"  // "guessed" from XML so, no need to fill
+				$options.facturX.version:="1.0"
 				
-				$fileInfo.name:="rechnung.xml"
+				$fileInfo.name:="factur-x.xml"
 				$fileInfo.description:="Factur-X/ZUGFeRD Invoice"
 				$fileInfo.mimeType:="text/xml"
 				$fileInfo.relationship:="Alternative"
@@ -229,8 +231,15 @@ Function buildXML()->$xmlText : Text
 			$col.push({xpath: "rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeAgreement/ram:BuyerTradeParty/ram:PostalTradeAddress/ram:CountryID"; value: "DE"})
 		: (($context.invoice.client.Country="France") | ($context.invoice.client.Country="Frankreich"))
 			$col.push({xpath: "rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeAgreement/ram:BuyerTradeParty/ram:PostalTradeAddress/ram:CountryID"; value: "FR"})
+		Else 
+			// for this example we just handle Germany and France, but in real live, you need to handle all european countries
+			$col.push({xpath: "rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeAgreement/ram:BuyerTradeParty/ram:PostalTradeAddress/ram:CountryID"; value: "DE"})
 	End case 
-	//$col.push({xpath: "rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeAgreement/ram:BuyerTradeParty/ram:SpecifiedTaxRegistration/ram:ID"; value: $context.invoice.client.VAT})// add if you have it
+	If (True:C214)  // use fake VAT, in real live add the real one from customer record
+		$col.push({xpath: "rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeAgreement/ram:BuyerTradeParty/ram:SpecifiedTaxRegistration/ram:ID"; value: "DE12345678"})  // add if you have it
+	Else 
+		$col.push({xpath: "rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeAgreement/ram:BuyerTradeParty/ram:SpecifiedTaxRegistration/ram:ID"; value: $context.invoice.client.VAT})  // add if you have it
+	End if 
 	
 	//$col.push({xpath: "rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeAgreement/ram:BuyerOrderReferencedDocument/ram:IssuerAssignedID"; value: $context.invoice.buyerIssuerAssignedID})// add if you have it
 	//$col.push({xpath: "rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeAgreement/ram:ContractReferencedDocument/ram:IssuerAssignedID"; value: $context.invoice.contractIssuerAssignedID})// add if you have it
@@ -303,7 +312,7 @@ Function buildXML()->$xmlText : Text
 		var $price : Real:=Round:C94($item.ProductUnitPrice*(100-$item.DiscountRate); 2)  // with BASIC profile there is no field for discount, if you use COMFORT you can specify discount
 		$col.push({xpath: $path+"/ram:SpecifiedLineTradeAgreement/ram:NetPriceProductTradePrice/ram:ChargeAmount"; value: $price})
 		
-		var $unitCode : Text:="LTR"
+		var $unitCode : Text:="XPP"  // Pieces, LTR would be Liter
 		$col.push({xpath: $path+"/ram:SpecifiedLineTradeDelivery/ram:BilledQuantity"; value: $item.Quantity; attributeName: "unitCode"; attributeValue: $unitCode})  //***
 		
 		$col.push({xpath: $path+"/ram:SpecifiedLineTradeSettlement/ram:ApplicableTradeTax/ram:TypeCode"; value: "VAT"})
