@@ -5,7 +5,7 @@
 // Calculate the total price per line item
 
 If ([INVOICE_LINES:3]DiscountRate:8#0)
-	[INVOICE_LINES:3]Total:10:=[INVOICE_LINES:3]ProductUnitPrice:7*[INVOICE_LINES:3]Quantity:6*(1-([INVOICE_LINES:3]DiscountRate:8/100))
+	[INVOICE_LINES:3]Total:10:=Round:C94([INVOICE_LINES:3]ProductUnitPrice:7*[INVOICE_LINES:3]Quantity:6*(1-([INVOICE_LINES:3]DiscountRate:8/100)); 2)
 Else 
 	[INVOICE_LINES:3]Total:10:=[INVOICE_LINES:3]ProductUnitPrice:7*[INVOICE_LINES:3]Quantity:6
 End if 
