@@ -309,7 +309,7 @@ Function buildXML()->$xmlText : Text
 		$col.push({xpath: $path+"/ram:AssociatedDocumentLineDocument/ram:LineID"; value: String:C10($itemID)})
 		//$col.push({xpath: $path+"/ram:SpecifiedTradeProduct/ram:GlobalID"; value: $item.globalID; attributeName: "schemeID"; attributeValue: $item.schemeID})  //***
 		$col.push({xpath: $path+"/ram:SpecifiedTradeProduct/ram:Name"; value: $item.ProductName})
-		var $price : Real:=Round:C94($item.Unit_Price-($item.Unit_Price*($item.Discount_Rate/100)); 2)  // with BASIC profile there is no field for discount, if you use COMFORT you can specify discount
+		var $price : Real:=Round:C94($item.ProductUnitPrice-($item.ProductUnitPrice*($item.DiscountRate/100)); 2)  // with BASIC profile there is no field for discount, if you use COMFORT you can specify discount
 		$col.push({xpath: $path+"/ram:SpecifiedLineTradeAgreement/ram:NetPriceProductTradePrice/ram:ChargeAmount"; value: $price})
 		
 		var $unitCode : Text:="XPP"  // Pieces, LTR would be Liter
