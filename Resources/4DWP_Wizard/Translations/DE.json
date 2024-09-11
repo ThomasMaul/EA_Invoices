@@ -36,7 +36,8 @@
             "translation": "Brutto"
         }
     ],
-    "formulas": [{
+    "formulas": [
+        {
             "original": "Sum of invoice items",
             "translation": "Gesamt Netto"
         },
