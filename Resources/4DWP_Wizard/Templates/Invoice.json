@@ -1,6 +1,6 @@
 {
-    "tableDataSource": "This.data.invoice.invoice_lines",
-    "columns": [{
+    "tableDataSource":  "ds.INVOICES.all().first().invoice_lines",
+     "columns": [{
             "check": true, 
             "header": "Quantity",
             "source": "This.item.Quantity"
@@ -44,15 +44,15 @@
     ],
     "bcorFormulas": [
         {
-            "label": "Sum of invoice items",
+            "label": "Subtotal of invoice items",
             "source": "String(This.previousItems.sum(\"Total\"); \"###,###.00\")"
         },
         {
-            "label": "Sum of invoice items with tax",
+            "label": "Subtotal of invoice items with tax",
             "source": "String(This.previousItems.sum(\"TotalWithTax\"); \"###,###.00\")"
         },
         {
-            "label": "Sum of invoice items tax",
+            "label": "Subtotal of invoice items tax",
             "source": "String(This.previousItems.sum(\"TotalTax\"); \"###,###.00\")"
         }
     ],

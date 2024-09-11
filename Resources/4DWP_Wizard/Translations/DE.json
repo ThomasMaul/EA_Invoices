@@ -48,6 +48,18 @@
         {
             "original": "Sum of invoice items tax",
             "translation": "Gesamt MwSt"
+        },
+                {
+            "original": "Subtotal of invoice items",
+            "translation": "Zwischensumme Netto"
+        },
+        {
+            "original": "Subtotal of invoice items with tax",
+            "translation": "Zwischensumme Brutto"
+        },
+        {
+            "original": "Subtotal of invoice items tax",
+            "translation": "Zwischensumme MwSt"
         }
     ]
 }
