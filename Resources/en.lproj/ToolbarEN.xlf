@@ -7,26 +7,95 @@
         </header>
 
         <body>
-            <group resname="Messages">
+			<group resname="More_Buttons">
+				<trans-unit resname="Selected">
+					<source>Subset</source>
+					<target>Subset</target>
+				</trans-unit>
+				
+				<trans-unit resname="None">
+					<source>None</source>
+					<target>None</target>
+				</trans-unit>
+			</group>
+			
+			<group resname="InvoiceEditor">
+				<trans-unit resname="IE_TabControl">
+					<source>Invoice Editor;Business Letter;Conditions</source>
+					<target>Invoice Editor;Business Letter;Conditions</target>
+				</trans-unit>
+				
+			</group>
+
+			<group resname="Toolbar_Messages">
                 <trans-unit resname="Overwrite_user_settings">   
                     <source>Do you want to overwrite User Settings?</source>                    
-                    <target>Wirklich Benutzervoreinstellung überschreiben?</target>
+                    <target>Do you want to overwrite User Settings?</target>
                 </trans-unit>
                  <trans-unit resname="Popup_Delete">   
                     <source>Delete;Delete All</source>                    
-                    <target>Löschen;Alle löschen</target>
+                    <target>Delete;Delete All</target>
                 </trans-unit>              
                  <trans-unit resname="Delete_all_buttons">   
                     <source>Delete all buttons?</source>                    
-                    <target>Wirklich alle Buttons löschen?</target>
+                    <target>Delete all buttons?</target>
                 </trans-unit>     
                  <trans-unit resname="Reset_Defaults">   
                     <source>Reset to defaults?</source>                    
-                    <target>Auf Voreinstellungen zurücksetzen?</target>
+                    <target>Reset to defaults?</target>
                 </trans-unit>    
+				<trans-unit resname="Save_Defaults">
+					<source>Save as defaults</source>
+					<target>Save as defaults</target>
+				</trans-unit>
+				<trans-unit resname="Toolbar_Reset">
+					<source>Reset</source>
+					<target>Reset</target>
+				</trans-unit>
+				<trans-unit resname="Toolbar_Save">
+					<source>Save</source>
+					<target>Save</target>
+				</trans-unit>
             </group>
 
- 
+			<group resname="ORDAListbox">
+				<trans-unit resname="ColumnRightClick">
+					<source>Delete Column;Save;Clear Saved;-;</source>
+					<target>Delete Column;Save;Clear Saved;-;</target>
+				</trans-unit>
+				<trans-unit resname="SaveChanges">
+					<source>Save changes?</source>
+					<target>Save changes?</target>
+				</trans-unit>
+				<trans-unit resname="SomebodyElseChanged">
+					<source>Someone else has changed the same fields in the meantime, the data cannot be saved!</source>
+					<target>Someone else has changed the same fields in the meantime, the data cannot be saved!</target>
+				</trans-unit>				
+				<trans-unit resname="RecordLockedFrom">
+					<source>Record is locked from </source>
+					<target>Record is locked from </target>
+				</trans-unit>	
+				<trans-unit resname="LockedWait">
+					<source>Wait</source>
+					<target>Wait</target>
+				</trans-unit>	
+				<trans-unit resname="LockedCancel">
+					<source>Cancel</source>
+					<target>Cancel</target>
+				</trans-unit>									
+				<trans-unit resname="LockedClassic">
+					<source>The data record is currently being processed by xxx! Open read-only...</source>
+					<target>The data record is currently being processed by xxx! Open read-only...</target>
+				</trans-unit>	
+			</group>
+			
+			<group resname="Application_Specific">
+				<trans-unit resname="NoNewButtonForInvoices">
+					<source>Double click the Client, to create a new invoice.</source>
+					<target>Double click the Client, to create a new invoice.</target>
+				</trans-unit>
+				
+			</group> 
 
         </body>
     </file>

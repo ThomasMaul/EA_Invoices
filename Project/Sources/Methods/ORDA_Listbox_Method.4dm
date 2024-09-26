@@ -129,14 +129,17 @@ Case of
 			: (($classname="Clients") | ($classname="Module"))
 				Form:C1466.ORDA_listbox.setTable(ds:C1482.CLIENTS)
 				Form:C1466.ORDA_listbox.load()
+				Form:C1466.toolbar.load()  // this will recreate the toolbar, produce flicker. But allow to change buttons or show/hide searchbox
 				Form:C1466.ORDA_listbox.setInputForm()
 			: ($classname="Invoices")
 				Form:C1466.ORDA_listbox.setTable(ds:C1482.INVOICES)
 				Form:C1466.ORDA_listbox.load()
+				Form:C1466.toolbar.load()
 				Form:C1466.ORDA_listbox.setInputForm()
 			: ($classname="Products")
 				Form:C1466.ORDA_listbox.setTable(ds:C1482.PRODUCTS)
 				Form:C1466.ORDA_listbox.load()
+				Form:C1466.toolbar.load()
 				Form:C1466.ORDA_listbox.setInputForm()
 				
 			: ($classname="Add")  // "New" button, different behavior depending of module

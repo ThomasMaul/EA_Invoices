@@ -42,6 +42,18 @@
 					<source>Reset to defaults?</source>
 					<target>Auf Voreinstellungen zurücksetzen?</target>
 				</trans-unit>
+				<trans-unit resname="Save_Defaults">
+					<source>Save as defaults</source>
+					<target>Als Voreinstellungen speichern</target>
+				</trans-unit>
+				<trans-unit resname="Toolbar_Reset">
+					<source>Reset</source>
+					<target>Zurücksetzen</target>
+				</trans-unit>
+				<trans-unit resname="Toolbar_Save">
+					<source>Save</source>
+					<target>Speichern</target>
+				</trans-unit>
 			</group>
 			
 			<group resname="ORDAListbox">

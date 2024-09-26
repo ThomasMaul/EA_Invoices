@@ -148,7 +148,7 @@ Function calcWindowTitle($sel : 4D:C1709.EntitySelection)->$title : Text
 		$title:=$class.calcWindowTitle($sel)
 		//%W+550.2
 	Else 
-		$title:=This:C1470.tablename+"   -   "+String:C10($sel.length)+" von "+String:C10($class.all().length)
+		$title:=This:C1470.tablename+"   -   "+String:C10($sel.length)+" of "+String:C10($class.all().length)
 	End if 
 	
 Function handleButtonClick($button : Text; $event : Integer)

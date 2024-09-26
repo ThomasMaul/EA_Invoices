@@ -72,7 +72,7 @@
 				},
 				"save": {
 					"type": "button",
-					"text": "Speichern",
+					"text": ":xliff:Toolbar_Save",
 					"top": 518,
 					"left": 711,
 					"width": 149,
@@ -86,7 +86,7 @@
 				},
 				"reset": {
 					"type": "button",
-					"text": "Reset",
+					"text": ":xliff:Toolbar_Reset",
 					"top": 518,
 					"left": 542,
 					"width": 149,
@@ -100,7 +100,7 @@
 				},
 				"SaveDefault": {
 					"type": "button",
-					"text": "Als Voreinstellung speichern",
+					"text": ":xliff:Save_Defaults",
 					"top": 518,
 					"left": 21,
 					"width": 196,
@@ -116,7 +116,7 @@
 			}
 		}
 	],
-	"geometryStamp": 49,
+	"geometryStamp": 52,
 	"method": "method.4dm",
 	"editor": {
 		"activeView": "View 1",
