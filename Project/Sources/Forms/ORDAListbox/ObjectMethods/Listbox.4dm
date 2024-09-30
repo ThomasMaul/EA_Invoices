@@ -64,7 +64,7 @@ Case of
 						$status:=Form:C1466.preview.data.save(dk auto merge:K85:24)
 						Case of 
 							: ($status.success)
-								// nichts, also passt!
+								// nothing all fine
 							: ($status.status=dk status automerge failed:K85:25)
 								ALERT:C41(Get localized string:C991("SomebodyElseChanged"))
 							: ($status.status=dk status locked:K85:21)
