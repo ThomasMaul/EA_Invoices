@@ -2,7 +2,7 @@ var $event : Object:=FORM Event:C1606
 Case of 
 	: ($event.code=On Header Click:K2:40)
 		If (Right click:C712)
-			var $popup : Text:=Get localized string:C991("ColumnRightClick")
+			var $popup : Text:=Localized string:C991("ColumnRightClick")
 			var $table : 4D:C1709.DataClass:=Form:C1466.listbox.getDataClass()
 			var $tablename : Text:=$table.getInfo().name
 			var $nullpointer : Pointer
@@ -58,7 +58,7 @@ Case of
 				var $check : Boolean:=True:C214
 				
 				If ($check)
-					CONFIRM:C162(Get localized string:C991("SaveChanges"))
+					CONFIRM:C162(Localized string:C991("SaveChanges"))
 					If (OK=1)
 						C_OBJECT:C1216($status)
 						$status:=Form:C1466.preview.data.save(dk auto merge:K85:24)
@@ -66,16 +66,18 @@ Case of
 							: ($status.success)
 								// nothing all fine
 							: ($status.status=dk status automerge failed:K85:25)
-								ALERT:C41(Get localized string:C991("SomebodyElseChanged"))
+								ALERT:C41(Localized string:C991("SomebodyElseChanged"))
 							: ($status.status=dk status locked:K85:21)
 								var $user : Text:=$status.lockInfo.user_name+"/"+$status.lockInfo.host_name+"/"+$status.lockInfo.task_name
-								CONFIRM:C162(Get localized string:C991("RecordLockedFrom")+$user; Get localized string:C991("LockedWait"); Get localized string:C991("LockedCancel"))
+								CONFIRM:C162(Localized string:C991("RecordLockedFrom")+$user; Localized string:C991("LockedWait"); Localized string:C991("LockedCancel"))
 								If (OK=1)
 									LISTBOX SELECT ROW:C912(*; "Listbox"; Num:C11(Form:C1466.preview.Position); lk replace selection:K53:1)
 									Form:C1466.SelectedElement:=Form:C1466.preview.data
 								Else 
 								End if 
 						End case 
+					Else   // do not change
+						Form:C1466.listbox:=Form:C1466.listbox  // force redraw with old values
 					End if 
 				End if 
 			End if 

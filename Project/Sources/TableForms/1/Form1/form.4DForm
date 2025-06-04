@@ -33,9 +33,10 @@
 		"onPageChange"
 	],
 	"pageFormat": {
-		"paperName": "DIN A4",
-		"paperWidth": "595pt",
-		"paperHeight": "842pt"
+		"paperName": "A4",
+		"paperWidth": "595.27556705475pt",
+		"paperHeight": "841.88977050781pt",
+		"orientation": "landscape"
 	},
 	"pages": [
 		null,
@@ -400,5 +401,9 @@
 			"View 8": {},
 			"View 9": {}
 		}
+	},
+	"$4d": {
+		"version": "1",
+		"kind": "form"
 	}
 }
