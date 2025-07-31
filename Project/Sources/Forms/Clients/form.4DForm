@@ -2078,18 +2078,21 @@
 					"textAlign": "right",
 					"text": ":xliff:Contact"
 				},
-				"Button": {
+				"Button1": {
 					"type": "button",
-					"text": "Map",
-					"top": 58,
-					"left": 746,
-					"width": 84,
-					"height": 30,
+					"text": "🗺",
+					"top": 46,
+					"left": 702,
+					"width": 99,
+					"height": 59,
 					"events": [
 						"onClick"
 					],
 					"action": "nextPage",
-					"method": "ObjectMethods/Button.4dm"
+					"style": "custom",
+					"fontFamily": "Arial",
+					"fontSize": 48,
+					"method": "ObjectMethods/Button1.4dm"
 				}
 			}
 		},
@@ -2186,18 +2189,6 @@
 						"onClick"
 					]
 				},
-				"Button1": {
-					"type": "button",
-					"text": "Details",
-					"top": 58,
-					"left": 746,
-					"width": 84,
-					"height": 30,
-					"events": [
-						"onClick"
-					],
-					"action": "previousPage"
-				},
 				"Web Area": {
 					"type": "webArea",
 					"left": 0,
@@ -2289,6 +2280,48 @@
 					"events": [
 						"onDataChange"
 					]
+				},
+				"_LAST_LAST_2": {
+					"type": "button",
+					"top": 51,
+					"left": 183,
+					"width": 58,
+					"height": 48,
+					"tooltip": {
+						"$ref": "/SOURCES/tips.json#/Last"
+					},
+					"class": "Texts11N",
+					"stroke": "#777777",
+					"focusable": false,
+					"text": ":xliff:Last",
+					"icon": "/RESOURCES/Buttons/clients-last.png",
+					"iconFrames": 4,
+					"style": "custom",
+					"method": "ObjectMethods/_LAST_LAST_2.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"_ALL_CANCEL_1": {
+					"type": "button",
+					"top": 51,
+					"left": 559,
+					"width": 58,
+					"height": 48,
+					"tooltip": {
+						"$ref": "/SOURCES/tips.json#/Cancel"
+					},
+					"class": "Texts11N",
+					"stroke": "#777777",
+					"focusable": false,
+					"text": ":xliff:Cancel",
+					"icon": "/RESOURCES/Buttons/clients-cancel.png",
+					"iconFrames": 4,
+					"style": "custom",
+					"events": [
+						"onClick"
+					],
+					"action": "previousPage"
 				}
 			}
 		}
@@ -2352,7 +2385,7 @@
 			"View 9": {}
 		}
 	},
-	"geometryStamp": 105,
+	"geometryStamp": 125,
 	"$4d": {
 		"version": "1",
 		"kind": "form"
