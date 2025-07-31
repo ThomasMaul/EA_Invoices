@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?><preferences stamp="14">
+<?xml version="1.0" encoding="UTF-8"?><preferences stamp="16">
 	<com.4d>
 		<deployment>
 			<options/>
@@ -13,7 +13,7 @@
 		</compiler>
 		<database>
 			<cache flush_buffer_delay="20s" size_maximum="1024" size_minimum="512"/>
-			<misc standard_xpath="false"/>
+			<misc mac_use_lf="true" no_bom="true" non_blocking_printing="true" prefer_null_than_blank_values="false" split_catalog="true" standard_xpath="true"/>
 		</database>
 		<server>
 			<network>
@@ -23,7 +23,7 @@
 		</server>
 		<web>
 			<standalone_server>
-				<configuration allowHttp="true" allow_ssl="false" port_number="80" publish_at_startup="false">
+				<configuration allowHttp="true" allow_ssl="false" port_number="80" publish_at_startup="true" session_mode="1">
 					<hosts>
 						<host home_page="" html_root="./Web/" id="0" name="default"/>
 					</hosts>
@@ -41,6 +41,7 @@
 					<backup daily="7;0" hourly="12;0" mode="1" monthly="1;1;0" size="10485760" weekly="1;{0;0}"/>
 				</log>
 				<rest launch_at_startup="true"/>
+				<qodlystudio enabled="true"/>
 			</standalone_server>
 		</web>
 		<sql>

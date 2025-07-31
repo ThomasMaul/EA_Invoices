@@ -1,7 +1,7 @@
-﻿{
+{
 	"destination": "detailScreen",
 	"rightMargin": 0,
-	"bottomMargin": 10,
+	"bottomMargin": 0,
 	"menuBar": "Menu Bar #1",
 	"markerHeader": 15,
 	"markerBody": 200,
@@ -618,7 +618,7 @@
 					"left": 40,
 					"width": 221,
 					"height": 17,
-					"dataSource": "Util_GiveRecordCount (Form:C1466.displayedSelection;Form:C1466.selectedSubset)",
+					"dataSource": "Util_GiveRecordCount(Form:C1466.displayedSelection; Form:C1466.selectedSubset)",
 					"focusable": false,
 					"fill": "transparent",
 					"borderStyle": "none",
@@ -1009,7 +1009,7 @@
 				},
 				"_FIELD_ZIP_2_": {
 					"type": "input",
-					"top": 430,
+					"top": 432,
 					"left": 131,
 					"width": 176,
 					"height": 16,
@@ -1338,7 +1338,7 @@
 				"_UNLOCK_": {
 					"type": "checkbox",
 					"top": 51,
-					"left": 924,
+					"left": 904,
 					"width": 63,
 					"height": 48,
 					"sizingX": "move",
@@ -2013,7 +2013,7 @@
 				"Round Rectangle6_2_": {
 					"type": "rectangle",
 					"top": 582,
-					"left": 125,
+					"left": 171,
 					"width": 188,
 					"height": 26,
 					"sizingX": "grow",
@@ -2077,6 +2077,218 @@
 					"class": "Texts13N",
 					"textAlign": "right",
 					"text": ":xliff:Contact"
+				},
+				"Button": {
+					"type": "button",
+					"text": "Map",
+					"top": 58,
+					"left": 746,
+					"width": 84,
+					"height": 30,
+					"events": [
+						"onClick"
+					],
+					"action": "nextPage",
+					"method": "ObjectMethods/Button.4dm"
+				}
+			}
+		},
+		{
+			"objects": {
+				"_FRST_FIRST_1": {
+					"type": "button",
+					"top": 51,
+					"left": 9,
+					"width": 58,
+					"height": 48,
+					"tooltip": {
+						"$ref": "/SOURCES/tips.json#/First"
+					},
+					"class": "Texts11N",
+					"stroke": "#777777",
+					"focusable": false,
+					"text": ":xliff:First",
+					"icon": "/RESOURCES/Buttons/clients-first.png",
+					"iconFrames": 4,
+					"style": "custom",
+					"method": "ObjectMethods/_FRST_FIRST_1.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"Line9": {
+					"type": "line",
+					"top": 53,
+					"left": 258,
+					"height": 35,
+					"stroke": "#D8D8D8"
+				},
+				"_FRST_PREVIOUS_1": {
+					"type": "button",
+					"top": 51,
+					"left": 67,
+					"width": 58,
+					"height": 48,
+					"tooltip": {
+						"$ref": "/SOURCES/tips.json#/Previous"
+					},
+					"class": "Texts11N",
+					"stroke": "#777777",
+					"focusable": false,
+					"text": ":xliff:Previous",
+					"icon": "/RESOURCES/Buttons/clients-previous.png",
+					"iconFrames": 4,
+					"style": "custom",
+					"method": "ObjectMethods/_FRST_PREVIOUS_1.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"_LAST_NEXT_1": {
+					"type": "button",
+					"top": 51,
+					"left": 125,
+					"width": 58,
+					"height": 48,
+					"tooltip": {
+						"$ref": "/SOURCES/tips.json#/Next"
+					},
+					"class": "Texts11N",
+					"stroke": "#777777",
+					"focusable": false,
+					"text": ":xliff:Next",
+					"icon": "/RESOURCES/Buttons/clients-next.png",
+					"iconFrames": 4,
+					"style": "custom",
+					"method": "ObjectMethods/_LAST_NEXT_1.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"_LAST_LAST_1": {
+					"type": "button",
+					"top": 51,
+					"left": 183,
+					"width": 58,
+					"height": 48,
+					"tooltip": {
+						"$ref": "/SOURCES/tips.json#/Last"
+					},
+					"class": "Texts11N",
+					"stroke": "#777777",
+					"focusable": false,
+					"text": ":xliff:Last",
+					"icon": "/RESOURCES/Buttons/clients-last.png",
+					"iconFrames": 4,
+					"style": "custom",
+					"method": "ObjectMethods/_LAST_LAST_1.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"Button1": {
+					"type": "button",
+					"text": "Details",
+					"top": 58,
+					"left": 746,
+					"width": 84,
+					"height": 30,
+					"events": [
+						"onClick"
+					],
+					"action": "previousPage"
+				},
+				"Web Area": {
+					"type": "webArea",
+					"left": 0,
+					"top": 146,
+					"width": 997,
+					"height": 519,
+					"webEngine": "embedded",
+					"sizingX": "grow",
+					"sizingY": "grow"
+				},
+				"_FIELD_Name_1": {
+					"type": "input",
+					"top": 119,
+					"left": 108,
+					"width": 176,
+					"height": 16,
+					"sizingX": "grow",
+					"dataSource": "Form:C1466.editEntity.Name",
+					"class": "Texts13N",
+					"fill": "transparent",
+					"borderStyle": "none",
+					"contextMenu": "none",
+					"dragging": "custom",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"Text5": {
+					"type": "text",
+					"top": 119,
+					"left": 0,
+					"width": 94,
+					"height": 16,
+					"stroke": "#696969",
+					"class": "Texts13N",
+					"textAlign": "right",
+					"text": ":xliff:Name"
+				},
+				"_FIELD_City__1_1": {
+					"type": "input",
+					"top": 120,
+					"left": 468,
+					"width": 176,
+					"height": 16,
+					"sizingX": "grow",
+					"dataSource": "Form:C1466.editEntity.City",
+					"class": "Texts13N",
+					"textAlign": "left",
+					"fill": "transparent",
+					"borderStyle": "none",
+					"contextMenu": "none",
+					"dragging": "custom",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"_FIELD_Address_1_1": {
+					"type": "input",
+					"top": 119,
+					"left": 638,
+					"width": 244,
+					"height": 16,
+					"sizingX": "grow",
+					"dataSource": "Form:C1466.editEntity.Address",
+					"class": "Texts13N",
+					"fill": "transparent",
+					"borderStyle": "none",
+					"contextMenu": "none",
+					"dragging": "custom",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"_FIELD_State__2_1": {
+					"type": "input",
+					"top": 119,
+					"left": 272,
+					"width": 176,
+					"height": 16,
+					"sizingX": "grow",
+					"dataSource": "Form:C1466.editEntity.State",
+					"dataSourceTypeHint": "text",
+					"class": "Texts13N",
+					"textAlign": "left",
+					"fill": "transparent",
+					"borderStyle": "none",
+					"contextMenu": "none",
+					"dragging": "custom",
+					"events": [
+						"onDataChange"
+					]
 				}
 			}
 		}
@@ -2110,7 +2322,9 @@
 					"Text6_1_",
 					"Text7_1_",
 					"Text8_1_",
-					"Text11_1_"
+					"Text11_1_",
+					"_FIELD_City__1_1",
+					"_FIELD_Address_1_1"
 				]
 			},
 			"View 3": {
@@ -2126,7 +2340,8 @@
 					"Text5_2_",
 					"Text7_2_",
 					"Text8_2_",
-					"Text11_2_"
+					"Text11_2_",
+					"_FIELD_State__2_1"
 				]
 			},
 			"View 4": {},
@@ -2136,5 +2351,10 @@
 			"View 8": {},
 			"View 9": {}
 		}
+	},
+	"geometryStamp": 105,
+	"$4d": {
+		"version": "1",
+		"kind": "form"
 	}
 }

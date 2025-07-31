@@ -1,0 +1,12 @@
+{
+  "name": "qodly_map",
+  "version": "0.4.5",
+  "scope": "qodly_6fa741d64953ed9604fa",
+  "author": {
+    "name": "Qodly Team",
+    "email": "contact@qodly.com",
+    "url": "https://qodly.com"
+  },
+  "module": "components",
+  "remoteEntryFileName": "components.js"
+}

@@ -1,0 +1,128 @@
+{
+	"metadata": {
+		"v": "1.0",
+		"datasources": [],
+		"styles": []
+	},
+	"components": {
+		"ROOT": {
+			"type": {
+				"resolvedName": "Container"
+			},
+			"isCanvas": true,
+			"props": {
+				"classNames": [],
+				"events": [
+					{
+						"type": "method",
+						"dataclass": "DataStore",
+						"events": [
+							"oninit"
+						],
+						"id": "v7mhCFx53buX1gkkfiqRia",
+						"method": "ds.authentify",
+						"params": [
+							{
+								"name": "username",
+								"type": "Text",
+								"datasource": "",
+								"id": "8yRb4NryEH2MypeSWCGuVM",
+								"isHardCoded": true,
+								"hardCodedType": "string",
+								"hardCodedValue": "-"
+							},
+							{
+								"name": "pass",
+								"type": "Text",
+								"datasource": "-",
+								"id": "a22NKURPcyMJgu9heRqghj",
+								"isHardCoded": true,
+								"hardCodedType": "string",
+								"hardCodedValue": "-"
+							},
+							{
+								"name": "query",
+								"type": "Object",
+								"datasource": "Qodly:Location",
+								"id": "nosPHdCE2Nu6puGRCQxHko"
+							}
+						],
+						"datasource": "",
+						"allowedOnHTTPGET": false,
+						"returns": {
+							"name": "out",
+							"type": "Text",
+							"datasource": "global:status"
+						},
+						"feedback": true
+					},
+					{
+						"type": "method",
+						"dataclass": "CLIENTS",
+						"events": [
+							"onload"
+						],
+						"id": "qJUiQUygrTqMDRJKddJEGq",
+						"method": "ds.CLIENTS.findByURL",
+						"params": [
+							{
+								"name": "location",
+								"type": "Object",
+								"datasource": "Qodly:Location",
+								"id": "cCceKs9awv7QDSnDj3a5Fj"
+							}
+						],
+						"datasource": "",
+						"allowedOnHTTPGET": false,
+						"returns": {
+							"name": "client",
+							"type": "cs.CLIENTSEntity",
+							"datasource": "global:client"
+						},
+						"feedback": true
+					}
+				],
+				"airyMode": false,
+				"className": "bg-white h-full w-full px-6",
+				"style": {
+					"paddingTop": "0px",
+					"paddingLeft": "0px",
+					"paddingRight": "0px",
+					"paddingBottom": "0px"
+				}
+			},
+			"displayName": "Page",
+			"custom": {},
+			"parent": "",
+			"hidden": false,
+			"nodes": [
+				"46A1xzkK3O"
+			],
+			"linkedNodes": {}
+		},
+		"46A1xzkK3O": {
+			"type": {
+				"resolvedName": "WebformLoader"
+			},
+			"isCanvas": false,
+			"props": {
+				"events": [],
+				"webform": "Map",
+				"style": {
+					"paddingTop": "0px",
+					"paddingRight": "0px",
+					"paddingBottom": "0px",
+					"paddingLeft": "0px",
+					"height": "100%",
+					"width": "100%"
+				}
+			},
+			"displayName": "Page Loader",
+			"custom": {},
+			"parent": "ROOT",
+			"hidden": false,
+			"nodes": [],
+			"linkedNodes": {}
+		}
+	}
+}

@@ -1,0 +1,288 @@
+{
+	"tables": {
+		"__DeletedRecords": {
+			"color": {
+				"red": "255",
+				"green": "255",
+				"blue": "255",
+				"alpha": "0"
+			},
+			"coordinates": {
+				"left": "229.12109375",
+				"top": "539.828125",
+				"width": "171.6953125",
+				"height": "159.7890625"
+			},
+			"displayable_fields_count": 5,
+			"fields_ordering": 1
+		},
+		"Listbox_Setting": {
+			"color": {
+				"red": "255",
+				"green": "255",
+				"blue": "255",
+				"alpha": "0"
+			},
+			"coordinates": {
+				"left": "18.21484375",
+				"top": "536.1640625",
+				"width": "161.1640625",
+				"height": "196.1328125"
+			},
+			"displayable_fields_count": 7
+		},
+		"DEFAULT_SETTINGS": {
+			"color": {
+				"red": "114",
+				"green": "209",
+				"blue": "221",
+				"alpha": "255"
+			},
+			"coordinates": {
+				"left": "710.9296875",
+				"top": "295.265625",
+				"width": "160",
+				"height": "216.6484375"
+			},
+			"displayable_fields_count": 8
+		},
+		"PRODUCTS": {
+			"color": {
+				"red": "252",
+				"green": "191",
+				"blue": "73",
+				"alpha": "255"
+			},
+			"coordinates": {
+				"left": "697.765625",
+				"top": "11.4765625",
+				"width": "168.49609375",
+				"height": "230.23828125"
+			},
+			"displayable_fields_count": 8,
+			"fields": {
+				"ID": {
+					"color": {
+						"red": "239",
+						"green": "107",
+						"blue": "0",
+						"alpha": "255"
+					}
+				}
+			}
+		},
+		"INVOICE_LINES": {
+			"color": {
+				"red": "207",
+				"green": "209",
+				"blue": "165",
+				"alpha": "255"
+			},
+			"coordinates": {
+				"left": "471.77734375",
+				"top": "9.1015625",
+				"width": "174.71875",
+				"height": "308.15234375"
+			},
+			"displayable_fields_count": 12,
+			"fields": {
+				"Total": {
+					"color": {
+						"red": "255",
+						"green": "255",
+						"blue": "255",
+						"alpha": "0"
+					}
+				},
+				"Tax_Rate": {
+					"color": {
+						"red": "255",
+						"green": "255",
+						"blue": "255",
+						"alpha": "0"
+					}
+				},
+				"Unit_Price": {
+					"color": {
+						"red": "255",
+						"green": "255",
+						"blue": "255",
+						"alpha": "0"
+					}
+				},
+				"_ProductName": {
+					"color": {
+						"red": "191",
+						"green": "48",
+						"blue": "181",
+						"alpha": "255"
+					}
+				},
+				"_ProductReference": {
+					"color": {
+						"red": "191",
+						"green": "48",
+						"blue": "181",
+						"alpha": "255"
+					}
+				},
+				"Product_ID": {
+					"color": {
+						"red": "239",
+						"green": "107",
+						"blue": "0",
+						"alpha": "255"
+					}
+				},
+				"Invoice_ID": {
+					"color": {
+						"red": "186",
+						"green": "216",
+						"blue": "10",
+						"alpha": "255"
+					}
+				},
+				"ID": {
+					"color": {
+						"red": "255",
+						"green": "255",
+						"blue": "255",
+						"alpha": "0"
+					}
+				}
+			}
+		},
+		"INVOICES": {
+			"color": {
+				"red": "186",
+				"green": "170",
+				"blue": "158",
+				"alpha": "255"
+			},
+			"coordinates": {
+				"left": "235",
+				"top": "5",
+				"width": "155",
+				"height": "398.24609375"
+			},
+			"displayable_fields_count": 16,
+			"fields": {
+				"Client_ID": {
+					"color": {
+						"red": "0",
+						"green": "153",
+						"blue": "181",
+						"alpha": "255"
+					}
+				},
+				"Invoice_Number": {
+					"color": {
+						"red": "255",
+						"green": "255",
+						"blue": "255",
+						"alpha": "0"
+					}
+				},
+				"ID": {
+					"color": {
+						"red": "204",
+						"green": "122",
+						"blue": "2",
+						"alpha": "255"
+					}
+				}
+			}
+		},
+		"CLIENTS": {
+			"color": {
+				"red": "168",
+				"green": "206",
+				"blue": "226",
+				"alpha": "255"
+			},
+			"coordinates": {
+				"left": "21.28515625",
+				"top": "6.45703125",
+				"width": "156.3828125",
+				"height": "514.6328125"
+			},
+			"displayable_fields_count": 22,
+			"fields": {
+				"_Web_Site": {
+					"color": {
+						"red": "191",
+						"green": "48",
+						"blue": "181",
+						"alpha": "255"
+					}
+				},
+				"_Email": {
+					"color": {
+						"red": "191",
+						"green": "48",
+						"blue": "181",
+						"alpha": "255"
+					}
+				},
+				"_Fax": {
+					"color": {
+						"red": "191",
+						"green": "48",
+						"blue": "181",
+						"alpha": "255"
+					}
+				},
+				"_Mobile": {
+					"color": {
+						"red": "191",
+						"green": "48",
+						"blue": "181",
+						"alpha": "255"
+					}
+				},
+				"_Phone": {
+					"color": {
+						"red": "191",
+						"green": "48",
+						"blue": "181",
+						"alpha": "255"
+					}
+				},
+				"ID": {
+					"color": {
+						"red": "0",
+						"green": "158",
+						"blue": "96",
+						"alpha": "255"
+					}
+				}
+			}
+		}
+	},
+	"relations": {
+		"ED0E940B7BA7AE4B99C3F957045694F1": {
+			"color": {
+				"red": "168",
+				"green": "206",
+				"blue": "226",
+				"alpha": "255"
+			}
+		},
+		"E102AD0611DC5F4ABC678BF2FAA3355B": {
+			"color": {
+				"red": "224",
+				"green": "234",
+				"blue": "104",
+				"alpha": "255"
+			}
+		},
+		"DB086A51B8E14040AF27F65CE8ADC66E": {
+			"color": {
+				"red": "255",
+				"green": "153",
+				"blue": "63",
+				"alpha": "255"
+			}
+		}
+	}
+}

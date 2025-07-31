@@ -1,0 +1,77 @@
+{
+	"forceLogin": true,
+	"permissions": {
+		"allowed": [
+			{
+				"applyTo": "ds.authentify",
+				"type": "method",
+				"execute": [
+					"guest",
+					"user"
+				],
+				"promote": [
+					"user"
+				]
+			},
+			{
+				"applyTo": "CLIENTS",
+				"type": "dataclass",
+				"read": [
+					"user"
+				]
+			},
+			{
+				"applyTo": "CLIENTS.findByURL",
+				"type": "method",
+				"execute": [
+					"user"
+				]
+			},
+			{
+				"applyTo": "ds",
+				"type": "datastore",
+				"read": [
+					"nobody"
+				],
+				"create": [
+					"nobody"
+				],
+				"update": [
+					"nobody"
+				],
+				"drop": [
+					"nobody"
+				],
+				"execute": [
+					"nobody"
+				]
+			}
+		]
+	},
+	"privileges": [
+		{
+			"id": "biHuDuwvrG2BT6eUwu6f7Q",
+			"privilege": "user",
+			"includes": []
+		},
+		{
+			"id": "sJqodUtGhRkDV1Api9gkwb",
+			"privilege": "nobody",
+			"includes": []
+		}
+	],
+	"roles": [
+		{
+			"id": "6V5kaSU1AdWMhSSH5EqZ39",
+			"role": "user",
+			"privileges": [
+				"user"
+			]
+		},
+		{
+			"id": "vBZQans6oPNgTgCSnHg4bS",
+			"role": "nobody",
+			"privileges": []
+		}
+	]
+}

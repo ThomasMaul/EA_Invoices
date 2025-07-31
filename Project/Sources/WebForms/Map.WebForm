@@ -1,0 +1,65 @@
+{
+	"metadata": {
+		"v": "1.0",
+		"datasources": [],
+		"styles": []
+	},
+	"components": {
+		"ROOT": {
+			"type": {
+				"resolvedName": "Container"
+			},
+			"isCanvas": true,
+			"props": {
+				"classNames": [],
+				"events": [],
+				"airyMode": false,
+				"className": "bg-white h-full w-full px-6",
+				"style": {
+					"paddingTop": "0px",
+					"paddingRight": "0px",
+					"paddingBottom": "0px",
+					"paddingLeft": "0px"
+				}
+			},
+			"displayName": "Page",
+			"custom": {},
+			"parent": "",
+			"hidden": false,
+			"nodes": [
+				"Yyeiuh-XNh"
+			],
+			"linkedNodes": {}
+		},
+		"Yyeiuh-XNh": {
+			"type": {
+				"resolvedName": "SingleMap"
+			},
+			"isCanvas": false,
+			"props": {
+				"name": "",
+				"classNames": [],
+				"events": [],
+				"style": {
+					"height": "100%",
+					"width": "100%"
+				},
+				"zoom": 10,
+				"markerDragging": false,
+				"popup": false,
+				"mapDragging": true,
+				"marker": true,
+				"icon": "fa-solid fa-location-dot",
+				"datasource": "global:client",
+				"long": "global:Longitude",
+				"lat": "global:Latitude"
+			},
+			"displayName": "SingleMap",
+			"custom": {},
+			"parent": "ROOT",
+			"hidden": false,
+			"nodes": [],
+			"linkedNodes": {}
+		}
+	}
+}
