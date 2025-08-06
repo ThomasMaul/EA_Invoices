@@ -30,8 +30,10 @@ Case of   //For Forms displaying related entities
 		OBJECT SET VISIBLE:C603(*; "@_LIST_DEL_INVOICE_LINES"; Form:C1466.recordCanBeSaved & (Form:C1466.sel_Lines_Fm_Invoices.length>0))  //If at least an Entity has been selected
 End case 
 OBJECT SET ENABLED:C1123(*; "@_LIST_@"; Form:C1466.recordCanBeSaved)  //
-OBJECT SET ENABLED:C1123(*; "@_FRST_@"; ($entity.indexOf(Form:C1466.displayedSelection)>0) & Not:C34($entity.isNew()))  //...if the Entity is the first one
-OBJECT SET ENABLED:C1123(*; "@_LAST_@"; ($entity.indexOf(Form:C1466.displayedSelection)<(Form:C1466.displayedSelection.length-1)) & Not:C34($entity.isNew()))  //...or the last one
+Try  // when called via Qodly, the selectedElement is not part of the collection...
+	OBJECT SET ENABLED:C1123(*; "@_FRST_@"; ($entity.indexOf(Form:C1466.displayedSelection)>0) & Not:C34($entity.isNew()))  //...if the Entity is the first one
+	OBJECT SET ENABLED:C1123(*; "@_LAST_@"; ($entity.indexOf(Form:C1466.displayedSelection)<(Form:C1466.displayedSelection.length-1)) & Not:C34($entity.isNew()))  //...or the last one
+End try
 If (Form:C1466.pictureName#"")
 	OBJECT SET VISIBLE:C603(*; "@_NOPIC_@"; (Picture size:C356($entity[Form:C1466.pictureName])=0))
 End if 

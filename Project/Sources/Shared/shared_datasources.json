@@ -88,6 +88,50 @@
 			"namespace": "global",
 			"dataType": "string",
 			"initialValue": ""
+		},
+		{
+			"id": "invoices",
+			"type": "entitysel",
+			"dataclass": "INVOICES",
+			"namespace": "global",
+			"initialValue": "all",
+			"depth": null,
+			"pageSize": 100
+		},
+		{
+			"id": "selectedDate",
+			"type": "scalar",
+			"namespace": "global",
+			"dataType": "date",
+			"initialValue": ""
+		},
+		{
+			"id": "invoice",
+			"type": "entity",
+			"dataclass": "INVOICES",
+			"namespace": "global",
+			"initialValue": "",
+			"depth": null,
+			"events": [
+				{
+					"type": "method",
+					"dataclass": "INVOICESEntity",
+					"events": [
+						"onChange"
+					],
+					"id": "f4W3tStSL2ckgXBucMSsST",
+					"method": "invoice.SelectDate",
+					"params": [],
+					"namespace": "global",
+					"datasource": "",
+					"returns": {
+						"name": "result",
+						"type": "Variable"
+					},
+					"feedback": true,
+					"disabled": true
+				}
+			]
 		}
 	]
 }

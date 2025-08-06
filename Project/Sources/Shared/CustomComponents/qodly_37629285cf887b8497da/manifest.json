@@ -1,0 +1,12 @@
+{
+  "name": "qodly-calendar",
+  "version": "0.5.8",
+  "scope": "qodly_37629285cf887b8497da",
+  "author": {
+    "name": "Qodly Team",
+    "email": "contact@qodly.com",
+    "url": "https://qodly.com"
+  },
+  "module": "components",
+  "remoteEntryFileName": "components.js"
+}

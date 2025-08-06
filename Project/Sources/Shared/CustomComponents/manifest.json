@@ -1,5 +1,18 @@
 [
 	{
+		"name": "qodly-calendar",
+		"version": "0.5.8",
+		"scope": "qodly_37629285cf887b8497da",
+		"author": {
+			"name": "Qodly Team",
+			"email": "contact@qodly.com",
+			"url": "https://qodly.com"
+		},
+		"module": "components",
+		"remoteEntryFileName": "components.js",
+		"url": "/$shared/CustomComponents/qodly_37629285cf887b8497da/"
+	},
+	{
 		"name": "qodly_map",
 		"version": "0.4.5",
 		"scope": "qodly_6fa741d64953ed9604fa",

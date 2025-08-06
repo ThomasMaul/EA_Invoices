@@ -22,18 +22,15 @@ exposed Function authentify($username : Text; $pass : Text; $query : Object)->$o
 	// we handle here only the part "called from 4D", and use the Current User as identification.
 	// to make sure it is really called from 4D, we use the 4D session ID (a 16 byte token) to verify.
 	
-	// debug only - allow everyone
-	var $info:=New object:C1471("userName"; Current user:C182; "roles"; "user"; "privileges"; "user")
-	$status:=Session:C1714.setPrivileges($info)
-	return String:C10($status)
-	
-	
-	//var $sessionID : Text:=String($query.urlPath.session)
-	//If ($sessionID#"")
-	//var $storage:=Session storage($sessionID)
-	//If ($storage#Null)
-	//var $info:=New object("userName"; Current user; "roles"; "user"; "privileges"; "user")
-	//Session.setPrivileges($info)
-	//End if 
-	//End if 
-	//return ""
+	var $sessionID : Text:=String:C10($query.urlPath.session)
+	If ($sessionID#"")
+		var $storage:=Session storage:C1839($sessionID)
+		If ($storage#Null:C1517)
+			var $info:=New object:C1471("userName"; Current user:C182; "roles"; "user"; "privileges"; "user")
+			Session:C1714.setPrivileges($info)
+			Use (Session:C1714.storage)
+				Session:C1714.storage.client4D:=New shared object:C1526("sessionID"; $sessionID)
+			End use 
+		End if 
+	End if 
+	return ""

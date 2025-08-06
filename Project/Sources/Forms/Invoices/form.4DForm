@@ -1,4 +1,4 @@
-﻿{
+{
 	"destination": "detailScreen",
 	"rightMargin": 0,
 	"bottomMargin": 10,
@@ -724,7 +724,7 @@
 					"left": 40,
 					"width": 221,
 					"height": 17,
-					"dataSource": "Util_GiveRecordCount (Form:C1466.displayedSelection;Form:C1466.selectedSubset)",
+					"dataSource": "Util_GiveRecordCount(Form:C1466.displayedSelection; Form:C1466.selectedSubset)",
 					"focusable": false,
 					"fill": "transparent",
 					"borderStyle": "none",
@@ -801,6 +801,21 @@
 					"events": [
 						"onClick"
 					]
+				},
+				"Button": {
+					"type": "button",
+					"text": "📅",
+					"top": 50,
+					"left": 519,
+					"width": 77,
+					"height": 51,
+					"events": [
+						"onClick"
+					],
+					"method": "ObjectMethods/Button.4dm",
+					"style": "custom",
+					"fontFamily": "Arial",
+					"fontSize": 36
 				}
 			}
 		},
@@ -2562,6 +2577,41 @@
 					]
 				}
 			}
+		},
+		{
+			"objects": {
+				"Web Area": {
+					"type": "webArea",
+					"left": 0,
+					"top": 106,
+					"width": 997,
+					"height": 561,
+					"webEngine": "embedded",
+					"sizingX": "grow",
+					"sizingY": "grow"
+				},
+				"_ALL_CANCEL_1": {
+					"type": "button",
+					"top": 51,
+					"left": 559,
+					"width": 58,
+					"height": 48,
+					"tooltip": {
+						"$ref": "/SOURCES/tips.json#/Cancel"
+					},
+					"class": "Texts11N",
+					"stroke": "#777777",
+					"focusable": false,
+					"text": ":xliff:Cancel",
+					"icon": "/RESOURCES/Buttons/invoices-cancel.png",
+					"iconFrames": 4,
+					"style": "custom",
+					"method": "ObjectMethods/_ALL_CANCEL_1.4dm",
+					"events": [
+						"onClick"
+					]
+				}
+			}
 		}
 	],
 	"editor": {
@@ -2592,5 +2642,10 @@
 			"View 8": {},
 			"View 9": {}
 		}
+	},
+	"geometryStamp": 13,
+	"$4d": {
+		"version": "1",
+		"kind": "form"
 	}
 }

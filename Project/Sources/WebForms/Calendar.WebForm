@@ -1,0 +1,181 @@
+{
+	"metadata": {
+		"v": "1.0",
+		"datasources": [],
+		"styles": []
+	},
+	"components": {
+		"ROOT": {
+			"type": {
+				"resolvedName": "Container"
+			},
+			"isCanvas": true,
+			"props": {
+				"classNames": [],
+				"events": [
+					{
+						"type": "method",
+						"dataclass": "DataStore",
+						"events": [
+							"onload"
+						],
+						"id": "17d9Evt6dDU4rtKKMH6Tjp",
+						"method": "ds.authentify",
+						"params": [
+							{
+								"name": "username",
+								"type": "Text",
+								"datasource": "",
+								"id": "1q8cvzCPzhPH3dnH17yRYY",
+								"isHardCoded": true,
+								"hardCodedType": "string",
+								"hardCodedValue": "-"
+							},
+							{
+								"name": "pass",
+								"type": "Text",
+								"datasource": "",
+								"id": "nqXYhnpXNY3EufYks4oVNf",
+								"isHardCoded": true,
+								"hardCodedType": "string",
+								"hardCodedValue": "-"
+							},
+							{
+								"name": "query",
+								"type": "Object",
+								"datasource": "Qodly:Location",
+								"id": "2Pwgej11Cj2CKgcfG51ZFk"
+							}
+						],
+						"datasource": "",
+						"allowedOnHTTPGET": false,
+						"returns": {
+							"name": "out",
+							"type": "Text",
+							"datasource": "global:status"
+						},
+						"feedback": true
+					}
+				],
+				"airyMode": false,
+				"className": "bg-white h-full w-full px-6"
+			},
+			"displayName": "Page",
+			"custom": {},
+			"parent": "",
+			"hidden": false,
+			"nodes": [
+				"RHDPKuVe4w",
+				"5NlIyopX6f"
+			],
+			"linkedNodes": {}
+		},
+		"RHDPKuVe4w": {
+			"type": {
+				"resolvedName": "Calendar"
+			},
+			"isCanvas": false,
+			"props": {
+				"classNames": [],
+				"events": [
+					{
+						"type": "method",
+						"dataclass": "INVOICESEntity",
+						"events": [
+							"onItemClick"
+						],
+						"id": "g8DLoaKuSWwePciLpuBa2w",
+						"method": "invoice.SelectDate",
+						"params": [],
+						"namespace": "global",
+						"datasource": "",
+						"returns": {
+							"name": "result",
+							"type": "Variable"
+						},
+						"feedback": true
+					}
+				],
+				"weekStart": "1",
+				"color": "#1a73e8",
+				"language": "en",
+				"type": "full",
+				"selectedColor": "#C084FC",
+				"yearNav": true,
+				"borderRadius": "6px",
+				"rowHeight": "150px",
+				"colorProp": "",
+				"datasource": "global:invoices",
+				"property": "global:Invoice_Number",
+				"startDate": "global:Creation_Date",
+				"endDate": "global:Creation_Date",
+				"selectedDate": "global:selectedDate",
+				"currentElement": "global:invoice"
+			},
+			"displayName": "Calendar",
+			"custom": {},
+			"parent": "ROOT",
+			"hidden": false,
+			"nodes": [],
+			"linkedNodes": {}
+		},
+		"5NlIyopX6f": {
+			"type": {
+				"resolvedName": "Button"
+			},
+			"isCanvas": false,
+			"props": {
+				"text": "Open Invoice",
+				"classNames": [],
+				"events": [
+					{
+						"type": "method",
+						"dataclass": "INVOICESEntity",
+						"events": [
+							"onclick"
+						],
+						"id": "hUmqQFfZLZG1BZCXGxtdnm",
+						"method": "invoice.SelectDate",
+						"params": [],
+						"namespace": "global",
+						"datasource": "",
+						"returns": {
+							"name": "result",
+							"type": "Variable"
+						},
+						"feedback": true
+					}
+				],
+				"iconPosition": "hidden",
+				"style": {
+					"display": "flex"
+				}
+			},
+			"displayName": "Button",
+			"custom": {},
+			"parent": "ROOT",
+			"hidden": false,
+			"nodes": [],
+			"linkedNodes": {
+				"icon": "5XaVMTF8yv"
+			}
+		},
+		"5XaVMTF8yv": {
+			"type": {
+				"resolvedName": "Icon"
+			},
+			"isCanvas": false,
+			"props": {
+				"classNames": [],
+				"events": [],
+				"icon": "fa-regular fa-star"
+			},
+			"displayName": "Icon",
+			"custom": {},
+			"parent": "5NlIyopX6f",
+			"hidden": false,
+			"nodes": [],
+			"linkedNodes": {}
+		}
+	}
+}

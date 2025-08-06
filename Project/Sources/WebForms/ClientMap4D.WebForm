@@ -17,16 +17,16 @@
 						"type": "method",
 						"dataclass": "DataStore",
 						"events": [
-							"oninit"
+							"onload"
 						],
-						"id": "v7mhCFx53buX1gkkfiqRia",
+						"id": "rENM8yUXNuChxN43bAXoae",
 						"method": "ds.authentify",
 						"params": [
 							{
 								"name": "username",
 								"type": "Text",
 								"datasource": "",
-								"id": "8yRb4NryEH2MypeSWCGuVM",
+								"id": "1q8cvzCPzhPH3dnH17yRYY",
 								"isHardCoded": true,
 								"hardCodedType": "string",
 								"hardCodedValue": "-"
@@ -34,8 +34,8 @@
 							{
 								"name": "pass",
 								"type": "Text",
-								"datasource": "-",
-								"id": "a22NKURPcyMJgu9heRqghj",
+								"datasource": "",
+								"id": "nqXYhnpXNY3EufYks4oVNf",
 								"isHardCoded": true,
 								"hardCodedType": "string",
 								"hardCodedValue": "-"
@@ -44,7 +44,7 @@
 								"name": "query",
 								"type": "Object",
 								"datasource": "Qodly:Location",
-								"id": "nosPHdCE2Nu6puGRCQxHko"
+								"id": "2Pwgej11Cj2CKgcfG51ZFk"
 							}
 						],
 						"datasource": "",

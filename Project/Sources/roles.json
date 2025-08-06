@@ -28,6 +28,27 @@
 				]
 			},
 			{
+				"applyTo": "INVOICES",
+				"type": "dataclass",
+				"read": [
+					"user"
+				]
+			},
+			{
+				"applyTo": "Form_Code.selectInvoice",
+				"type": "singletonMethod",
+				"execute": [
+					"user"
+				]
+			},
+			{
+				"applyTo": "INVOICES.SelectDate",
+				"type": "method",
+				"execute": [
+					"user"
+				]
+			},
+			{
 				"applyTo": "ds",
 				"type": "datastore",
 				"read": [

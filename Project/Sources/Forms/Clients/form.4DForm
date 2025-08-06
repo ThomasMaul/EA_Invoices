@@ -2013,7 +2013,7 @@
 				"Round Rectangle6_2_": {
 					"type": "rectangle",
 					"top": 582,
-					"left": 171,
+					"left": 126,
 					"width": 188,
 					"height": 26,
 					"sizingX": "grow",
@@ -2385,7 +2385,7 @@
 			"View 9": {}
 		}
 	},
-	"geometryStamp": 125,
+	"geometryStamp": 134,
 	"$4d": {
 		"version": "1",
 		"kind": "form"
