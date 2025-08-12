@@ -22,6 +22,7 @@ exposed Function authentify($username : Text; $pass : Text; $query : Object)->$o
 	// we handle here only the part "called from 4D", and use the Current User as identification.
 	// to make sure it is really called from 4D, we use the 4D session ID (a 16 byte token) to verify.
 	
+	
 	var $sessionID : Text:=String:C10($query.urlPath.session)
 	If ($sessionID#"")
 		var $storage:=Session storage:C1839($sessionID)

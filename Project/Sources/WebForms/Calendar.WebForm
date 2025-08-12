@@ -93,7 +93,8 @@
 							"name": "result",
 							"type": "Variable"
 						},
-						"feedback": true
+						"feedback": true,
+						"disabled": true
 					}
 				],
 				"weekStart": "1",
