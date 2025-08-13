@@ -20,12 +20,9 @@
 	},
 	"Default Project Methods": {
 		"methods": [
-			"FillData",
-			"Invoices_CalculateLineTotals",
 			"Invoices_CalculateTotals",
 			"Invoices_ChangeColor",
 			"Invoices_Delete",
-			"Invoices_GetNumber",
 			"Invoices_GetNumberPrf"
 		]
 	},
