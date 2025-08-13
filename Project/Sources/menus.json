@@ -43,36 +43,6 @@
 			"title": ":xliff:CommonMenuFile",
 			"items": [
 				{
-					"title": ":xliff:Clients",
-					"method": "Clients_Manage",
-					"shortcutShift": true,
-					"shortcutAccel": true,
-					"shortcutKey": "c"
-				},
-				{
-					"title": ":xliff:Invoices",
-					"method": "Invoices_Manage",
-					"shortcutShift": true,
-					"shortcutAccel": true,
-					"shortcutKey": "i"
-				},
-				{
-					"title": ":xliff:Products",
-					"method": "Products_Manage",
-					"shortcutShift": true,
-					"shortcutAccel": true,
-					"shortcutKey": "p"
-				},
-				{
-					"title": "Item 7",
-					"isSeparator": true
-				},
-				{
-					"title": "Custom Fields",
-					"method": "Settings_CustomFields",
-					"action": "databaseSettings"
-				},
-				{
 					"title": ":xliff:Settings",
 					"method": "Settings_Manage",
 					"shortcutShift": true,

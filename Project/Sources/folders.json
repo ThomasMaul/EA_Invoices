@@ -30,22 +30,15 @@
 		"forms": [
 			"[CLIENTS]Input",
 			"[INVOICE_LINES]Input",
-			"[INVOICES]Input",
-			"[PRODUCTS]Input",
-			"[SETTINGS]Input"
+			"[INVOICES]Input"
 		]
 	},
 	"Export": {
 		"forms": [
-			"[CLIENTS]OutputExport",
-			"[PRODUCTS]OutputExport"
+			"[CLIENTS]OutputExport"
 		]
 	},
-	"FillData": {
-		"methods": [
-			"Clients_BuildLogo"
-		]
-	},
+	"FillData": {},
 	"Graph": {
 		"forms": [
 			"[CLIENTS]GraphForm"
@@ -58,15 +51,13 @@
 		],
 		"forms": [
 			"[CLIENTS]Output",
-			"[INVOICES]Output",
-			"[PRODUCTS]Output"
+			"[INVOICES]Output"
 		]
 	},
 	"Manage": {
 		"methods": [
 			"Clients_Manage",
 			"Invoices_Manage",
-			"Products_Manage",
 			"Settings_Manage"
 		]
 	},
@@ -80,24 +71,20 @@
 		"forms": [
 			"[CLIENTS]OutputPrint",
 			"[INVOICE_LINES]OutputPrint",
-			"[INVOICES]OutputPrint",
-			"[PRODUCTS]OutputPrint"
+			"[INVOICES]OutputPrint"
 		]
 	},
 	"ProcessInit": {
 		"methods": [
 			"Clients_ProcessInit",
-			"Invoices_ProcessInit",
-			"Products_ProcessInit",
-			"Settings_ProcessInit"
+			"Invoices_ProcessInit"
 		]
 	},
 	"Reorder": {
 		"methods": [
 			"Clients_Reorder",
 			"InvoiceLines_Reorder",
-			"Invoices_Reorder",
-			"Products_Reorder"
+			"Invoices_Reorder"
 		]
 	},
 	"Tables": {

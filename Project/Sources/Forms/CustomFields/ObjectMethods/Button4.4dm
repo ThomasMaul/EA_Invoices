@@ -1,9 +1,6 @@
-C_POINTER:C301($ColPtr)
-C_LONGINT:C283($selected)
-
 If (Form event code:C388=On Clicked:K2:4)
-	$ColPtr:=OBJECT Get pointer:C1124(Object named:K67:5; "LBcustomFields")
-	$selected:=$ColPtr->
+	var $ColPtr:=OBJECT Get pointer:C1124(Object named:K67:5; "LBcustomFields")
+	var $selected : Integer:=$ColPtr->
 	If ($selected>0)
 		$selected:=$selected+1
 		$ColPtr:=OBJECT Get pointer:C1124(Object named:K67:5; "Tablename")

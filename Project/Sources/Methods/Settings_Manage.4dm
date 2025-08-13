@@ -1,6 +1,5 @@
 //%attributes = {}
-// (P) Settings_Manage
+// needs to be a project method, as called via Menu Bar Editor
 
-C_LONGINT:C283(<>ps_Settings)
-<>ps_Settings:=New process:C317("Settings_ProcessInit"; 0; "Settings_Manage"; *)
-BRING TO FRONT:C326(<>ps_Settings)
+var $win:=Open form window:C675("Settings_Input")
+DIALOG:C40("Settings_Input"; *)

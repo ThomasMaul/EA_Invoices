@@ -1,3 +1,11 @@
+property table : cs:C1710.DataClass
+property tablename : Text
+property _columnwidths : Collection
+property Search : Text
+property SearchCopy : Text
+property listbox : cs:C1710.EntitySelection
+
+
 Class constructor($table : 4D:C1709.DataClass)
 	This:C1470.table:=$table
 	This:C1470.tablename:=This:C1470.table.getInfo().name

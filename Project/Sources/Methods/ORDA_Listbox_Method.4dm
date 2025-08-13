@@ -1,8 +1,9 @@
 //%attributes = {}
 /* this method allows customization, it is used for 3 different purposes
 
-- used as object method for Toolbar buttons (they must be a project mode). (from ORDA_listbox Toolbar)
+- used as object method for Toolbar buttons. (from ORDA_listbox Toolbar)
    zero parameters given
+   use the button name to identify - and then do whatever special action you need
 
 - prepare preview form, init your data here depending of your tables
    parameter "preview"
@@ -19,7 +20,6 @@
 */
 
 #DECLARE($job : Text; $classname : Text; $pk : Text)
-
 
 Case of 
 		//MARK: button - called from object method
@@ -54,15 +54,10 @@ Case of
 			$classname:=String:C10(Form:C1466.data.getDataClass().getInfo().name)
 			
 			Case of 
-				: ($classname="CLIENTS")
+					//: ($classname="CLIENTS")  // nothing to do...
 					// load customfields done via computed attribute
 					// sort invoices done via computed attribute as relation
-					// for example purpose, we just hide/show listbox depending of computed content
-					If ((Form:C1466.data.customFieldsLB#Null:C1517) && (Form:C1466.data.customFieldsLB.result.length>0))
-						OBJECT SET VISIBLE:C603(*; "customF_LB"; True:C214)
-					Else 
-						OBJECT SET VISIBLE:C603(*; "customF_LB"; False:C215)
-					End if 
+					
 					
 				: ($classname="INVOICES")
 					If (Form:C1466.data.ProForma)
@@ -74,7 +69,7 @@ Case of
 						OBJECT SET VISIBLE:C603(*; "inv_@"; Bool:C1537(Form:C1466.data.Paid))
 					End if 
 					
-					OBJECT SET FORMAT:C236(*; "@_cur"; Get localized string:C991("currency"))
+					OBJECT SET FORMAT:C236(*; "@_cur"; Localized string:C991("currency"))
 			End case 
 		End if 
 		
@@ -114,7 +109,7 @@ Case of
 					var $message : Text
 					LOCKED BY:C353($tableptr->; $long; $user; $machineuser; $processname)
 					$user:=$user+"/"+$machineuser+" ("+$processname+")"
-					$message:=Replace string:C233(Get localized string:C991("LockedClassic"); "xxx"; $user)
+					$message:=Replace string:C233(Localized string:C991("LockedClassic"); "xxx"; $user)
 					ALERT:C41($message)
 					DISPLAY SELECTION:C59($tableptr->)
 				Else 
@@ -149,7 +144,7 @@ Case of
 						$p:=New process:C317("ORDA_Listbox_Method"; 0; "ORDA_Listbox_Doubleclick"; "doubleclick_process"; Form:C1466.ORDA_listbox.tablename; "")
 						
 					: (Form:C1466.ORDA_listbox.tablename="INVOICES")
-						ALERT:C41(Get localized string:C991("NoNewButtonForInvoices"))
+						ALERT:C41(Localized string:C991("NoNewButtonForInvoices"))
 						
 					Else 
 						ALERT:C41("Not supported")
@@ -168,7 +163,7 @@ Case of
 				
 				// special behavior for invoices
 				If (Form:C1466.ORDA_listbox.tablename="Invoices")
-					var $pop : Text:=Get localized string:C991("Invoices")+";"+Get localized string:C991("Invoice_Lines")
+					var $pop : Text:=Localized string:C991("Invoices")+";"+Localized string:C991("Invoice_Lines")
 					var $popup : Integer:=Pop up menu:C542($pop)
 					If ($popup=2)
 						$data.table:="INVOICE_LINES"

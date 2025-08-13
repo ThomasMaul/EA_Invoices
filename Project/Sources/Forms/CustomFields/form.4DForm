@@ -1,66 +1,47 @@
 {
-	"destination": "detailScreen",
+	"$4d": {
+		"version": "1",
+		"kind": "form"
+	},
+	"windowSizingX": "variable",
+	"windowSizingY": "variable",
+	"windowMinWidth": 0,
+	"windowMinHeight": 0,
+	"windowMaxWidth": 32767,
+	"windowMaxHeight": 32767,
 	"rightMargin": 20,
 	"bottomMargin": 20,
-	"markerHeader": 15,
-	"markerBody": 200,
-	"markerBreak": 220,
-	"markerFooter": 240,
 	"events": [
 		"onLoad",
+		"onPageChange",
 		"onValidate",
 		"onClick",
-		"onHeader",
-		"onPrintingBreak",
-		"onPrintingFooter",
-		"onDisplayDetail",
-		"onOutsideCall",
 		"onDoubleClick",
+		"onOutsideCall",
+		"onBeginDragOver",
+		"onDragOver",
 		"onDrop",
+		"onAfterKeystroke",
 		"onMenuSelect",
 		"onPluginArea",
-		"onDataChange",
-		"onDragOver",
-		"onPrintingDetail",
-		"onOpenDetail",
-		"onCloseDetail",
-		"onTimer",
-		"onAfterKeystroke",
-		"onLoadRecord",
 		"onAfterEdit",
-		"onBeginDragOver",
-		"onBoundVariableChange",
-		"onPageChange"
+		"onTimer",
+		"onBoundVariableChange"
 	],
-	"method": "method.4dm",
-	"pageFormat": {
-		"paperName": "DIN A4",
-		"paperWidth": "595pt",
-		"paperHeight": "841pt"
-	},
+	"windowTitle": "window title",
+	"destination": "detailScreen",
 	"pages": [
-		null,
+		{
+			"objects": {}
+		},
 		{
 			"objects": {
-				"JSONdebug": {
-					"type": "input",
-					"top": 14,
-					"left": 18,
-					"width": 576,
-					"height": 18,
-					"visibility": "hidden",
-					"dragging": "none",
-					"dropping": "custom",
-					"events": [
-						"onDataChange"
-					]
-				},
 				"LBcustomFields": {
 					"type": "listbox",
-					"top": 36,
+					"top": 12,
 					"left": 19,
 					"width": 575,
-					"height": 502,
+					"height": 526,
 					"resizingMode": "legacy",
 					"rowHeight": "20px",
 					"rowHeightAutoMin": "20px",
@@ -117,7 +98,7 @@
 					"left": 485,
 					"width": 109,
 					"height": 24,
-					"action": "accept",
+					"action": "",
 					"text": "Save",
 					"method": "ObjectMethods/Button.4dm",
 					"events": [
@@ -126,5 +107,14 @@
 				}
 			}
 		}
-	]
+	],
+	"geometryStamp": 3,
+	"method": "method.4dm",
+	"editor": {
+		"activeView": "View 1",
+		"defaultView": "View 1",
+		"views": {
+			"View 1": {}
+		}
+	}
 }

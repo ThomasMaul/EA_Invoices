@@ -1,4 +1,3 @@
-//%attributes = {}
 C_LONGINT:C283($ref)
 FORM SET INPUT:C55([SETTINGS:5]; "CustomFields")
 $ref:=Open form window:C675([SETTINGS:5]; "CustomFields"; Plain form window:K39:10; 120; 140)

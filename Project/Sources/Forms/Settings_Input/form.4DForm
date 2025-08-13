@@ -1,20 +1,39 @@
 {
-	"destination": "detailScreen",
-	"windowSizingX": "fixed",
-	"windowSizingY": "fixed",
+	"$4d": {
+		"version": "1",
+		"kind": "form"
+	},
+	"windowSizingX": "variable",
+	"windowSizingY": "variable",
+	"windowMinWidth": 0,
+	"windowMinHeight": 0,
+	"windowMaxWidth": 32767,
+	"windowMaxHeight": 32767,
 	"rightMargin": 20,
 	"bottomMargin": 20,
-	"menuBar": "Main",
-	"markerBody": 398,
-	"markerBreak": 398,
-	"markerFooter": 408,
-	"pageFormat": {
-		"paperName": "DIN A4",
-		"paperWidth": "595pt",
-		"paperHeight": "842pt"
-	},
+	"events": [
+		"onLoad",
+		"onPageChange",
+		"onValidate",
+		"onClick",
+		"onDoubleClick",
+		"onOutsideCall",
+		"onBeginDragOver",
+		"onDragOver",
+		"onDrop",
+		"onAfterKeystroke",
+		"onMenuSelect",
+		"onPluginArea",
+		"onAfterEdit",
+		"onTimer",
+		"onBoundVariableChange"
+	],
+	"windowTitle": "window title",
+	"destination": "detailScreen",
 	"pages": [
-		null,
+		{
+			"objects": {}
+		},
 		{
 			"objects": {
 				"Rectangle3": {
@@ -44,7 +63,7 @@
 					"left": 247,
 					"width": 70,
 					"height": 16,
-					"dataSource": "[SETTINGS:5]CrtProformaNumber:2",
+					"dataSource": "Form:C1466.settings.CrtProformaNumber",
 					"dataSourceTypeHint": "integer",
 					"textAlign": "left",
 					"tooltip": "Client Name",
@@ -69,7 +88,7 @@
 					"left": 247,
 					"width": 70,
 					"height": 16,
-					"dataSource": "[SETTINGS:5]CrtInvoiceNumber:1",
+					"dataSource": "Form:C1466.settings.CrtInvoiceNumber",
 					"dataSourceTypeHint": "integer",
 					"textAlign": "left",
 					"tooltip": "Client Name",
@@ -114,14 +133,15 @@
 					"sizingX": "move",
 					"sizingY": "move",
 					"dataSource": "Button",
-					"action": "accept",
+					"action": "",
 					"shortcutKey": "[Enter]",
 					"text": "OK",
 					"class": "Buttons_13",
 					"defaultButton": true,
 					"events": [
 						"onClick"
-					]
+					],
+					"method": "ObjectMethods/Button1.4dm"
 				},
 				"ToolbarSetup": {
 					"type": "button",
@@ -162,24 +182,13 @@
 			}
 		}
 	],
+	"geometryStamp": 1,
+	"method": "method.4dm",
 	"editor": {
 		"activeView": "View 1",
 		"defaultView": "View 1",
 		"views": {
-			"View 1": {},
-			"View 2": {},
-			"View 3": {},
-			"View 4": {},
-			"View 5": {},
-			"View 6": {},
-			"View 7": {},
-			"View 8": {},
-			"View 9": {}
+			"View 1": {}
 		}
-	},
-	"geometryStamp": 13,
-	"$4d": {
-		"version": "1",
-		"kind": "form"
 	}
 }

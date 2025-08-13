@@ -1,13 +1,9 @@
-C_TEXT:C284($tablename)
-C_POINTER:C301($ColPtr)
-C_LONGINT:C283($selected)
-
 If (Form event code:C388=On Clicked:K2:4)
-	$ColPtr:=OBJECT Get pointer:C1124(Object named:K67:5; "LBcustomFields")
-	$selected:=$ColPtr->
+	var $ColPtr:=OBJECT Get pointer:C1124(Object named:K67:5; "LBcustomFields")
+	var $selected : Integer:=$ColPtr->
 	If ($selected>0)
 		$ColPtr:=OBJECT Get pointer:C1124(Object named:K67:5; "Tablename")
-		$tablename:=$ColPtr->{$selected}
+		var $tablename : Text:=$ColPtr->{$selected}
 		If (Count in array:C907($ColPtr->; $tablename)>1)
 			DELETE FROM ARRAY:C228($ColPtr->; $selected)
 			$ColPtr:=OBJECT Get pointer:C1124(Object named:K67:5; "Fieldname")

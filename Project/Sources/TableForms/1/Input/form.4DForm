@@ -165,21 +165,6 @@
 					"dragging": "none",
 					"dropping": "none"
 				},
-				"fax": {
-					"type": "input",
-					"top": 842,
-					"left": 513,
-					"width": 170,
-					"height": 16,
-					"dataSource": "[CLIENTS:1]Fax:10",
-					"textAlign": "left",
-					"fontFamily": ".Helvetica Neue DeskInterface",
-					"fontSize": 13,
-					"tooltip": "Client Fax",
-					"contextMenu": "none",
-					"dragging": "none",
-					"dropping": "none"
-				},
 				"email": {
 					"type": "input",
 					"top": 304,
@@ -566,16 +551,6 @@
 					"textAlign": "right",
 					"text": ":xliff:Telephone"
 				},
-				"Text25": {
-					"type": "text",
-					"top": 842,
-					"left": 413,
-					"width": 90,
-					"height": 16,
-					"stroke": "#777777",
-					"textAlign": "right",
-					"text": ":xliff:Fax"
-				},
 				"Text26": {
 					"type": "text",
 					"top": 304,
@@ -853,15 +828,6 @@
 					"sizingX": "move",
 					"stroke": "#AAAAAA"
 				},
-				"Text": {
-					"type": "text",
-					"top": 842,
-					"left": 220,
-					"width": 173,
-					"height": 16,
-					"stroke": "#777777",
-					"text": ":xliff:General Information"
-				},
 				"Text5": {
 					"type": "text",
 					"top": 172,
@@ -996,7 +962,6 @@
 				"zipCode1",
 				"telephone",
 				"telephone1",
-				"fax",
 				"email",
 				"webSite",
 				"contact",
@@ -1035,5 +1000,10 @@
 			"View 8": {},
 			"View 9": {}
 		}
+	},
+	"geometryStamp": 1,
+	"$4d": {
+		"version": "1",
+		"kind": "form"
 	}
 }

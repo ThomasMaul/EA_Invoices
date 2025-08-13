@@ -47,194 +47,193 @@
 					"top": 52,
 					"left": 149,
 					"width": 395,
-					"height": 16,
+					"height": 17,
 					"dataSource": "Form:C1466.data.Name",
 					"textAlign": "left",
 					"tooltip": "Client Name",
 					"contextMenu": "none",
 					"dragging": "none",
-					"dropping": "none"
+					"dropping": "none",
+					"fontTheme": "normal"
 				},
 				"address1": {
 					"type": "input",
 					"top": 76,
 					"left": 149,
 					"width": 395,
-					"height": 16,
+					"height": 17,
 					"dataSource": "Form:C1466.data.Address1",
 					"textAlign": "left",
 					"tooltip": "Client Address 1",
 					"contextMenu": "none",
 					"dragging": "none",
-					"dropping": "none"
+					"dropping": "none",
+					"fontTheme": "normal"
 				},
 				"address2": {
 					"type": "input",
 					"top": 100,
 					"left": 149,
 					"width": 395,
-					"height": 16,
+					"height": 17,
 					"dataSource": "Form:C1466.data.Address2",
 					"textAlign": "left",
 					"tooltip": "Client Address 2",
 					"contextMenu": "none",
 					"dragging": "none",
-					"dropping": "none"
+					"dropping": "none",
+					"fontTheme": "normal"
 				},
 				"city": {
 					"type": "input",
 					"top": 124,
 					"left": 149,
 					"width": 395,
-					"height": 16,
+					"height": 17,
 					"dataSource": "Form:C1466.data.City",
 					"textAlign": "left",
 					"tooltip": "Client City",
 					"contextMenu": "none",
 					"dragging": "none",
-					"dropping": "none"
+					"dropping": "none",
+					"fontTheme": "normal"
 				},
 				"city1": {
 					"type": "input",
 					"top": 148,
 					"left": 149,
 					"width": 160,
-					"height": 16,
+					"height": 17,
 					"dataSource": "Form:C1466.data.State",
 					"textAlign": "left",
 					"tooltip": "Client State",
 					"contextMenu": "none",
 					"dragging": "none",
-					"dropping": "none"
+					"dropping": "none",
+					"fontTheme": "normal"
 				},
 				"zipCode": {
 					"type": "input",
 					"top": 148,
 					"left": 384,
 					"width": 160,
-					"height": 16,
+					"height": 17,
 					"dataSource": "Form:C1466.data.ZipCode",
 					"textAlign": "left",
 					"tooltip": "Client ZipCode",
 					"contextMenu": "none",
 					"dragging": "none",
-					"dropping": "none"
+					"dropping": "none",
+					"fontTheme": "normal"
 				},
 				"zipCode1": {
 					"type": "input",
 					"top": 172,
 					"left": 149,
 					"width": 395,
-					"height": 16,
+					"height": 17,
 					"dataSource": "Form:C1466.data.Country",
 					"textAlign": "left",
 					"tooltip": "Client ZipCode",
 					"contextMenu": "none",
 					"dragging": "none",
-					"dropping": "none"
+					"dropping": "none",
+					"fontTheme": "normal"
 				},
 				"telephone": {
 					"type": "input",
 					"top": 208,
 					"left": 149,
 					"width": 160,
-					"height": 16,
+					"height": 17,
 					"dataSource": "Form:C1466.data.Phone",
 					"textAlign": "left",
-					"fontFamily": ".Helvetica Neue DeskInterface",
-					"fontSize": 13,
 					"tooltip": "Client Telephone",
 					"contextMenu": "none",
 					"dragging": "none",
-					"dropping": "none"
+					"dropping": "none",
+					"fontTheme": "normal"
 				},
 				"telephone1": {
 					"type": "input",
 					"top": 208,
 					"left": 384,
 					"width": 160,
-					"height": 16,
+					"height": 17,
 					"dataSource": "Form:C1466.data.Mobile",
 					"textAlign": "left",
-					"fontFamily": ".Helvetica Neue DeskInterface",
-					"fontSize": 13,
 					"tooltip": "Client Mobile",
 					"contextMenu": "none",
 					"dragging": "none",
-					"dropping": "none"
+					"dropping": "none",
+					"fontTheme": "normal"
 				},
 				"email": {
 					"type": "input",
 					"top": 232,
 					"left": 149,
 					"width": 395,
-					"height": 16,
+					"height": 17,
 					"dataSource": "Form:C1466.data.Email",
 					"textAlign": "left",
-					"fontFamily": ".Helvetica Neue DeskInterface",
-					"fontSize": 13,
 					"tooltip": "Client Email",
 					"contextMenu": "none",
 					"dragging": "none",
-					"dropping": "none"
+					"dropping": "none",
+					"fontTheme": "normal"
 				},
 				"webSite": {
 					"type": "input",
 					"top": 256,
 					"left": 149,
 					"width": 395,
-					"height": 16,
+					"height": 17,
 					"dataSource": "Form:C1466.data.WebSite",
 					"textAlign": "left",
-					"fontFamily": ".Helvetica Neue DeskInterface",
-					"fontSize": 13,
 					"tooltip": "Client Web Site",
 					"contextMenu": "none",
 					"dragging": "none",
-					"dropping": "none"
+					"dropping": "none",
+					"fontTheme": "normal"
 				},
 				"contact": {
 					"type": "input",
 					"top": 292,
 					"left": 149,
 					"width": 395,
-					"height": 16,
+					"height": 17,
 					"dataSource": "Form:C1466.data.Contact",
 					"textAlign": "left",
-					"fontFamily": ".Helvetica Neue DeskInterface",
-					"fontSize": 13,
 					"tooltip": "Client Contact",
 					"contextMenu": "none",
 					"dragging": "none",
-					"dropping": "none"
+					"dropping": "none",
+					"fontTheme": "normal"
 				},
 				"invl_DiscountRate": {
 					"type": "input",
 					"top": 316,
 					"left": 149,
 					"width": 150,
-					"height": 16,
+					"height": 17,
 					"dataSource": "Form:C1466.data.DiscountRate",
 					"dataSourceTypeHint": "number",
 					"textAlign": "left",
-					"fontFamily": ".Helvetica Neue DeskInterface",
-					"fontSize": 13,
 					"tooltip": "Product Discount Rate",
 					"contextMenu": "none",
 					"numberFormat": "##0%",
 					"dragging": "none",
-					"dropping": "none"
+					"dropping": "none",
+					"fontTheme": "normal"
 				},
 				"comments": {
 					"type": "input",
 					"top": 340,
 					"left": 149,
 					"width": 395,
-					"height": 59,
+					"height": 49,
 					"dataSource": "Form:C1466.data.Comments",
 					"textAlign": "left",
-					"fontFamily": ".Helvetica Neue DeskInterface",
-					"fontSize": 13,
 					"tooltip": "Comments on Client",
 					"styledText": true,
 					"dragging": "none",
@@ -249,7 +248,8 @@
 						"onDisplayDetail",
 						"onDataChange",
 						"onPrintingDetail"
-					]
+					],
+					"fontTheme": "normal"
 				},
 				"clientInvoices": {
 					"type": "listbox",
@@ -402,7 +402,8 @@
 								"textAlign": "automatic",
 								"verticalAlign": "middle"
 							},
-							"dataSource": "This:C1470.Paid"
+							"dataSource": "This:C1470.Paid",
+							"dataSourceTypeHint": "boolean"
 						},
 						{
 							"name": "invoicesPayementDate",
@@ -808,5 +809,6 @@
 	"$4d": {
 		"version": "1",
 		"kind": "form"
-	}
+	},
+	"formClass": "Form_Clients"
 }
