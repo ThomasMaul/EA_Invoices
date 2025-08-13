@@ -491,5 +491,6 @@
 			"View 1": {}
 		}
 	},
-	"formSizeAnchor": "tabcontrol"
+	"formSizeAnchor": "tabcontrol",
+	"menuBar": "edit"
 }

@@ -65,7 +65,7 @@ Buttons can contain subelements, accessible through the right side arrow. The us
 ### Printing invoices via smart templating
 Using 4D Write Pro' smart templating feature, invoices can be printed on paper or exported as PDF. 
 The helper class supports invoices with conditions (aka small prints) to be printed on the back side of the first invoice page when printed on paper - or as last page when exported as PDF. It supports removing the business letter background for internal black/white archive printing (to reduce color printing expenses).
-Created PDF's include an XML description of the invoice (electronic invoice) following the Facture-X/Zugferd standard (for France, Germany, Spain).
+Created PDF's include an XML description of the invoice (electronic invoice) following the Facture-X/Zugferd standard (for France, Germany).
 
 ### Invoice editor
 The Settings dialog allows to open an invoice editor.

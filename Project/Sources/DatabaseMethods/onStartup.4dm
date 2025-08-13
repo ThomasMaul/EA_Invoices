@@ -19,8 +19,8 @@ If (False:C215)  // old code, classic interface
 	
 Else 
 	var $version:=Application version:C493
-	If ($version<"2050")
-		ALERT:C41("Diese Demo verwendet neue Fenstertypen und erfordert 4D 20 R5 oder eine neuere Version.")
+	If ($version<"20A0")
+		ALERT:C41("This Demo requires 4D 20 R10 or newer.")
 	End if 
 	
 	If (Is Windows:C1573)

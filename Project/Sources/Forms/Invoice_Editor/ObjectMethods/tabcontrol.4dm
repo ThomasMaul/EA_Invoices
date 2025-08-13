@@ -7,8 +7,7 @@ If (FORM Event:C1606.code=On Clicked:K2:4)
 				// start with an empty one
 				WParea1:=WP New:C1317()
 			Else 
-				var $template : cs:C1710.Document_Templates
-				$template:=$templates.first()
+				var $template:=$templates.first()
 				WParea1:=$template.WPro
 			End if 
 			

@@ -20,7 +20,19 @@
 			"name": "empty",
 			"items": [
 				{
-					"link": 32004
+					"link": 32001
+				},
+				{
+					"link": 32002
+				}
+			]
+		},
+		{
+			"id": 3,
+			"name": "edit",
+			"items": [
+				{
+					"link": 32002
 				}
 			]
 		}
@@ -151,11 +163,6 @@
 					"action": "design"
 				}
 			]
-		},
-		{
-			"link": 32004,
-			"title": "Ablage",
-			"items": []
 		}
 	]
 }

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings-import-export table_no="6" format="4D" char_display_format="decimal" platform="automatic" all_records="true" table_name="Document_Templates">
+	<field table_no="6" field_no="1" name="ID" kind="alpha"/>
+	<field table_no="6" field_no="4" name="image" kind="picture"/>
+	<field table_no="6" field_no="2" name="Name" kind="alpha"/>
+	<field table_no="6" field_no="3" name="WPro" kind="object"/>
+	<xml_settings export_xsl_mode="none"/>
+	<text_settings/>
+</settings-import-export>

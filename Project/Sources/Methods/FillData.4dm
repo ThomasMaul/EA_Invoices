@@ -15,10 +15,7 @@ _O_C_STRING:C293(1; $lf)
 C_TEXT:C284($alphabet)
 C_LONGINT:C283($diff)
 
-//$currentLanguage:=Get database localization(Current localization)
-//$resourcesFolder:=Get 4D folder(Current resources folder)
-//$clientsFile:=$resourcesFolder+$currentLanguage+".lproj"+Folder separator+"Clients.txt"
-$clientsFile:=Get localized document path:C1105("Clients.txt")
+$clientsFile:=Localized document path:C1105("Clients.txt")
 
 If (Test path name:C476($clientsFile)=Is a document:K24:1)
 	$importOk:=True:C214
@@ -154,6 +151,10 @@ If ($importOk)
 	// Create the [GENERAL] table
 	If (Records in table:C83([SETTINGS:5])=0)
 		CREATE RECORD:C68([SETTINGS:5])
+		[SETTINGS:5]CustomFields_:3:={Tables: [\
+			{name: "CLIENTS"; fields: [{name: "VAT Code"}]}; \
+			{name: "INVOICES"; fields: [{name: "Customer Order Code"}]}]}
+		// as an example to activate custom fields
 		SAVE RECORD:C53([SETTINGS:5])
 		UNLOAD RECORD:C212([SETTINGS:5])
 	End if 
@@ -225,6 +226,13 @@ If ($importOk)
 		SAVE RECORD:C53([CLIENTS:1])
 		NEXT RECORD:C51([CLIENTS:1])
 	End for 
+	
+	var $docpath : Text:=Get 4D folder:C485(Current resources folder:K5:16)+"en.lproj"+Folder separator:K24:12+"DocumentTemplates_Demo.4ie"
+	var $formatpath : Text:=Get 4D folder:C485(Current resources folder:K5:16)+"en.lproj"+Folder separator:K24:12+"DocumentTemplates_DemoFormat.4si"
+	If ((Test path name:C476($docpath)=Is a document:K24:1) && (Test path name:C476($formatpath)=Is a document:K24:1))
+		var $projectText:=Document to text:C1236($formatpath)
+		IMPORT DATA:C665($docpath; $projectText)
+	End if 
 	
 Else 
 	ALERT:C41("Unable to find the import files, the database remains empty")

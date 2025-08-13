@@ -6,8 +6,7 @@ Class constructor($context : Object; $Write : Object)
 			// start with an empty one
 			This:C1470.WP:=WP New:C1317()
 		Else 
-			var $template : cs:C1710.Document_Templates
-			$template:=$templates.first()
+			var $template:=$templates.first()
 			This:C1470.WP:=$template.WPro
 		End if 
 	Else 
@@ -21,8 +20,7 @@ Function updateTemplate($templatename : Text)
 	If ($templates.length=0)
 		Form:C1466.WP:=WP New:C1317()
 	Else 
-		var $template : cs:C1710.Document_Templates
-		$template:=$templates.first()
+		var $template:=$templates.first()
 		This:C1470.WP:=$template.WPro
 	End if 
 	This:C1470.setContext()
@@ -30,6 +28,7 @@ Function updateTemplate($templatename : Text)
 	
 Function updateInvoice($invoice : cs:C1710.INVOICESEntity)
 	This:C1470.context.invoice:=$invoice
+	This:C1470.context.invoice_lines:=$invoice.invoice_lines
 	This:C1470.setContext()
 	
 Function setContext($wp : Object)
@@ -78,7 +77,7 @@ Function createPDF($pfad : Text)
 	For each ($page; $col)
 		var $pic : Object:=WP Add picture:C1536($wp; $page.svg)
 		WP SET ATTRIBUTES:C1342($pic; wk anchor page:K81:231; $page.page)
-		WP INSERT BREAK:C1413($wp; wk page break:K81:188; wk append:K81:179)
+		WP Insert break:C1413($wp; wk page break:K81:188; wk append:K81:179)
 	End for each 
 	If ($conditionsentity.length>0)
 		$conditions:=$conditionsentity.first().image
@@ -166,18 +165,18 @@ Function print_color()
 		Case of 
 			: ($pagecounter=2)  // first page...
 				If (Picture size:C356($conditions)>0)
-					WP INSERT BREAK:C1413($wp; wk page break:K81:188; wk append:K81:179)
+					WP Insert break:C1413($wp; wk page break:K81:188; wk append:K81:179)
 					$pic:=WP Add picture:C1536($wp; $conditions)
 					WP SET ATTRIBUTES:C1342($pic; wk anchor page:K81:231; $pagecounter)
 				End if 
 				$pagecounter+=1
 				If ($page.page<$col.length)
-					WP INSERT BREAK:C1413($wp; wk page break:K81:188; wk append:K81:179)
+					WP Insert break:C1413($wp; wk page break:K81:188; wk append:K81:179)
 				End if 
 			: ($page.page<$col.length)
-				WP INSERT BREAK:C1413($wp; wk page break:K81:188; wk append:K81:179)  // empty page
+				WP Insert break:C1413($wp; wk page break:K81:188; wk append:K81:179)  // empty page
 				$pagecounter+=1
-				WP INSERT BREAK:C1413($wp; wk page break:K81:188; wk append:K81:179)
+				WP Insert break:C1413($wp; wk page break:K81:188; wk append:K81:179)
 		End case 
 	End for each 
 	
