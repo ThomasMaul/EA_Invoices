@@ -7,5 +7,5 @@ If (Ok=1)
 	//OBJECT SET VISIBLE(*;"bCancelInvoice";False)
 End if 
 RELATE MANY:C262([INVOICES:2])
-Invoices_CalculateTotals
-InvoiceLines_Reorder
+//Invoices_CalculateTotals
+//InvoiceLines_Reorder

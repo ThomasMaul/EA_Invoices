@@ -2,6 +2,9 @@ property data : cs:C1710.INVOICESEntity
 property Position : Integer
 
 Function loadEvent()
+	
+	
+	
 	If (Form:C1466.data.ProForma)
 		OBJECT SET VISIBLE:C603(*; "inv_Payement@"; False:C215)
 	Else 

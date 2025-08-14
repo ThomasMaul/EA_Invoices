@@ -24,7 +24,7 @@ Function updateTemplate($templatename : Text)
 		This:C1470.WP:=$template.WPro
 	End if 
 	This:C1470.setContext()
-	WPArea:=This:C1470.WP
+	var WPArea:=This:C1470.WP
 	
 Function updateInvoice($invoice : cs:C1710.INVOICESEntity)
 	This:C1470.context.invoice:=$invoice

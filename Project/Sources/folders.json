@@ -1,34 +1,15 @@
 {
 	"(Default Forms)": {},
-	"Compiler": {
-		"methods": [
-			"Compiler_Arrays",
-			"Compiler_Methods",
-			"Compiler_Variables",
-			"Compiler_Variables_Inter"
-		]
-	},
-	"Debug": {
-		"methods": [
-			"LISTBOX_ADJUST_WIDTH"
-		]
-	},
+	"Compiler": {},
+	"Debug": {},
 	"Default Folder": {
 		"groups": [
 			"Default Project Methods"
 		]
 	},
-	"Default Project Methods": {
-		"methods": [
-			"Invoices_CalculateTotals",
-			"Invoices_ChangeColor",
-			"Invoices_Delete",
-			"Invoices_GetNumberPrf"
-		]
-	},
+	"Default Project Methods": {},
 	"Entry": {
 		"forms": [
-			"[CLIENTS]Input",
 			"[INVOICE_LINES]Input",
 			"[INVOICES]Input"
 		]
@@ -47,7 +28,6 @@
 	},
 	"Manage": {
 		"methods": [
-			"Invoices_Manage",
 			"Settings_Manage"
 		]
 	},
@@ -63,17 +43,8 @@
 			"[INVOICES]OutputPrint"
 		]
 	},
-	"ProcessInit": {
-		"methods": [
-			"Invoices_ProcessInit"
-		]
-	},
-	"Reorder": {
-		"methods": [
-			"InvoiceLines_Reorder",
-			"Invoices_Reorder"
-		]
-	},
+	"ProcessInit": {},
+	"Reorder": {},
 	"Tables": {
 		"tables": [
 			"CLIENTS",
@@ -83,13 +54,7 @@
 			"SETTINGS"
 		]
 	},
-	"Update": {
-		"methods": [
-			"UPDATE_ALL_BUTTON",
-			"UPDATE_DELETE_BUTTON",
-			"UPDATE_SUBSET_BUTTON"
-		]
-	},
+	"Update": {},
 	"trash": {
 		"groups": [
 			"(Default Forms)"

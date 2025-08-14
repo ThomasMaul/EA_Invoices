@@ -274,7 +274,7 @@
 					"verticalLineStroke": "#DDDDDD",
 					"fill": "#FFFFFF",
 					"alternateFill": "#EEEEEE",
-					"rowStrokeSource": "Invoices_ChangeColor",
+					"rowStrokeSource": "Form:C1466.Invoices_ChangeColor(This:C1470)",
 					"textAlign": "right",
 					"verticalAlign": "middle",
 					"borderStyle": "none",
@@ -760,6 +760,46 @@
 							"dataSource": "This:C1470.value"
 						}
 					]
+				},
+				"bAddInvoice": {
+					"type": "button",
+					"top": 467,
+					"left": 899,
+					"width": 80,
+					"height": 60,
+					"sizingX": "move",
+					"tooltip": "Add Invoice",
+					"textAlign": "center",
+					"stroke": "#000000",
+					"focusable": false,
+					"text": ":xliff:Add",
+					"icon": "/RESOURCES/Images/Buttons/NewRecord.png",
+					"iconFrames": 4,
+					"style": "custom",
+					"method": "ObjectMethods/bAddInvoice.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"bDeleteInvoice": {
+					"type": "button",
+					"top": 527,
+					"left": 899,
+					"width": 80,
+					"height": 60,
+					"sizingX": "move",
+					"tooltip": "Delete Invoice",
+					"textAlign": "center",
+					"stroke": "#000000",
+					"focusable": false,
+					"text": ":xliff:Delete",
+					"icon": "/RESOURCES/Images/Buttons/DeleteRecord.png",
+					"iconFrames": 4,
+					"style": "custom",
+					"method": "ObjectMethods/bDeleteInvoice.4dm",
+					"events": [
+						"onClick"
+					]
 				}
 			},
 			"entryOrder": [
@@ -779,7 +819,9 @@
 				"comments",
 				"clientInvoices",
 				"logo",
-				"customF_LB"
+				"customF_LB",
+				"bAddInvoice",
+				"bDeleteInvoice"
 			]
 		}
 	],
@@ -803,7 +845,7 @@
 			"View 9": {}
 		}
 	},
-	"geometryStamp": 15,
+	"geometryStamp": 17,
 	"rightMargin": 20,
 	"bottomMargin": 20,
 	"$4d": {

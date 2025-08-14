@@ -5,7 +5,7 @@ If (FORM Event:C1606.code=On Clicked:K2:4)
 			If ($templates.length=0)
 				//ALERT("Template Invoice is missing")
 				// start with an empty one
-				WParea1:=WP New:C1317()
+				var WParea1:=WP New:C1317()
 			Else 
 				var $template:=$templates.first()
 				WParea1:=$template.WPro
@@ -16,7 +16,7 @@ If (FORM Event:C1606.code=On Clicked:K2:4)
 			If ($templates.length=0)
 				//ALERT("Template Invoice is missing")
 				// start with an empty one
-				WParea2:=WP New:C1317()
+				var WParea2:=WP New:C1317()
 			Else 
 				$template:=$templates.first()
 				WParea2:=$template.WPro

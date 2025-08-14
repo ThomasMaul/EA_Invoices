@@ -1,2 +1,2 @@
 // [CLIENTS]Input.bDeleteInvoice
-Invoices_Delete
+//Invoices_Delete

@@ -13,4 +13,4 @@ PRINT SELECTION:C60(Current form table:C627->)
 
 COPY SET:C600("$tempSet"; "$highlightedInvoices")  //Restore the current highlighted invoices
 USE SET:C118("$tempoInvoices")
-Invoices_Reorder
+//Invoices_Reorder

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><preferences stamp="25">
+<?xml version="1.0" encoding="UTF-8"?><preferences stamp="26">
 	<com.4d>
 		<general allow_user_settings="true" startup_environnement="1"/>
 		<interface>
@@ -7,7 +7,7 @@
 		</interface>
 		<compiler>
 			<typage default_for_button="2" default_for_numeric="1"/>
-			<options compilation_path="3" error_file="true" symbol_file="true" target="all"/>
+			<options compilation_path="4" error_file="true" symbol_file="true" target="all"/>
 		</compiler>
 		<web>
 			<standalone_server>

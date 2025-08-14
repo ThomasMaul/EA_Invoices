@@ -293,12 +293,16 @@ Function handleCustomButtons($button : Text; $event : Integer; $this : Object)
 			
 		: ($button="Add")  // "New" button, different behavior depending of module
 			// using case of, we could add different behavior depending of module
-			// here we use the same concept for all 3 modules
-			var $formdata:=cs:C1710.Form_Input_Main.new()
-			$formdata.tablename:=$this.tablename
-			$formdata.SelectedElement:=ds:C1482[$this.tablename].new()
-			var $win:=Open form window:C675("Input_Main")
-			DIALOG:C40("Input_Main"; $formdata; *)
+			// here we use the same concept for 2 modules, with exception for invoices
+			If ($this.tablename="Invoices")
+				ALERT:C41("Invoices can only be created through the Clients module")
+			Else 
+				var $formdata:=cs:C1710.Form_Input_Main.new()
+				$formdata.tablename:=$this.tablename
+				$formdata.SelectedElement:=ds:C1482[$this.tablename].new()
+				var $win:=Open form window:C675("Input_Main")
+				DIALOG:C40("Input_Main"; $formdata; *)
+			End if 
 			
 			
 		: ($button="Settings")
