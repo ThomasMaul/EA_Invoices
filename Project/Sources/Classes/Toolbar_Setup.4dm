@@ -1,3 +1,10 @@
+property pictpath : Text
+property list : Integer
+property buttons : Collection
+property isModified : Boolean
+
+
+
 Class constructor($pictpath : Text)
 	This:C1470.pictpath:=$pictpath
 	This:C1470.list:=New list:C375
@@ -262,8 +269,14 @@ Function storeSettings()->$userdata : Collection
 	WINDOW LIST:C442($windows)
 	For ($i; 1; Size of array:C274($windows))
 		CALL FORM:C1391($windows{$i}; "ORDA_Listbox_Method"; "Toolbar_Refresh")
+		CALL FORM:C1391($windows{$i}; This:C1470._run_Toolbar_Refresh)
 	End for 
 	
+Function _run_Toolbar_Refresh()
+	// runs via Call Form in the context of each open window  - if it knows how to refresh a toolbar
+	If (Form:C1466.Toolbar_Refresh#Null:C1517)
+		Form:C1466.Toolbar_Refresh()
+	End if 
 	
 Function setUserSettings($bisher : Collection)
 	var $button : Object

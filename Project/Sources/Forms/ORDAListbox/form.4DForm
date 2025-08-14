@@ -341,5 +341,6 @@
 			"View 1": {}
 		}
 	},
-	"formSizeAnchor": "preview"
+	"formSizeAnchor": "preview",
+	"formClass": "Form_ORDAListbox"
 }

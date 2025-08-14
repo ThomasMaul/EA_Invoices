@@ -30,112 +30,34 @@ Case of
 			: (($event=On Clicked:K2:4) | ($event=On Alternative Click:K2:36))
 				If (Form:C1466.buttons#Null:C1517)  // to be sure we are in the right form...
 					var $buttonname : Text:=FORM Event:C1606.objectName
-					CALL FORM:C1391(Current form window:C827; Formula:C1597(Form:C1466.ORDA_listbox.handleButtonClick($buttonname; $event)))
+					CALL FORM:C1391(Current form window:C827; Formula:C1597(Form:C1466.handleButtonClick($buttonname; $event)))
 				End if 
 				
 			: ($event=On Data Change:K2:15)
 				If (String:C10(FORM Event:C1606.objectName)="search")
-					CALL FORM:C1391(Current form window:C827; Formula:C1597(Form:C1466.ORDA_listbox.handleSearchbox()))
+					CALL FORM:C1391(Current form window:C827; Formula:C1597(Form:C1466.handleSearchbox()))
 				End if 
 		End case 
 		
-		// MARK: Refresh Button Toolbar
-	: ($job="Toolbar_Refresh")
-		// called via call form for all open windows. In each window check if there is a form.toolbar object, if yes execute form.loolbar.load()
-		If ((Form:C1466.toolbar#Null:C1517) && (Form:C1466.toolbar.load#Null:C1517))
-			Form:C1466.toolbar.load()
-		End if 
 		
-		//MARK: Preview - init your preview data
-	: ($job="preview")
-		// customize this for your tables
-		// executed in context of the preview form
-		If (Form:C1466.data#Null:C1517)
-			$classname:=String:C10(Form:C1466.data.getDataClass().getInfo().name)
-			
-			Case of 
-					//: ($classname="CLIENTS")  // nothing to do...
-					// load customfields done via computed attribute
-					// sort invoices done via computed attribute as relation
-					
-					
-				: ($classname="INVOICES")
-					If (Form:C1466.data.ProForma)
-						OBJECT SET VISIBLE:C603(*; "inv_@"; False:C215)
-					Else 
-						OBJECT SET ENTERABLE:C238(*; "invoiceDate"; False:C215)
-						OBJECT SET ENTERABLE:C238(*; "invoiceDelay"; False:C215)
-						OBJECT SET ENTERABLE:C238(*; "invoiceProforma"; False:C215)
-						OBJECT SET VISIBLE:C603(*; "inv_@"; Bool:C1537(Form:C1466.data.Paid))
-					End if 
-					
-					OBJECT SET FORMAT:C236(*; "@_cur"; Localized string:C991("currency"))
-			End case 
-		End if 
-		
-		//MARK: Double click - handle detail form
-	: ($job="doubleclick")
-		$classname:=String:C10(Form:C1466.preview.data.getDataClass().getInfo().name)
-		var $p : Integer:=New process:C317("ORDA_Listbox_Method"; 0; "ORDA_Listbox_Doubleclick"; "doubleclick_process"; $classname; Form:C1466.SelectedElement.getKey(dk key as string:K85:16))
-		
-		//MARK: Classic Mode - generic Double click 
-	: ($job="doubleclick_process")
-		// better to call above in double click directly your existing code to handle classic mode detail form
-		// this generic method is just to help coding...
-		// it requires that there is an input form named "Input" for each form, else it will do nothing
-		
-		// only if the form exist. Note that using that path checking works interpreted or compiled (checking inside 4DZ)
-		var $tableptr : Pointer:=Formula from string:C1601("->["+$classname+"]").call()
-		var $form : 4D:C1709.File:=File:C1566("/PROJECT/Sources/TableForms/"+String:C10(Table:C252($tableptr))+"/Input/form.4DForm")
-		If ($form.exists)
-			var $win : Integer:=Open form window:C675($tableptr->; "Input")
-			FORM SET INPUT:C55($tableptr->; "Input")
-			
-			If ($pk="")  // new record
-				ADD RECORD:C56($tableptr->; *)
-			Else   // existing record
-				var $entity : 4D:C1709.Entity:=ds:C1482[$classname].get($pk)
-				var $sel : 4D:C1709.EntitySelection:=ds:C1482[$classname].newSelection()
-				USE ENTITY SELECTION:C1513($sel.add($entity))
-				
-				READ WRITE:C146($tableptr->)
-				LOAD RECORD:C52($tableptr->)
-				
-				If (Locked:C147($tableptr->))
-					var $long : Integer
-					var $user : Text
-					var $machineuser : Text
-					var $processname : Text
-					var $message : Text
-					LOCKED BY:C353($tableptr->; $long; $user; $machineuser; $processname)
-					$user:=$user+"/"+$machineuser+" ("+$processname+")"
-					$message:=Replace string:C233(Localized string:C991("LockedClassic"); "xxx"; $user)
-					ALERT:C41($message)
-					DISPLAY SELECTION:C59($tableptr->)
-				Else 
-					MODIFY RECORD:C57($tableptr->; *)
-				End if 
-			End if 
-			CLOSE WINDOW:C154($win)
-		End if 
 		
 	: ($job="customButton")
 		Case of 
 			: (($classname="Clients") | ($classname="Module"))
-				Form:C1466.ORDA_listbox.setTable(ds:C1482.CLIENTS)
-				Form:C1466.ORDA_listbox.load()
+				Form:C1466.setTable(ds:C1482.CLIENTS)
+				Form:C1466.load()
 				Form:C1466.toolbar.load()  // this will recreate the toolbar, produce flicker. But allow to change buttons or show/hide searchbox
-				Form:C1466.ORDA_listbox.setInputForm()
+				Form:C1466.setInputForm()
 			: ($classname="Invoices")
-				Form:C1466.ORDA_listbox.setTable(ds:C1482.INVOICES)
-				Form:C1466.ORDA_listbox.load()
+				Form:C1466.setTable(ds:C1482.INVOICES)
+				Form:C1466.load()
 				Form:C1466.toolbar.load()
-				Form:C1466.ORDA_listbox.setInputForm()
+				Form:C1466.setInputForm()
 			: ($classname="Products")
-				Form:C1466.ORDA_listbox.setTable(ds:C1482.PRODUCTS)
-				Form:C1466.ORDA_listbox.load()
+				Form:C1466.setTable(ds:C1482.PRODUCTS)
+				Form:C1466.load()
 				Form:C1466.toolbar.load()
-				Form:C1466.ORDA_listbox.setInputForm()
+				Form:C1466.setInputForm()
 				
 			: ($classname="Add")  // "New" button, different behavior depending of module
 				Case of 

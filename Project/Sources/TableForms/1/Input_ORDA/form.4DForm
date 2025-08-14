@@ -810,5 +810,5 @@
 		"version": "1",
 		"kind": "form"
 	},
-	"formClass": "Form_Clients"
+	"formClass": "Form_CLIENTS"
 }

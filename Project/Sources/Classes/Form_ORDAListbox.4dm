@@ -5,11 +5,14 @@ property Search : Text
 property SearchCopy : Text
 property listbox : cs:C1710.EntitySelection
 
+property toolbar : cs:C1710.Toolbar
+property preview : Object  // Subform - either class such as Form_CLIENTS or empty object
+property SelectedElement : cs:C1710.Entity
+property SelectedPosition : Integer
 
-Class constructor($table : 4D:C1709.DataClass)
-	This:C1470.table:=$table
-	This:C1470.tablename:=This:C1470.table.getInfo().name
-	This:C1470._columnwidths:=[]
+
+Class constructor
+	
 	
 Function setTable($table : 4D:C1709.DataClass)
 	This:C1470.table:=$table
@@ -107,37 +110,56 @@ Function _loadListboxColumns()
 	End if 
 	
 Function setInputForm()
-	//  load Preview Form
-	Form:C1466.preview:=New object:C1471
+	// load Preview Form
+	// check if Form class exists. Name="Form_"+tablename
+	var $name:="Form_"+This:C1470.tablename
+	If (cs:C1710[$name]#Null:C1517)
+		Form:C1466.preview:=cs:C1710[$name].new()
+	Else 
+		Form:C1466.preview:=New object:C1471
+	End if 
 	Form:C1466.preview.data:=Form:C1466.SelectedElement  // pass the selected element
 	
-	var $tableptr : Pointer:=Formula from string:C1601("->["+This:C1470.tablename+"]").call()
-	var $form : 4D:C1709.File:=File:C1566("/PROJECT/Sources/TableForms/"+String:C10(Table:C252($tableptr))+"/Input_ORDA/form.4DForm")
-	If ($form.exists)
+	If (This:C1470._inputFormExists())
+		var $tableptr : Pointer:=Formula from string:C1601("->["+This:C1470.tablename+"]").call()
+		var $form : 4D:C1709.File:=File:C1566("/PROJECT/Sources/TableForms/"+String:C10(Table:C252($tableptr))+"/Input_ORDA/form.4DForm")
+		
 		OBJECT SET SUBFORM:C1138(*; "Preview"; $tableptr->; "Input_ORDA")
 	Else 
-		// create form with text + field in loop
-		// use this form
-		var $page : Object:=New object:C1471()
-		
-		var $top : Integer:=20
-		var $fieldname : Text
-		For each ($fieldname; This:C1470.table)
-			var $text : Object:=New object:C1471("height"; 20; "width"; 130; "left"; 20; "top"; $top; "text"; $fieldname; "type"; "text")
-			$page["text_"+String:C10($top)]:=$text
-			var $field : Object:=New object:C1471("height"; 20; "width"; 300; "left"; 160; "top"; $top; "type"; "input"; "enterable"; False:C215; "dataSource"; "Form.data."+$fieldname)
-			$page[$fieldname]:=$field
-			$top:=$top+30
-		End for each 
-		
-		var $sub : Object:=New object:C1471("pages"; New collection:C1472(Null:C1517; New object:C1471("objects"; $page)); "destination"; "detailScreen")
-		OBJECT SET SUBFORM:C1138(*; "Preview"; $sub)
-		
+		var $result : Object:=This:C1470._getInputForm()
+		OBJECT SET SUBFORM:C1138(*; "Preview"; $result)
 	End if 
+	
+Function _inputFormExists() : Boolean
+	var $tableptr : Pointer:=Formula from string:C1601("->["+This:C1470.tablename+"]").call()
+	var $form : 4D:C1709.File:=File:C1566("/PROJECT/Sources/TableForms/"+String:C10(Table:C252($tableptr))+"/Input_ORDA/form.4DForm")
+	return $form.exists
+	
+Function _getInputForm() : Object
+	// create form with text + field in loop
+	// use this form
+	var $page : Object:=New object:C1471()
+	
+	var $top : Integer:=20
+	var $fieldname : Text
+	For each ($fieldname; This:C1470.table)
+		var $text : Object:=New object:C1471("height"; 20; "width"; 130; "left"; 20; "top"; $top; "text"; $fieldname; "type"; "text")
+		$page["text_"+String:C10($top)]:=$text
+		var $field : Object:=New object:C1471("height"; 20; "width"; 300; "left"; 160; "top"; $top; "type"; "input"; "enterable"; False:C215; "dataSource"; "Form.data."+$fieldname)
+		$page[$fieldname]:=$field
+		$top:=$top+30
+	End for each 
+	return New object:C1471("pages"; New collection:C1472(Null:C1517; New object:C1471("objects"; $page)); "destination"; "detailScreen")
+	
+	
 	
 Function updateInputForm()
 	// needs to call via Execute in Subform
-	EXECUTE METHOD IN SUBFORM:C1085("preview"; Form:C1466.loadEvent())
+	If (Form:C1466.preview.loadEvent=Null:C1517)
+		// nothing do be done?
+	Else 
+		EXECUTE METHOD IN SUBFORM:C1085("preview"; Form:C1466.preview.loadEvent)
+	End if 
 	
 Function useAll($class : 4D:C1709.DataClass)->$all : 4D:C1709.EntitySelection
 	If ($class.useAll#Null:C1517)
@@ -223,4 +245,32 @@ Function displaySearchbox()->$bool : Boolean  // display the searchbox
 	$bool:=(This:C1470.table.quickSearch#Null:C1517)
 	
 	
+Function Toolbar_Refresh()
+	// called via Call Form from Toolbar_Setup - this form is supposed to have a toolbar, but checking just to be sure
+	If ((Form:C1466.toolbar#Null:C1517) && (Form:C1466.toolbar.load#Null:C1517))
+		Form:C1466.toolbar.load()
+	End if 
+	
+Function doDoubleClick()
+	// default version to handle double click, if we do not have an overwrite in the form class used for the preview subform
+	var $name:="Form_"+This:C1470.tablename
+	var $data : Object
+	If (cs:C1710[$name]#Null:C1517)
+		$data:=cs:C1710[$name].new()
+	Else 
+		$data:=New object:C1471
+	End if 
+	$data.data:=Form:C1466.SelectedElement  // pass the selected element
+	
+	If (This:C1470._inputFormExists())
+		var $tableptr : Pointer:=Formula from string:C1601("->["+This:C1470.tablename+"]").call()
+		var $form : 4D:C1709.File:=File:C1566("/PROJECT/Sources/TableForms/"+String:C10(Table:C252($tableptr))+"/Input_ORDA/form.4DForm")
+		
+		var $win:=Open form window:C675($tableptr->; "Input_ORDA")
+		DIALOG:C40($tableptr->; "Input_ORDA"; $data; *)
+	Else 
+		var $result : Object:=This:C1470._getInputForm()
+		var $win:=Open form window:C675($result)
+		DIALOG:C40($result; $data; *)
+	End if 
 	

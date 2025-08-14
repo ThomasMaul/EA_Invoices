@@ -1,3 +1,25 @@
+property width : Integer
+property height : Integer
+property method : Text
+property subform : Text
+property dataSource : Text
+property dataSourceTypeHint : Text
+property mytype : Integer
+property title : Text
+property icon : Text
+property action : Object
+property prio : Integer
+property order : Integer
+property name : Text
+property status : Integer
+property curWidth : Integer
+property popupPlacement : Text
+property icon16 : Text
+property group : Text
+property widths : Collection
+property events : Collection
+property tooltip : Text
+
 Class constructor($ob : Object)
 	If ($ob#Null:C1517)
 		var $prop : Text

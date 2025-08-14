@@ -1,3 +1,6 @@
+property buttons : Collection
+property subformName : Text
+
 Class constructor
 	This:C1470.buttons:=New collection:C1472
 	This:C1470.subformName:=""
@@ -35,7 +38,7 @@ Function load()
 	End for each 
 	
 	// #### Search Picker
-	If (Form:C1466.ORDA_listbox.displaySearchbox())
+	If (Form:C1466.displaySearchbox())
 		var $searchbox : cs:C1710.Toolbar_Button:=cs:C1710.Toolbar_Button.new(New object:C1471("name"; "search"; "group"; "300"; "mytype"; 1; "prio"; 1000))
 		$searchbox.width:=205
 		$searchbox.height:=36
@@ -275,7 +278,7 @@ Function createButton($group : Integer; $buttondesc : Object; $allbuttons : cs:C
 	Else 
 		$title:=$buttondesc.name
 	End if 
-	var $localizedTitle:=Get localized string:C991($title)
+	var $localizedTitle:=Localized string:C991($title)
 	If ($localizedTitle#"")
 		$title:=$localizedTitle
 	End if 
@@ -283,7 +286,7 @@ Function createButton($group : Integer; $buttondesc : Object; $allbuttons : cs:C
 	If ($masterbutton#Null:C1517)
 		$button.icon:="/RESOURCES/Images/Buttons_32/"+$masterbutton.pictname
 		$button.icon16:="/RESOURCES/Images/Buttons_16/"+Replace string:C233($masterbutton.pictname; "32"; "16")
-		$button.tooltip:=Get localized string:C991($buttondesc.name)
+		$button.tooltip:=Localized string:C991($buttondesc.name)
 		$button.width:=45
 		$button.style:="toolbar"
 		$button.method:=$callback
@@ -303,7 +306,7 @@ Function createButton($group : Integer; $buttondesc : Object; $allbuttons : cs:C
 				If ($find.length>0)
 					$subbutton.icon:="/RESOURCES/Images/Buttons_32/"+$find[0].pictname
 				End if 
-				$localizedTitle:=Get localized string:C991($subbutton.name)
+				$localizedTitle:=Localized string:C991($subbutton.name)
 				$subbutton.title:=($localizedTitle#"") ? $localizedTitle : $subbutton.name
 			End for each 
 		End if 
@@ -325,7 +328,7 @@ Function buildSubPopup($title : Text)->$menu : Text
 	End if 
 	
 	// check if we have table specific overwrite
-	var $class : 4D:C1709.DataClass:=Form:C1466.ORDA_listbox.table
+	var $class : 4D:C1709.DataClass:=Form:C1466.table
 	If ($class.OverWriteButtonPopup#Null:C1517)
 		//%W-550.2
 		$class.OverWriteButtonPopup($title; $menu)

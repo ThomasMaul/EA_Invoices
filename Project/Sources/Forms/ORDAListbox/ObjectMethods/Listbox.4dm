@@ -45,23 +45,21 @@ Case of
 					var $title : Text:=$col[$select-1]
 					LISTBOX INSERT COLUMN FORMULA:C970(*; "Listbox"; $event.column+1; $title; "this."+$title; Is text:K8:3; $title; $nullpointer)
 					OBJECT SET TITLE:C194(*; $title; $title)
-					Form:C1466.ORDA_listbox._columnwidths.insert($event.column; 50)
-					Form:C1466.ORDA_listbox.resize()
+					Form:C1466._columnwidths.insert($event.column; 50)
+					Form:C1466.resize()
 			End case 
 		End if 
 		
 	: ($event.code=On Selection Change:K2:29)
 		If (Form:C1466.preview.data#Null:C1517)
 			If (Form:C1466.preview.data.touched())
-				C_COLLECTION:C1488($touchedAttributes)
-				$touchedAttributes:=Form:C1466.preview.data.touchedAttributes()
+				var $touchedAttributes : Collection:=Form:C1466.preview.data.touchedAttributes()
 				var $check : Boolean:=True:C214
 				
 				If ($check)
 					CONFIRM:C162(Localized string:C991("SaveChanges"))
 					If (OK=1)
-						C_OBJECT:C1216($status)
-						$status:=Form:C1466.preview.data.save(dk auto merge:K85:24)
+						var $status : Object:=Form:C1466.preview.data.save(dk auto merge:K85:24)
 						Case of 
 							: ($status.success)
 								// nothing all fine
@@ -84,12 +82,16 @@ Case of
 		End if 
 		Form:C1466.preview.data:=Form:C1466.SelectedElement
 		Form:C1466.preview.Position:=Form:C1466.SelectedPosition
-		EXECUTE METHOD IN SUBFORM:C1085("preview"; Formula:C1597(ORDA_Listbox_Method("preview")))
+		Form:C1466.updateInputForm()
 		
 		
 	: ($event.code=On Double Clicked:K2:5)
 		If (Form:C1466.SelectedElement.getKey(dk key as string:K85:16)#"")
-			ORDA_Listbox_Method("doubleclick")
+			If (Form:C1466.preview.doDoubleClick#Null:C1517)
+				Form:C1466.preview.doDoubleClick()  // we have an overwrite in the table form class
+			Else 
+				Form:C1466.doDoubleClick()  // no, so we use the default version
+			End if 
 		End if 
 		
 End case 

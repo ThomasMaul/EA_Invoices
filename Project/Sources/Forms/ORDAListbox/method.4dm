@@ -30,9 +30,9 @@ Case of
 			HIDE MENU BAR:C432
 		End if 
 		
-		Form:C1466.ORDA_listbox:=cs:C1710.ORDA_Listbox.new(ds:C1482.CLIENTS)
-		Form:C1466.ORDA_listbox.load()
-		Form:C1466.ORDA_listbox.setInputForm()
+		Form:C1466.setTable(ds:C1482.CLIENTS)
+		Form:C1466.load()
+		Form:C1466.setInputForm()
 		
 		Form:C1466.toolbar:=cs:C1710.Toolbar.new()
 		Form:C1466.toolbar.load()
@@ -42,6 +42,6 @@ Case of
 		
 	: (Form event code:C388=On Resize:K2:27)
 		Form:C1466.toolbar.resize()
-		Form:C1466.ORDA_listbox.resize()
+		Form:C1466.resize()
 		
 End case 

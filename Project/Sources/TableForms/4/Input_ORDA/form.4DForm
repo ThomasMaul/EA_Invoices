@@ -217,5 +217,5 @@
 		"version": "1",
 		"kind": "form"
 	},
-	"formClass": "Form_Products"
+	"formClass": "Form_PRODUCTS"
 }
