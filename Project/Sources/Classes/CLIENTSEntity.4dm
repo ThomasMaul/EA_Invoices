@@ -4,34 +4,16 @@ Class extends Entity
 Function get invoices_sort->$sel : cs:C1710.INVOICESSelection
 	$sel:=This:C1470.invoices.orderBy("Date desc")
 	
-Function get customFieldsLB->$cb : Object
-/* return custom fields as collection directly to display in input form
-custom fields were stored for this demo in 2014 as:
-{
-"Twitter": "@abc",
-"Customer Group": "Special"
-}
+local Function get customFieldsLB->$cb : Object  // the data is already on the client, no need to ask the server
+	return cs:C1710.CustomFields.me.buildContent("CLIENTS"; This:C1470.CustomFields)
 	
-we need to rearrange as
-[{"name": "Twitter", "value": "@abc"},
-{"name": "Customer Group", "value": "Special"}
-]
-*/
-	
-	var $col : Collection:=[]
-	var $property : Text
-	If (This:C1470.CustomFields#Null:C1517)
-		For each ($property; This:C1470.CustomFields)
-			$col.push(New object:C1471("name"; $property; "value"; This:C1470.CustomFields[$property]))
-		End for each 
-		$cb:=New object:C1471("result"; $col)
-	End if 
-	
+local Function set customFieldsLB($cb : Object)
+	This:C1470.CustomFields:=cs:C1710.CustomFields.me.setContent("CLIENTS"; $cb)
 	
 Function get TotalSales->$total : Real
 	$total:=This:C1470.invoices.sum("Total")
 	
-Function get fullAddress->$address : Text
+local Function get fullAddress->$address : Text
 	$address:=This:C1470.Name+Char:C90(13)
 	$address+=(This:C1470.Address1+Char:C90(13))
 	If (This:C1470.Country="Germany")  // In Germany first Zip, then city

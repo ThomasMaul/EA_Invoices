@@ -1,1 +1,0 @@
-PRINT LABEL:C39(Current form table:C627->; Char:C90(1))

@@ -1,15 +1,11 @@
 //%attributes = {"invisible":true}
 
 
-//Clients_BuildLogo
-C_PICTURE:C286(Clients_BuildLogo; $0)
-C_TEXT:C284(Clients_BuildLogo; $1)
 
 //Invoices_ChangeColor
 C_REAL:C285(Invoices_ChangeColor; $0)
 
-//Invoices_GetNumber
-C_LONGINT:C283(Invoices_GetNumber; $0)
+
 
 //Invoices_GetNumberPrf
 C_LONGINT:C283(Invoices_GetNumberPrf; $0)

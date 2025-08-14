@@ -38,5 +38,6 @@ var $status:=$settings.save(dk auto merge:K85:24)
 If ($status.success=False:C215)
 	ALERT:C41("Error saving custom fields: "+$status.statusText)
 Else 
+	cs:C1710.CustomFields.me.update()
 	CANCEL:C270  // close the window
 End if 

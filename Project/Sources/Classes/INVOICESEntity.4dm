@@ -2,6 +2,9 @@ Class extends Entity
 
 Alias CustomerName client.Name
 
+local Function get customFieldsLB->$cb : Object  // the data is already on the client, no need to ask the server
+	return cs:C1710.CustomFields.me.buildContent("INVOICES"; This:C1470.CustomFields)
+	
 local Function updateTotals()
 	// calculates Subtotal, Tax and Total
 	// cannot be run in event, as there might be no change in invoice, only invoice item

@@ -33,30 +33,20 @@
 			"[INVOICES]Input"
 		]
 	},
-	"Export": {
-		"forms": [
-			"[CLIENTS]OutputExport"
-		]
-	},
+	"Export": {},
 	"FillData": {},
-	"Graph": {
-		"forms": [
-			"[CLIENTS]GraphForm"
-		]
-	},
+	"Graph": {},
 	"List": {
 		"groups": [
 			"Reorder",
 			"Update"
 		],
 		"forms": [
-			"[CLIENTS]Output",
 			"[INVOICES]Output"
 		]
 	},
 	"Manage": {
 		"methods": [
-			"Clients_Manage",
 			"Invoices_Manage",
 			"Settings_Manage"
 		]
@@ -69,20 +59,17 @@
 	},
 	"Print": {
 		"forms": [
-			"[CLIENTS]OutputPrint",
 			"[INVOICE_LINES]OutputPrint",
 			"[INVOICES]OutputPrint"
 		]
 	},
 	"ProcessInit": {
 		"methods": [
-			"Clients_ProcessInit",
 			"Invoices_ProcessInit"
 		]
 	},
 	"Reorder": {
 		"methods": [
-			"Clients_Reorder",
 			"InvoiceLines_Reorder",
 			"Invoices_Reorder"
 		]

@@ -6,7 +6,7 @@ Case of
 			$customfields:={}
 		End if 
 		
-		// { "name":"test", "fields":[{"name":"field1", "type":1}] }
+		// { "name":"test", "fields":[{"name":"field1"}] }
 		
 		ARRAY TEXT:C222($LB_tableNames; 0)  // used in hierarchical list box
 		ARRAY TEXT:C222($LB_Fields; 0)

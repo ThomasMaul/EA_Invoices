@@ -86,6 +86,7 @@ Case of
 		Form:C1466.preview.Position:=Form:C1466.SelectedPosition
 		EXECUTE METHOD IN SUBFORM:C1085("preview"; Formula:C1597(ORDA_Listbox_Method("preview")))
 		
+		
 	: ($event.code=On Double Clicked:K2:5)
 		If (Form:C1466.SelectedElement.getKey(dk key as string:K85:16)#"")
 			ORDA_Listbox_Method("doubleclick")

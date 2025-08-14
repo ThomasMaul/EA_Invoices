@@ -135,8 +135,9 @@ Function setInputForm()
 		
 	End if 
 	
-	
-	
+Function updateInputForm()
+	// needs to call via Execute in Subform
+	EXECUTE METHOD IN SUBFORM:C1085("preview"; Form:C1466.loadEvent())
 	
 Function useAll($class : 4D:C1709.DataClass)->$all : 4D:C1709.EntitySelection
 	If ($class.useAll#Null:C1517)
@@ -146,7 +147,6 @@ Function useAll($class : 4D:C1709.DataClass)->$all : 4D:C1709.EntitySelection
 	Else 
 		$all:=$class.all()
 	End if 
-	
 	
 Function calcWindowTitle($sel : 4D:C1709.EntitySelection)->$title : Text
 	var $class : 4D:C1709.DataClass:=$sel.getDataClass()

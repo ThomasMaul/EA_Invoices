@@ -729,13 +729,12 @@
 					"scrollbarHorizontal": "hidden",
 					"scrollbarVertical": "hidden",
 					"events": [
-						"onClick",
-						"onDataChange",
-						"onSelectionChange",
-						"onHeaderClick"
+						"onDataChange"
 					],
 					"listboxType": "collection",
-					"dataSource": "Form:C1466.data.customFieldsLB.result",
+					"dataSource": "Form:C1466.data.customFieldsLB.fields",
+					"method": "ObjectMethods/customF_LB.4dm",
+					"singleClickEdit": true,
 					"columns": [
 						{
 							"header": {
@@ -746,7 +745,8 @@
 							"footer": {
 								"name": "Fussteil1"
 							},
-							"dataSource": "This:C1470.name"
+							"dataSource": "This:C1470.name",
+							"enterable": false
 						},
 						{
 							"header": {
