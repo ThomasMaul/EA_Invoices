@@ -1,0 +1,222 @@
+{
+	"$4d": {
+		"version": "1",
+		"kind": "form"
+	},
+	"windowSizingX": "variable",
+	"windowSizingY": "variable",
+	"windowMinWidth": 0,
+	"windowMinHeight": 0,
+	"windowMaxWidth": 32767,
+	"windowMaxHeight": 32767,
+	"rightMargin": 0,
+	"bottomMargin": 0,
+	"events": [
+		"onLoad",
+		"onPageChange",
+		"onValidate",
+		"onClick",
+		"onDoubleClick",
+		"onOutsideCall",
+		"onBeginDragOver",
+		"onDragOver",
+		"onDrop",
+		"onAfterKeystroke",
+		"onMenuSelect",
+		"onPluginArea",
+		"onAfterEdit",
+		"onTimer",
+		"onBoundVariableChange"
+	],
+	"windowTitle": "window title",
+	"destination": "detailScreen",
+	"pages": [
+		{
+			"objects": {}
+		},
+		{
+			"objects": {
+				"but_FirstClient": {
+					"type": "button",
+					"top": 20,
+					"left": 140,
+					"width": 80,
+					"height": 60,
+					"tooltip": "First Client",
+					"action": "",
+					"textAlign": "center",
+					"stroke": "#000000",
+					"focusable": false,
+					"text": ":xliff:First",
+					"icon": "/RESOURCES/Images/Buttons/FirstRecord.png",
+					"iconFrames": 4,
+					"style": "custom",
+					"events": [
+						"onClick"
+					],
+					"method": "ObjectMethods/but_FirstClient.4dm"
+				},
+				"but_PreviousClient": {
+					"type": "button",
+					"top": 20,
+					"left": 220,
+					"width": 80,
+					"height": 60,
+					"tooltip": "Previous Client",
+					"action": "",
+					"textAlign": "center",
+					"stroke": "#000000",
+					"focusable": false,
+					"text": ":xliff:Previous",
+					"icon": "/RESOURCES/Images/Buttons/PreviousRecord.png",
+					"iconFrames": 4,
+					"style": "custom",
+					"events": [
+						"onClick"
+					],
+					"method": "ObjectMethods/but_PreviousClient.4dm"
+				},
+				"but_NextClient": {
+					"type": "button",
+					"top": 20,
+					"left": 300,
+					"width": 80,
+					"height": 60,
+					"tooltip": "Next Client",
+					"action": "",
+					"textAlign": "center",
+					"stroke": "#000000",
+					"focusable": false,
+					"text": ":xliff:Next",
+					"icon": "/RESOURCES/Images/Buttons/NextRecord.png",
+					"iconFrames": 4,
+					"style": "custom",
+					"events": [
+						"onClick"
+					],
+					"method": "ObjectMethods/but_NextClient.4dm"
+				},
+				"but_LastClient": {
+					"type": "button",
+					"top": 20,
+					"left": 380,
+					"width": 80,
+					"height": 60,
+					"tooltip": "Last Client",
+					"action": "",
+					"textAlign": "center",
+					"stroke": "#000000",
+					"focusable": false,
+					"text": ":xliff:Last",
+					"icon": "/RESOURCES/Images/Buttons/LastRecord.png",
+					"iconFrames": 4,
+					"style": "custom",
+					"events": [
+						"onClick"
+					],
+					"method": "ObjectMethods/but_LastClient.4dm"
+				},
+				"but_DeleteClient": {
+					"type": "button",
+					"top": 20,
+					"left": 460,
+					"width": 80,
+					"height": 60,
+					"tooltip": "Delete Client",
+					"textAlign": "center",
+					"stroke": "#000000",
+					"focusable": false,
+					"text": ":xliff:Delete",
+					"icon": "/RESOURCES/Images/Buttons/DeleteRecord.png",
+					"iconFrames": 4,
+					"style": "custom",
+					"method": "ObjectMethods/but_DeleteClient.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"Cancel": {
+					"type": "button",
+					"top": 20,
+					"left": 815,
+					"width": 80,
+					"height": 60,
+					"sizingX": "move",
+					"tooltip": "Cancel Client",
+					"action": "",
+					"textAlign": "center",
+					"stroke": "#000000",
+					"focusable": false,
+					"text": ":xliff:Cancel",
+					"icon": "/RESOURCES/Images/Buttons/Cancel.png",
+					"iconFrames": 4,
+					"style": "custom",
+					"events": [
+						"onClick"
+					],
+					"method": "ObjectMethods/Cancel.4dm"
+				},
+				"Validate": {
+					"type": "button",
+					"top": 20,
+					"left": 895,
+					"width": 80,
+					"height": 60,
+					"sizingX": "move",
+					"tooltip": "Validate Client",
+					"action": "",
+					"textAlign": "center",
+					"stroke": "#000000",
+					"focusable": false,
+					"text": ":xliff:Validate",
+					"icon": "/RESOURCES/Images/Buttons/OK.png",
+					"iconFrames": 4,
+					"style": "custom",
+					"events": [
+						"onClick"
+					],
+					"method": "ObjectMethods/Validate.4dm"
+				},
+				"Line2": {
+					"type": "line",
+					"top": 30,
+					"left": 540,
+					"height": 42,
+					"stroke": "#AAAAAA"
+				},
+				"Line3": {
+					"type": "line",
+					"top": 30,
+					"left": 460,
+					"height": 42,
+					"stroke": "#AAAAAA"
+				},
+				"Line4": {
+					"type": "line",
+					"top": 30,
+					"left": 815,
+					"height": 42,
+					"sizingX": "move",
+					"stroke": "#AAAAAA"
+				},
+				"Preview": {
+					"type": "subform",
+					"left": -1,
+					"top": 98,
+					"width": 1018,
+					"height": 731,
+					"dataSource": "Form:C1466.preview"
+				}
+			}
+		}
+	],
+	"geometryStamp": 26,
+	"method": "method.4dm",
+	"editor": {
+		"activeView": "View 1",
+		"defaultView": "View 1",
+		"views": {
+			"View 1": {}
+		}
+	}
+}

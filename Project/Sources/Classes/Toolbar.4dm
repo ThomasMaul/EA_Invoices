@@ -1,9 +1,16 @@
 property buttons : Collection
 property subformName : Text
+property maxWidth : Integer
+property parentForm : Object
+property parentWindow : Integer
+property style : Text
+property fontSize : Integer
 
 Class constructor
 	This:C1470.buttons:=New collection:C1472
 	This:C1470.subformName:=""
+	This:C1470.parentForm:=Form:C1466
+	This:C1470.parentWindow:=Current form window:C827
 	
 Function load()
 	This:C1470.buttons:=New collection:C1472  // init
@@ -33,7 +40,7 @@ Function load()
 		If ($button.name="Divider")
 			$groupcounter:=$groupcounter+1
 		Else 
-			Form:C1466.toolbar.createButton($groupcounter; $button; $allbuttons; "ORDA_Listbox_Method")
+			Form:C1466.toolbar.createButton($groupcounter; $button; $allbuttons; "Toolbar_Button_Callback")
 		End if 
 	End for each 
 	
@@ -42,7 +49,7 @@ Function load()
 		var $searchbox : cs:C1710.Toolbar_Button:=cs:C1710.Toolbar_Button.new(New object:C1471("name"; "search"; "group"; "300"; "mytype"; 1; "prio"; 1000))
 		$searchbox.width:=205
 		$searchbox.height:=36
-		$searchbox.method:="ORDA_Listbox_Method"
+		$searchbox.method:="Toolbar_Button_Callback"
 		$searchbox.subform:="SearchPicker"
 		C_TEXT:C284(vSearch)
 		$searchbox.dataSource:="vSearch"  // needs to be a process text variable, Form.xx will not work
@@ -53,7 +60,6 @@ Function load()
 	End if 
 	var $sub : Object:=Form:C1466.toolbar.getSubform("buttonsubform")
 	OBJECT SET SUBFORM:C1138(*; "buttonsubform"; $sub)
-	
 	
 Function add($button : cs:C1710.Toolbar_Button)
 	// add a button instance to the toolbar

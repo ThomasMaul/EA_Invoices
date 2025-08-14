@@ -8,8 +8,6 @@ Function OverWriteButtonPopup($title : Text; $menu : Text)
 	//Printing using 4D Write Pro templates: paper, duplex (conditions on background first page), color
 	//Printing using 4D Write Pro templates: paper, BW
 	If ($title="Print")  // compare with English  name (resname in xliff), not localized one
-		APPEND MENU ITEM:C411($menu; "Classic Invoice")
-		SET MENU ITEM PARAMETER:C1004($menu; -1; "Classic Invoice")
 		APPEND MENU ITEM:C411($menu; "New Invoice as PDF")
 		SET MENU ITEM PARAMETER:C1004($menu; -1; "New Invoice as PDF")
 		APPEND MENU ITEM:C411($menu; "New Invoice Color Paper")

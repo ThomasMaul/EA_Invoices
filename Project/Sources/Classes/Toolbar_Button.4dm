@@ -19,6 +19,7 @@ property group : Text
 property widths : Collection
 property events : Collection
 property tooltip : Text
+property sub : Collection
 
 Class constructor($ob : Object)
 	If ($ob#Null:C1517)

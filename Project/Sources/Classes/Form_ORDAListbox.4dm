@@ -122,7 +122,7 @@ Function setInputForm()
 	
 	If (This:C1470._inputFormExists())
 		var $tableptr : Pointer:=Formula from string:C1601("->["+This:C1470.tablename+"]").call()
-		var $form : 4D:C1709.File:=File:C1566("/PROJECT/Sources/TableForms/"+String:C10(Table:C252($tableptr))+"/Input_ORDA/form.4DForm")
+		//var $form : 4D.File:=File("/PROJECT/Sources/TableForms/"+String(Table($tableptr))+"/Input_ORDA/form.4DForm")
 		
 		OBJECT SET SUBFORM:C1138(*; "Preview"; $tableptr->; "Input_ORDA")
 	Else 
@@ -150,7 +150,6 @@ Function _getInputForm() : Object
 		$top:=$top+30
 	End for each 
 	return New object:C1471("pages"; New collection:C1472(Null:C1517; New object:C1471("objects"; $page)); "destination"; "detailScreen")
-	
 	
 	
 Function updateInputForm()
@@ -181,64 +180,68 @@ Function calcWindowTitle($sel : 4D:C1709.EntitySelection)->$title : Text
 		$title:=This:C1470.tablename+"   -   "+String:C10($sel.length)+" of "+String:C10($class.all().length)
 	End if 
 	
+	
 Function handleButtonClick($button : Text; $event : Integer)
+	// called via Call Form -> this is not useable, we need to use Form !!!
+	var $this:=Form:C1466
 	If ($event=On Clicked:K2:4)
-		var $class : 4D:C1709.DataClass:=This:C1470.table
+		var $class : 4D:C1709.DataClass:=$this.table
 		var $tablename : Text
 		var $tableptr : Pointer
 		var $context : Object
-		var $helper : cs:C1710.Helper_Invoices
 		
 		Case of 
 			: ($button="All")
-				Form:C1466.listbox:=This:C1470.useAll($class)
-				SET WINDOW TITLE:C213(This:C1470.calcWindowTitle(Form:C1466.listbox); Current form window:C827)
+				Form:C1466.listbox:=$this.useAll($class)
+				SET WINDOW TITLE:C213($this.calcWindowTitle(Form:C1466.listbox); Current form window:C827)
 				
 			: ($button="None")
 				Form:C1466.listbox:=$class.newSelection()
-				SET WINDOW TITLE:C213(This:C1470.calcWindowTitle(Form:C1466.listbox); Current form window:C827)
+				SET WINDOW TITLE:C213($this.calcWindowTitle(Form:C1466.listbox); Current form window:C827)
 				
 			: ($button="Selected")
 				Form:C1466.listbox:=Form:C1466.Selection
-				SET WINDOW TITLE:C213(This:C1470.calcWindowTitle(Form:C1466.listbox); Current form window:C827)
+				SET WINDOW TITLE:C213($this.calcWindowTitle(Form:C1466.listbox); Current form window:C827)
 				
 			: ($button="Query")
 				// open standard query editor from Classic
 				// this shows how to use Classic editors for ORDA
 				// alternative: use ORDA query, by example https://github.com/ThomasMaul/QueryEditor/tree/main
-				$tableptr:=Formula from string:C1601("->["+This:C1470.tablename+"]").call()
+				$tableptr:=Formula from string:C1601("->["+$this.tablename+"]").call()
 				QUERY:C277($tableptr->)
-				Form:C1466.listbox:=Create entity selection:C1512($tableptr->)
-				SET WINDOW TITLE:C213(This:C1470.calcWindowTitle(Form:C1466.listbox); Current form window:C827)
+				$this.listbox:=Create entity selection:C1512($tableptr->)
+				SET WINDOW TITLE:C213($this.calcWindowTitle($this.listbox); Current form window:C827)
 				
 			: ($button="Sort")
-				$tableptr:=Formula from string:C1601("->["+This:C1470.tablename+"]").call()
-				USE ENTITY SELECTION:C1513(Form:C1466.listbox)
+				$tableptr:=Formula from string:C1601("->["+$this.tablename+"]").call()
+				USE ENTITY SELECTION:C1513($this)
 				ORDER BY:C49($tableptr->)
-				Form:C1466.listbox:=Create entity selection:C1512($tableptr->)
+				$this.listbox:=Create entity selection:C1512($tableptr->)
 				
 			: (($button="Print") | ($button="QuickReport"))
-				$tableptr:=Formula from string:C1601("->["+This:C1470.tablename+"]").call()
-				USE ENTITY SELECTION:C1513(Form:C1466.listbox)
+				$tableptr:=Formula from string:C1601("->["+$this.tablename+"]").call()
+				USE ENTITY SELECTION:C1513($this.listbox)
 				QR REPORT:C197($tableptr->; Char:C90(1))
 				
 			Else   // everything from your application to customize
-				ORDA_Listbox_Method("customButton"; $button)
+				$this.handleCustomButtons($button; $event; $this)
 		End case 
 		
 	Else   // alternative, open submenu
 		var $submenu : Text:=Form:C1466.toolbar.buildSubPopup($button)
 		var $ref : Text:=Dynamic pop up menu:C1006($submenu)
 		RELEASE MENU:C978($submenu)
-		This:C1470.handleButtonClick($ref; On Clicked:K2:4)
+		$This.handleButtonClick($ref; On Clicked:K2:4)
 	End if 
 	
 Function handleSearchbox()  // handle the searchbox
-	If (This:C1470.table.quickSearch#Null:C1517)
+	// called via Call Form -> this is not useable, we need to use Form !!!
+	var $this:=Form:C1466
+	If ($this.table.quickSearch#Null:C1517)
 		//%W-550.2
-		Form:C1466.listbox:=This:C1470.table.quickSearch(vSearch)
+		Form:C1466.listbox:=$this.table.quickSearch(vSearch)
 		//%W+550.2
-		SET WINDOW TITLE:C213(This:C1470.calcWindowTitle(Form:C1466.listbox); Current form window:C827)
+		SET WINDOW TITLE:C213($this.calcWindowTitle($this.listbox); Current form window:C827)
 	End if 
 	
 Function displaySearchbox()->$bool : Boolean  // display the searchbox
@@ -262,15 +265,107 @@ Function doDoubleClick()
 	End if 
 	$data.data:=Form:C1466.SelectedElement  // pass the selected element
 	
-	If (This:C1470._inputFormExists())
-		var $tableptr : Pointer:=Formula from string:C1601("->["+This:C1470.tablename+"]").call()
-		var $form : 4D:C1709.File:=File:C1566("/PROJECT/Sources/TableForms/"+String:C10(Table:C252($tableptr))+"/Input_ORDA/form.4DForm")
-		
-		var $win:=Open form window:C675($tableptr->; "Input_ORDA")
-		DIALOG:C40($tableptr->; "Input_ORDA"; $data; *)
-	Else 
-		var $result : Object:=This:C1470._getInputForm()
-		var $win:=Open form window:C675($result)
-		DIALOG:C40($result; $data; *)
-	End if 
+	// using case of, we could add different behavior depending of module
+	// here we use the same concept for all 3 modules
+	var $formdata:=cs:C1710.Form_Input_Main.new()
+	$formdata.tablename:=This:C1470.tablename
+	$formdata.SelectedElement:=This:C1470.SelectedElement
+	var $win:=Open form window:C675("Input_Main")
+	DIALOG:C40("Input_Main"; $formdata; *)
 	
+	
+	// **************************************************
+	//MARK: customize section
+	// add here your own behavior
+	
+Function handleCustomButtons($button : Text; $event : Integer; $this : Object)
+	// called via Call Form, so this is not available, use $this (or Form)
+	Case of 
+		: (($button="Clients") | ($button="Module") | ($button="Invoices") | ($button="Invoices"))
+			If (($button="Clients") | ($button="Module"))
+				Form:C1466.setTable(ds:C1482.CLIENTS)
+			Else 
+				Form:C1466.setTable(ds:C1482[Uppercase:C13($button)])
+			End if 
+			Form:C1466.load()
+			Form:C1466.toolbar.load()  // this will recreate the toolbar, produce flicker. But allow to change buttons or show/hide searchbox
+			Form:C1466.setInputForm()
+			
+		: ($button="Add")  // "New" button, different behavior depending of module
+			// using case of, we could add different behavior depending of module
+			// here we use the same concept for all 3 modules
+			var $formdata:=cs:C1710.Form_Input_Main.new()
+			$formdata.tablename:=$this.tablename
+			$formdata.SelectedElement:=ds:C1482[$this.tablename].new()
+			var $win:=Open form window:C675("Input_Main")
+			DIALOG:C40("Input_Main"; $formdata; *)
+			
+			
+		: ($button="Settings")
+			Settings_Manage
+			
+		: ($button="4DViewPro")
+			var $data : Object:=New object:C1471("table"; Form:C1466.tablename; "masterform"; Form:C1466)
+			If (Form:C1466.Selection.length>0)  // if some records are selected, we use those, else all
+				$data.data:=Form:C1466.Selection
+			Else 
+				$data.data:=Form:C1466.listbox
+			End if 
+			
+			// special behavior for invoices
+			If (Form:C1466.tablename="Invoices")
+				var $pop : Text:=Localized string:C991("Invoices")+";"+Localized string:C991("Invoice_Lines")
+				var $popup : Integer:=Pop up menu:C542($pop)
+				If ($popup=2)
+					$data.table:="INVOICE_LINES"
+					$data.data:=$data.data.invoice_lines
+				End if 
+			End if 
+			
+			$win:=Open form window:C675("ViewProReport")
+			DIALOG:C40("ViewProReport"; $data; *)
+			// end VPReport
+			
+		: ($button="New Invoice as PDF")
+			If (Form:C1466.SelectedElement=Null:C1517)
+				ALERT:C41("Please select an invoice")
+				return 
+			End if 
+			var $context:={invoice: Form:C1466.SelectedElement; seller: Storage:C1525.company}
+			var $helper:=cs:C1710.Helper_Invoices.new($context)
+			$helper.createPDF(System folder:C487(Desktop:K41:16)+"test.pdf")
+			ALERT:C41("Stored as test.pdf on your desktop")
+			
+		: ($button="New Invoice Color Paper")
+			If (Form:C1466.SelectedElement=Null:C1517)
+				ALERT:C41("Please select an invoice")
+				return 
+			End if 
+			$context:={invoice: Form:C1466.SelectedElement; seller: Storage:C1525.company}
+			$helper:=cs:C1710.Helper_Invoices.new($context)
+			ALERT:C41("Set the printer to duplex and color. For production, change the code to make this automatically")
+			PRINT SETTINGS:C106  // better than to ask the user how to setup the printer would be to do that automatically
+			// in settings dialog, allow the end user to store the settings using Print settings to BLOB   
+			// this includes which printer to use, what paper tray, color/duplex/stapling, etc.
+			// then just load this settings and pass them to the printer via BLOB to print settings   
+			$helper.print_color()
+			
+		: ($button="New Invoice BW Paper")
+			If (Form:C1466.SelectedElement=Null:C1517)
+				ALERT:C41("Please select an invoice")
+				return 
+			End if 
+			$context:={invoice: Form:C1466.SelectedElement; seller: Storage:C1525.company}
+			$helper:=cs:C1710.Helper_Invoices.new($context)
+			ALERT:C41("Set the printer to single page and black&white. For production, change the code to make this automatically")
+			PRINT SETTINGS:C106  // better than to ask the user how to setup the printer would be to do that automatically
+			// in settings dialog, allow the end user to store the settings using Print settings to BLOB   
+			// this includes which printer to use, what paper tray, color/duplex/stapling, etc.
+			// then just load this settings and pass them to the printer via BLOB to print settings   
+			$helper.print_white()
+			
+		Else 
+			If ($button#"")
+				ALERT:C41("Not supported")
+			End if 
+	End case   // customButton

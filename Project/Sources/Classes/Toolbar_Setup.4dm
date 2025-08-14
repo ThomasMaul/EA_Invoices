@@ -268,7 +268,6 @@ Function storeSettings()->$userdata : Collection
 	ARRAY LONGINT:C221($windows; 0)
 	WINDOW LIST:C442($windows)
 	For ($i; 1; Size of array:C274($windows))
-		CALL FORM:C1391($windows{$i}; "ORDA_Listbox_Method"; "Toolbar_Refresh")
 		CALL FORM:C1391($windows{$i}; This:C1470._run_Toolbar_Refresh)
 	End for 
 	
