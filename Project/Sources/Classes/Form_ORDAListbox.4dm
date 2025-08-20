@@ -181,6 +181,31 @@ Function calcWindowTitle($sel : 4D:C1709.EntitySelection)->$title : Text
 	End if 
 	
 	
+Function closeWindow()
+	// called from close box - and from red button (Mac) or cross (Windows)
+	If (In transaction:C397)
+		ds:C1482.cancelTransaction()
+	End if 
+	
+	ARRAY LONGINT:C221($windows; 0)
+	WINDOW LIST:C442($windows)
+	If (Size of array:C274($Windows)=1)  // if not already in design mode or other windows open, quit...
+		If (Is compiled mode:C492)
+			QUIT 4D:C291
+		Else 
+			CONFIRM:C162("Quit or open design mode?"; "Quit"; "Design")
+			If (OK=1)
+				QUIT 4D:C291
+			Else 
+				CANCEL:C270
+				SHOW MENU BAR:C431
+				INVOKE ACTION:C1439(ak return to design mode:K76:62)
+			End if 
+		End if 
+	Else 
+		CANCEL:C270  // close only this window, don't ask/quit
+	End if 
+	
 Function handleButtonClick($button : Text; $event : Integer)
 	// called via Call Form -> this is not useable, we need to use Form !!!
 	var $this:=Form:C1466

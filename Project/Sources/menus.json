@@ -47,7 +47,8 @@
 					"method": "Settings_Manage",
 					"shortcutShift": true,
 					"shortcutAccel": true,
-					"shortcutKey": "s"
+					"shortcutKey": "s",
+					"action": "databaseSettings"
 				},
 				{
 					"title": "Zeile 2",

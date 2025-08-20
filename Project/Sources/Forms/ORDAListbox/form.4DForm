@@ -148,7 +148,7 @@
 				"Listbox": {
 					"type": "listbox",
 					"top": 66,
-					"left": 1,
+					"left": -114,
 					"width": 781,
 					"height": 704,
 					"sizingX": "grow",
@@ -332,7 +332,7 @@
 			}
 		}
 	],
-	"geometryStamp": 88,
+	"geometryStamp": 89,
 	"method": "method.4dm",
 	"editor": {
 		"activeView": "View 1",

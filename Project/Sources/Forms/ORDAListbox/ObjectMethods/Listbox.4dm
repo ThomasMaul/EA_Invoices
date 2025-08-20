@@ -63,6 +63,11 @@ Case of
 						Case of 
 							: ($status.success)
 								// nothing all fine
+								// but if we are in a transaction?
+								If (In transaction:C397)
+									ds:C1482.validateTransaction()
+									ds:C1482.startTransaction()
+								End if 
 							: ($status.status=dk status automerge failed:K85:25)
 								ALERT:C41(Localized string:C991("SomebodyElseChanged"))
 							: ($status.status=dk status locked:K85:21)
@@ -75,6 +80,10 @@ Case of
 								End if 
 						End case 
 					Else   // do not change
+						If (In transaction:C397)
+							ds:C1482.cancelTransaction()
+							ds:C1482.startTransaction()
+						End if 
 						Form:C1466.listbox:=Form:C1466.listbox  // force redraw with old values
 					End if 
 				End if 

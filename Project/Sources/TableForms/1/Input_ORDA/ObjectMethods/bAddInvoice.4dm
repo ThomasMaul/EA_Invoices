@@ -5,7 +5,7 @@ End if
 var $formdata:=cs:C1710.Form_Input_Main.new()
 $formdata.tablename:="INVOICES"
 $formdata.SelectedElement:=ds:C1482.INVOICES.new()
-$formdata.SelectedElement.ClientID:=Form:C1466.data.ID
+$formdata.SelectedElement.Client_ID:=Form:C1466.data.ID
 $formdata.SelectedElement.Date:=Current date:C33
 $formdata.SelectedElement.PaymentDelay:=30
 $formdata.SelectedElement.ProForma:=True:C214

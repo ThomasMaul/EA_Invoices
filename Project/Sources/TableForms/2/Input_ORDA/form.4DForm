@@ -120,13 +120,13 @@
 				"List Box": {
 					"type": "listbox",
 					"top": 430,
-					"left": 13,
+					"left": 21,
 					"width": 864,
 					"height": 265,
 					"sizingY": "grow",
 					"resizingMode": "legacy",
 					"listboxType": "collection",
-					"focusable": false,
+					"focusable": true,
 					"movableRows": false,
 					"rowHeight": "20px",
 					"headerHeight": "20px",
@@ -143,10 +143,11 @@
 					"verticalAlign": "middle",
 					"borderStyle": "none",
 					"events": [
-						"onDoubleClick",
-						"onSelectionChange"
+						"onDataChange"
 					],
-					"dataSource": "Form:C1466.data.invoice_lines",
+					"dataSource": "Form:C1466.itemList",
+					"singleClickEdit": true,
+					"currentItemSource": "Form:C1466.curLine",
 					"columns": [
 						{
 							"name": "invoiceLineReference",
@@ -154,14 +155,13 @@
 							"minWidth": 10,
 							"maxWidth": 32000,
 							"resizable": false,
-							"enterable": false,
+							"enterable": true,
 							"stroke": "automatic",
 							"fill": "#EEEEEE",
 							"alternateFill": "#FFFFFF",
 							"textAlign": "left",
 							"verticalAlign": "middle",
 							"events": [
-								"onClick",
 								"onDataChange"
 							],
 							"header": {
@@ -179,7 +179,8 @@
 								"textAlign": "automatic",
 								"verticalAlign": "top"
 							},
-							"dataSource": "This:C1470.ProductReference"
+							"dataSource": "This:C1470.ProductReference",
+							"method": "ObjectMethods/invoiceLineReference.4dm"
 						},
 						{
 							"name": "invoiceLineName",
@@ -220,14 +221,13 @@
 							"minWidth": 10,
 							"maxWidth": 32000,
 							"resizable": false,
-							"enterable": false,
+							"enterable": true,
 							"stroke": "automatic",
 							"fill": "#EEEEEE",
 							"alternateFill": "#FFFFFF",
 							"textAlign": "center",
 							"verticalAlign": "middle",
 							"events": [
-								"onClick",
 								"onDataChange"
 							],
 							"header": {
@@ -245,7 +245,8 @@
 								"textAlign": "right",
 								"verticalAlign": "top"
 							},
-							"dataSource": "This:C1470.Quantity"
+							"dataSource": "This:C1470.Quantity",
+							"method": "ObjectMethods/invoiceLineQuantity.4dm"
 						},
 						{
 							"name": "invoiceLineUnitPrice_cur",
@@ -253,7 +254,7 @@
 							"minWidth": 10,
 							"maxWidth": 32000,
 							"resizable": false,
-							"enterable": false,
+							"enterable": true,
 							"stroke": "automatic",
 							"fill": "#EEEEEE",
 							"alternateFill": "#FFFFFF",
@@ -278,15 +279,16 @@
 								"textAlign": "automatic",
 								"verticalAlign": "top"
 							},
-							"dataSource": "This:C1470.ProductUnitPrice"
+							"dataSource": "This:C1470.ProductUnitPrice",
+							"method": "ObjectMethods/invoiceLineUnitPrice_cur.4dm"
 						},
 						{
 							"name": "invoiceLineDiscount",
 							"width": 110,
 							"minWidth": 10,
 							"maxWidth": 32000,
-							"resizable": false,
-							"enterable": false,
+							"resizable": true,
+							"enterable": true,
 							"stroke": "automatic",
 							"fill": "#EEEEEE",
 							"alternateFill": "#FFFFFF",
@@ -314,7 +316,8 @@
 								"verticalAlign": "top",
 								"fontWeight": "bold"
 							},
-							"dataSource": "This:C1470.DiscountRate"
+							"dataSource": "This:C1470.DiscountRate",
+							"method": "ObjectMethods/invoiceLineDiscount.4dm"
 						},
 						{
 							"name": "invoiceLineTotal_cur",
@@ -1235,6 +1238,45 @@
 					"textAlign": "right",
 					"fontWeight": "bold",
 					"text": ":xliff:Total"
+				},
+				"bDeleteInvoiceLine": {
+					"type": "button",
+					"top": 510,
+					"left": 897,
+					"width": 51,
+					"height": 60,
+					"tooltip": "Delete Invoice Line(s)",
+					"textAlign": "center",
+					"stroke": "#000000",
+					"focusable": false,
+					"text": ":xliff:Delete",
+					"icon": "/RESOURCES/Images/Buttons/DeleteRecord.png",
+					"iconFrames": 4,
+					"style": "custom",
+					"method": "ObjectMethods/bDeleteInvoiceLine.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"bAddInvoice": {
+					"type": "button",
+					"top": 430,
+					"left": 894,
+					"width": 62,
+					"height": 60,
+					"sizingX": "move",
+					"tooltip": "Add Invoice",
+					"textAlign": "center",
+					"stroke": "#000000",
+					"focusable": false,
+					"text": ":xliff:Add",
+					"icon": "/RESOURCES/Images/Buttons/NewRecord.png",
+					"iconFrames": 4,
+					"style": "custom",
+					"method": "ObjectMethods/bAddInvoice.4dm",
+					"events": [
+						"onClick"
+					]
 				}
 			}
 		}
@@ -1259,7 +1301,7 @@
 			"View 9": {}
 		}
 	},
-	"geometryStamp": 5,
+	"geometryStamp": 17,
 	"$4d": {
 		"version": "1",
 		"kind": "form"

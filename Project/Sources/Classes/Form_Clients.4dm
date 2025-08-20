@@ -1,5 +1,6 @@
 property data : cs:C1710.CLIENTSEntity
 property Position : Integer
+property Selected : cs:C1710.INVOICESEntity
 
 Function loadEvent()
 	// nothing

@@ -282,8 +282,9 @@
 						"onDoubleClick",
 						"onSelectionChange"
 					],
-					"currentItemSource": "",
+					"currentItemSource": "Form:C1466.Selected",
 					"dataSource": "Form:C1466.data.invoices_sort",
+					"method": "ObjectMethods/clientInvoices.4dm",
 					"columns": [
 						{
 							"name": "invoicesNumber",

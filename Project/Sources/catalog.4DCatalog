@@ -158,7 +158,7 @@
 		<field name="ProformaNumber" uuid="4EB412E1C5641B449DE19D51209BF63F" type="10" limiting_length="20" never_null="true" id="14"/>
 		<field name="CustomFields" uuid="D6505D5170321E478EF329EBC1F59A7E" type="21" never_null="true" id="15"/>
 		<primary_key field_name="ID" field_uuid="76B6BD940327F94EB5051C7503283164"/>
-		<table_extra input_form="Input" output_form="Output">
+		<table_extra input_form="Input_ORDA" output_form="Input_ORDA">
 			<editor_table_info displayable_fields_count="15">
 				<color red="224" green="234" blue="104" alpha="255"/>
 				<coordinates left="235" top="5" width="172" height="376.33203125"/>
@@ -226,7 +226,7 @@
 		</field>
 		<field name="TotalTax" uuid="183B06E6B222164F871719F2EF33E01F" type="6" never_null="true" id="11"/>
 		<primary_key field_name="ID" field_uuid="701C73A810B33342AD34262E9C843123"/>
-		<table_extra input_form="Input" output_form="OutputPrint">
+		<table_extra input_form="dummy" output_form="dummy">
 			<editor_table_info displayable_fields_count="12">
 				<color red="224" green="234" blue="104" alpha="255"/>
 				<coordinates left="492" top="7" width="162.14453125" height="299.68359375"/>
@@ -308,7 +308,7 @@
 			</editor_relation_info>
 		</relation_extra>
 	</relation>
-	<relation uuid="E102AD0611DC5F4ABC678BF2FAA3355B" name_Nto1="invoice" name_1toN="invoice_lines" auto_load_Nto1="true" auto_load_1toN="true" state="1" integrity="reject">
+	<relation uuid="E102AD0611DC5F4ABC678BF2FAA3355B" name_Nto1="invoice" name_1toN="invoice_lines" auto_load_Nto1="true" auto_load_1toN="true" state="1" integrity="delete">
 		<related_field kind="source">
 			<field_ref uuid="FB780D6B09568846B8220AF0CAC3DA26" name="Invoice_ID">
 				<table_ref uuid="C1146E075B67B24CAA3D4910AC2ED24C" name="INVOICE_LINES"/>
@@ -319,8 +319,8 @@
 				<table_ref uuid="689F27F44AE5FA43B1D357F9A3A43468" name="INVOICES"/>
 			</field_ref>
 		</related_field>
-		<relation_extra entry_wildchar="false" entry_create="false" choice_field="0" entry_autofill="false">
-			<editor_relation_info via_point_x="-1" via_point_y="-1" prefers_left="true" smartlink="true">
+		<relation_extra>
+			<editor_relation_info>
 				<color red="224" green="234" blue="104" alpha="255"/>
 			</editor_relation_info>
 		</relation_extra>

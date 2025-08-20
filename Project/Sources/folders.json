@@ -8,12 +8,7 @@
 		]
 	},
 	"Default Project Methods": {},
-	"Entry": {
-		"forms": [
-			"[INVOICE_LINES]Input",
-			"[INVOICES]Input"
-		]
-	},
+	"Entry": {},
 	"Export": {},
 	"FillData": {},
 	"Graph": {},
@@ -21,9 +16,6 @@
 		"groups": [
 			"Reorder",
 			"Update"
-		],
-		"forms": [
-			"[INVOICES]Output"
 		]
 	},
 	"Manage": {
@@ -37,12 +29,7 @@
 			"ProcessInit"
 		]
 	},
-	"Print": {
-		"forms": [
-			"[INVOICE_LINES]OutputPrint",
-			"[INVOICES]OutputPrint"
-		]
-	},
+	"Print": {},
 	"ProcessInit": {},
 	"Reorder": {},
 	"Tables": {
