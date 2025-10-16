@@ -16,4 +16,8 @@ Case of
 			OBJECT SET VISIBLE:C603(*; "but_@"; False:C215)
 			OBJECT SET ENABLED:C1123(*; "but_@"; False:C215)  // even unvisible, it could have a shortcut
 		End if 
+		
+		If (Form:C1466.preview.loadEvent#Null:C1517)
+			Form:C1466.preview.loadEvent()
+		End if 
 End case 

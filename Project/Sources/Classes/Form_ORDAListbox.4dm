@@ -9,7 +9,7 @@ property toolbar : cs:C1710.Toolbar
 property preview : Object  // Subform - either class such as Form_CLIENTS or empty object
 property SelectedElement : cs:C1710.Entity
 property SelectedPosition : Integer
-
+property Selection : cs:C1710.EntitySelection
 
 Class constructor
 	
@@ -75,6 +75,7 @@ Function _loadListboxColumns()
 			OBJECT SET TITLE:C194(*; $column.title; $column.title)
 			LISTBOX SET COLUMN WIDTH:C833(*; $column.title; $column.width)
 			This:C1470._columnwidths.push($column.width)
+			OBJECT SET ENTERABLE:C238(*; $column.title; False:C215)
 		End for each 
 		
 		
@@ -104,8 +105,10 @@ Function _loadListboxColumns()
 					OBJECT SET TITLE:C194(*; $fieldname; $fieldname)
 					LISTBOX SET COLUMN WIDTH:C833(*; $fieldname; $width)
 					This:C1470._columnwidths.push($width)
+					OBJECT SET ENTERABLE:C238(*; $fieldname; False:C215)
 				End if 
 			End if 
+			
 		End for each 
 	End if 
 	
@@ -157,7 +160,7 @@ Function updateInputForm()
 	If (Form:C1466.preview.loadEvent=Null:C1517)
 		// nothing do be done?
 	Else 
-		EXECUTE METHOD IN SUBFORM:C1085("preview"; Form:C1466.preview.loadEvent)
+		EXECUTE METHOD IN SUBFORM:C1085("preview"; Form:C1466.preview.loadEvent; *; Form:C1466.preview)
 	End if 
 	
 Function useAll($class : 4D:C1709.DataClass)->$all : 4D:C1709.EntitySelection

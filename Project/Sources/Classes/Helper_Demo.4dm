@@ -141,6 +141,7 @@ Function buildDemoData()->$error
 						$invoiceLine.ProductUnitPrice:=$product.UnitPrice
 						$invoiceLine.DiscountRate:=Random:C100%(11)
 						$invoiceLine.ProductTaxRate:=$product.TaxRate
+						$invoiceLine.ItemPos:=$k
 						$invoiceLine.save()  // totals calculated in $invoiceLine event
 					End for 
 					

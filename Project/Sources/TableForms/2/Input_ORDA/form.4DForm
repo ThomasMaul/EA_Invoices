@@ -120,7 +120,7 @@
 				"List Box": {
 					"type": "listbox",
 					"top": 430,
-					"left": 21,
+					"left": 23,
 					"width": 864,
 					"height": 265,
 					"sizingY": "grow",
@@ -351,7 +351,8 @@
 								"stroke": "automatic",
 								"fill": "#DDDDDD",
 								"textAlign": "right",
-								"verticalAlign": "top"
+								"verticalAlign": "top",
+								"numberFormat": "###,##0.00"
 							},
 							"dataSource": "This:C1470.Total",
 							"dataSourceTypeHint": "number",
@@ -395,8 +396,8 @@
 				"Tax_cur": {
 					"type": "input",
 					"top": 656,
-					"left": 673,
-					"width": 75,
+					"left": 680,
+					"width": 80,
 					"height": 18,
 					"sizingY": "move",
 					"dataSource": "Form:C1466.data.Tax",
@@ -409,13 +410,14 @@
 					"enterable": false,
 					"contextMenu": "none",
 					"dragging": "none",
-					"dropping": "none"
+					"dropping": "none",
+					"numberFormat": "###,##0.00"
 				},
 				"Total_cur": {
 					"type": "input",
 					"top": 679,
-					"left": 673,
-					"width": 75,
+					"left": 680,
+					"width": 80,
 					"height": 18,
 					"sizingY": "move",
 					"dataSource": "Form:C1466.data.Total",
@@ -429,7 +431,8 @@
 					"enterable": false,
 					"contextMenu": "none",
 					"dragging": "none",
-					"dropping": "none"
+					"dropping": "none",
+					"numberFormat": "###,##0.00"
 				},
 				"inv_LabelPayementReference": {
 					"type": "text",
@@ -1184,7 +1187,7 @@
 				"Line": {
 					"type": "line",
 					"top": 629,
-					"left": 672,
+					"left": 681,
 					"height": 65,
 					"sizingY": "move",
 					"stroke": "#AAAAAA"
@@ -1192,7 +1195,7 @@
 				"Line1": {
 					"type": "line",
 					"top": 629,
-					"left": 752,
+					"left": 761,
 					"height": 65,
 					"sizingY": "move",
 					"stroke": "#AAAAAA"
@@ -1301,7 +1304,7 @@
 			"View 9": {}
 		}
 	},
-	"geometryStamp": 17,
+	"geometryStamp": 41,
 	"$4d": {
 		"version": "1",
 		"kind": "form"

@@ -28,7 +28,7 @@
 		"onTimer",
 		"onBoundVariableChange"
 	],
-	"windowTitle": "window title",
+	"windowTitle": "Data Entry",
 	"destination": "detailScreen",
 	"pages": [
 		{
@@ -116,25 +116,6 @@
 					],
 					"method": "ObjectMethods/but_LastClient.4dm"
 				},
-				"but_DeleteClient": {
-					"type": "button",
-					"top": 20,
-					"left": 460,
-					"width": 80,
-					"height": 60,
-					"tooltip": "Delete Client",
-					"textAlign": "center",
-					"stroke": "#000000",
-					"focusable": false,
-					"text": ":xliff:Delete",
-					"icon": "/RESOURCES/Images/Buttons/DeleteRecord.png",
-					"iconFrames": 4,
-					"style": "custom",
-					"method": "ObjectMethods/but_DeleteClient.4dm",
-					"events": [
-						"onClick"
-					]
-				},
 				"Cancel": {
 					"type": "button",
 					"top": 20,
@@ -177,20 +158,6 @@
 					],
 					"method": "ObjectMethods/Validate.4dm"
 				},
-				"Line2": {
-					"type": "line",
-					"top": 30,
-					"left": 540,
-					"height": 42,
-					"stroke": "#AAAAAA"
-				},
-				"Line3": {
-					"type": "line",
-					"top": 30,
-					"left": 460,
-					"height": 42,
-					"stroke": "#AAAAAA"
-				},
 				"Line4": {
 					"type": "line",
 					"top": 30,
@@ -210,7 +177,7 @@
 			}
 		}
 	],
-	"geometryStamp": 26,
+	"geometryStamp": 29,
 	"method": "method.4dm",
 	"editor": {
 		"activeView": "View 1",
